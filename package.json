@@ -1,0 +1,50 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "short updates on what we do at CarbonPlan",
+  "main": "index.js",
+  "scripts": {
+    "dev": "NODE_ENV=development next -p 4001",
+    "build": "next build",
+    "start": "next start",
+    "format": "npm run format-js && npm run format-md",
+    "format-js": "prettier --write '*.js' '{components,lib,pages,posts}/**/*.js'",
+    "format-md": "prettier --write README.md 'posts/**/*.md' --parser mdx"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carbonplan/blog.git"
+  },
+  "author": "carbonplan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/carbonplan/blog/issues"
+  },
+  "homepage": "https://github.com/carbonplan/blog#readme",
+  "dependencies": {
+    "@carbonplan/components": "^2.5.9",
+    "@carbonplan/theme": "^2.3.1",
+    "@mdx-js/loader": "^1.6.22",
+    "@next/mdx": "^10.0.5",
+    "@theme-ui/color": "^0.3.5",
+    "d3-drag": "^2.0.0",
+    "d3-interpolate": "^2.0.1",
+    "d3-random": "^2.2.2",
+    "d3-scale": "^3.2.3",
+    "d3-selection": "^2.0.0",
+    "d3-shape": "^2.0.0",
+    "mapbox-gl": "^1.13.0",
+    "next": "^10.0.5",
+    "react": "^16.14.0",
+    "react-animate-height": "^2.0.23",
+    "react-dom": "^16.14.0",
+    "react-vega": "^7.4.2",
+    "rehype-slug": "^4.0.1",
+    "theme-ui": "^0.3.5",
+    "vega": "^5.19.1",
+    "vega-lite": "^4.17.0"
+  },
+  "devDependencies": {
+    "prettier": "2.2.1"
+  }
+}

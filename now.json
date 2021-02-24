@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "routes": [
+    { "src": "/_next(.*)", "dest": "/blog/_next$1" },
+    { "src": "/(.*)", "dest": "/blog$1" }
+  ]
+}
