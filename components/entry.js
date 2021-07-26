@@ -1,7 +1,6 @@
 import { memo } from 'react'
-import { Box, Grid, Text, Link, Heading } from 'theme-ui'
-import { default as NextLink } from 'next/link'
-import { Tag, TaggedLink } from '@carbonplan/components'
+import { Box, Grid, Text, Heading } from 'theme-ui'
+import { Link, Tag } from '@carbonplan/components'
 import Icon from './icon'
 
 const Entry = ({ info, final }) => {
@@ -89,7 +88,7 @@ const Entry = ({ info, final }) => {
                 {links.map((link, ix) => {
                   const pad = links.length > 1 && ix < links.length - 1
                   return (
-                    <WrappedLink key={ix} url={link.url}>
+                    <Link key={ix} href={link.url}>
                       <Text
                         as='span'
                         sx={{
@@ -122,7 +121,7 @@ const Entry = ({ info, final }) => {
                           </Text>
                         </Box>
                       </Text>
-                    </WrappedLink>
+                    </Link>
                   )
                 })}
               </Box>
@@ -151,42 +150,15 @@ const Entry = ({ info, final }) => {
                 ))}
             </Box>
             {icon && (
-              <WrappedLink url={links[0].url}>
+              <Link href={links[0].url}>
                 <Icon icon={icon} color={color} />
-              </WrappedLink>
+              </Link>
             )}
           </Box>
         </Grid>
       </Box>
     </Box>
   )
-}
-
-function WrappedLink({ url, children }) {
-  if (url.startsWith('/blog')) {
-    return (
-      <NextLink href={url} passHref={true}>
-        <Link sx={{ textDecoration: 'none' }}>{children}</Link>
-      </NextLink>
-    )
-  } else {
-    let action = 'website'
-    let category = 'external'
-    if (url.includes('pdf')) {
-      action = 'PDF'
-      category = 'download'
-    }
-    return (
-      <TaggedLink
-        action={action}
-        category={category}
-        sx={{ textDecoration: 'none' }}
-        href={url}
-      >
-        {children}
-      </TaggedLink>
-    )
-  }
 }
 
 export default memo(Entry)
