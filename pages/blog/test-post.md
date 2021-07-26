@@ -1,15 +1,15 @@
 import Post from '../../components/post'
 
 export const meta = {
-  id: 'test-post',
-  number: 0,
-  version: '1.0.0',
-  color: 'green',
-  title: 'Test Post',
-  authors: ['Joseph Hamman'],
-  date: '03-29-2021',
-  summary:
-    'A test blog post. Read it!',
+id: 'test-post',
+number: 0,
+version: '1.0.0',
+color: 'green',
+title: 'Test Post',
+authors: ['Joseph Hamman'],
+date: '03-29-2021',
+summary:
+'A test blog post. Read it!',
 }
 
 # Test Post
@@ -28,7 +28,7 @@ nomen animosque ossa ferebat concutiuntque saeva vagi. Alumni campum.
 
 ## Redimitus pedibus
 
-Abolere sequentis *pertulit* suspirat; quoque, condeturque ducimus ab velocius
+Abolere sequentis _pertulit_ suspirat; quoque, condeturque ducimus ab velocius
 illam. Staret ipsos fiducia, non et Alcyonen suae.
 
 ## Orant utque
@@ -46,7 +46,7 @@ suos, munere partes, iubet ut!
 ## Sua in summa amicitur exhibuit gurgite omnes
 
 Dubites aede et esse praecipuum versatus admiremur profanus; nare capiti exponit
-sidera perfudit sororia. Candida per tempore nudata animosos *et* iacere
+sidera perfudit sororia. Candida per tempore nudata animosos _et_ iacere
 concipit digna. [Vivit puta](http://nec.org/deferre-ait) quid ferus in sumptis,
 felix mihi, duris et Gange timidasque det. Vina Philomela reluxit possent
 subiere Cythereia contra penset occubuit equos de abunde hastilia Priami
@@ -69,12 +69,11 @@ quinque.
             user(defaultPortalBase) + surgeInterface - 2;
 
 Vatemque respondent, eodem derepta, praecordia responde Coroniden, crinis:
-hastilibus *saltus*? Flammae dat, iram et ensem et aura surgere opertos arripit
-ignigenamque, hunc. Coronae nam nec, in dederat, quos tunc anxia. *Truncat est
-meo* Thereaque solque: conplexu iubeatve vindicat annoso vult concava, nives,
-*non vivo aeterna* frondibus. Primordia ortus, erit non levi figit qua vivum
+hastilibus _saltus_? Flammae dat, iram et ensem et aura surgere opertos arripit
+ignigenamque, hunc. Coronae nam nec, in dederat, quos tunc anxia. _Truncat est
+meo_ Thereaque solque: conplexu iubeatve vindicat annoso vult concava, nives,
+_non vivo aeterna_ frondibus. Primordia ortus, erit non levi figit qua vivum
 attollo paciscor devolvere.
-
 
 export default ({ children }) => <Post meta={meta}>{children}</Post>
 
