@@ -69,7 +69,7 @@ const Main = () => {
           </Box>
         </Box>
       </Column>
-      <Column start={[1, 5]} width={[6]}>
+      <Column start={[1, 5]} width={[6, 8]}>
         <List filter={filter} sort={sort} />
       </Column>
     </Row>
