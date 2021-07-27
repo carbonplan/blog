@@ -4,17 +4,8 @@ import { Link, Tag } from '@carbonplan/components'
 import Icon from './icon'
 
 const Entry = ({ info, final }) => {
-  let {
-    title,
-    color,
-    tags,
-    authors,
-    version,
-    date,
-    icon,
-    summary,
-    links,
-  } = info
+  let { title, color, tags, authors, version, date, icon, summary, links } =
+    info
 
   color = color || 'text'
 

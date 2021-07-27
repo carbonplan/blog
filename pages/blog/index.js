@@ -5,9 +5,7 @@ const Index = () => {
   return (
     <Layout
       title={'blog / carbonplan'}
-      description={
-        'Short updates on what we do at CarbonPlan'
-      }
+      description={'Short updates on what we do at CarbonPlan'}
       card={'https://images.carbonplan.org/social/blog.png'}
       footer={false}
       links={'local'}
