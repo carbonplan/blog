@@ -1,15 +1,15 @@
 import { useState } from 'react'
-import { Box, Grid } from 'theme-ui'
+import { Box } from 'theme-ui'
 import { Row, Column, Filter, Tag } from '@carbonplan/components'
 
 import List from './list'
+import { CATEGORY_COLORS } from '../constants'
 
-const initFilter = {
-  post: true,
-  tool: true,
-  comment: true,
-  publication: true,
-  dataset: true,
+const initCategoryFilter = {
+  press: true,
+  team: true,
+  policy: true,
+  tech: true,
 }
 
 const initSort = {
@@ -19,22 +19,23 @@ const initSort = {
 
 const Main = () => {
   // TODO: update Filter integration to support multi-select
-  const [filter, setFilter] = useState(initFilter)
+  const [filter, setFilter] = useState(initCategoryFilter)
   const [sort, setSort] = useState(initSort)
 
   return (
     <Row>
       <Column start={[1, 1, 2, 2]} width={[6, 6, 2, 2]}>
-        {/* TODO: integrate with filterColors prop */}
         <Filter
           filters={{ category: filter }}
           setFilters={{ category: setFilter }}
           filterLabels={{ category: 'Category' }}
           filterList={['category']}
+          filterColors={{ category: CATEGORY_COLORS }}
         />
         <Box
           sx={{
             mt: [5],
+            color: 'secondary',
             textTransform: 'uppercase',
             fontFamily: 'mono',
             letterSpacing: 'mono',
@@ -68,7 +69,7 @@ const Main = () => {
           </Box>
         </Box>
       </Column>
-      <Column start={[1, 2, 6, 6]} width={[6, 7, 6, 6]}>
+      <Column start={[1, 5]} width={[6]}>
         <List filter={filter} sort={sort} />
       </Column>
     </Row>

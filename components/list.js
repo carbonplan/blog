@@ -4,9 +4,7 @@ import Entry from './entry'
 import contents from '../contents'
 
 const List = ({ filter, sort }) => {
-  const inFilter = (d) => {
-    return d.tags.some((t) => filter[t])
-  }
+  const inFilter = (d) => filter[d.category]
 
   const compare = (a, b) => {
     if (sort.date) {
@@ -20,12 +18,7 @@ const List = ({ filter, sort }) => {
   }
 
   return (
-    <Box
-      sx={{
-        mt: [0],
-        pl: [0, 0, 4],
-      }}
-    >
+    <Box>
       {contents
         .filter(inFilter)
         .sort(compare)
