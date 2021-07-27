@@ -24,10 +24,6 @@ const List = ({ filter, sort }) => {
       sx={{
         mt: [0],
         pl: [0, 0, 4],
-        borderStyle: 'solid',
-        borderWidth: '0px',
-        borderColor: 'muted',
-        borderLeftWidth: ['0px', '0px', '1px'],
       }}
     >
       {contents
