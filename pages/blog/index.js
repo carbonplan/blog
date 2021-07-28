@@ -1,7 +1,10 @@
+import { useState } from 'react'
 import { Layout } from '@carbonplan/components'
 import Main from '../../components/main'
 
 const Index = () => {
+  const [showMobileSettings, setShowMobileSettings] = useState(false)
+
   return (
     <Layout
       title={'blog / carbonplan'}
@@ -9,9 +12,12 @@ const Index = () => {
       card={'https://images.carbonplan.org/social/blog.png'}
       footer={false}
       links={'local'}
-      metadata={'POSTS: 9'}
+      settings={{
+        value: showMobileSettings,
+        onClick: () => setShowMobileSettings(!showMobileSettings),
+      }}
     >
-      <Main />
+      <Main showMobileSettings={showMobileSettings} />
     </Layout>
   )
 }
