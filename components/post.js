@@ -1,8 +1,42 @@
 import { Box, Text, Grid, Container } from 'theme-ui'
-import { Layout } from '@carbonplan/components'
-import BackArrow from './back-arrow'
+import { Button, Column, Row, Layout } from '@carbonplan/components'
+import { Left } from '@carbonplan/icons'
 
 const prefix = 'https://images.carbonplan.org'
+
+const Authors = ({ authors }) => {
+  return (
+    <Text
+      sx={{
+        fontFamily: 'mono',
+        letterSpacing: 'mono',
+        textTransform: 'uppercase',
+        fontSize: [2],
+      }}
+    >
+      by{' '}
+      {authors.map((author, ix) => (
+        <Text
+          key={author}
+          sx={{
+            display: 'inline-block',
+            mr: [2],
+            fontFamily: 'mono',
+            letterSpacing: 'mono',
+            fontSize: [2],
+          }}
+        >
+          {author.replace(/ /g, '\u00a0')} {ix < authors.length - 1 ? '+' : ''}
+        </Text>
+      ))}
+    </Text>
+  )
+}
+const dateFormatter = new Intl.DateTimeFormat('en-US', {
+  month: 'short',
+  day: 'numeric',
+  year: 'numeric',
+})
 
 const Post = ({ children, meta }) => {
   return (
@@ -14,101 +48,42 @@ const Post = ({ children, meta }) => {
       metadata={'scroll'}
       container={false}
     >
-      <Box
-        sx={{
-          backgroundColor: meta.color,
-          height: ['auto', 'auto', meta.background ? '275px' : '100px'],
-          position: 'relative',
-          backgroundImage: [
-            'none',
-            'none',
-            meta.background ? `url(${prefix}/${meta.background}.png)` : 'none',
-          ],
-          backgroundSize: 'cover',
-          backgroundPosition: '50% 70%',
-          py: [3, 3, 0],
-        }}
-      >
-        <Box
-          sx={{
-            position: ['initial', 'initial', 'absolute'],
-            bottom: 0,
-            pb: [0, 0, 3],
-            width: '100%',
-            color: ['#1b1e23', '#1b1e23', meta.invert ? '#1b1e23' : '#ebebec'],
-          }}
+      <Row>
+        <Column start={[1]} width={[2, 1, 2, 2]}>
+          <Button
+            inverted
+            size='xs'
+            href='/blog'
+            prefix={<Left />}
+            sx={{ ml: ['-2px', '-2px', '-2px', '-2px'] }}
+          >
+            Back
+          </Button>
+        </Column>
+        <Column
+          start={[4, 2, 4, 4]}
+          width={[3, 3, 2, 2]}
+          sx={{ textAlign: ['right', 'left'] }}
         >
-          <Container sx={{ px: [3, 4, 4] }}>
-            <Grid columns={[1, 1, '165px 585px 1fr']} gap={['0px']}>
-              <Text
-                sx={{
-                  fontFamily: 'mono',
-                  letterSpacing: 'mono',
-                  textTransform: 'uppercase',
-                  fontSize: [2],
-                }}
-              >
-                Post({meta.number})
-              </Text>
-              <Text
-                sx={{
-                  fontFamily: 'mono',
-                  letterSpacing: 'mono',
-                  textTransform: 'uppercase',
-                  fontSize: [2],
-                }}
-              >
-                by{' '}
-                {meta.authors.map((author, ix) => (
-                  <Text
-                    key={author}
-                    sx={{
-                      display: 'inline-block',
-                      mr: [2],
-                      fontFamily: 'mono',
-                      letterSpacing: 'mono',
-                      fontSize: [2],
-                    }}
-                  >
-                    {author.replace(/ /g, '\u00a0')}{' '}
-                    {ix < meta.authors.length - 1 ? '+' : ''}
-                  </Text>
-                ))}
-              </Text>
-              <Text
-                sx={{
-                  fontFamily: 'mono',
-                  letterSpacing: 'mono',
-                  textTransform: 'uppercase',
-                  fontSize: [2],
-                }}
-              >
-                {meta.date}
-              </Text>
-            </Grid>
-          </Container>
-        </Box>
-      </Box>
-      <Container sx={{ px: [3, 4, 4], mb: [5] }}>
-        <BackArrow />
-        <Grid columns={[1, 1, '650px 1fr']} gap={['100px']}>
-          <Box sx={{ mt: '-65px' }}>{children}</Box>
-          <Box sx={{ display: ['none', 'none', 'initial'] }}>
-            <Box sx={{ mt: '55px', maxWidth: '250px' }}>
-              <Text
-                sx={{
-                  fontFamily: 'heading',
-                  letterSpacing: 'smallcaps',
-                  mb: [3],
-                }}
-              >
-                / QUICK LOOK
-              </Text>
-              <Text sx={{ color: meta.color }}>{meta.summary}</Text>
-            </Box>
-          </Box>
-        </Grid>
-      </Container>
+          <Text
+            sx={{
+              fontFamily: 'mono',
+              letterSpacing: 'mono',
+              textTransform: 'uppercase',
+              color: 'secondary',
+              fontSize: [2],
+            }}
+          >
+            {dateFormatter.format(new Date(meta.date))}
+          </Text>
+        </Column>
+      </Row>
+
+      <Row>
+        <Column start={[1, 2, 4, 4]} width={[6, 6, 6, 6]}>
+          <Box as='article'>{children}</Box>
+        </Column>
+      </Row>
     </Layout>
   )
 }
