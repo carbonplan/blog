@@ -40,7 +40,8 @@ const Authors = ({ authors }) => {
               fontSize: [2],
             }}
           >
-            {author.replace(/ /g, '\u00a0')}{' '}
+            {author.replace(/ /g, '\u00a0')}
+            {'\u00a0'}
             {ix < authors.length - 1 ? '+' : ''}
           </Text>
         ))}
@@ -64,8 +65,8 @@ const Post = ({ children, meta }) => {
       metadata={'scroll'}
       container={false}
     >
-      <Row>
-        <Column start={[1]} width={[2, 1, 2, 2]}>
+      <Row sx={{ mt: [4, 6, 6, 8] }}>
+        <Column start={[1, 2, 1, 2]} width={[2, 1, 2, 2]}>
           <Button
             inverted
             size='xs'
@@ -77,9 +78,9 @@ const Post = ({ children, meta }) => {
           </Button>
         </Column>
         <Column
-          start={[4, 2, 4, 4]}
+          start={[4, 5, 4, 4]}
           width={[3, 3, 2, 2]}
-          sx={{ textAlign: ['right', 'left'] }}
+          sx={{ textAlign: ['right', 'right', 'left', 'left'] }}
         >
           <Text
             sx={{
@@ -96,7 +97,7 @@ const Post = ({ children, meta }) => {
       </Row>
       <Row>
         <Column start={[1, 2, 4, 4]} width={[6, 6, 6, 6]}>
-          <Box as='h1' variant='styles.h1'>
+          <Box as='h1' variant='styles.h1' sx={{ mb: [5, 5, 0, 0] }}>
             {meta.title}
           </Box>
         </Column>
@@ -104,9 +105,9 @@ const Post = ({ children, meta }) => {
       <Row>
         <Column start={[1, 2, 1, 2]} width={[6, 6, 2, 2]}>
           {/* TODO: share margin-top with h2 without hard-coding values */}
-          <Box sx={{ mt: [0, 5, 6, 6] }}>
+          <Box sx={{ mt: [0, 0, 6, 6] }}>
             <Row columns={[6, 6, 2, 2]}>
-              <Column start={[1]} width={[3, 3, 2, 2]}>
+              <Column start={[1]} width={[3, 3, 2, 2]} sx={{ mb: [3] }}>
                 <Authors authors={meta.authors} />
               </Column>
               <Column start={[4, 4, 1, 1]} width={[3, 3, 2, 2]}>

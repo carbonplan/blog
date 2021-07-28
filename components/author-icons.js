@@ -1,11 +1,15 @@
 import { Box, Image } from 'theme-ui'
 import { Column, Row } from '@carbonplan/components'
 
+const colors = ['red', 'orange', 'yellow', 'pink']
+
 const AuthorIcons = ({ authors }) => {
+  const initialColorIndex = Math.floor(Math.random() * colors.length)
+  const mobileColOffset = Math.max(1, 3 - authors.length + 1)
   return (
-    <Row columns={[3]} gap={[1, 3]}>
-      {authors.map((name) => (
-        <Column key={name}>
+    <Row columns={[3]} gap={[1, 2, 2, 3]}>
+      {authors.map((name, idx) => (
+        <Column key={name} start={[mobileColOffset + idx, 'auto']}>
           <Box
             sx={{
               maxWidth: '100px',
@@ -13,7 +17,8 @@ const AuthorIcons = ({ authors }) => {
               height: 'auto',
               borderRadius: '50%',
               position: 'relative',
-              bg: 'pink', // todo: vary this
+              // TODO: investigate deterministic options
+              bg: colors[(initialColorIndex + idx) % 4],
             }}
           >
             <Image
