@@ -1,10 +1,11 @@
-import { Box } from 'theme-ui'
+import { Box, Text } from 'theme-ui'
 import { Button, Column, Row, Tag } from '@carbonplan/components'
 import { RotatingArrow } from '@carbonplan/icons'
 
 import AuthorIcons from './author-icons'
 import { CATEGORY_COLORS } from '../constants'
 
+// TODO: do we need to show year?
 const dateFormatter = new Intl.DateTimeFormat('en-US', {
   month: 'short',
   day: 'numeric',
@@ -65,7 +66,7 @@ const Entry = ({ final, info }) => {
 
           <Row columns={[6, 6, 4, 4]}>
             <Column start={[1]} width={[6, 6, 4, 4]}>
-              {summary}
+              <Text variant='paragraph'>{summary}</Text>
             </Column>
           </Row>
         </Column>
