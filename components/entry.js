@@ -10,7 +10,7 @@ const dateFormatter = new Intl.DateTimeFormat('en-US', {
   day: 'numeric',
 })
 
-const Entry = ({ info }) => {
+const Entry = ({ final, info }) => {
   let { id, title, category, authors, date, summary } = info
 
   const formattedDate = dateFormatter.format(new Date(date))
@@ -18,8 +18,17 @@ const Entry = ({ info }) => {
 
   return (
     <>
-      <Row columns={[6, 6, 8, 8]} sx={{ order: [1, 1] }}>
-        <Column start={[1]} width={[2, 2, 1, 1]}>
+      <Row
+        columns={[6, 6, 8, 8]}
+        sx={{
+          py: [4, 4, 5, 5],
+          borderColor: 'secondary',
+          borderStyle: 'solid',
+          borderWidth: '0',
+          borderBottomWidth: final ? 0 : '1px',
+        }}
+      >
+        <Column start={[1]} width={[2, 2, 1, 1]} sx={{ order: [1, 1] }}>
           <Box
             sx={{
               color: 'secondary',
@@ -37,7 +46,7 @@ const Entry = ({ info }) => {
           width={[6, 6, 4, 4]}
           sx={{ order: [3, 3, 2, 2] }}
         >
-          <Row columns={[6, 6, 4, 4]}>
+          <Row columns={[6, 6, 4, 4]} sx={{ mb: [3] }}>
             <Column start={[1]} width={[6, 6, 3, 3]}>
               <Button href={articleHref} suffix={<RotatingArrow />}>
                 {title}
