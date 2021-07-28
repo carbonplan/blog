@@ -1,7 +1,5 @@
 export const meta = {
-number: 1,
 version: '1.0.0',
-color: 'green',
 title: 'Test Post 2',
 authors: ['Cindy Chiao'],
 date: '07-29-2021',
@@ -9,8 +7,6 @@ summary:
 'Another test blog post. This one has a longer summary, though. But again, read it!',
 category: 'tech'
 }
-
-# Test Post
 
 ## Sacerdotes posset
 
