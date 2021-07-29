@@ -55,7 +55,7 @@ const dateFormatter = new Intl.DateTimeFormat('en-US', {
   year: 'numeric',
 })
 
-const Post = ({ children, meta }) => {
+const Post = ({ children, meta, number }) => {
   return (
     <Layout
       card={`${prefix}/social/${meta.card}.png`}
@@ -111,7 +111,7 @@ const Post = ({ children, meta }) => {
                 <Authors authors={meta.authors} />
               </Column>
               <Column start={[4, 4, 1, 1]} width={[3, 3, 2, 2]}>
-                <AuthorIcons authors={meta.authors} />
+                <AuthorIcons authors={meta.authors} articleNumber={number} />
               </Column>
             </Row>
           </Box>

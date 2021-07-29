@@ -8,6 +8,7 @@ const contents = [
     summary:
       'Another test blog post. This one has a longer summary, though. But again, read it!',
     category: 'tech',
+    number: 1,
   },
   {
     id: 'test-post',
@@ -17,6 +18,7 @@ const contents = [
     date: '03-29-2021',
     summary: 'A test blog post. Read it!',
     category: 'tech',
+    number: 0,
   },
 ]
 export default contents

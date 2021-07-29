@@ -11,14 +11,22 @@ existing.forEach((f) => {
 glob('./posts/**.md', async (err, filePaths) => {
   const articleContents = await Promise.all(filePaths.map(getMetadata))
 
+  // Construct contents.js
+  const sorted = articleContents
+    .sort((a, b) => new Date(b.date) - new Date(a.date))
+    .map((meta, idx) => ({ ...meta, number: articleContents.length - 1 - idx }))
+  const contents = `const contents = ${JSON.stringify(sorted)}
+    export default contents`
+  fs.writeFileSync('./contents.js', contents)
+
   // Construct pages/research
-  articleContents.forEach(({ id }) => {
+  sorted.forEach(({ id, number }) => {
     const page = `
     import Index, {meta} from '../../posts/${id}.md'
     import Post from '../../components/post'
 
     const Content = () => (
-      <Post meta={meta}>
+      <Post meta={meta} number={${number}}>
         <Index />
       </Post>
     )
@@ -27,14 +35,6 @@ glob('./posts/**.md', async (err, filePaths) => {
     `
     fs.writeFileSync(`./pages/blog/${id}.js`, page)
   })
-
-  // Construct contents.js
-  const sorted = articleContents.sort(
-    (a, b) => new Date(b.date) - new Date(a.date)
-  )
-  const contents = `const contents = ${JSON.stringify(sorted)}
-    export default contents`
-  fs.writeFileSync('./contents.js', contents)
 })
 
 async function getMetadata(path) {

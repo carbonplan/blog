@@ -12,7 +12,7 @@ const dateFormatter = new Intl.DateTimeFormat('en-US', {
 })
 
 const Entry = ({ final, info }) => {
-  let { id, title, category, authors, date, summary } = info
+  let { id, number, title, category, authors, date, summary } = info
 
   const formattedDate = dateFormatter.format(new Date(date))
   const articleHref = `/blog/${id}`
@@ -76,7 +76,7 @@ const Entry = ({ final, info }) => {
           width={[3, 3, 2, 2]}
           sx={{ order: [2, 2, 3, 3] }}
         >
-          <AuthorIcons authors={authors} />
+          <AuthorIcons authors={authors} articleNumber={number} />
         </Column>
       </Row>
     </>

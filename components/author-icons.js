@@ -3,9 +3,9 @@ import { Column, Row } from '@carbonplan/components'
 
 const colors = ['red', 'orange', 'yellow', 'pink']
 
-const AuthorIcons = ({ authors }) => {
-  const initialColorIndex = Math.floor(Math.random() * colors.length)
+const AuthorIcons = ({ authors, articleNumber }) => {
   const mobileColOffset = Math.max(1, 3 - authors.length + 1)
+
   return (
     <Row columns={[3]} gap={[1, 2, 2, 3]}>
       {authors.map((name, idx) => (
@@ -17,8 +17,7 @@ const AuthorIcons = ({ authors }) => {
               height: 'auto',
               borderRadius: '50%',
               position: 'relative',
-              // TODO: investigate deterministic options
-              bg: colors[(initialColorIndex + idx) % 4],
+              bg: colors[(articleNumber + idx) % 4],
             }}
           >
             <Image
