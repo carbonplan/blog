@@ -1,5 +1,4 @@
 const fs = require('fs')
-const path = require('path')
 const glob = require('glob')
 const extractMdxMeta = require('extract-mdx-metadata')
 
@@ -41,7 +40,7 @@ glob('./posts/**.md', async (err, filePaths) => {
 async function getMetadata(path) {
   const content = fs.readFileSync(path)
   const meta = await extractMdxMeta(content)
-  const id = path.match(/[^\/]+(?=\.md)/)
+  const id = path.match(/[^/]+(?=\.md)/)
 
   if (!id || !id[0]) {
     throw new Error(`Invalid article path: ${path}`)

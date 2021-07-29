@@ -1,11 +1,11 @@
 export const meta = {
-version: '1.0.0',
-title: 'Test Post 2',
-authors: ['Cindy Chiao'],
-date: '07-29-2021',
-summary:
-'Another test blog post. This one has a longer summary, though. But again, read it!',
-category: 'tech'
+  version: '1.0.0',
+  title: 'Test Post 2',
+  authors: ['Cindy Chiao'],
+  date: '07-29-2021',
+  summary:
+    'Another test blog post. This one has a longer summary, though. But again, read it!',
+  category: 'tech',
 }
 
 ## Sacerdotes posset

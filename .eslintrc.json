@@ -1,0 +1,9 @@
+{
+  "extends": ["eslint:recommended", "next", "prettier"],
+  "globals": { "Intl": "readonly" },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  }
+}
