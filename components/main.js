@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { Box, Heading, Text } from 'theme-ui'
-import { Row, Column, Filter, Tag, Tray } from '@carbonplan/components'
+import { Heading, Text } from 'theme-ui'
+import { Group, Row, Column, Filter, Tray } from '@carbonplan/components'
 
 import List from './list'
 import { CATEGORY_COLORS } from '../constants'
@@ -19,51 +19,17 @@ const initSort = {
 
 const Settings = ({ filter, setFilter, setSort, sort }) => {
   return (
-    <>
+    <Group spacing='md'>
       <Filter
-        filters={{ category: filter }}
-        setFilters={{ category: setFilter }}
-        filterLabels={{ category: 'Category' }}
-        filterList={['category']}
-        filterColors={{ category: CATEGORY_COLORS }}
+        values={filter}
+        setValues={setFilter}
+        label='Filter by'
+        colors={CATEGORY_COLORS}
+        multiSelect
+        showAll
       />
-      <Box
-        sx={{
-          mt: [5],
-          color: 'secondary',
-          textTransform: 'uppercase',
-          fontFamily: 'mono',
-          letterSpacing: 'mono',
-          fontSize: [1, 1, 1, 2],
-        }}
-      >
-        Sort by
-        <Box sx={{ mt: [3] }}>
-          <Tag
-            value={sort.date}
-            onClick={() => setSort({ date: true, title: false })}
-            sx={{
-              width: 'max-content',
-              mr: [2],
-              mb: [1],
-            }}
-          >
-            Date
-          </Tag>
-          <Tag
-            value={sort.title}
-            onClick={() => setSort({ date: false, title: true })}
-            sx={{
-              width: 'max-content',
-              mr: [2],
-              mb: [1],
-            }}
-          >
-            Title
-          </Tag>
-        </Box>
-      </Box>
-    </>
+      <Filter values={sort} setValues={setSort} label='Sort by' />
+    </Group>
   )
 }
 
