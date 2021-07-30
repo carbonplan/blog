@@ -3,6 +3,7 @@ import { Button, Column, Row, Layout } from '@carbonplan/components'
 import { Left } from '@carbonplan/icons'
 
 import AuthorIcons from './author-icons'
+import { formatDate } from './utils/format-date'
 
 const prefix = 'https://images.carbonplan.org'
 
@@ -49,11 +50,6 @@ const Authors = ({ authors }) => {
     </>
   )
 }
-const dateFormatter = new Intl.DateTimeFormat('en-US', {
-  month: 'short',
-  day: 'numeric',
-  year: 'numeric',
-})
 
 const Post = ({ children, meta, number }) => {
   return (
@@ -91,7 +87,11 @@ const Post = ({ children, meta, number }) => {
               fontSize: [2],
             }}
           >
-            {dateFormatter.format(new Date(meta.date))}
+            {formatDate(meta.date, {
+              month: 'short',
+              day: 'numeric',
+              year: 'numeric',
+            })}
           </Text>
         </Column>
       </Row>

@@ -4,17 +4,13 @@ import { RotatingArrow } from '@carbonplan/icons'
 
 import AuthorIcons from './author-icons'
 import { CATEGORY_COLORS } from '../constants'
-
-// TODO: do we need to show year?
-const dateFormatter = new Intl.DateTimeFormat('en-US', {
-  month: 'short',
-  day: 'numeric',
-})
+import { formatDate } from './utils/format-date'
 
 const Entry = ({ final, info }) => {
   let { id, number, title, category, authors, date, summary } = info
 
-  const formattedDate = dateFormatter.format(new Date(date))
+  // TODO: do we need to show year?
+  const formattedDate = formatDate(date, { month: 'short', day: 'numeric' })
   const articleHref = `/blog/${id}`
 
   return (
