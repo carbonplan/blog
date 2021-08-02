@@ -43,6 +43,6 @@
     "eslint-config-prettier": "^8.3.0",
     "extract-mdx-metadata": "^1.0.0",
     "glob": "^7.1.7",
-    "prettier": "2.3.0"
+    "prettier": "2.3.2"
   }
 }
