@@ -30,6 +30,31 @@ const List = ({ filter, sort }) => {
           final={ix === filteredContents.length - 1}
         ></Entry>
       ))}
+
+      {filteredContents.length === 0 && (
+        <Box sx={{ py: [4, 4, 5, 5] }}>
+          <Box
+            sx={{
+              display: 'inline-block',
+              fontSize: [1, 1, 1, 2],
+              fontFamily: 'mono',
+              color: 'secondary',
+              textTransform: 'uppercase',
+              letterSpacing: 'mono',
+            }}
+          >
+            No posts found
+          </Box>
+          <Box
+            sx={{
+              mt: [2],
+              fontSize: [2, 2, 2, 3],
+            }}
+          >
+            Please select different filter options to view posts.
+          </Box>
+        </Box>
+      )}
     </Box>
   )
 }

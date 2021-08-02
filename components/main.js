@@ -34,7 +34,6 @@ const Settings = ({ filter, setFilter, setSort, sort }) => {
 }
 
 const Main = ({ showMobileSettings }) => {
-  // TODO: update Filter integration to support multi-select
   const [filter, setFilter] = useState(initCategoryFilter)
   const [sort, setSort] = useState(initSort)
 
