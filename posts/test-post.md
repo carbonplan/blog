@@ -1,6 +1,6 @@
 export const meta = {
   version: '1.0.0',
-  title: 'Test Post',
+  title: 'Test Post with a much much much much longer name',
   authors: ['Joe Hamman', 'Kata Martin', 'Cindy Chiao'],
   date: '03-29-2021',
   summary: 'A test blog post. Read it!',
@@ -67,5 +67,3 @@ ignigenamque, hunc. Coronae nam nec, in dederat, quos tunc anxia. _Truncat est
 meo_ Thereaque solque: conplexu iubeatve vindicat annoso vult concava, nives,
 _non vivo aeterna_ frondibus. Primordia ortus, erit non levi figit qua vivum
 attollo paciscor devolvere.
-
-### Questions? Interested in collaborating on these problems? Email us at [hello@carbonplan.org](mailto:hello@carbonplan.org)

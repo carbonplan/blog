@@ -3,6 +3,7 @@ import { Button, Column, Row, Layout } from '@carbonplan/components'
 import { Left } from '@carbonplan/icons'
 
 import AuthorIcons from './author-icons'
+import Closing from './closing'
 import { formatDate } from './utils/format-date'
 
 const prefix = 'https://images.carbonplan.org'
@@ -62,7 +63,7 @@ const Post = ({ children, meta, number }) => {
       container={false}
     >
       <Row sx={{ mt: [4, 6, 6, 8] }}>
-        <Column start={[1, 2, 1, 2]} width={[2, 1, 2, 2]}>
+        <Column start={[1, 2, 2, 2]} width={[2, 1, 2, 2]}>
           <Button
             inverted
             size='xs'
@@ -103,7 +104,7 @@ const Post = ({ children, meta, number }) => {
         </Column>
       </Row>
       <Row>
-        <Column start={[1, 2, 1, 2]} width={[6, 6, 2, 2]}>
+        <Column start={[1, 2, 2, 2]} width={[6, 6, 2, 2]}>
           {/* TODO: share margin-top with h2 without hard-coding values */}
           <Box sx={{ mt: [0, 0, 6, 6] }}>
             <Row columns={[6, 6, 2, 2]}>
@@ -116,8 +117,13 @@ const Post = ({ children, meta, number }) => {
             </Row>
           </Box>
         </Column>
-        <Column start={[1, 2, 4, 4]} width={[6, 6, 6, 6]}>
+        <Column
+          start={[1, 2, 4, 4]}
+          width={[6, 6, 6, 6]}
+          sx={{ mb: [8, 8, 9, 10] }}
+        >
           <Box as='article'>{children}</Box>
+          <Closing />
         </Column>
       </Row>
     </Layout>
