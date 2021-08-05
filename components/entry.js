@@ -19,7 +19,7 @@ const Entry = ({ final, info }) => {
         columns={[6, 6, 8, 8]}
         sx={{
           py: [4, 4, 5, 5],
-          borderColor: 'secondary',
+          borderColor: 'muted',
           borderStyle: 'solid',
           borderWidth: '0',
           borderBottomWidth: final ? 0 : '1px',
@@ -32,6 +32,7 @@ const Entry = ({ final, info }) => {
               fontFamily: 'mono',
               letterSpacing: 'mono',
               textTransform: 'uppercase',
+              fontSize: [1, 1, 1, 2],
             }}
           >
             {formattedDate}
@@ -44,17 +45,21 @@ const Entry = ({ final, info }) => {
           sx={{ order: [3, 3, 2, 2] }}
         >
           <Row columns={[6, 6, 4, 4]} sx={{ mb: [3] }}>
-            <Column start={[1]} width={[6, 6, 3, 3]}>
+            <Column
+              start={[1]}
+              width={[6, 6, 3, 3]}
+              sx={{ mt: [1, 2, -2, -2] }}
+            >
               <Button href={articleHref} suffix={<RotatingArrow />}>
-                {title}
+                <Text sx={{ fontSize: [3, 3, 4, 4] }}>{title}</Text>
               </Button>
             </Column>
             <Column
               start={[4]}
               width={[1]}
-              sx={{ display: ['none', 'none', 'block', 'block'] }}
+              sx={{ display: ['none', 'none', 'block', 'block'], mt: [-1] }}
             >
-              <Box sx={{ textAlign: 'right' }}>
+              <Box>
                 <Tag sx={{ color: CATEGORY_COLORS[category] }}>{category}</Tag>
               </Box>
             </Column>
@@ -62,13 +67,13 @@ const Entry = ({ final, info }) => {
 
           <Row columns={[6, 6, 4, 4]}>
             <Column start={[1]} width={[6, 6, 4, 4]}>
-              <Text variant='paragraph'>{summary}</Text>
+              <Text sx={{ fontSize: [2, 2, 2, 3] }}>{summary}</Text>
             </Column>
           </Row>
         </Column>
 
         <Column
-          start={[4, 4, 7, 7]}
+          start={[4, 4, 6, 6]}
           width={[3, 3, 2, 2]}
           sx={{ order: [2, 2, 3, 3] }}
         >

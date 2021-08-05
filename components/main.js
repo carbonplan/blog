@@ -60,7 +60,10 @@ const Main = ({ showMobileSettings }) => {
           width={[3]}
           sx={{ display: 'flex', alignItems: 'flex-end' }}
         >
-          <Text variant='paragraph' sx={{ mb: [4, 5, 6, 6] }}>
+          <Text
+            variant='paragraph'
+            sx={{ mb: [4, 5, 6, 6], fontSize: [2, 2, 2, 3] }}
+          >
             Short posts from our team on topics in climate and technology.
           </Text>
         </Column>
@@ -69,7 +72,10 @@ const Main = ({ showMobileSettings }) => {
         <Column
           start={[1, 1, 2, 2]}
           width={[6, 6, 2, 2]}
-          sx={{ display: ['none', 'none', 'initial', 'initial'] }}
+          sx={{
+            display: ['none', 'none', 'initial', 'initial'],
+            mt: [4, 4, 5, 5],
+          }}
         >
           {settings}
         </Column>
