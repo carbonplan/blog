@@ -3,7 +3,6 @@ import { Box, Text } from 'theme-ui'
 import { Group, Row, Column, Filter, Tray } from '@carbonplan/components'
 
 import List from './list'
-import { CATEGORY_COLORS } from '../constants'
 
 const initCategoryFilter = {
   press: true,
@@ -17,7 +16,7 @@ const initSort = {
   title: false,
 }
 
-const Settings = ({ filter, setFilter, setSort, sort }) => {
+const Settings = ({ setSort, sort }) => {
   return (
     <Group spacing='md'>
       <Filter values={sort} setValues={setSort} label='Sort by' />

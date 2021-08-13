@@ -1,13 +1,12 @@
 import { Box, Text } from 'theme-ui'
-import { Button, Column, Row, Tag } from '@carbonplan/components'
+import { Button, Column, Row } from '@carbonplan/components'
 import { RotatingArrow } from '@carbonplan/icons'
 
 import AuthorIcons from './author-icons'
-import { CATEGORY_COLORS } from '../constants'
 import { formatDate } from './utils/format-date'
 
 const Entry = ({ final, first, info }) => {
-  let { id, number, title, category, authors, date, summary } = info
+  let { id, number, title, authors, date, summary } = info
 
   // TODO: do we need to show year?
   const formattedDate = formatDate(date, { month: 'short', day: 'numeric' })
