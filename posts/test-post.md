@@ -1,6 +1,6 @@
 export const meta = {
   version: '1.0.0',
-  title: 'Test Post with a much much much much longer name',
+  title: 'Test post with a much much much much longer name',
   authors: ['Joe Hamman', 'Kata Martin', 'Cindy Chiao'],
   date: '03-29-2021',
   summary: 'A test blog post. Read it!',

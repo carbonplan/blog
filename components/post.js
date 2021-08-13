@@ -62,7 +62,7 @@ const Post = ({ children, meta, number }) => {
       metadata={'scroll'}
       container={false}
     >
-      <Row sx={{ mt: [4, 6, 6, 8] }}>
+      <Row sx={{ mt: [4, 6, 7, 8] }}>
         <Column start={[1, 2, 2, 2]} width={[2, 1, 2, 2]}>
           <Button
             inverted
@@ -75,9 +75,12 @@ const Post = ({ children, meta, number }) => {
           </Button>
         </Column>
         <Column
-          start={[4, 5, 4, 4]}
+          start={[4, 5, 5, 5]}
           width={[3, 3, 2, 2]}
-          sx={{ textAlign: ['right', 'right', 'left', 'left'] }}
+          sx={{
+            textAlign: ['right', 'right', 'left', 'left'],
+            mt: ['-3px', '-3px', '-3px', '-1px'],
+          }}
         >
           <Text
             sx={{
@@ -97,7 +100,7 @@ const Post = ({ children, meta, number }) => {
         </Column>
       </Row>
       <Row>
-        <Column start={[1, 2, 4, 4]} width={[6, 6, 6, 6]}>
+        <Column start={[1, 2, 5, 5]} width={[6, 6, 6, 6]}>
           <Box as='h1' variant='styles.h1' sx={{ mb: [5, 5, 0, 0] }}>
             {meta.title}
           </Box>
@@ -111,14 +114,18 @@ const Post = ({ children, meta, number }) => {
               <Column start={[1]} width={[3, 3, 2, 2]} sx={{ mb: [3] }}>
                 <Authors authors={meta.authors} />
               </Column>
-              <Column start={[4, 4, 1, 1]} width={[3, 3, 2, 2]}>
+              <Column
+                start={[4, 4, 1, 1]}
+                width={[3, 3, 2, 2]}
+                sx={{ mt: [-1, -1, 0, 0] }}
+              >
                 <AuthorIcons authors={meta.authors} articleNumber={number} />
               </Column>
             </Row>
           </Box>
         </Column>
         <Column
-          start={[1, 2, 4, 4]}
+          start={[1, 2, 5, 5]}
           width={[6, 6, 6, 6]}
           sx={{ mb: [8, 8, 9, 10] }}
         >

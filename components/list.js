@@ -27,6 +27,7 @@ const List = ({ filter, sort }) => {
         <Entry
           key={d.title}
           info={d}
+          first={ix === 0}
           final={ix === filteredContents.length - 1}
         ></Entry>
       ))}
