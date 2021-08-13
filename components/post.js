@@ -55,7 +55,11 @@ const Authors = ({ authors }) => {
 const Post = ({ children, meta, number }) => {
   return (
     <Layout
-      card={`${prefix}/social/${meta.card}.png`}
+      card={
+        meta.card
+          ? `${prefix}/social/${meta.card}.png`
+          : 'https://images.carbonplan.org/social/blog.png'
+      }
       description={meta.summary}
       title={meta.title.toLowerCase() + ' / blog / carbonplan'}
       links={'local'}
