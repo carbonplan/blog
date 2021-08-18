@@ -41,13 +41,13 @@ const Main = ({ showMobileSettings }) => {
     <>
       <Tray expanded={showMobileSettings}>{settings}</Tray>
       <Row sx={{ mt: [5, 6, 7, 8], mb: [5, 6, 7, 8] }}>
-        <Column start={[1, 1, 2, 2]} width={[3]}>
+        <Column start={[1, 1, 2, 2]} width={[2]}>
           <Box as='h1' variant='styles.h1' sx={{ my: [0, 0, 0, 0] }}>
             Blog
           </Box>
         </Column>
         <Column
-          start={[1, 4, 5, 5]}
+          start={[1, 3, 5, 5]}
           width={[6, 4, 4, 4]}
           sx={{ display: 'flex', alignItems: 'flex-end' }}
         >
