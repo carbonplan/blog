@@ -13,7 +13,7 @@ const AuthorIcons = ({ authors, articleNumber }) => {
           <Box
             sx={{
               maxWidth: '100px',
-              width: '100%',
+              width: ['90%', '90%', '100%', '100%'],
               height: 'auto',
               borderRadius: '50%',
               position: 'relative',
