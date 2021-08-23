@@ -12,7 +12,6 @@ const AuthorIcons = ({ authors, articleNumber }) => {
         <Column key={name} start={[mobileColOffset + idx, 'auto']}>
           <Box
             sx={{
-              maxWidth: '100px',
               width: ['90%', '90%', '100%', '100%'],
               height: 'auto',
               borderRadius: '50%',
