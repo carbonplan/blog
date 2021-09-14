@@ -3,8 +3,6 @@ import { Box } from 'theme-ui'
 import Entry from './entry'
 import contents from '../contents'
 
-console.log(contents)
-
 const List = ({ sort }) => {
   const filteredContents = useMemo(() => {
     const compare = (a, b) => {
