@@ -47,7 +47,7 @@ const Entry = ({ final, first, info }) => {
             <Column
               start={[1]}
               width={[6, 6, 4, 4]}
-              sx={{ mt: [4, 4, -2, -2] }}
+              sx={{ mt: [4, 4, -2, '-14px'] }}
             >
               <Button
                 size='md'
