@@ -105,7 +105,7 @@ const Post = ({ children, meta, number }) => {
       </Row>
       <Row>
         <Column start={[1, 2, 5, 5]} width={[6, 6, 6, 6]}>
-          <Box as='h1' variant='styles.h1' sx={{ mb: [5, 5, 0, 0] }}>
+          <Box as='h1' variant='styles.h1' sx={{ mb: [5, 5, 5, 5] }}>
             {meta.title}
           </Box>
         </Column>
@@ -113,7 +113,7 @@ const Post = ({ children, meta, number }) => {
       <Row>
         <Column start={[1, 2, 2, 2]} width={[6, 6, 2, 2]}>
           {/* TODO: share margin-top with h2 without hard-coding values */}
-          <Box sx={{ mt: [0, 0, 6, 6] }}>
+          <Box sx={{ mt: [0, 0, '20px', '32px'] }}>
             <Row columns={[6, 6, 2, 2]}>
               <Column start={[1]} width={[3, 3, 2, 2]} sx={{ mb: [3] }}>
                 <Authors authors={meta.authors} />

@@ -4,13 +4,6 @@ import { Group, Row, Column, Filter, Tray } from '@carbonplan/components'
 
 import List from './list'
 
-const initCategoryFilter = {
-  press: true,
-  team: true,
-  policy: true,
-  tech: true,
-}
-
 const initSort = {
   date: true,
   title: false,
@@ -25,17 +18,9 @@ const Settings = ({ setSort, sort }) => {
 }
 
 const Main = ({ showMobileSettings }) => {
-  const [filter, setFilter] = useState(initCategoryFilter)
   const [sort, setSort] = useState(initSort)
 
-  const settings = (
-    <Settings
-      filter={filter}
-      setFilter={setFilter}
-      setSort={setSort}
-      sort={sort}
-    />
-  )
+  const settings = <Settings setSort={setSort} sort={sort} />
 
   return (
     <>
@@ -63,7 +48,7 @@ const Main = ({ showMobileSettings }) => {
           </Text>
         </Column>
       </Row>
-      <Row>
+      <Row sx={{ mb: [7, 8, 9, 10] }}>
         <Column
           start={[1, 1, 2, 2]}
           width={[6, 6, 2, 2]}
@@ -75,7 +60,7 @@ const Main = ({ showMobileSettings }) => {
           {settings}
         </Column>
         <Column start={[1, 2, 5, 5]} width={[6, 6, 7, 7]}>
-          <List filter={filter} sort={sort} />
+          <List sort={sort} />
         </Column>
       </Row>
     </>

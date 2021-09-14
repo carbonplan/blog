@@ -3,10 +3,10 @@ import { Box } from 'theme-ui'
 import Entry from './entry'
 import contents from '../contents'
 
-const List = ({ filter, sort }) => {
-  const filteredContents = useMemo(() => {
-    const inFilter = (d) => filter[d.category]
+console.log(contents)
 
+const List = ({ sort }) => {
+  const filteredContents = useMemo(() => {
     const compare = (a, b) => {
       if (sort.date) {
         const da = new Date(a.date.replace(/-/g, '/'))
@@ -18,8 +18,8 @@ const List = ({ filter, sort }) => {
       }
     }
 
-    return contents.filter(inFilter).sort(compare)
-  }, [filter, sort])
+    return contents.sort(compare)
+  }, [sort])
 
   return (
     <Box>

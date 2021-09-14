@@ -12,7 +12,7 @@ const Index = () => {
         'Short posts from our team on topics in climate and technology.'
       }
       card={'https://images.carbonplan.org/social/blog.png'}
-      footer={false}
+      footer={true}
       links={'local'}
       settings={{
         value: showMobileSettings,
