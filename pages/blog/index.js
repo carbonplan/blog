@@ -14,6 +14,7 @@ const Index = () => {
       card={'https://images.carbonplan.org/social/blog.png'}
       footer={true}
       links={'local'}
+      nav={'blog'}
       settings={{
         value: showMobileSettings,
         onClick: () => setShowMobileSettings(!showMobileSettings),
