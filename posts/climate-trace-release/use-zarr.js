@@ -11,47 +11,47 @@ const useZarr = (uri, variables = [], options = {}) => {
   array = array === undefined ? 'auto' : array
   async = async || false
 
-  const open = () => {
-    zarr().open(uri, (error, data) => {
-      if (error) setError(error)
-      setData(data)
-    })
-  }
-
-  const load = () => {
-    zarr().load(uri, (error, data) => {
-      if (error) setError(error)
-      setData(data)
-    })
-  }
-
-  const openGroup = (metadata) => {
-    zarr().openGroup(
-      uri,
-      (error, data, metadata) => {
-        if (error) setError(error)
-        setMetadata(metadata)
-        setData(data)
-      },
-      variables,
-      metadata
-    )
-  }
-
-  const loadGroup = (metadata) => {
-    zarr().loadGroup(
-      uri,
-      (error, data, metadata) => {
-        if (error) setError(error)
-        setMetadata(metadata)
-        setData(data)
-      },
-      variables,
-      metadata
-    )
-  }
-
   useEffect(() => {
+    const open = () => {
+      zarr().open(uri, (error, data) => {
+        if (error) setError(error)
+        setData(data)
+      })
+    }
+
+    const load = () => {
+      zarr().load(uri, (error, data) => {
+        if (error) setError(error)
+        setData(data)
+      })
+    }
+
+    const openGroup = (metadata) => {
+      zarr().openGroup(
+        uri,
+        (error, data, metadata) => {
+          if (error) setError(error)
+          setMetadata(metadata)
+          setData(data)
+        },
+        variables,
+        metadata
+      )
+    }
+
+    const loadGroup = (metadata) => {
+      zarr().loadGroup(
+        uri,
+        (error, data, metadata) => {
+          if (error) setError(error)
+          setMetadata(metadata)
+          setData(data)
+        },
+        variables,
+        metadata
+      )
+    }
+
     if (array === 'auto') {
       fetch(uri + '/.zmetadata').then((res) => {
         if (res.status === 200) {
@@ -83,7 +83,7 @@ const useZarr = (uri, variables = [], options = {}) => {
         loadGroup()
       }
     }
-  }, [uri])
+  }, [uri, async, array, variables])
 
   return { data, error, metadata }
 }
