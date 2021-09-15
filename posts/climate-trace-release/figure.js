@@ -32,7 +32,7 @@ const Figure = () => {
   const canvas = useRef()
   const colormap = useColormap('fire')
   const [land, setLand] = useState()
-  const [projection, ] = useState(() =>
+  const [projection] = useState(() =>
     geoNaturalEarth1()
       .scale((1.3 * width) / (2 * Math.PI))
       .translate([width / 2, height / 2])
