@@ -7,7 +7,7 @@
     "dev": "npm run build-pages && NODE_ENV=development next -p 4001",
     "build": "npm run build-pages && next build",
     "build-pages": "node build.js && prettier --write contents.js 'pages/blog/!(index).js'",
-    "lint": "eslint . --max-warnings 0",
+    "lint": "eslint . --max-warnings 5",
     "start": "next start",
     "format": "npm run format-js && npm run format-md",
     "format-js": "prettier --write '*.js' '{components,lib,pages,posts}/**/*.js'",

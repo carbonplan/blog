@@ -83,7 +83,7 @@ const useZarr = (uri, variables = [], options = {}) => {
         loadGroup()
       }
     }
-  }, [uri, async, array, variables])
+  }, [uri])
 
   return { data, error, metadata }
 }
