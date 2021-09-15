@@ -26,32 +26,41 @@ const useZarr = (uri, variables = [], options = {}) => {
   }
 
   const openGroup = (metadata) => {
-    zarr().openGroup(uri, (error, data, metadata) => {
-      if (error) setError(error)
-      setMetadata(metadata)
-      setData(data)
-    }, variables, metadata)
+    zarr().openGroup(
+      uri,
+      (error, data, metadata) => {
+        if (error) setError(error)
+        setMetadata(metadata)
+        setData(data)
+      },
+      variables,
+      metadata
+    )
   }
 
   const loadGroup = (metadata) => {
-    zarr().loadGroup(uri, (error, data, metadata) => {
-      if (error) setError(error)
-      setMetadata(metadata)
-      setData(data)
-    }, variables, metadata)
+    zarr().loadGroup(
+      uri,
+      (error, data, metadata) => {
+        if (error) setError(error)
+        setMetadata(metadata)
+        setData(data)
+      },
+      variables,
+      metadata
+    )
   }
 
   useEffect(() => {
     if (array === 'auto') {
-      fetch(uri + '/.zmetadata').then(res => {
+      fetch(uri + '/.zmetadata').then((res) => {
         if (res.status === 200) {
-          res.json().then(metadata => {
+          res.json().then((metadata) => {
             if (async) {
               openGroup(metadata)
             } else {
               loadGroup(metadata)
             }
-            
           })
         } else {
           if (async) {

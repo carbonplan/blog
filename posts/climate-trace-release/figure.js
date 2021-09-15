@@ -2,25 +2,19 @@ import { useState, useRef, useCallback, useEffect } from 'react'
 import { Box } from 'theme-ui'
 import { Slider } from '@carbonplan/components'
 import { useColormap } from '@carbonplan/colormaps'
-import {
-  geoPath,
-  geoEquirectangular,
-  geoNaturalEarth1,
-  geoOrthographic,
-  geoEqualEarth,
-  geoMercator
-} from 'd3-geo'
+import { geoPath, geoNaturalEarth1 } from 'd3-geo'
 import { feature } from 'topojson-client'
 import { minIndex } from 'd3-array'
-import useZarr from './use-zarr'
 import ops from 'ndarray-ops'
 import ndarray from 'ndarray'
+import useZarr from './use-zarr'
+import Colorbar from './colorbar'
 
 const prefix = 'https://carbonplan-climatetrace.s3.us-west-2.amazonaws.com/'
 const path = 'v0.4/blog/total_emissions.zarr'
 
 const colorize = (colormap, clim) => (value) => {
-  value = (isNaN(value) || value == 9.969209968386869e+36) ? 0 : value
+  value = isNaN(value) || value == 9.969209968386869e36 ? 0 : value
   value = (value - clim[0]) / (clim[1] - clim[0])
   value = Math.min(Math.max(value, 0), 1)
   value = Math.round(value * 254)
@@ -30,32 +24,27 @@ const colorize = (colormap, clim) => (value) => {
 
 const Figure = () => {
   const width = 360
-  const height = 180
+  const height = 185
 
   const sourceWidth = 360
   const sourceHeight = 180
 
-  const { data, error, metadata } = useZarr(prefix + path, ['emissions', 'lat', 'lon'])
-
-  console.log(data)
+  const { data, error } = useZarr(prefix + path, ['emissions', 'lat', 'lon'])
 
   const canvas = useRef()
-  const colormap = useColormap('reds')
+  const colormap = useColormap('fire')
   const [year, setYear] = useState(0)
   const [land, setLand] = useState()
   const [rotation, setRotation] = useState(0)
-  const [projection, setProjection] = useState(() => geoNaturalEarth1().scale(1.25 * width / (2 * Math.PI)).translate([width / 2, height / 2]))
+  const [projection, setProjection] = useState(() =>
+    geoNaturalEarth1()
+      .scale((1.3 * width) / (2 * Math.PI))
+      .translate([width / 2, height / 2])
+  )
 
   const offsetHeight = Math.round((height - sourceHeight) / 2)
 
-  const source = ndarray(new Float32Array(sourceHeight * sourceWidth), [
-    sourceHeight,
-    sourceWidth,
-  ])
   const target = ndarray(new Float32Array(width * height), [height, width])
-  const equirectangular = geoEquirectangular()
-    .scale(width / (2 * Math.PI))
-    .translate([width / 2, height / 2])
 
   const ref = useCallback((node) => {
     if (node !== null) {
@@ -77,10 +66,9 @@ const Figure = () => {
 
   useEffect(() => {
     if (canvas.current && data) {
-      const torender = data.emissions
+      const source = data.emissions
       const torgb = colorize(colormap, [0, 50000000])
       const { context, image } = canvas.current
-      ops.assign(source, torender)
       for (let i = 0; i < sourceWidth; i += 1) {
         for (let j = 0; j < sourceHeight; j += 1) {
           let coords = projection.invert([i, j + offsetHeight])
@@ -103,11 +91,14 @@ const Figure = () => {
   }, [data, year, projection, colormap])
 
   return (
-    <Box>
+    <Box as='figure' sx={{ mt: [6, 6, 6, 7], mb: [4, 4, 4, 5] }}>
       <Box sx={{ display: 'block', width: '100%', position: 'relative' }}>
+        <Box sx={{ zIndex: 1000, position: 'absolute', left: 0, bottom: 0 }}>
+          <Colorbar colormap={'fire'} units={'tCO₂'} clim={[0, 50000000]} />
+        </Box>
         <Box
           as='svg'
-          viewBox={`0 0 ${width} ${height}`}
+          viewBox={`0 0 ${width} ${height - 20}`}
           sx={{ position: 'absolute', width: '100%', top: 0, left: 0 }}
         >
           <mask id='circle-mask'>
@@ -130,8 +121,14 @@ const Figure = () => {
         </Box>
         <Box
           as='svg'
-          viewBox={`0 0 ${width} ${height}`}
-          sx={{ position: 'absolute', width: '100%', top: 0, left: 0 }}
+          viewBox={`0 0 ${width} ${height - 20}`}
+          sx={{
+            position: 'absolute',
+            width: '100%',
+            top: 0,
+            left: 0,
+            overflow: 'hidden',
+          }}
         >
           <Box
             as='path'
@@ -150,7 +147,7 @@ const Figure = () => {
           id='canvas'
           ref={ref}
           width={`${width}px`}
-          height={`${height}px`}
+          height={`${height - 20}px`}
           sx={{ imageRendering: 'pixelated', width: '100%' }}
         />
       </Box>

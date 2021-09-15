@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/carbonplan/blog#readme",
   "dependencies": {
-    "@carbonplan/colormaps": "^1.0.0",
+    "@carbonplan/colormaps": "^2.0.0",
     "@carbonplan/components": "^10.1.1",
     "@carbonplan/icons": "^1.0.0",
     "@carbonplan/theme": "^7.0.0",
@@ -32,6 +32,7 @@
     "@next/mdx": "^10.2.3",
     "@theme-ui/color": "^0.10.0",
     "d3-array": "^2.12.1",
+    "d3-format": "^2.0.0",
     "d3-geo": "^2.0.1",
     "ndarray": "^1.0.19",
     "ndarray-ops": "^1.2.2",
