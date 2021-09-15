@@ -1,11 +1,9 @@
 import { useState, useRef, useCallback, useEffect } from 'react'
 import { Box } from 'theme-ui'
-import { Slider } from '@carbonplan/components'
 import { useColormap } from '@carbonplan/colormaps'
 import { geoPath, geoNaturalEarth1 } from 'd3-geo'
 import { feature } from 'topojson-client'
 import { minIndex } from 'd3-array'
-import ops from 'ndarray-ops'
 import ndarray from 'ndarray'
 import useZarr from './use-zarr'
 import Colorbar from './colorbar'
@@ -29,14 +27,12 @@ const Figure = () => {
   const sourceWidth = 360
   const sourceHeight = 180
 
-  const { data, error } = useZarr(prefix + path, ['emissions', 'lat', 'lon'])
+  const { data } = useZarr(prefix + path, ['emissions', 'lat', 'lon'])
 
   const canvas = useRef()
   const colormap = useColormap('fire')
-  const [year, setYear] = useState(0)
   const [land, setLand] = useState()
-  const [rotation, setRotation] = useState(0)
-  const [projection, setProjection] = useState(() =>
+  const [projection, ] = useState(() =>
     geoNaturalEarth1()
       .scale((1.3 * width) / (2 * Math.PI))
       .translate([width / 2, height / 2])
