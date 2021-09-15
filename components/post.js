@@ -64,7 +64,7 @@ const Post = ({ children, meta, number }) => {
       title={meta.title.toLowerCase() + ' / blog / carbonplan'}
       links={'local'}
       metadata={'scroll'}
-      container={false}
+      container={true}
     >
       <Row sx={{ mt: [4, 6, 7, 8] }}>
         <Column start={[1, 2, 2, 2]} width={[2, 1, 2, 2]}>
