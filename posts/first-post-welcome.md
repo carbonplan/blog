@@ -3,7 +3,7 @@ export const meta = {
   title: 'Welcome to the blog',
   authors: ['Jeremy Freeman'],
   date: '09-14-2021',
-  summary: "Why we made this and what you'll find here",
+  summary: "Why we made this and what you'll find here.",
 }
 
 Public communication is core to our mission at CarbonPlan.
