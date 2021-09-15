@@ -120,7 +120,7 @@ const Post = ({ children, meta, number }) => {
               <Column
                 start={[4, 4, 1, 1]}
                 width={[3, 3, 2, 2]}
-                sx={{ mt: [-1, -1, 0, 0] }}
+                sx={{ pl: [meta.authors.length > 2 ? 4 : 0, 0, 0, 0], mt: [-1, -1, 0, 0] }}
               >
                 <AuthorIcons authors={meta.authors} articleNumber={number} />
               </Column>
