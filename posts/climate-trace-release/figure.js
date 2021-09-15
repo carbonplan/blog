@@ -84,7 +84,7 @@ const Figure = () => {
       image.data.set(new Uint8ClampedArray(flattened))
       context.putImageData(image, 0, offsetHeight)
     }
-  }, [data, year, projection, colormap])
+  }, [data, projection, colormap])
 
   return (
     <Box as='figure' sx={{ mt: [6, 6, 6, 7], mb: [4, 4, 4, 5] }}>
