@@ -1,3 +1,4 @@
+import { Link } from '@carbonplan/components'
 import Figure from './climate-trace-release/figure'
 import FigureCaption from '../components/figure-caption'
 
@@ -19,8 +20,20 @@ For the initial release of the Climate TRACE platform we used established method
 <Figure />
 <FigureCaption>
   Cumulative emissions from forests (2001 - 2020). Pixels are 1º x 1º. Open the{' '}
-  <Link href='/research/forest-carbon'>interactive</Link> version to explore
-  more.
+  <Link
+    sx={{
+      color: 'secondary',
+      '@media (hover: hover) and (pointer: fine)': {
+        '&:hover': {
+          color: 'primary',
+        },
+      },
+    }}
+    href='/research/forest-carbon'
+  >
+    interactive
+  </Link>{' '}
+  version to explore more.
 </FigureCaption>
 
 Our complete methods are documented in detail [here](https://docs.google.com/document/d/e/2PACX-1vSVPWE8BOOqu_G9_bdioMquhoIOTnJ4UOYeJeCpEr9RMBrazStaIxQIJtrt8DzVBMZb4waxA9fLyyqr/pub) and all of our source code is available on [GitHub](https://github.com/carbonplan/trace). The full data product is visible via an interactive [webmap](https://carbonplan.org/research/forest-carbon). Interested users can also check out a sample [jupyter notebook](https://aws-uswest2-binder.pangeo.io/v2/gh/carbonplan/trace/HEAD?urlpath=lab/tree/notebooks%2Fblogpost_sample_notebook.ipynb) to inspect the resulting publicly-available, cloud-based emissions archive at the 30 m scale and visualize the data like the map above.
