@@ -1,10 +1,9 @@
 import { Box, Text } from 'theme-ui'
-import { Button, Column, Row, Layout } from '@carbonplan/components'
+import { Button, Column, Row, Layout, formatDate } from '@carbonplan/components'
 import { Left } from '@carbonplan/icons'
 
 import AuthorIcons from './author-icons'
 import Closing from './closing'
-import { formatDate } from './utils/format-date'
 
 const prefix = 'https://images.carbonplan.org'
 
