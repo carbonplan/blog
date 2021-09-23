@@ -1,4 +1,5 @@
 import MapDemo2d from './maps-release/MapDemo2d'
+import MapDemo4d from './maps-release/MapDemo4d'
 
 export const meta = {
   version: '1.0.0',
