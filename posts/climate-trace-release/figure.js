@@ -95,7 +95,7 @@ const Figure = () => {
       borderWidth: '1px',
     }}>
       <Box sx={{ display: 'block', width: '100%', position: 'relative' }}>
-        <Box sx={{ zIndex: 1000, position: 'absolute', left: 2, bottom: 2 }}>
+        <Box sx={{ zIndex: 1000, position: 'absolute', left: '8px', bottom: '12px' }}>
           <Colorbar colormap={'fire'} units={'tCO₂'} clim={[0, 50000000]} />
         </Box>
         <Box
