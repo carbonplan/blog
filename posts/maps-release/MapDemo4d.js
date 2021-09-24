@@ -18,7 +18,7 @@ const COLORMAPS = {
 }
 
 const MapDemo4d = () => {
-  const [band, setBand] = useState('tavg')
+  const [band, setBand] = useState('prec')
   const [month, setMonth] = useState(1)
 
   const colormap = useColormap(COLORMAPS[band])

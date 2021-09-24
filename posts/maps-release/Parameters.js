@@ -12,7 +12,7 @@ const Parameters = ({ band, setBand, month, setMonth }) => {
       <Box sx={sx}>
         Variable
         <Filter
-          values={{ tavg: band === 'tavg', prec: band === 'prec' }}
+          values={{ prec: band === 'prec', tavg: band === 'tavg' }}
           setValues={(v) => setBand(v.tavg ? 'tavg' : 'prec')}
         />
       </Box>
