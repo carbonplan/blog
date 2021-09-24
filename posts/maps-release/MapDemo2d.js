@@ -8,8 +8,7 @@ const MapDemo2d = () => {
     <Box
       as='figure'
       sx={{
-        mt: [6, 6, 6, 7],
-        mb: [4, 4, 4, 5],
+        my: [6, 6, 6, 7],
         width: '100%',
         height: '350px',
         border: 'solid',
