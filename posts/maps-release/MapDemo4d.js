@@ -1,6 +1,8 @@
 import { Box } from 'theme-ui'
 import { Map, Raster } from '@carbonplan/maps'
 import { useColormap } from '@carbonplan/colormaps'
+import Coastlines from './Coastlines'
+import style from './style'
 
 const MapDemo4d = () => {
   const colormap = useColormap('warm')
@@ -16,7 +18,8 @@ const MapDemo4d = () => {
         borderWidth: '1px',
       }}
     >
-      <Map>
+      <Map style={style}>
+        <Coastlines />
         <Raster
           colormap={colormap}
           clim={[-20, 30]}
