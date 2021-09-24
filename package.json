@@ -27,7 +27,7 @@
     "@carbonplan/colormaps": "^2.0.2",
     "@carbonplan/components": "^10.2.0",
     "@carbonplan/icons": "^1.0.0",
-    "@carbonplan/maps": "1.0.0-alpha.18",
+    "@carbonplan/maps": "1.0.0-alpha.19",
     "@carbonplan/prism": "^1.0.3",
     "@carbonplan/theme": "^7.0.0",
     "@mdx-js/loader": "^1.6.22",
