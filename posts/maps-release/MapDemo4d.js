@@ -11,7 +11,10 @@ const MapDemo4d = () => {
         mt: [6, 6, 6, 7],
         mb: [4, 4, 4, 5],
         width: '100%',
-        height: '300px',
+        height: '350px',
+        border: 'solid',
+        borderColor: 'muted',
+        borderWidth: '1px',
       }}
     >
       <Map>
