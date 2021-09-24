@@ -3,6 +3,7 @@ import { Map, Raster } from '@carbonplan/maps'
 import { useColormap } from '@carbonplan/colormaps'
 import Coastlines from './Coastlines'
 import style from './style'
+import Zoom from './Zoom'
 
 const MapDemo2d = () => {
   const colormap = useColormap('warm')
@@ -13,7 +14,7 @@ const MapDemo2d = () => {
       sx={{
         my: [6, 6, 6, 7],
         width: '100%',
-        height: '350px',
+        height: '400px',
         border: 'solid',
         borderColor: 'muted',
         borderWidth: '1px',
@@ -30,6 +31,7 @@ const MapDemo2d = () => {
           variable={'tavg'}
           dimensions={['y', 'x']}
         />
+        <Zoom />
       </Map>
     </Box>
   )

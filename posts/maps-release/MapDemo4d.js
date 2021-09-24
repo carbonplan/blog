@@ -6,6 +6,7 @@ import { Group } from '@carbonplan/components'
 import Coastlines from './Coastlines'
 import style from './style'
 import Parameters from './Parameters'
+import Zoom from './Zoom'
 
 const CLIMS = {
   tavg: [-20, 30],
@@ -30,7 +31,7 @@ const MapDemo4d = () => {
           as='figure'
           sx={{
             width: '100%',
-            height: '350px',
+            height: '400px',
             border: 'solid',
             borderColor: 'muted',
             borderWidth: '1px',
@@ -48,15 +49,15 @@ const MapDemo4d = () => {
               dimensions={['band', 'month', 'y', 'x']}
               selector={{ band, month }}
             />
+            <Parameters
+              band={band}
+              setBand={setBand}
+              month={month}
+              setMonth={setMonth}
+            />
+            <Zoom />
           </Map>
         </Box>
-
-        <Parameters
-          band={band}
-          setBand={setBand}
-          month={month}
-          setMonth={setMonth}
-        />
       </Group>
     </Box>
   )
