@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { useMapbox } from '@carbonplan/maps'
 import { useThemeUI } from 'theme-ui'
 
-const Coastlines = ({}) => {
+const Coastlines = () => {
   const { map } = useMapbox()
   const {
     theme: { rawColors: colors },
