@@ -2,12 +2,12 @@ import { useEffect } from 'react'
 import { useMapbox } from '@carbonplan/maps'
 import { useThemeUI } from 'theme-ui'
 
-const Coastlines = ({ inverted }) => {
+const Coastlines = ({}) => {
   const { map } = useMapbox()
   const {
     theme: { rawColors: colors },
   } = useThemeUI()
-  const { primary, background, muted, hinted } = colors
+  const { primary } = colors
 
   useEffect(() => {
     if (!map.getLayer('coastlines')) {

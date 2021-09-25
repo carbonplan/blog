@@ -1,5 +1,5 @@
 import { Box } from 'theme-ui'
-import { Badge, Filter, Group, Select, Slider } from '@carbonplan/components'
+import { Badge, Group, Select, Slider } from '@carbonplan/components'
 
 const sx = {
   fontFamily: 'mono',
