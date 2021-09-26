@@ -95,6 +95,7 @@ const Figure = () => {
         border: 'solid',
         borderColor: 'muted',
         borderWidth: '1px',
+        borderRadius: '1px'
       }}
     >
       <Box sx={{ display: 'block', width: '100%', position: 'relative' }}>
