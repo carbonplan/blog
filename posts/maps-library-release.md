@@ -70,14 +70,13 @@ const colormap = useColormap('warm')
     clim={[-20,30]}
     source={bucket + ‘maps-demo/2d/tavg'}
     variable={'tavg'}
-    dimensions={['y', 'x']}
   />
 </Map>
 ```
 
 <MapDemo2d />
 
-The source data is a Zarr group with the temperature data from [WorldClim](https://www.worldclim.org/data/worldclim21.html) encoded at multiple zoom levels. The file layout (with some files hidden for clarity) is as follows — note how the number of chunks doubles as the zoom level increases. We automatically load metadata from files in this directory.
+The source data is a Zarr group with the temperature data from [WorldClim](https://www.worldclim.org/data/worldclim21.html) at multiple zoom levels. The file layout (with some files hidden for clarity) is as follows — note how the number of chunks doubles as the zoom level increases. We automatically load metadata from files in this directory.
 
 ```
 /
@@ -103,7 +102,6 @@ With the same component, we can just as easily render a 4D map where the third d
   clim={clim}
   source={bucket + ‘maps-demo/4d/tavg-prec-month'}
   variable={'climate'}
-  dimensions={['band', 'month', 'y', 'x']}
   selector={{ band, month }}
 />
 ```
@@ -120,7 +118,6 @@ In more advanced settings, we might want more control over rendering, including 
   clim={[-20, 30]}
   source={bucket + ‘maps-demo/3d/tavg-month’}
   variable={'tavg'}
-  dimensions={['month', 'y', 'x']}
   selector={{ month: [1, 2] }}
   frag={`
     float average = (month_1 + month_2) / 2.0
