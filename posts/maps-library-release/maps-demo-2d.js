@@ -18,7 +18,7 @@ const MapDemo2d = () => {
         border: 'solid',
         borderColor: 'muted',
         borderWidth: '1px',
-        borderRadius: '1px'
+        borderRadius: '1px',
       }}
     >
       <Map style={style}>

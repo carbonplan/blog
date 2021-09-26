@@ -15,21 +15,21 @@ const Parameters = ({ band, setBand, month, setMonth }) => {
         <Group spacing='sm'>
           <Box>
             Variable
-            <Box sx={{mt: ['2px']}}>
-            <Select
-              value={band}
-              onChange={(e) => setBand(e.target.value)}
-              sx={{ display: 'block' }}
-              size='xs'
-            >
-              <option value='prec'>Precipitation</option>
-              <option value='tavg'>Temperature</option>
-            </Select>
+            <Box sx={{ mt: ['2px'] }}>
+              <Select
+                value={band}
+                onChange={(e) => setBand(e.target.value)}
+                sx={{ display: 'block' }}
+                size='xs'
+              >
+                <option value='prec'>Precipitation</option>
+                <option value='tavg'>Temperature</option>
+              </Select>
             </Box>
           </Box>
           <Box>
             Month
-            <Box sx={{mt: ['-2px']}}>
+            <Box sx={{ mt: ['-2px'] }}>
               <Slider
                 min={1}
                 max={12}
@@ -47,7 +47,7 @@ const Parameters = ({ band, setBand, month, setMonth }) => {
                   ml: [3],
                   top: ['2px', '2px', '2px', '3px'],
                   fontSize: [1, 1, 1, 2],
-                  height: ['21px', '21px', '21px', '24px']
+                  height: ['21px', '21px', '21px', '24px'],
                 }}
               >
                 {month.toFixed(0)}
