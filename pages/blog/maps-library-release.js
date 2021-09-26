@@ -1,4 +1,4 @@
-import Index, { meta } from '../../posts/maps-release.md'
+import Index, { meta } from '../../posts/maps-library-release.md'
 import Post from '../../components/post'
 
 const Content = () => (

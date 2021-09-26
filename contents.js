@@ -1,11 +1,12 @@
 const contents = [
   {
-    id: 'maps-release',
+    id: 'maps-library-release',
     version: '1.0.0',
-    title: '@carbonplan/maps',
+    title: 'A new toolkit for data-driven maps',
     authors: ['Jeremy Freeman', 'Kata Martin', 'Joe Hamman'],
     date: '09-24-2021',
-    summary: 'A new toolkit for rendering data-driven maps on the web',
+    summary:
+      'Why rendering scientific data in web maps is so tough, and how we’re trying to solve it',
     number: 2,
   },
   {

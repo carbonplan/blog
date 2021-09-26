@@ -3,14 +3,14 @@ import { useState } from 'react'
 import { Map, Raster } from '@carbonplan/maps'
 import { useColormap } from '@carbonplan/colormaps'
 import { Group } from '@carbonplan/components'
-import Coastlines from './Coastlines'
+import Coastlines from './coastlines'
 import style from './style'
-import Parameters from './Parameters'
-import Zoom from './Zoom'
+import Parameters from './parameters'
+import Zoom from './zoom'
 
 const CLIMS = {
   tavg: [-20, 30],
-  prec: [-100, 200],
+  prec: [0, 250],
 }
 
 const COLORMAPS = {
@@ -31,10 +31,11 @@ const MapDemo4d = () => {
           as='figure'
           sx={{
             width: '100%',
-            height: '400px',
+            height: ['300px', '400px', '400px', '500px'],
             border: 'solid',
             borderColor: 'muted',
             borderWidth: '1px',
+            borderRadius: '1px'
           }}
         >
           <Map style={style}>

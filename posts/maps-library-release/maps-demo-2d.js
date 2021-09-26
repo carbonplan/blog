@@ -1,9 +1,9 @@
 import { Box } from 'theme-ui'
 import { Map, Raster } from '@carbonplan/maps'
 import { useColormap } from '@carbonplan/colormaps'
-import Coastlines from './Coastlines'
+import Coastlines from './coastlines'
 import style from './style'
-import Zoom from './Zoom'
+import Zoom from './zoom'
 
 const MapDemo2d = () => {
   const colormap = useColormap('warm')
@@ -14,10 +14,11 @@ const MapDemo2d = () => {
       sx={{
         my: [6, 6, 6, 7],
         width: '100%',
-        height: '400px',
+        height: ['300px', '400px', '400px', '500px'],
         border: 'solid',
         borderColor: 'muted',
         borderWidth: '1px',
+        borderRadius: '1px'
       }}
     >
       <Map style={style}>
