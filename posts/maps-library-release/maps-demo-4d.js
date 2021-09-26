@@ -10,7 +10,7 @@ import Zoom from './zoom'
 
 const CLIMS = {
   tavg: [-20, 30],
-  prec: [0, 250],
+  prec: [0, 300],
 }
 
 const COLORMAPS = {
@@ -44,7 +44,7 @@ const MapDemo4d = () => {
               colormap={colormap}
               clim={CLIMS[band]}
               source={
-                'https://storage.googleapis.com/carbonplan-share/testing/maps/4d/tavg-prec-month'
+                'https://storage.googleapis.com/carbonplan-share/maps-demo/4d/tavg-prec-month'
               }
               variable={'climate'}
               dimensions={['band', 'month', 'y', 'x']}

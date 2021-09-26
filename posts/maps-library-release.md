@@ -60,11 +60,11 @@ const bucket = ‘https://storage.googleapis.com/carbonplan-share/’
 const colormap = useColormap('warm')
 
 <Map>
-  <Line source={bucket + ‘testing/maps/land’}/>
+  <Line source={bucket + ‘maps-demo/land’}/>
   <Raster
     colormap={colormap}
     clim={[-20,30]}
-    source={bucket + ‘testing/maps/2d/tavg'}
+    source={bucket + ‘maps-demo/2d/tavg'}
     variable={'tavg'}
     dimensions={['y', 'x']}
   />
@@ -97,7 +97,7 @@ With the same component, we can just as easily render a 4D map where the third d
   <Raster
   colormap={colormap}
   clim={clim}
-  source={bucket + ‘testing/maps/4d/tavg-prec-month'}
+  source={bucket + ‘maps-demo/4d/tavg-prec-month'}
   variable={'climate'}
   dimensions={['band', 'month', 'y', 'x']}
   selector={{ band, month }}
@@ -114,7 +114,7 @@ In more advanced settings, we might want more control over rendering, including 
 <Raster
   colormap={colormap}
   clim={[-20, 30]}
-  source={prefix + ‘/testing/maps/3d/tavg-month’}
+  source={bucket + ‘maps-demo/3d/tavg-month’}
   variable={'tavg'}
   dimensions={['month', 'y', 'x']}
   selector={{ month: [1, 2] }}

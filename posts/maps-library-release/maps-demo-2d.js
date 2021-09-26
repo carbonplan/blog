@@ -27,7 +27,7 @@ const MapDemo2d = () => {
           colormap={colormap}
           clim={[-20, 30]}
           source={
-            'https://storage.googleapis.com/carbonplan-share/testing/maps/2d/tavg'
+            'https://storage.googleapis.com/carbonplan-share/maps-demo/2d/tavg'
           }
           variable={'tavg'}
           dimensions={['y', 'x']}
