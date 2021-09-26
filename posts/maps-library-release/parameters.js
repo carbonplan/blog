@@ -15,7 +15,7 @@ const Parameters = ({ band, setBand, month, setMonth }) => {
         <Group spacing='sm'>
           <Box>
             Variable
-            <Box sx={{ mt: ['1px'] }}>
+            <Box sx={{ mt: ['2px'] }}>
               <Select
                 value={band}
                 onChange={(e) => setBand(e.target.value)}
