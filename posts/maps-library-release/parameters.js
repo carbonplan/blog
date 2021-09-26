@@ -11,11 +11,11 @@ const sx = {
 const Parameters = ({ band, setBand, month, setMonth }) => {
   return (
     <>
-      <Box sx={{ ...sx, bottom: 20, left: 20 }}>
+      <Box sx={{ ...sx, bottom: 18, left: 20 }}>
         <Group spacing='sm'>
           <Box>
             Variable
-            <Box sx={{ mt: ['2px'] }}>
+            <Box sx={{ mt: ['1px'] }}>
               <Select
                 value={band}
                 onChange={(e) => setBand(e.target.value)}
@@ -29,7 +29,7 @@ const Parameters = ({ band, setBand, month, setMonth }) => {
           </Box>
           <Box>
             Month
-            <Box sx={{ mt: ['-2px'] }}>
+            <Box sx={{ mt: ['-1px'] }}>
               <Slider
                 min={1}
                 max={12}
