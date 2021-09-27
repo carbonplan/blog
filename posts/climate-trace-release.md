@@ -4,7 +4,7 @@ import FigureCaption from '../components/figure-caption'
 
 export const meta = {
   version: '1.0.0',
-  title: 'Climate TRACE released',
+  title: 'Climate TRACE release',
   authors: ['Oriana Chegwidden', 'Cindy Chiao', 'Joe Hamman'],
   date: '09-16-2021',
   summary:
