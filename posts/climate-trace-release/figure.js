@@ -87,9 +87,26 @@ const Figure = () => {
   }, [data, projection, colormap, offsetHeight, target])
 
   return (
-    <Box as='figure' sx={{ mt: [6, 6, 6, 7], mb: [4, 4, 4, 5] }}>
+    <Box
+      as='figure'
+      sx={{
+        mt: [6, 6, 6, 7],
+        mb: [4, 4, 4, 5],
+        border: 'solid',
+        borderColor: 'muted',
+        borderWidth: '1px',
+        borderRadius: '1px',
+      }}
+    >
       <Box sx={{ display: 'block', width: '100%', position: 'relative' }}>
-        <Box sx={{ zIndex: 1000, position: 'absolute', left: 0, bottom: 0 }}>
+        <Box
+          sx={{
+            zIndex: 1000,
+            position: 'absolute',
+            left: '8px',
+            bottom: '12px',
+          }}
+        >
           <Colorbar colormap={'fire'} units={'tCO₂'} clim={[0, 50000000]} />
         </Box>
         <Box
