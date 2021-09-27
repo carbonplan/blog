@@ -1,11 +1,12 @@
-import { Box } from 'theme-ui'
-import { Map, Raster } from '@carbonplan/maps'
+import { useThemeUI, Box } from 'theme-ui'
+import { Map, Raster, Line } from '@carbonplan/maps'
 import { useColormap } from '@carbonplan/colormaps'
-import Coastlines from './coastlines'
-import style from './style'
 import Zoom from './zoom'
 
+const bucket = 'https://storage.googleapis.com/carbonplan-share/'
+
 const MapDemo2d = () => {
+  const { theme } = useThemeUI()
   const colormap = useColormap('warm')
 
   return (
@@ -21,14 +22,16 @@ const MapDemo2d = () => {
         borderRadius: '1px',
       }}
     >
-      <Map style={style}>
-        <Coastlines />
+      <Map>
+        <Line
+          color={theme.rawColors.primary}
+          source={bucket + 'maps-demo/land'}
+          variable={'land'}
+        />
         <Raster
           colormap={colormap}
           clim={[-20, 30]}
-          source={
-            'https://storage.googleapis.com/carbonplan-share/maps-demo/2d/tavg'
-          }
+          source={bucket + 'maps-demo/2d/tavg'}
           variable={'tavg'}
           dimensions={['y', 'x']}
         />

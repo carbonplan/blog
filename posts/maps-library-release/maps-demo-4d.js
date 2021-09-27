@@ -1,12 +1,12 @@
-import { Box } from 'theme-ui'
+import { useThemeUI, Box } from 'theme-ui'
 import { useState } from 'react'
-import { Map, Raster } from '@carbonplan/maps'
+import { Map, Raster, Line } from '@carbonplan/maps'
 import { useColormap } from '@carbonplan/colormaps'
 import { Group } from '@carbonplan/components'
-import Coastlines from './coastlines'
-import style from './style'
 import Parameters from './parameters'
 import Zoom from './zoom'
+
+const bucket = 'https://storage.googleapis.com/carbonplan-share/'
 
 const CLIMS = {
   tavg: [-20, 30],
@@ -22,6 +22,7 @@ const MapDemo4d = () => {
   const [band, setBand] = useState('prec')
   const [month, setMonth] = useState(1)
 
+  const { theme } = useThemeUI()
   const colormap = useColormap(COLORMAPS[band])
 
   return (
@@ -38,14 +39,16 @@ const MapDemo4d = () => {
             borderRadius: '1px',
           }}
         >
-          <Map style={style}>
-            <Coastlines />
+          <Map>
+            <Line
+              color={theme.rawColors.primary}
+              source={bucket + 'maps-demo/land'}
+              variable={'land'}
+            />
             <Raster
               colormap={colormap}
               clim={CLIMS[band]}
-              source={
-                'https://storage.googleapis.com/carbonplan-share/maps-demo/4d/tavg-prec-month'
-              }
+              source={bucket + 'maps-demo/4d/tavg-prec-month'}
               variable={'climate'}
               dimensions={['band', 'month', 'y', 'x']}
               selector={{ band, month }}
