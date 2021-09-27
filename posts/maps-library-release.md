@@ -18,19 +18,19 @@ Google itself didn't invent the concept of tiled maps — video games were argua
 
 For most of the 2000s, tiled web maps used “raster” tiles — static, pre-generated images, typically 256 x 256 pixels in size. Raster tiles are fast to load and easy to render, but limited by their fixed resolution and difficult to manipulate or style interactively on the client, instead requiring server-side regeneration.
 
-In the early 2010s [“vector” tiles](https://wiki.openstreetmap.org/wiki/Vector_tiles) were introduced. Rather than pre-render points, lines, shapes, and other geometrical elements as pixels, vector tiles store the geometry explicitly, so it can be rendered at arbitrarily high resolution and with lots of customizability. Vector tiles quickly became a standard, and the open source [`mapbox-gl-js`](https://github.com/mapbox/mapbox-gl-js) library from Mapbox made it easy to render vector tiles in JavaScript using [WebGL](https://github.com/KhronosGroup/WebGL), enabling an exciting ecosystem of developers and use cases.
+In the early 2010s [“vector” tiles](https://wiki.openstreetmap.org/wiki/Vector_tiles) were introduced. Rather than pre-render points, lines, shapes, and other geometrical elements as pixels, vector tiles store the geometry explicitly, so it can be rendered at arbitrarily high resolution with flexible styling. Vector tiles quickly became a standard, and the open source [`mapbox-gl-js`](https://github.com/mapbox/mapbox-gl-js) library from Mapbox made it easy to render vector tiles in JavaScript using [WebGL](https://github.com/KhronosGroup/WebGL), enabling an exciting ecosystem of developers and use cases.
 
 ## The problem
 
 As is often the case, scientific use cases push the boundaries of current software.
 
-In many scientific settings — including climate science — we work with numerical, gridded data arising from simulations, observations, or computational analyses. The data can be two-dimensional, like global temperature on a particular day, but they are often multi-dimensional, for example, monthly precipitation (3D) or ocean temperature across depth and time (4D).
+In many scientific settings — including climate science — we work with numerical, gridded data arising from simulations, observations, or computational analyses. The data can be 2D, like global temperature on a particular day, but they are often multi-dimensional, for example, monthly precipitation (3D) or ocean temperature across depth and time (4D).
 
 It's surprisingly tough to render these data with existing tools.
 
-We can treat them as classic raster tiles by converting them into a pixelated image format like PNG or JPEG. But that makes it difficult to dynamically customize the rendering based on user input — the same reason web mapping moved away from raster tiles in the first place! It also requires storing a copy of the data in a format we wouldn’t use otherwise.
+We can treat them as classic raster tiles by converting them into a pixelated image format like PNG or JPEG. But that makes it difficult to dynamically customize the rendering based on user input — the same reason web mapping moved away from raster tiles in the first place! That approach also requires storing a copy of the data in a format we wouldn’t use otherwise.
 
-Treating these data as vector tiles has its own challenges. We can certainly convert a dense numerical grid to a collection of points, which are a basic geometrical type. Vector tiles can store points, and existing tools can query and render several features per point. That's exactly how we built our [forest risk map](https://carbonplan.org/research/forest-risks), and especially for sparse data it’s a workable approach. But it requires producing an inefficient intermediate format, and it offers little flexibility for optimizing how we store, fetch, and combine different dimensions of the data, which for us quickly became a performance bottleneck.
+Treating these data as vector tiles has its own challenges. We can convert a dense numerical grid to a collection of points, which are a basic geometrical type. Vector tiles can store points, and existing tools can query and render several features per point. That's exactly how we built our [forest risk map](https://carbonplan.org/research/forest-risks), and especially for sparse data it’s a workable approach. But it requires producing an inefficient intermediate format, and it offers little flexibility for optimizing how we store, fetch, and combine different dimensions of the data, which for us has become a performance bottleneck.
 
 ## A solution
 
@@ -42,13 +42,13 @@ Zarr is well-suited to tiled maps. The “chunks” of a Zarr dataset — the bl
 
 A dataset stored in Zarr typically represents one spatial scale — the scale at which the analysis or simulation was performed. However, it's easy to recreate the same dataset at multiple scales, carrying along the other non-spatial dimensions. We wrote a small package [`ndpyramid`](https://github.com/carbonplan/ndpyramid) to do that conversion, and to define [standard metadata](https://forum.image.sc/t/multiscale-arrays-v0-1/37930) for a multi-dimensional spatial pyramid. (In this conversion step we also reproject the data into [Web Mercator](https://en.wikipedia.org/wiki/Web_Mercator_projection), which the rest of our toolkit currently requires. See below for more on relaxing this requirement.)
 
-Second, we need to put the data on the screen. We wrote a small library for reading Zarr in JavaScript called [`zarr-js`](https://github.com/freeman-lab/zarr-js), and we're using the [`regl`](https://github.com/regl-project/regl) library to render fetched chunks of binary data directly via WebGL as either grids or textures. Among possible alternatives, `regl` has worked well because it's simple, performant, and low-level, letting us avoid much of the boilerplate of raw WebGL, but without the scene graph provided by [`three-js`](https://github.com/mrdoob/three.js/) and [`react-three-fiber`](https://github.com/pmndrs/react-three-fiber) (both are amazing tools, they just offer more than we needed here).
+Second, we need to put the data on the screen. We wrote a small library for reading Zarr in JavaScript called [`zarr-js`](https://github.com/freeman-lab/zarr-js), and we're using the [`regl`](https://github.com/regl-project/regl) library to render fetched chunks of binary data directly via WebGL as either grids or textures. Among alternatives, `regl` has worked well because it's minimal and performant, letting us avoid the boilerplate of raw WebGL, but without the scene graph functionality of [`three-js`](https://github.com/mrdoob/three.js/) and [`react-three-fiber`](https://github.com/pmndrs/react-three-fiber) (both are amazing tools, they just offer more than we needed here).
 
 Finally, because we're showing data on a map, we need to render traditional map layers — roads, rivers, countries, etc. — at the same time. For these layers we're continuing to use `mapbox-gl-js` with vector tiles, because parsing and rendering vector tiles is a hard problem and `mapbox-gl-js` solved it well.
 
 ## Putting it together
 
-We've released an open-source library called [`@carbonplan/maps`](https://github.com/carbonplan/maps) that puts all these pieces together. It's a small set of React components for rendering data-driven, gridded, raster maps. Behind the scenes, it synchronizes data fetching via `zarr-js`, raster data rendering via `regl`, and vector rendering and interactive controls powered by `mapbox-gl-js`. The library handles all the tile math, selecting which chunks to load based on the current view. Everything is wired for reactivity — most map properties are controlled by React props, and the map will dynamically rerender when props change, synchronized with the main rendering loop.
+We've released an open-source library called [`@carbonplan/maps`](https://github.com/carbonplan/maps) that puts all these pieces together. It's a small set of React components for rendering data-driven, gridded, raster maps. Behind the scenes, it synchronizes data fetching via `zarr-js`, raster data rendering via `regl`, and vector rendering and interactive controls powered by `mapbox-gl-js`. The library handles all the tile math, selecting which chunks to load given the current view. Everything is wired for reactivity — map properties are controlled by React props, and the map rerenders when props change, synchronized with the main rendering loop.
 
 For the simplest possible example, the following code renders a 2D map of global temperature with a coastline.
 
@@ -57,26 +57,27 @@ import { Map, Raster, Line } from '@carbonplan/maps'
 import { useColormap } from '@carbonplan/colormaps'
 
 const bucket = ‘https://storage.googleapis.com/carbonplan-share/’
+
 const colormap = useColormap('warm')
 
 <Map>
   <Line
-    color={‘white’}
-    source={bucket + ‘maps-demo/land’}
-    variable={‘land’}
+    color={'white'}
+    source={bucket + 'maps-demo/land'}
+    variable={'land'}
   />
   <Raster
     colormap={colormap}
     clim={[-20,30]}
-    source={bucket + ‘maps-demo/2d/tavg'}
-    variable={'tavg'}
+    source={bucket + 'maps-demo/2d/tavg'}
+    variable={'​​tavg'}
   />
 </Map>
 ```
 
 <MapDemo2d />
 
-The source data is a Zarr group with the temperature data from [WorldClim](https://www.worldclim.org/data/worldclim21.html) at multiple zoom levels. The file layout (with some files hidden for clarity) is as follows — note how the number of chunks quadruples as the zoom level increases. We automatically load metadata from files in this directory.
+The source data is a Zarr group with temperature data from [WorldClim](https://www.worldclim.org/data/worldclim21.html) at multiple zoom levels. The file layout (with some files hidden for clarity) is as follows — note how the number of chunks quadruples as the zoom level increases. We automatically load metadata from files in this directory.
 
 ```
 /
@@ -94,7 +95,7 @@ The source data is a Zarr group with the temperature data from [WorldClim](https
 ...
 ```
 
-With the same component, we can just as easily render a 4D map where the third dimension is the month and the fourth dimension is temperature or precipitation (labeled “band” in this dataset). Pointing to a different dataset, the `Raster` component becomes this.
+With the same component, we can just as easily render a 4D map where the third dimension is the month and the fourth dimension is temperature or precipitation (labeled “band”). Pointing to this dataset, the `Raster` component becomes this.
 
 ```js
   <Raster
@@ -108,9 +109,9 @@ With the same component, we can just as easily render a 4D map where the third d
 
 <MapDemo4d />
 
-Here, the `selector` prop allows us to change how we index into the full multi-dimensional array. Note that the code sample omits how the inputs to the selector are controlled by a slider and a menu, and how the colormap and clim are based on the selection. The [full code](https://github.com/carbonplan/blog/blob/main/posts/maps-library-release/maps-demo-4d.js) is just slightly more complicated.
+Here, the `selector` prop allows us to index into the full multi-dimensional array. Note that the code sample omits how the inputs to the selector are controlled by a slider and a menu, and how the colormap and clim are based on the selection. The [full code](https://github.com/carbonplan/blog/blob/main/posts/maps-library-release/maps-demo-4d.js) is just slightly more complicated.
 
-In more advanced settings, we might want more control over rendering, including the ability to combine data across multiple layers with math. We've exposed a custom fragment shader prop `frag` to make this easy. In this example, we render the average temperature over January and February by loading both months at once and calculating the average on the GPU, followed by a rescaling and colormap lookup. While this requires writing [shader code](<https://www.khronos.org/opengl/wiki/Core_Language_(GLSL)>), it lets us combine data layers via arbitrarily complex math, with high performance and full control over what gets rendered. Here’s a `Raster` component that demos this approach.
+In more advanced settings, we might want more control over rendering, including the ability to combine data across multiple layers with math. We've exposed a custom fragment shader prop `frag` to make this easy. In the sample below, we render the average temperature over January and February by loading both months at once and calculating the average on the GPU, followed by a rescaling and colormap lookup. While this requires writing [shader code](<https://www.khronos.org/opengl/wiki/Core_Language_(GLSL)>), it lets us combine data layers via arbitrarily complex math, with high performance and full control over what gets rendered. Here’s a `Raster` component that demos this approach.
 
 ```js
 <Raster
@@ -131,9 +132,9 @@ In more advanced settings, we might want more control over rendering, including 
 
 There are so many existing approaches to web maps, and this work is just one contribution to a rich ecosystem of tools.
 
-Both `mapbox-gl-js` itself and another library called [`deck.gl`](https://github.com/visgl/deck.gl) handle a much wider variety of data types than our library does, but we think ours handles gridded raster data more effectively, so in that sense they're highly complimentary. While we use `mapbox-gl-js` inside our library, and plan to continue doing so, we are restricted to using v1 because [Mapbox changed its licensing for v2](https://github.com/mapbox/mapbox-gl-js/blob/main/CHANGELOG.md#200). We are actively following the projects that have forked from Mapbox v1, as we may ultimately need to switch to one of them, or rebuild some components ourselves.
+Both `mapbox-gl-js` itself and another library called [`deck.gl`](https://github.com/visgl/deck.gl) handle a much wider variety of data types than our library does, but we think ours handles gridded raster data more effectively, so in that sense they're highly complimentary. While we use `mapbox-gl-js` inside our library, and plan to continue doing so, we are restricted to using v1 because [Mapbox changed its licensing for v2](https://github.com/mapbox/mapbox-gl-js/blob/main/CHANGELOG.md#200). We are actively following the projects that have forked from v1, as we may ultimately need to switch to one of them, or rebuild some components ourselves.
 
-One major limitation of `mapbox-gl-js` v1 is that it only supports the [web mercator projection](https://docs.mapbox.com/help/glossary/projection/). Building off tools like [`d3-geo`](https://github.com/d3/d3-geo), we have prototyped rendering raster data with alternative map projections. However, we also need to handle vector tile rendering (and tile indexing) with other projections, which again would involve modifying or replacing our dependency on `mapbox-gl-js`. This feature is important both because of the [representational benefits](https://www.youtube.com/watch?v=vVX-PrBRtTY) of other map projections, and because we wouldn’t need to store multiple copies of the same data (unprojected and projected), which is expensive at terabyte or petabyte scale.
+One major limitation of `mapbox-gl-js` v1 is that it only supports the [Web Mercator projection](https://docs.mapbox.com/help/glossary/projection/). Building off tools like [`d3-geo`](https://github.com/d3/d3-geo), we have prototyped rendering raster data with alternative map projections. However, we also need to handle vector tile rendering (and tile indexing) with other projections, which again would involve modifying or replacing our dependency on `mapbox-gl-js`. This feature is important both because of the [representational benefits](https://www.youtube.com/watch?v=vVX-PrBRtTY) of other map projections, and because we wouldn’t need to store multiple copies of the same data (unprojected and projected), which gets expensive at terabyte or petabyte scale.
 
 Another [effort to load Zarr in JavaScript](https://github.com/gzuidhof/zarr.js/) emerged around the time we started `zarr-js`. It’s a more full featured implementation of both Zarr reading and writing in the browser, but we prefer our smaller, read-only library for our mapping use case. It'd be great to find some unification here, and the authors of that library have [expressed interest](https://github.com/gzuidhof/zarr.js/issues/69) in a more minimal version.
 
