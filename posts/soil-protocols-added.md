@@ -21,7 +21,7 @@ This blog post summarizes our findings from reviewing the three additional proto
 
 ## Australia measurement protocol
 
-The most recent [Australian measurement protocol](https://www.legislation.gov.au/Details/F2018L00089) was published in 2018, and has been used by [over 100 projects](http://www.cleanenergyregulator.gov.au/ERF/project-and-contracts-registers/project-register) to date. It is is currently [under review](http://www.cleanenergyregulator.gov.au/ERF/Pages/Method%20development%20tracker/Soil-carbon.aspx) and revisions to the protocol are possible by the end of 2021. We analyzed this protocol as published, without taking into account possible changes as a result of the public review process.
+The most recent [Australia measurement protocol](https://www.legislation.gov.au/Details/F2018L00089) was published in 2018, and has been used by [over 100 projects](http://www.cleanenergyregulator.gov.au/ERF/project-and-contracts-registers/project-register) to date. It is is currently [under review](http://www.cleanenergyregulator.gov.au/ERF/Pages/Method%20development%20tracker/Soil-carbon.aspx) and revisions to the protocol are possible by the end of 2021. We analyzed this protocol as published, without taking into account possible changes as a result of the public review process.
 
 ### Rigor
 
@@ -41,9 +41,9 @@ This protocol received a high score for safeguards. Applicable Australian laws p
 
 ## Australia estimation protocol
 
-The [Australian estimation protocol](https://www.legislation.gov.au/Details/F2018C00126) was published in 2015, but has [not been used](http://www.cleanenergyregulator.gov.au/ERF/project-and-contracts-registers/project-register) since. We included it here because it serves as an important contrast with the Australian protocol that is in wide use and which earned a significantly higher score in our review.
+The [Australia estimation protocol](https://www.legislation.gov.au/Details/F2018C00126) was published in 2015, but has [not been used](http://www.cleanenergyregulator.gov.au/ERF/project-and-contracts-registers/project-register) since. We included it here because it serves as an important contrast with the Australia protocol that is in wide use and which earned a significantly higher score in our review.
 
-This protocol shares durability and safeguard characteristics with the Australian measurement protocol reviewed above, but differs significantly in its quantification rigor and additionality metrics.
+This protocol shares durability and safeguard characteristics with the Australia measurement protocol reviewed above, but differs significantly in its quantification rigor and additionality metrics.
 
 ### Rigor
 
@@ -51,7 +51,7 @@ Under this protocol, projects estimate changes to soil carbon using regional def
 
 ### Additionality
 
-This protocol uses the same “newness” requirement to establish additionality as the Australian measurement protocol described above. Although we gave the measurement protocol a score of 2/3, we assigned a score of 1/3 here because no site-specific modeling or analysis is required. Instead, this protocol uses default parameters to calculate carbon savings, which provides a strong incentive to developers to preferentially select profitable locations for development — potentially resulting in the exact same kind of adverse selection outcomes we documented in [California’s forest offsets program](https://carbonplan.org/research/forest-offsets-explainer). As a result, the potential benefits of a “newness” screen are outweighed by its shortcomings in the context of a protocol without rigorous, project-specific analysis.
+This protocol uses the same “newness” requirement to establish additionality as the Australia measurement protocol described above. Although we gave the measurement protocol a score of 2/3, we assigned a score of 1/3 here because no site-specific modeling or analysis is required. Instead, this protocol uses default parameters to calculate carbon savings, which provides a strong incentive to developers to preferentially select profitable locations for development — potentially resulting in the exact same kind of adverse selection outcomes we documented in [California’s forest offsets program](https://carbonplan.org/research/forest-offsets-explainer). As a result, the potential benefits of a “newness” screen are outweighed by its shortcomings in the context of a protocol without rigorous, project-specific analysis.
 
 ## Alberta protocol
 
