@@ -75,19 +75,19 @@ const ScoreSummary = () => {
                 <Box sx={{ ...sx.label, mb: ['2px', 0, 0, 0] }}>{names[i]}</Box>
               </Column>
               <Column start={[2]} width={[1]}>
-                <Squares value={rigor[i]} color='orange' />
+                <Squares value={rigor[i]} />
               </Column>
               <Column start={[3]} width={[1]}>
-                <Squares value={additionality[i]} color='orange' />
+                <Squares value={additionality[i]} />
               </Column>
               <Column start={[4]} width={[1]}>
-                <Squares value={durability[i]} color='orange' />
+                <Squares value={durability[i]} />
               </Column>
               <Column start={[5]} width={[1]}>
-                <Squares value={safeguards[i]} color='orange' />
+                <Squares value={safeguards[i]} />
               </Column>
               <Column start={[6]} width={[1]}>
-                <Rating value={rating[i]} color='orange' />
+                <Rating value={rating[i]} />
               </Column>
             </Row>
           )

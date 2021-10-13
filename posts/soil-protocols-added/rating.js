@@ -1,7 +1,7 @@
-import { Box, Grid } from 'theme-ui'
+import { Box } from 'theme-ui'
 import { Check } from '@carbonplan/icons'
 
-const Rating = ({ color, value }) => {
+const Rating = ({ value }) => {
   return (
     <Box
       sx={{
