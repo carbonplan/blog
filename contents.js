@@ -1,5 +1,15 @@
 const contents = [
   {
+    id: 'soil-protocols-added',
+    version: '1.0.0',
+    title: 'Additions to our analysis of soil carbon protocols',
+    authors: ['Freya Chay', 'Danny Cullenward'],
+    date: '10-13-2021',
+    summary:
+      'We analyzed three new soil carbon protocols and added them our interactive database',
+    number: 3,
+  },
+  {
     id: 'maps-library-release',
     version: '1.0.0',
     title: 'A new toolkit for data-driven maps',
