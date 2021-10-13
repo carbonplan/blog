@@ -47,7 +47,12 @@ const sx = {
 }
 
 const star = (name) => {
-  if (['Alb Cr', 'Aus Est', 'Aus Meas'].includes(name)) return '*'
+  if (['Alb Cr', 'Aus Est', 'Aus Meas'].includes(name))
+    return (
+      <Box as='span' sx={{ color: 'orange' }}>
+        *
+      </Box>
+    )
   else return ''
 }
 

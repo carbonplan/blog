@@ -1,3 +1,4 @@
+import { Box } from 'theme-ui'
 import { Link } from '@carbonplan/components'
 import RecommendationTable from './soil-protocols-added/recommendation-table'
 import ScoreSummary from './soil-protocols-added/score-summary'
@@ -78,10 +79,13 @@ Combining the new analysis with our results from before, we can look at all the 
 
 <ScoreSummary />
 <FigureCaption>
-  Summary table of our results. Each protocol is a row. The * indicates new
-  additions. The first four columns show scores along four individual metrics
-  (each on a scale from 1 to 3) and the final column shows the overall rating
-  (on a scale from 1 to 5). For more details, check out the{' '}
+  Summary table of our results. Each protocol is a row. The{' '}
+  <Box as='span' sx={{ color: 'orange' }}>
+    *
+  </Box>{' '}
+  indicates new additions. The first four columns show scores along four
+  individual metrics (each on a scale from 1 to 3) and the final column shows
+  the overall rating (on a scale from 1 to 5). For more details, check out the{' '}
   <Link
     href='/research/soil-protocols'
     sx={{ color: 'secondary', '&:hover': { color: 'primary' } }}
