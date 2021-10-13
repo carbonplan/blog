@@ -7,7 +7,7 @@ const table = [
   ],
   [
     'Step 2',
-    'Ask projects to adopt one of the most rigorous sampling requirements (such as those found in the BCarbon or FAO protocols) for their quantification requirements.',
+    'Ask projects to adopt one of the most rigorous sampling requirements (such as those found in the BCarbon, FAO, or Australia measurement protocols) for their quantification requirements.',
   ],
   [
     'Step 3',

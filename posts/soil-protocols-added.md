@@ -14,9 +14,9 @@ export const meta = {
 
 In July 2021, we published an [analysis](https://carbonplan.org/research/soil-protocols-explainer) of 14 protocols that certify or issue credits for soil carbon removal. Our systematic review of the protocols was also published as an [interactive database](https://carbonplan.org/research/soil-protocols), which we are updating now with the release of this short blog post.
 
-We originally analyzed publicly available protocols that generate credits for the voluntary carbon market. In response to public feedback, we are expanding this database to include three additional protocols that were designed by governments – two protocols from Australia and one from Alberta – but whose credits can also be used by voluntary actors.
+We originally analyzed publicly available protocols that generate credits for the voluntary carbon market. In response to public feedback, we are expanding this database to include three additional protocols that were designed by governments – two protocols from Australia and one from Alberta, Canada – but whose credits can also be used by voluntary actors.
 
-This blog post summarizes our findings from reviewing the three additional protocols. We applied the same four metrics applied in our initial analysis: rigor, additionality, durability and safeguards. We recommend reading [this article](https://carbonplan.org/research/soil-protocols-explainer) for more details regarding the four metrics and our methods.
+This blog post summarizes our findings from reviewing the three additional protocols. We applied the same four metrics applied in our initial analysis: rigor, additionality, durability, and safeguards. We recommend reading [this article](https://carbonplan.org/research/soil-protocols-explainer) for more details regarding the four metrics and our methods.
 
 ## Australia measurement protocol
 
@@ -78,10 +78,10 @@ Combining the new analysis with our results from before, we can look at all the 
 
 <ScoreSummary />
 <FigureCaption>
-  Summary table of our results. Each protocol is a row. The first four columns
-  show scores along four individual metrics (each on a scale from 1 to 3) and
-  the final column shows the overall rating (on a scale from 1 to 5). For more
-  details, check out the{' '}
+  Summary table of our results. Each protocol is a row. The * indicates new
+  additions. The first four columns show scores along four individual metrics
+  (each on a scale from 1 to 3) and the final column shows the overall rating
+  (on a scale from 1 to 5). For more details, check out the{' '}
   <Link
     href='/research/soil-protocols'
     sx={{ color: 'secondary', '&:hover': { color: 'primary' } }}

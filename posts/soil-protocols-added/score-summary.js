@@ -46,6 +46,11 @@ const sx = {
   },
 }
 
+const star = (name) => {
+  if (['Alb Cr', 'Aus Est', 'Aus Meas'].includes(name)) return '*'
+  else return ''
+}
+
 const ScoreSummary = () => {
   return (
     <Box sx={{ mt: [6, 6, 6, 7], mb: [5] }}>
@@ -72,7 +77,10 @@ const ScoreSummary = () => {
           return (
             <Row key={i} columns={[6]}>
               <Column start={[1]} width={[6, 1, 1, 1]}>
-                <Box sx={{ ...sx.label, mb: ['2px', 0, 0, 0] }}>{names[i]}</Box>
+                <Box sx={{ ...sx.label, mb: ['2px', 0, 0, 0] }}>
+                  {names[i]}
+                  {star(names[i])}
+                </Box>
               </Column>
               <Column start={[2]} width={[1]}>
                 <Squares value={rigor[i]} color='orange' />
