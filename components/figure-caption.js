@@ -6,8 +6,6 @@ const FigureCaption = ({ children }) => {
       as='figcaption'
       sx={{
         color: 'secondary',
-        fontFamily: 'faux',
-        letterSpacing: 'smallcaps',
         mt: [3, 3, 3, 4],
         mb: [6, 6, 6, 7],
         fontSize: [2, 2, 2, 3],
