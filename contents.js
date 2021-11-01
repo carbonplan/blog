@@ -1,5 +1,15 @@
 const contents = [
   {
+    id: 'climate-financial-risks',
+    version: '1.0.0',
+    title: 'Climate-related financial risk and corporate net-zero commitments ',
+    authors: ['Sadie Frank', 'Danny Cullenward'],
+    date: '11-01-2021',
+    summary:
+      'We discuss tensions and considerations at the nexus of climate risk disclosure and corporate net-zero strategies.',
+    number: 4,
+  },
+  {
     id: 'soil-protocols-added',
     version: '1.0.0',
     title: 'Additions to our analysis of soil carbon protocols',
