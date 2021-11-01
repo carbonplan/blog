@@ -5,20 +5,9 @@ const Blockquote = ({ children }) => {
   const textIndent = firstChar === '“' ? ['-0.4em'] : [0]
   return (
     <Box
+      variant='styles.blockquote'
       sx={{
-        bg: 'hinted',
-        color: 'primary',
-        fontFamily: 'body',
-        lineHeight: '1.35',
-        fontSize: [3, 3, 3, 4],
-        borderRadius: '1px',
-        mx: [0],
-        my: [4, 4, 4, 5],
-        p: [3, 3, 3, 4],
         textIndent: textIndent,
-        '> p': {
-          m: [0],
-        },
       }}
     >
       {children}
