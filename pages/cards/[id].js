@@ -18,7 +18,15 @@ const Card = ({ title, authors, date, number }) => {
     >
       <Flex sx={{ flexDirection: 'column', justifyContent: 'space-between' }}>
         <Box>
-          <Box sx={{ color: 'secondary', fontSize: [4], mb: [3] }}>
+          <Box
+            sx={{
+              color: 'secondary',
+              fontFamily: 'faux',
+              letterSpacing: 'smallcaps',
+              fontSize: [5],
+              mb: [3],
+            }}
+          >
             blog / carbonplan
           </Box>
           <Box as='h1' variant='styles.h1' sx={{ maxWidth: '800px' }}>
@@ -47,6 +55,9 @@ const Card = ({ title, authors, date, number }) => {
           ))}
         </Box>
       </Flex>
+
+      <Box sx={{ flex: '1 0 64px' }} />
+
       <Flex sx={{ flexDirection: 'column', justifyContent: 'space-between' }}>
         <Monogram sx={{ width: 160, display: 'block' }} />
 
