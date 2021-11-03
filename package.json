@@ -7,6 +7,7 @@
     "dev": "npm run build-pages && NODE_ENV=development next -p 4001",
     "build": "npm run build-pages && next build",
     "build-pages": "node build.js && prettier --write contents.js 'pages/blog/!(index).js'",
+    "build-cards": "node generate-images.js",
     "lint": "eslint . --max-warnings 5",
     "start": "next start",
     "format": "npm run format-js && npm run format-md",
@@ -47,11 +48,13 @@
     "zarr-js": "^1.0.0"
   },
   "devDependencies": {
+    "chrome-aws-lambda": "^10.1.0",
     "eslint": "^7.32.0",
     "eslint-config-next": "^11.0.1",
     "eslint-config-prettier": "^8.3.0",
     "extract-mdx-metadata": "^1.0.0",
     "glob": "^7.1.7",
-    "prettier": "2.3.2"
+    "prettier": "2.3.2",
+    "puppeteer": "^10.4.0"
   }
 }

@@ -4,3 +4,5 @@ export const CATEGORY_COLORS = {
   team: 'blue',
   tech: 'teal',
 }
+
+export const AUTHOR_COLORS = ['red', 'orange', 'yellow', 'pink']

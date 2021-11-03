@@ -16,7 +16,7 @@ glob('./posts/**.md', async (err, filePaths) => {
     .sort((a, b) => new Date(b.date) - new Date(a.date))
     .map((meta, idx) => ({ ...meta, number: articleContents.length - 1 - idx }))
   const contents = `const contents = ${JSON.stringify(sorted)}
-    export default contents`
+    module.exports = contents`
   fs.writeFileSync('./contents.js', contents)
 
   // Construct pages/research
