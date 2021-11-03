@@ -9,8 +9,8 @@ const Card = ({ title, authors, date, number }) => {
     <Flex
       sx={{
         flexDirection: 'row',
-        px: [8],
-        py: [6],
+        px: ['80px'],
+        py: [7],
         height: '100vh',
         width: '100vw',
         justifyContent: 'space-between',
@@ -59,7 +59,7 @@ const Card = ({ title, authors, date, number }) => {
       <Box sx={{ flex: '1 0 64px' }} />
 
       <Flex sx={{ flexDirection: 'column', justifyContent: 'space-between' }}>
-        <Monogram sx={{ width: 160, display: 'block' }} />
+        <Monogram sx={{ width: 160, display: 'block', mr: '-10px' }} />
 
         <Text
           sx={{
@@ -72,6 +72,7 @@ const Card = ({ title, authors, date, number }) => {
             whiteSpace: 'nowrap',
             display: 'inline-block',
             overflow: 'visible',
+            mr: '-12px',
           }}
         >
           {formatDate(date, {
