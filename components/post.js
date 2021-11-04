@@ -56,7 +56,7 @@ const Post = ({ children, meta, number }) => {
     <Layout
       card={
         meta.card
-          ? `${prefix}/social/${meta.card}.png`
+          ? `${prefix}/social/blog/${meta.card}.png`
           : 'https://images.carbonplan.org/social/blog.png'
       }
       description={meta.summary}

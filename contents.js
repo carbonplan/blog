@@ -1,12 +1,24 @@
 const contents = [
   {
+    id: 'fsoc-open-data',
+    version: '1.0.0',
+    title: 'Open data and the Financial Stability Oversight Council',
+    authors: ['Sadie Frank'],
+    date: '11-04-2021',
+    summary:
+      'Why open data and analytics matter in addressing climate-related financial risk.',
+    card: 'fsoc-open-data',
+    number: 5,
+  },
+  {
     id: 'climate-financial-risks',
     version: '1.0.0',
-    title: 'Climate-related financial risk and corporate net-zero commitments ',
+    title: 'Climate-related financial risk and corporate net-zero commitments',
     authors: ['Sadie Frank', 'Danny Cullenward'],
     date: '11-01-2021',
     summary:
       'We discuss tensions and considerations at the nexus of climate risk disclosure and corporate net-zero strategies.',
+    card: 'climate-financial-risks',
     number: 4,
   },
   {
@@ -16,7 +28,8 @@ const contents = [
     authors: ['Freya Chay', 'Danny Cullenward'],
     date: '10-13-2021',
     summary:
-      'We analyzed three new soil carbon protocols and added them our interactive database',
+      'We analyzed three new soil carbon protocols and added them our interactive database.',
+    card: 'soil-protocols-added',
     number: 3,
   },
   {
@@ -26,7 +39,8 @@ const contents = [
     authors: ['Jeremy Freeman', 'Kata Martin', 'Joe Hamman'],
     date: '09-27-2021',
     summary:
-      'Why rendering scientific data in web maps is so tough, and how we’re trying to solve it',
+      'Why rendering scientific data in web maps is so tough, and how we’re trying to solve it.',
+    card: 'maps-library-release',
     number: 2,
   },
   {
@@ -37,6 +51,7 @@ const contents = [
     date: '09-16-2021',
     summary:
       'Our contributions to the initial Climate TRACE data release, and what’s coming next.',
+    card: 'climate-trace-release',
     number: 1,
   },
   {
@@ -46,6 +61,7 @@ const contents = [
     authors: ['Jeremy Freeman'],
     date: '09-14-2021',
     summary: "Why we made this and what you'll find here.",
+    card: 'first-post-welcome',
     number: 0,
   },
 ]
