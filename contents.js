@@ -28,7 +28,7 @@ const contents = [
     authors: ['Freya Chay', 'Danny Cullenward'],
     date: '10-13-2021',
     summary:
-      'We analyzed three new soil carbon protocols and added them our interactive database',
+      'We analyzed three new soil carbon protocols and added them our interactive database.',
     card: 'soil-protocols-added',
     number: 3,
   },
@@ -39,7 +39,7 @@ const contents = [
     authors: ['Jeremy Freeman', 'Kata Martin', 'Joe Hamman'],
     date: '09-27-2021',
     summary:
-      'Why rendering scientific data in web maps is so tough, and how we’re trying to solve it',
+      'Why rendering scientific data in web maps is so tough, and how we’re trying to solve it.',
     card: 'maps-library-release',
     number: 2,
   },

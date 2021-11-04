@@ -7,7 +7,7 @@ export const meta = {
   authors: ['Jeremy Freeman', 'Kata Martin', 'Joe Hamman'],
   date: '09-27-2021',
   summary:
-    'Why rendering scientific data in web maps is so tough, and how we’re trying to solve it',
+    'Why rendering scientific data in web maps is so tough, and how we’re trying to solve it.',
   card: 'maps-library-release',
 }
 

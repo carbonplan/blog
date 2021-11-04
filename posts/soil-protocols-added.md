@@ -10,7 +10,7 @@ export const meta = {
   authors: ['Freya Chay', 'Danny Cullenward'],
   date: '10-13-2021',
   summary:
-    'We analyzed three new soil carbon protocols and added them our interactive database',
+    'We analyzed three new soil carbon protocols and added them our interactive database.',
   card: 'soil-protocols-added',
 }
 
