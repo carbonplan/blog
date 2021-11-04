@@ -9,7 +9,7 @@ const Card = ({ title, authors, date, number }) => {
     <Flex
       sx={{
         flexDirection: 'row',
-        px: ['80px'],
+        px: ['78px'],
         py: [7],
         height: '100vh',
         width: '100vw',
@@ -25,11 +25,20 @@ const Card = ({ title, authors, date, number }) => {
               letterSpacing: 'smallcaps',
               fontSize: [5],
               mb: [3],
+              mt: '-10px',
             }}
           >
             blog / carbonplan
           </Box>
-          <Box as='h1' variant='styles.h1' sx={{ maxWidth: '800px' }}>
+          <Box
+            as='h1'
+            variant='styles.h1'
+            sx={{
+              maxWidth: '800px',
+              fontSize: '70px',
+              mt: ['42px', '42px', '42px', '42px'],
+            }}
+          >
             {title}
           </Box>
         </Box>
@@ -40,6 +49,7 @@ const Card = ({ title, authors, date, number }) => {
             textTransform: 'uppercase',
             color: 'secondary',
             fontSize: [5],
+            mb: '-6px',
           }}
         >
           {authors.map((a, i) => (
@@ -59,7 +69,9 @@ const Card = ({ title, authors, date, number }) => {
       <Box sx={{ flex: '1 0 64px' }} />
 
       <Flex sx={{ flexDirection: 'column', justifyContent: 'space-between' }}>
-        <Monogram sx={{ width: 160, display: 'block', mr: '-10px' }} />
+        <Monogram
+          sx={{ width: 160, display: 'block', mt: '-19px', mr: '-10px' }}
+        />
 
         <Text
           sx={{
