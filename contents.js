@@ -1,5 +1,15 @@
 const contents = [
   {
+    id: 'fsoc-open-data',
+    version: '1.0.0',
+    title: 'Open data and the Financial Stability Oversight Council',
+    authors: ['Sadie Frank'],
+    date: '11-04-2021',
+    summary:
+      'Why open data and analytics matter in addressing climate-related financial risk.',
+    number: 5,
+  },
+  {
     id: 'climate-financial-risks',
     version: '1.0.0',
     title: 'Climate-related financial risk and corporate net-zero commitments ',
