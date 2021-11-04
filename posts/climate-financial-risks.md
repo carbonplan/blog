@@ -1,6 +1,6 @@
 export const meta = {
   version: '1.0.0',
-  title: 'Climate-related financial risk and corporate net-zero commitments ',
+  title: 'Climate-related financial risk and corporate net-zero commitments',
   authors: ['Sadie Frank', 'Danny Cullenward'],
   date: '11-01-2021',
   summary:
