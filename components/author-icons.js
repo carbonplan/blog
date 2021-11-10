@@ -1,7 +1,7 @@
 import { Box, Image } from 'theme-ui'
 import { Column, Row } from '@carbonplan/components'
 
-const colors = ['red', 'orange', 'yellow', 'pink']
+import { AUTHOR_COLORS } from '../constants'
 
 const AuthorIcons = ({ authors, articleNumber }) => {
   const mobileColOffset = Math.max(1, 3 - authors.length + 1)
@@ -17,7 +17,7 @@ const AuthorIcons = ({ authors, articleNumber }) => {
               height: 'auto',
               borderRadius: '50%',
               position: 'relative',
-              bg: colors[(articleNumber + idx) % 4],
+              bg: AUTHOR_COLORS[(articleNumber + idx) % 4],
             }}
           >
             <Image

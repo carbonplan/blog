@@ -65,4 +65,4 @@ const contents = [
     number: 0,
   },
 ]
-export default contents
+module.exports = contents
