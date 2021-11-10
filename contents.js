@@ -1,5 +1,17 @@
 const contents = [
   {
+    id: 'usda-csaf-comment',
+    version: '1.0.0',
+    title:
+      'Comments to the United States Department of Agriculture on climate-smart commodity markets',
+    authors: ['Danny Cullenward', 'Sadie Frank', 'Jeremy Freeman'],
+    date: '11-10-2021',
+    summary:
+      'We encourage the USDA to directly procure "climate-smart" commodities instead of subsidizing carbon offsets.',
+    card: 'usda-csaf-comment',
+    number: 6,
+  },
+  {
     id: 'fsoc-open-data',
     version: '1.0.0',
     title: 'Open data and the Financial Stability Oversight Council',
