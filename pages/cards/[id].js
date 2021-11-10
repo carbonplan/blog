@@ -1,10 +1,18 @@
 import { Box, Flex, Text } from 'theme-ui'
+import { useEffect, useRef, useState } from 'react'
 import { Monogram, formatDate } from '@carbonplan/components'
 
 import contents from '../../contents'
 import { AUTHOR_COLORS } from '../../constants'
 
 const Card = ({ title, authors, date, number }) => {
+  const [lines, setLines] = useState(0)
+  const titleText = useRef(null)
+
+  useEffect(() => {
+    setLines(Math.round(titleText.current?.offsetHeight / 67))
+  }, [])
+
   return (
     <Flex
       sx={{
@@ -33,6 +41,7 @@ const Card = ({ title, authors, date, number }) => {
           <Box
             as='h1'
             variant='styles.h1'
+            ref={titleText}
             sx={{
               maxWidth: '800px',
               fontSize: '70px',
@@ -43,6 +52,7 @@ const Card = ({ title, authors, date, number }) => {
           </Box>
         </Box>
         <Box
+          id={lines === 0 ? 'initial-authors' : 'final-authors'}
           sx={{
             fontFamily: 'mono',
             letterSpacing: 'mono',
@@ -53,11 +63,17 @@ const Card = ({ title, authors, date, number }) => {
           }}
         >
           {authors.map((a, i) => (
-            <Box key={a} sx={{ color: AUTHOR_COLORS[(number + i) % 4] }}>
+            <Box
+              key={a}
+              sx={{
+                display: lines >= 4 && i > 0 ? 'inline-block' : 'block',
+                color: AUTHOR_COLORS[(number + i) % 4],
+              }}
+            >
               {a}
 
               {i < authors.length - 1 && (
-                <Box as='span' sx={{ color: 'primary', ml: [3] }}>
+                <Box as='span' sx={{ color: 'primary', mx: [3] }}>
                   +
                 </Box>
               )}
