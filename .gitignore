@@ -2,5 +2,6 @@
 .ipynb_checkpoints
 .next
 .vscode
-/node_modules
+node_modules
 .env*.local
+cards
