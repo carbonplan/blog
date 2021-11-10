@@ -1,4 +1,4 @@
-import Index, { meta } from '../../posts/usda-comment-letter.md'
+import Index, { meta } from '../../posts/usda-csaf-comment.md'
 import Post from '../../components/post'
 
 const Content = () => (
