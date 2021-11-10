@@ -4,6 +4,10 @@ const puppeteer = require('puppeteer')
 const contents = require('./contents.js')
 
 glob('./cards/**.png', async (err, filePaths) => {
+  if (!fs.existsSync('./cards')) {
+    fs.mkdirSync('./cards')
+  }
+
   for (const post of contents) {
     if (!filePaths.find((p) => p.includes(post.id))) {
       const file = await getScreenshot(post.id)
