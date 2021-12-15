@@ -1,5 +1,15 @@
 const contents = [
   {
+    id: 'stripe-2021-additions',
+    version: '1.0.0',
+    title: 'Additions to our CDR database',
+    authors: ['Freya Chay'],
+    date: '12-15-2021',
+    summary:
+      'Analysis of 11 new proposals from Stripe’s Fall 2021 CDR procurement.',
+    number: 7,
+  },
+  {
     id: 'usda-csaf-comment',
     version: '1.0.0',
     title:
