@@ -7,6 +7,7 @@ const contents = [
     date: '12-15-2021',
     summary:
       'Analysis of 11 new proposals from Stripe’s Fall 2021 CDR procurement.',
+    card: 'stripe-2021-additions',
     number: 7,
   },
   {
