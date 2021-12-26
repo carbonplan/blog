@@ -1,7 +1,7 @@
 import { useThemeUI, Box } from 'theme-ui'
 import { useState } from 'react'
 import { Map, Raster, Line } from '@carbonplan/maps'
-import { useColormap } from '@carbonplan/colormaps'
+import { useThemedColormap } from '@carbonplan/colormaps'
 import { Group } from '@carbonplan/components'
 import Parameters from './parameters'
 import Zoom from './zoom'
@@ -23,7 +23,7 @@ const MapDemo4d = () => {
   const [month, setMonth] = useState(1)
 
   const { theme } = useThemeUI()
-  const colormap = useColormap(COLORMAPS[band])
+  const colormap = useThemedColormap(COLORMAPS[band])
 
   return (
     <Box sx={{ my: [6, 6, 6, 7] }}>

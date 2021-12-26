@@ -1,12 +1,13 @@
 import { useState, useRef, useCallback, useEffect } from 'react'
 import { Box } from 'theme-ui'
-import { useColormap } from '@carbonplan/colormaps'
+import { Colorbar } from '@carbonplan/components'
+import { useThemedColormap } from '@carbonplan/colormaps'
 import { geoPath, geoNaturalEarth1 } from 'd3-geo'
 import { feature } from 'topojson-client'
 import { minIndex } from 'd3-array'
+import { format } from 'd3-format'
 import ndarray from 'ndarray'
 import useZarr from './use-zarr'
-import Colorbar from './colorbar'
 
 const prefix = 'https://carbonplan-climatetrace.s3.us-west-2.amazonaws.com/'
 const path = 'v0.4/blog/total_emissions.zarr'
@@ -30,7 +31,7 @@ const Figure = () => {
   const { data } = useZarr(prefix + path, ['emissions', 'lat', 'lon'])
 
   const canvas = useRef()
-  const colormap = useColormap('fire')
+  const colormap = useThemedColormap('fire')
   const [land, setLand] = useState()
   const [projection] = useState(() =>
     geoNaturalEarth1()
@@ -107,7 +108,13 @@ const Figure = () => {
             bottom: '12px',
           }}
         >
-          <Colorbar colormap={'fire'} units={'tCO₂'} clim={[0, 50000000]} />
+          <Colorbar
+            colormap={colormap}
+            label={'emissions'}
+            format={format('~s')}
+            units={'tCO₂'}
+            clim={[0, 50000000]}
+          />
         </Box>
         <Box
           as='svg'

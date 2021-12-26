@@ -129,11 +129,7 @@ const Post = ({ children, meta, number }) => {
             </Row>
           </Box>
         </Column>
-        <Column
-          start={[1, 2, 5, 5]}
-          width={[6, 6, 6, 6]}
-          sx={{ mb: [8, 8, 9, 10] }}
-        >
+        <Column start={[1, 2, 5, 5]} width={[6, 6, 6, 6]}>
           <Box as='article'>{children}</Box>
           <Closing />
         </Column>

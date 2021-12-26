@@ -1,13 +1,13 @@
 import { useThemeUI, Box } from 'theme-ui'
 import { Map, Raster, Line } from '@carbonplan/maps'
-import { useColormap } from '@carbonplan/colormaps'
+import { useThemedColormap } from '@carbonplan/colormaps'
 import Zoom from './zoom'
 
 const bucket = 'https://storage.googleapis.com/carbonplan-share/'
 
 const MapDemo2d = () => {
   const { theme } = useThemeUI()
-  const colormap = useColormap('warm')
+  const colormap = useThemedColormap('warm')
 
   return (
     <Box
