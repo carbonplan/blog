@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { Box, Text } from 'theme-ui'
 import {
   Group,
   Row,
