@@ -1,8 +1,7 @@
 import { Box, Text } from 'theme-ui'
 import { Button, Column, Row, formatDate } from '@carbonplan/components'
+import { AuthorIcons } from '@carbonplan/layouts'
 import { RotatingArrow } from '@carbonplan/icons'
-
-import AuthorIcons from './author-icons'
 
 const Entry = ({ final, first, info }) => {
   let { id, number, title, authors, date, summary } = info

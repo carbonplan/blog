@@ -1,6 +1,6 @@
 import { Link } from '@carbonplan/components'
+import { FigureCaption } from '@carbonplan/layouts'
 import Figure from './climate-trace-release/figure'
-import FigureCaption from '../components/figure-caption'
 
 export const meta = {
   version: '1.0.0',
