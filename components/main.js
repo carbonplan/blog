@@ -9,18 +9,32 @@ const initSort = {
   title: false,
 }
 
-const Settings = ({ setSort, sort }) => {
+const initYear = {
+  2021: true,
+  2022: true,
+}
+
+const Settings = ({ setSort, setYear, sort, year }) => {
   return (
     <Group spacing='md'>
       <Filter values={sort} setValues={setSort} label='Sort by' />
+      <Filter
+        values={year}
+        setValues={setYear}
+        label='Filter by year'
+        showAll
+      />
     </Group>
   )
 }
 
 const Main = ({ showMobileSettings }) => {
   const [sort, setSort] = useState(initSort)
+  const [year, setYear] = useState(initYear)
 
-  const settings = <Settings setSort={setSort} sort={sort} />
+  const settings = (
+    <Settings setSort={setSort} sort={sort} setYear={setYear} year={year} />
+  )
 
   return (
     <>
@@ -60,7 +74,7 @@ const Main = ({ showMobileSettings }) => {
           {settings}
         </Column>
         <Column start={[1, 2, 5, 5]} width={[6, 6, 7, 7]}>
-          <List sort={sort} />
+          <List sort={sort} year={year} />
         </Column>
       </Row>
     </>

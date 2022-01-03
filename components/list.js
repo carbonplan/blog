@@ -3,7 +3,7 @@ import { Box } from 'theme-ui'
 import Entry from './entry'
 import contents from '../contents'
 
-const List = ({ sort }) => {
+const List = ({ sort, year }) => {
   const filteredContents = useMemo(() => {
     const compare = (a, b) => {
       if (sort.date) {
@@ -16,8 +16,8 @@ const List = ({ sort }) => {
       }
     }
 
-    return contents.sort(compare)
-  }, [sort])
+    return contents.filter((d) => year[d.date.split('-')[2]]).sort(compare)
+  }, [sort, year])
 
   return (
     <Box>
