@@ -7,8 +7,14 @@ import AuthorIcons from './author-icons'
 const Entry = ({ final, first, info }) => {
   let { id, number, title, authors, date, summary } = info
 
-  // TODO: do we need to show year?
-  const formattedDate = formatDate(date, { month: 'short', day: 'numeric' })
+  // TODO: properly handle separator in formatDate()
+  const formattedDate = formatDate(date, {
+    month: 'numeric',
+    day: 'numeric',
+    year: '2-digit',
+  })
+    .split(' ')
+    .join('.')
   const articleHref = `/blog/${id}`
 
   return (
