@@ -26,7 +26,7 @@
   "homepage": "https://github.com/carbonplan/blog#readme",
   "dependencies": {
     "@carbonplan/colormaps": "^3.0.0",
-    "@carbonplan/components": "^11.1.0",
+    "@carbonplan/components": "^11.1.1",
     "@carbonplan/icons": "^1.0.0",
     "@carbonplan/maps": "^1.2.0",
     "@carbonplan/prism": "^1.0.3",
