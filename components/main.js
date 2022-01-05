@@ -4,23 +4,28 @@ import { Group, Row, Column, Filter, Tray } from '@carbonplan/components'
 
 import List from './list'
 
-const initSort = {
-  date: true,
-  title: false,
+const initYear = {
+  2021: true,
+  2022: true,
 }
 
-const Settings = ({ setSort, sort }) => {
+const Settings = ({ setYear, year }) => {
   return (
     <Group spacing='md'>
-      <Filter values={sort} setValues={setSort} label='Sort by' />
+      <Filter
+        values={year}
+        setValues={setYear}
+        label='Filter by year'
+        showAll
+      />
     </Group>
   )
 }
 
 const Main = ({ showMobileSettings }) => {
-  const [sort, setSort] = useState(initSort)
+  const [year, setYear] = useState(initYear)
 
-  const settings = <Settings setSort={setSort} sort={sort} />
+  const settings = <Settings setYear={setYear} year={year} />
 
   return (
     <>
@@ -60,7 +65,7 @@ const Main = ({ showMobileSettings }) => {
           {settings}
         </Column>
         <Column start={[1, 2, 5, 5]} width={[6, 6, 7, 7]}>
-          <List sort={sort} />
+          <List year={year} />
         </Column>
       </Row>
     </>
