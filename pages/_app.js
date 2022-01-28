@@ -4,11 +4,11 @@ import '@carbonplan/components/fonts.css'
 import '@carbonplan/components/globals.css'
 import '@carbonplan/maps/mapbox.css'
 import theme from '@carbonplan/theme'
-import { LiveCode, Pre } from '@carbonplan/prism'
+import { Code, Pre } from '@carbonplan/prism'
 import Blockquote from '../components/blockquote'
 
 const components = {
-  code: LiveCode,
+  code: Code,
   pre: Pre,
   blockquote: Blockquote,
 }
