@@ -1,4 +1,3 @@
-import { Box } from 'theme-ui'
 import Caption from './caption'
 
 const FigureCaption = ({ number, children }) => {
