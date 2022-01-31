@@ -1,8 +1,16 @@
 import { Box } from 'theme-ui'
 
 const Blockquote = ({ children }) => {
-  const firstChar = children.props.children.slice(0, 1)
-  const textIndent = firstChar === '“' ? ['-0.4em'] : [0]
+  let firstChar = ''
+
+  if (Array.isArray(children) && children[0].props) {
+    firstChar = children[0].props.children.slice(0, 1)
+  } else if (children.props) {
+    firstChar = children.props.children.slice(0, 1)
+  }
+
+  const textIndent = firstChar === '“' ? ['-0.3em'] : [0]
+
   return (
     <Box
       variant='styles.blockquote'
