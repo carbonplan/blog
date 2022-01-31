@@ -1,17 +1,4 @@
-import { Box } from 'theme-ui'
 import { Table } from '@carbonplan/components'
-
-const sx = {
-  units: {
-    textTransform: 'initial',
-    fontFamily: 'faux',
-    letterSpacing: 'faux',
-    fontSize: [2, 2, 2, 3],
-    color: 'secondary',
-    ml: [2, 0, 0, 0],
-    display: ['inline-block', 'block', 'block', 'block'],
-  },
-}
 
 const table = [
   [
