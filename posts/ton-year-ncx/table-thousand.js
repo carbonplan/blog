@@ -1,0 +1,54 @@
+import { Box } from 'theme-ui'
+import { Table } from '@carbonplan/components'
+
+const sx = {
+  units: {
+    textTransform: 'initial',
+    fontFamily: 'faux',
+    letterSpacing: 'faux',
+    fontSize: [2, 2, 2, 3],
+    color: 'secondary',
+    ml: [2, 0, 0, 0],
+    display: ['inline-block', 'block', 'block', 'block'],
+  },
+}
+
+const table = [
+  [
+    '',
+    'Emission at t=0',
+    'Emission at t=1',
+    'Benefit of delay',
+    'Equivalence ratio',
+  ],
+  ['Units', 'ton-years', 'ton-years', 'ton-years', 'unitless'],
+  ['Undiscounted', '310.78', '310.54', '0.24', '1322.20'],
+  ['Discounted', '19.12', '18.50', '0.62', '30.81'],
+]
+
+const TableThousand = () => {
+  return (
+    <Table
+      as='figure'
+      sx={{ mt: [6, 6, 6, 7], mb: [4, 4, 4, 5] }}
+      columns={[4, 6, 6, 6]}
+      start={[
+        [1, 1, 1, 1],
+        [1, 3, 3, 3],
+        [2, 4, 4, 4],
+        [3, 5, 5, 5],
+        [4, 6, 6, 6],
+      ]}
+      width={[
+        [4, 2, 2, 2],
+        [1, 1, 1, 1],
+        [1, 1, 1, 1],
+        [1, 1, 1, 1],
+        [1, 1, 1, 1],
+      ]}
+      data={table}
+    />
+  )
+}
+
+export default TableThousand

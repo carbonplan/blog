@@ -1,5 +1,16 @@
 const contents = [
   {
+    id: 'ton-year-ncx',
+    version: '1.0.0',
+    title: 'A critique of NCX’s carbon accounting methods',
+    authors: ['Danny Cullenward', 'Freya Chay', 'Grayson Badgley'],
+    date: '01-31-2022',
+    summary:
+      'We review concerns with NCX’s use of discounted ton-year accounting methods to credit short-term timber harvests delays.',
+    card: 'ton-year-ncx',
+    number: 9,
+  },
+  {
     id: 'compliance-users-release',
     version: '1.0.0',
     title: 'Who is using which offsets in California? ',
