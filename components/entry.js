@@ -6,8 +6,13 @@ import { RotatingArrow } from '@carbonplan/icons'
 const Entry = ({ final, first, info }) => {
   let { id, number, title, authors, date, summary } = info
 
-  // TODO: do we need to show year?
-  const formattedDate = formatDate(date, { month: 'short', day: 'numeric' })
+  const formattedDate = formatDate(date, {
+    month: 'numeric',
+    day: 'numeric',
+    year: '2-digit',
+    separator: '.',
+  })
+
   const articleHref = `/blog/${id}`
 
   return (

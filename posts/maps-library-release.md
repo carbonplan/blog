@@ -53,7 +53,7 @@ We've released an open-source library called [`@carbonplan/maps`](https://github
 
 For the simplest possible example, the following code renders a 2D map of global temperature with a coastline.
 
-```js
+```jsx
 import { Map, Raster, Line } from '@carbonplan/maps'
 import { useColormap } from '@carbonplan/colormaps'
 
@@ -98,7 +98,7 @@ The source data is a Zarr group with temperature data from [WorldClim](https://w
 
 With the same component, we can just as easily render a 4D map where the third dimension is the month and the fourth dimension is temperature or precipitation (labeled “band”). Pointing to this dataset, the `Raster` component becomes the following.
 
-```js
+```jsx
   <Raster
   colormap={colormap}
   clim={clim}
@@ -114,7 +114,7 @@ Here, the `selector` prop allows us to index into the full multi-dimensional arr
 
 In more advanced settings, we might want more control over rendering, including the ability to combine data across multiple layers with math. We've exposed a custom fragment shader prop `frag` to make this easy. In the sample below, we render the average temperature over January and February by loading both months at once and calculating the average on the GPU, followed by a rescaling and colormap lookup. While this requires writing [shader code](<https://www.khronos.org/opengl/wiki/Core_Language_(GLSL)>), it lets us combine data layers via arbitrarily complex math, with high performance and full control over what gets rendered. Here’s a `Raster` component that demos this approach.
 
-```js
+```jsx
 <Raster
   colormap={colormap}
   clim={[-20, 30]}
