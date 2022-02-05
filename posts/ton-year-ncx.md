@@ -115,3 +115,7 @@ We decided to explain our objections at length and in public because NCX has put
 Let us be the first to acknowledge that what’s missing from this conversation is a robust economic framework for valuing the physical climate consequences of temporary carbon storage. What NCX has put forward misses the mark. We recognize that our criticism doesn’t provide a solution, and we intend to return to this topic in future work to help address what is a clear and growing gap in today’s carbon markets.
 
 Meanwhile, we hope that NCX will acknowledge the challenges with its current methodology and commit to improvements going forward.
+
+## Update — Feb 04 2022
+
+NCX posted a [response](https://ncx.com/learning-hub/ncx-response-to-carbonplan-critique/) on February 3, but as of this writing has not yet engaged with the substance of our critique.
