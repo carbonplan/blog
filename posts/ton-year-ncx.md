@@ -1,4 +1,4 @@
-import { TableCaption } from '@carbonplan/layouts'
+import { TableCaption } from '@carbonplan/components'
 import TableHundred from './ton-year-ncx/table-hundred'
 import TableThousand from './ton-year-ncx/table-thousand'
 

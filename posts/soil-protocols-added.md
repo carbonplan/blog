@@ -1,6 +1,5 @@
 import { Box } from 'theme-ui'
-import { Link } from '@carbonplan/components'
-import { FigureCaption } from '@carbonplan/layouts'
+import { Link, FigureCaption } from '@carbonplan/components'
 import RecommendationTable from './soil-protocols-added/recommendation-table'
 import ScoreSummary from './soil-protocols-added/score-summary'
 

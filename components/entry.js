@@ -1,6 +1,11 @@
 import { Box, Text } from 'theme-ui'
-import { Button, Column, Row, formatDate } from '@carbonplan/components'
-import { AuthorIcons } from '@carbonplan/layouts'
+import {
+  Button,
+  Column,
+  Row,
+  AvatarGroup,
+  formatDate,
+} from '@carbonplan/components'
 import { RotatingArrow } from '@carbonplan/icons'
 
 const Entry = ({ final, first, info }) => {
@@ -14,6 +19,11 @@ const Entry = ({ final, first, info }) => {
   })
 
   const articleHref = `/blog/${id}`
+
+  const colors = ['red', 'orange', 'yellow', 'pink']
+  const avatars = authors.map((d, i) => {
+    return { name: d, color: colors[(number + i) % 4] }
+  })
 
   return (
     <>
@@ -73,7 +83,14 @@ const Entry = ({ final, first, info }) => {
           width={[3, 3, 2, 2]}
           sx={{ order: [2, 2, 3, 3], mt: [-1] }}
         >
-          <AuthorIcons authors={authors} articleNumber={number} />
+          <AvatarGroup
+            members={avatars}
+            fixedCount={3}
+            spacing={[1, 2, 2, 3]}
+            maxWidth='150px'
+            align={['right', 'left', 'left', 'left']}
+            width={['90%', '90%', '100%', '100%']}
+          />
         </Column>
       </Row>
     </>
