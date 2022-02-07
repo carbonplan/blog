@@ -23,7 +23,7 @@ glob('./posts/**.md', async (err, filePaths) => {
   sorted.forEach(({ id, number }) => {
     const page = `
     import Index, {meta} from '../../posts/${id}.md'
-    import Post from '../../components/post'
+    import { Post } from '@carbonplan/layouts'
 
     const Content = () => (
       <Post meta={meta} number={${number}}>

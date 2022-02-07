@@ -1,6 +1,12 @@
 import { useState } from 'react'
-import { Box, Text } from 'theme-ui'
-import { Group, Row, Column, Filter, Tray } from '@carbonplan/components'
+import {
+  Group,
+  Row,
+  Column,
+  Filter,
+  Heading,
+  Tray,
+} from '@carbonplan/components'
 
 import List from './list'
 
@@ -30,29 +36,18 @@ const Main = ({ showMobileSettings }) => {
   return (
     <>
       <Tray expanded={showMobileSettings}>{settings}</Tray>
-      <Row sx={{ mt: [5, 6, 7, 8], mb: [5, 6, 7, 8] }}>
-        <Column start={[1, 1, 2, 2]} width={[2]}>
-          <Box as='h1' variant='styles.h1' sx={{ my: [0, 0, 0, 0] }}>
-            Blog
-          </Box>
-        </Column>
-        <Column
-          start={[1, 3, 5, 5]}
-          width={[6, 4, 4, 4]}
-          sx={{ display: 'flex', alignItems: 'flex-end' }}
-        >
-          <Text
-            sx={{
-              mt: [4, 0, 0, 0],
-              pb: [0, '2px', 1, 1],
-              fontSize: [2, 2, 2, 3],
-            }}
-          >
+      <Heading
+        description={
+          <>
             Short posts from our team on topics
             <br /> in climate and technology.
-          </Text>
-        </Column>
-      </Row>
+          </>
+        }
+        descriptionStart={[1, 3, 5, 5]}
+        descriptionWidth={[6, 4, 4, 4]}
+      >
+        Blog
+      </Heading>
       <Row sx={{ mb: [7, 8, 9, 10] }}>
         <Column
           start={[1, 1, 2, 2]}

@@ -1,8 +1,7 @@
 import { Box } from 'theme-ui'
-import { Link } from '@carbonplan/components'
+import { Link, FigureCaption } from '@carbonplan/components'
 import RecommendationTable from './soil-protocols-added/recommendation-table'
 import ScoreSummary from './soil-protocols-added/score-summary'
-import FigureCaption from '../components/figure-caption'
 
 export const meta = {
   version: '1.0.0',

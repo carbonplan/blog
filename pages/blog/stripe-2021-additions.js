@@ -1,5 +1,5 @@
 import Index, { meta } from '../../posts/stripe-2021-additions.md'
-import Post from '../../components/post'
+import { Post } from '@carbonplan/layouts'
 
 const Content = () => (
   <Post meta={meta} number={7}>

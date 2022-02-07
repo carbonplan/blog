@@ -1,6 +1,6 @@
+import { TableCaption } from '@carbonplan/components'
 import TableHundred from './ton-year-ncx/table-hundred'
 import TableThousand from './ton-year-ncx/table-thousand'
-import TableCaption from '../components/table-caption'
 
 export const meta = {
   version: '1.0.0',
