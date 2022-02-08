@@ -65,10 +65,37 @@ const Entry = ({ final, first, info }) => {
               <Button
                 size='md'
                 href={articleHref}
-                suffix={<RotatingArrow />}
-                sx={{ fontFamily: 'heading' }}
+                sx={{
+                  fontFamily: 'heading',
+                  '&:hover .rotate': {
+                    color: 'secondary',
+                    transform: 'rotate(45deg)',
+                  },
+                }}
               >
-                {title}
+                {title
+                  .split(' ')
+                  .slice(0, title.split(' ').length - 1)
+                  .join(' ')}{' '}
+                <Box as='span' sx={{ whiteSpace: 'nowrap' }}>
+                  {title
+                    .split(' ')
+                    .slice(
+                      title.split(' ').length - 1,
+                      title.split(' ').length
+                    )}
+                  <RotatingArrow
+                    className='rotate'
+                    sx={{
+                      height: [18, 18, 18, 24],
+                      width: [18, 18, 18, 24],
+                      ml: ['8px', '8px', '8px', '8px'],
+                      strokeWidth: [2, 2, 2, 3],
+                      verticalAlign: 'middle',
+                      transition: 'color 0.05s, transform 0.15s',
+                    }}
+                  />
+                </Box>
               </Button>
             </Column>
           </Row>
