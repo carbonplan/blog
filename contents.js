@@ -13,7 +13,7 @@ const contents = [
   {
     id: 'compliance-users-release',
     version: '1.0.0',
-    title: 'Who is using which offsets in California? ',
+    title: 'Who is using which offsets in California?',
     authors: ['Freya Chay', 'Jeremy Freeman', 'Danny Cullenward'],
     date: '01-05-2022',
     summary:
