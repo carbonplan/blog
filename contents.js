@@ -1,5 +1,16 @@
 const contents = [
   {
+    id: 'offset-disclosure-needs',
+    version: '1.0.0',
+    title: 'Why carbon offset disclosure matters',
+    authors: ['Sadie Frank', 'Danny Cullenward', 'Freya Chay'],
+    date: '02-08-2022',
+    summary:
+      "Voluntary carbon markets don't provide investors with adequate data about who is using offset credits, nor what kinds of climate claims those credits justify. Simple disclosures would fix this gap.",
+    card: 'offset-disclosure-needs',
+    number: 10,
+  },
+  {
     id: 'ton-year-ncx',
     version: '1.0.0',
     title: 'A critique of NCX’s carbon accounting methods',
