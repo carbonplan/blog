@@ -2,7 +2,9 @@ const fs = require('fs')
 const glob = require('glob')
 const extractMdxMeta = require('extract-mdx-metadata')
 
-const existing = glob.sync('./pages/blog/!(index.js|rss.xml.js)')
+const existing = glob.sync(
+  './pages/blog/!(index.js|rss.xml.js|contents.json.js)'
+)
 existing.forEach((f) => {
   if (fs.rmSync) fs.rmSync(f)
 })
