@@ -1,9 +1,6 @@
 import fs from 'fs'
-import getConfig from 'next/config'
 
 import contents from '../../contents'
-
-const { serverRuntimeConfig } = getConfig()
 
 function Contents() {
   // getServerSideProps will do the heavy lifting
@@ -11,7 +8,7 @@ function Contents() {
 
 export function getServerSideProps({ res }) {
   const pages = fs
-    .readdirSync(serverRuntimeConfig.PROJECT_ROOT + '/pages/blog')
+    .readdirSync(process.cwd() + '/pages/blog')
     .filter((staticPage) => {
       return !['index.js', '404.js', 'rss.xml.js', 'contents.json.js'].includes(
         staticPage
