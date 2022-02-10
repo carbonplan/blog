@@ -7,7 +7,7 @@ const Index = () => {
 
   return (
     <Layout
-      title={'blog / carbonplan'}
+      title={'Blog – CarbonPlan'}
       description={
         'Short posts from our team on topics in climate and technology.'
       }
