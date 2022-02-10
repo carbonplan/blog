@@ -1,4 +1,5 @@
 import fs from 'fs'
+import { resolve } from 'path'
 
 import contents from '../../contents'
 
@@ -8,7 +9,7 @@ function Contents() {
 
 export function getServerSideProps({ res }) {
   const pages = fs
-    .readdirSync(process.cwd() + '/pages/blog')
+    .readdirSync(resolve(process.cwd(), 'pages/blog'))
     .filter((staticPage) => {
       return !['index.js', '404.js', 'rss.xml.js', 'contents.json.js'].includes(
         staticPage
