@@ -1,6 +1,3 @@
-import fs from 'fs'
-import { resolve } from 'path'
-
 import contents from '../../contents'
 
 function Contents() {
@@ -8,23 +5,10 @@ function Contents() {
 }
 
 export function getServerSideProps({ res }) {
-  const pages = fs
-    .readdirSync(resolve(process.cwd(), 'pages/blog'))
-    .filter((staticPage) => {
-      return !['index.js', '404.js', 'rss.xml.js', 'contents.json.js'].includes(
-        staticPage
-      )
-    })
-    .map((page) => page.replace('.js', ''))
-    .map((page) => {
-      const postContent = contents.find((c) => c.id === page)
-      const result = { page: `blog/${page}` }
-      if (postContent) {
-        const [month, day, year] = postContent.date.split('-')
-        result.date = `${year}-${month}-${day}`
-      }
-      return result
-    })
+  const pages = contents.map(({ date, id }) => {
+    const [month, day, year] = date.split('-')
+    return { page: `blog/${id}`, date: `${year}-${month}-${day}` }
+  })
 
   res.setHeader('Content-Type', 'application/json')
 
