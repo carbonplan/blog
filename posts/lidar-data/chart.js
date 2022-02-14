@@ -1,4 +1,5 @@
 import { Box, useThemeUI } from 'theme-ui'
+import React from 'react'
 import {
   Chart,
   Axis,
@@ -12,8 +13,9 @@ import {
   Label,
   useChart,
 } from '@carbonplan/charts'
+import { Column, Row } from '@carbonplan/components'
+
 import data from './data.json'
-import React from 'react'
 
 const sx = {
   reference: {
@@ -32,28 +34,37 @@ const LINES = [
   ['signal_end', 'green', 'Signal end'],
 ]
 
+const HEIGHTS = [500, 500, 450, 500]
+
 const SmallTree = () => {
   const { theme } = useThemeUI()
   const { y } = useChart()
-  const height =
+
+  const calculateHeight = (height) =>
     (Math.abs(y(data.alternative_ground_peak) - y(data.signal_beginning)) /
       100) *
-    600 *
-    0.92
+    height *
+    0.9
+
+  const calculateWidth = (height) => (calculateHeight(height) * 76) / 122
 
   return (
     <Label
-      x={0.95}
+      x={0.8}
       y={data.signal_beginning + 0.1}
       verticalAlign='top'
       height={data.alternative_ground_peak - data.signal_beginning}
+      align='left'
     >
-      <svg
-        height={height}
-        width={(height * 76) / 122}
+      <Box
+        as='svg'
+        sx={{
+          display: ['none', 'none', 'initial', 'initial'],
+          width: HEIGHTS.map(calculateWidth),
+          height: HEIGHTS.map(calculateHeight),
+          //   ml: ['0px', '0px', '0px', '20%'],
+        }}
         viewBox='0 0 76 122'
-        fill='none'
-        id='small-tree'
       >
         <line x1='37' y1='121.5' x2='37' y2='14' stroke={theme.colors.pink} />
         <line
@@ -89,30 +100,36 @@ const SmallTree = () => {
           fill={theme.colors.pink}
           mask='url(#path-5-inside-1_203_96)'
         />
-      </svg>
+      </Box>
     </Label>
   )
 }
 const LargeTree = () => {
   const { theme } = useThemeUI()
   const { y } = useChart()
-  const height =
+  const calculateHeight = (height) =>
     (Math.abs(y(data.ground_peak) - y(data.signal_beginning)) / 100) *
-    600 *
-    0.92
+    height *
+    0.9
+  const calculateWidth = (height) => (calculateHeight(height) * 190) / 366
 
   return (
     <Label
-      x={0.6}
+      x={0.46}
       y={data.signal_beginning + 0.1}
       verticalAlign='top'
       height={data.ground_peak - data.signal_beginning}
+      align='left'
     >
-      <svg
-        height={height}
-        width={(height * 190) / 366}
+      <Box
+        as='svg'
+        sx={{
+          display: ['none', 'none', 'initial', 'initial'],
+          width: HEIGHTS.map(calculateWidth),
+          height: HEIGHTS.map(calculateHeight),
+          //   ml: ['0px', '0px', '0px', '50px'],
+        }}
         viewBox='0 0 190 366'
-        fill='none'
       >
         <path
           fillRule='evenodd'
@@ -175,74 +192,92 @@ const LargeTree = () => {
           fill={theme.colors.yellow}
           mask='url(#path-7-inside-1_0_1)'
         />
-      </svg>
+      </Box>
     </Label>
   )
 }
 
 const Figure = () => {
   return (
-    <Box sx={{ width: '35%', height: '600px' }}>
-      <Chart
-        // x={[-0.00837900023907423, 0.45219600200653076]}
-        // y={[603178.378297817, 603259.7719501641]}
-        x={[-0.03, 0.46]}
-        y={RANGE}
-        clamp={false}
-      >
-        <Axis left bottom />
-        <AxisLabel bottom units='joules'>
-          LiDAR return
-        </AxisLabel>
-        <AxisLabel left units='m' arrow={false}>
-          Distance from satellite
-        </AxisLabel>
-        <Ticks left bottom />
-        <TickLabels left format={(d) => d % RANGE[1]} />
-        <TickLabels bottom />
-        <Grid vertical values={[0.013915494217939783]} sx={sx.reference} />
-        <Plot sx={{ position: 'relative' }}>
-          <Scatter
-            size={5}
-            data={data.raw.filter((d) => d[1] > RANGE[1])}
-            color='muted'
-          />
-          <Line
-            data={data.smoothed.filter((d) => d[1] > RANGE[1])}
-            width={2}
-            color='secondary'
-          />
-          {LINES.map(([key, color]) => (
-            <Line
-              key={key}
-              data={[
-                [-0.03, data[key]],
-                [1.63, data[key]],
-              ]}
-              sx={{
-                stroke: color,
-                strokeWidth: 1,
-                strokeDasharray: 4,
-              }}
-            />
-          ))}
-        </Plot>
-        <SmallTree />
-        <LargeTree />
-        {LINES.map(([key, color, label]) => (
-          <Label
-            key={key}
-            x={1.63}
-            align='right'
-            verticalAlign='bottom'
-            y={data[key]}
-            sx={{ color }}
-          >
-            {label}
-          </Label>
-        ))}
-      </Chart>
-    </Box>
+    <Row columns={6}>
+      <Column start={1} width={[6, 6, 6, 4]}>
+        <Box
+          sx={{
+            width: 'calc(0.4 * (100% - 70px) + 70px)',
+            // maxWidth: ['280px', '280px', '254px', '280px'],
+            height: HEIGHTS,
+          }}
+        >
+          <Chart x={[-0.04, 0.46]} y={RANGE} clamp={false}>
+            <Axis left bottom />
+            <AxisLabel bottom units='joules'>
+              <Box
+                as='span'
+                sx={{
+                  textTransform: 'none',
+                  display: ['none', 'none', 'none', 'initial'],
+                }}
+              >
+                LiDAR RETURN
+              </Box>
+              <Box
+                as='span'
+                sx={{ display: ['initial', 'initial', 'initial', 'none'] }}
+              >
+                Return
+              </Box>
+            </AxisLabel>
+            <AxisLabel left units='m' arrow={false}>
+              Distance from satellite
+            </AxisLabel>
+            <Ticks left bottom />
+            <TickLabels left format={(d) => d % RANGE[1]} />
+            <TickLabels bottom />
+            <Grid vertical values={[0.013915494217939783]} sx={sx.reference} />
+            <Plot sx={{ position: 'relative' }}>
+              <Scatter
+                size={5}
+                data={data.raw.filter((d) => d[1] > RANGE[1])}
+                color='muted'
+              />
+              <Line
+                data={data.smoothed.filter((d) => d[1] > RANGE[1])}
+                width={2}
+                color='secondary'
+              />
+              {LINES.map(([key, color]) => (
+                <Line
+                  key={key}
+                  data={[
+                    [-0.04, data[key]],
+                    [0.5 / 0.4 - 0.04, data[key]],
+                  ]}
+                  sx={{
+                    stroke: color,
+                    strokeWidth: 1,
+                    strokeDasharray: 4,
+                  }}
+                />
+              ))}
+            </Plot>
+            <SmallTree />
+            <LargeTree />
+            {LINES.map(([key, color, label]) => (
+              <Label
+                key={key}
+                x={0.5 / 0.4 - 0.04}
+                align='right'
+                verticalAlign='bottom'
+                y={data[key]}
+                sx={{ color }}
+              >
+                {label}
+              </Label>
+            ))}
+          </Chart>
+        </Box>
+      </Column>
+    </Row>
   )
 }
 
