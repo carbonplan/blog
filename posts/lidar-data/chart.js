@@ -167,7 +167,7 @@ const Figure = () => {
               sx={{
                 color: 'yellow',
                 ml: 3,
-                mt: 1,
+                mt: [4, 4, 3, 3],
                 bg: 'background',
                 textTransform: 'none',
               }}
@@ -182,7 +182,7 @@ const Figure = () => {
               sx={{
                 color: 'pink',
                 ml: 3,
-                mt: [4, 4, 1, 1],
+                mt: [6, 4, 3, 3],
                 bg: 'background',
                 textTransform: 'none',
               }}
