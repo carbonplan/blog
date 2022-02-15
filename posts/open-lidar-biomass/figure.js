@@ -38,14 +38,14 @@ const LINES = [
 const HEIGHTS = [500, 500, 450, 500]
 
 const Trees = () => {
-  const { y } = useChart()
+  const { x, y } = useChart()
   return (
     <>
       <Flex
         sx={{
           position: 'absolute',
           gap: 3,
-          left: 'calc(100% + 12px)',
+          left: `calc(${x(0.5)}% + 20px)`,
           top: `${y(data.signal_beginning) - 2}%`,
           alignContent: 'flex-start',
         }}
@@ -133,11 +133,10 @@ const Figure = () => {
       <Column start={1} width={6}>
         <Box
           sx={{
-            width: 'calc(0.4 * (100% - 70px) + 70px)',
             height: HEIGHTS,
           }}
         >
-          <Chart x={[-0.04, 0.46]} y={RANGE} clamp={false}>
+          <Chart x={[-0.04, 0.5 / 0.4 - 0.04]} y={RANGE} clamp={false}>
             <Axis left bottom />
             <AxisLabel bottom units='joules'>
               <Box
