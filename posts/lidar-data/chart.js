@@ -67,21 +67,10 @@ const Figure = () => {
           <Chart x={[-0.04, 0.5 / 0.4 - 0.04]} y={RANGE} clamp={false}>
             <Axis left bottom />
             <AxisLabel bottom units='joules' arrow={false}>
-              <Box
-                as='span'
-                sx={{
-                  textTransform: 'none',
-                  display: ['none', 'none', 'none', 'initial'],
-                }}
-              >
-                LiDAR RETURN
+              <Box as='span' sx={{ textTransform: 'none' }}>
+                LiDAR
               </Box>
-              <Box
-                as='span'
-                sx={{ display: ['initial', 'initial', 'initial', 'none'] }}
-              >
-                Return
-              </Box>
+              &nbsp;return
             </AxisLabel>
             <AxisLabel left units='m' arrow={false}>
               Relative distance from satellite
