@@ -1,4 +1,4 @@
-import { Box, Flex } from 'theme-ui'
+import { Box } from 'theme-ui'
 import React from 'react'
 import {
   Chart,
@@ -11,11 +11,9 @@ import {
   Line,
   Grid,
   Label,
-  useChart,
 } from '@carbonplan/charts'
 import { Column, Row } from '@carbonplan/components'
 
-import { LargeTree, SmallTree } from './trees'
 import data from './data.json'
 
 const sx = {
@@ -37,93 +35,27 @@ const LINES = [
 
 const HEIGHTS = [500, 500, 450, 500]
 
-const Trees = () => {
-  const { y } = useChart()
+const Marker = ({ color, start }) => {
   return (
-    <>
-      <Flex
-        sx={{
-          position: 'absolute',
-          gap: 3,
-          left: 'calc(100% + 12px)',
-          top: `${y(data.signal_beginning) - 2}%`,
-          alignContent: 'flex-start',
-        }}
-      >
-        <LargeTree
-          sx={{ display: ['none', 'none', 'initial', 'initial'] }}
-          height={HEIGHTS.map(
-            (height) =>
-              (Math.abs(y(data.ground_peak) - y(data.signal_beginning)) / 100) *
-              height *
-              0.9
-          )}
-        />
-
-        <SmallTree
-          sx={{ display: ['none', 'none', 'initial', 'initial'] }}
-          height={HEIGHTS.map(
-            (height) =>
-              (Math.abs(
-                y(data.alternative_ground_peak) - y(data.signal_beginning)
-              ) /
-                100) *
-              height *
-              0.9
-          )}
-        />
-      </Flex>
-
-      <Box sx={{ display: ['initial', 'initial', 'none', 'none'] }}>
-        <Label
-          x={0.51}
-          y={(data.ground_peak + data.signal_beginning) / 2}
-          width={0.5}
-          height={0.5}
-          verticalAlign='middle'
-        >
-          <LargeTree height={HEIGHTS.map((height) => height * 0.13)} />
-        </Label>
-        <Label
-          x={0.71}
-          y={(data.alternative_ground_peak + data.signal_beginning) / 2}
-          width={0.5}
-          height={0.5}
-          verticalAlign='middle'
-        >
-          <SmallTree height={HEIGHTS.map((height) => height * 0.1)} />
-        </Label>
-      </Box>
-    </>
-  )
-}
-
-const TreeLines = () => {
-  return (
-    <>
-      <Line
-        data={[
-          [0.5, data.ground_peak],
-          [0.5, data.signal_beginning],
-        ]}
-        sx={{
-          stroke: 'yellow',
-          strokeWidth: 1,
-          display: ['initial', 'initial', 'none', 'none'],
-        }}
-      />
-      <Line
-        data={[
-          [0.7, data.alternative_ground_peak],
-          [0.7, data.signal_beginning],
-        ]}
-        sx={{
-          stroke: 'pink',
-          strokeWidth: 1,
-          display: ['initial', 'initial', 'none', 'none'],
-        }}
-      />
-    </>
+    <Box
+      as='marker'
+      id={`${color}-${start ? 'start' : 'end'}`}
+      markerWidth='24'
+      markerHeight='24'
+      refX='21.9'
+      refY='12'
+      orient={start ? 90 : -90}
+      markerUnits='strokeWidth'
+      sx={{
+        stroke: color,
+        fill: 'none',
+        vectorEffect: 'non-scaling-stroke',
+        strokeWidth: 1,
+      }}
+    >
+      <line x1='13.4' y1='3.5' x2='21.9' y2='12' />
+      <line x1='21.9' y1='12' x2='13.4' y2='20.5' />
+    </Box>
   )
 }
 
@@ -131,15 +63,10 @@ const Figure = () => {
   return (
     <Row columns={6}>
       <Column start={1} width={6}>
-        <Box
-          sx={{
-            width: 'calc(0.4 * (100% - 70px) + 70px)',
-            height: HEIGHTS,
-          }}
-        >
-          <Chart x={[-0.04, 0.46]} y={RANGE} clamp={false}>
+        <Box sx={{ height: HEIGHTS }}>
+          <Chart x={[-0.04, 0.5 / 0.4 - 0.04]} y={RANGE} clamp={false}>
             <Axis left bottom />
-            <AxisLabel bottom units='joules'>
+            <AxisLabel bottom units='joules' arrow={false}>
               <Box
                 as='span'
                 sx={{
@@ -157,7 +84,7 @@ const Figure = () => {
               </Box>
             </AxisLabel>
             <AxisLabel left units='m' arrow={false}>
-              Distance from satellite
+              Relative distance from satellite
             </AxisLabel>
             <Ticks left bottom />
             <TickLabels left format={(d) => d % RANGE[1]} />
@@ -167,12 +94,12 @@ const Figure = () => {
               <Scatter
                 size={5}
                 data={data.raw.filter((d) => d[1] > RANGE[1])}
-                color='muted'
+                color='secondary'
               />
               <Line
                 data={data.smoothed.filter((d) => d[1] > RANGE[1])}
                 width={2}
-                color='secondary'
+                color='primary'
               />
               {LINES.map(([key, color]) => (
                 <Line
@@ -188,9 +115,38 @@ const Figure = () => {
                   }}
                 />
               ))}
-              <TreeLines />
+              <Marker color='yellow' start />
+              <Marker color='yellow' end />
+
+              <Line
+                data={[
+                  [0.5, data.ground_peak],
+                  [0.5, data.signal_beginning],
+                ]}
+                sx={{
+                  stroke: 'yellow',
+                  strokeWidth: 1,
+                }}
+                markerEnd='url(#yellow-end)'
+                markerStart='url(#yellow-start)'
+              />
+
+              <Marker color='pink' start />
+              <Marker color='pink' end />
+
+              <Line
+                data={[
+                  [0.7, data.alternative_ground_peak],
+                  [0.7, data.signal_beginning],
+                ]}
+                sx={{
+                  stroke: 'pink',
+                  strokeWidth: 1,
+                }}
+                markerEnd='url(#pink-end)'
+                markerStart='url(#pink-start)'
+              />
             </Plot>
-            <Trees />
             {LINES.map(([key, color, label]) => (
               <Label
                 key={key}
@@ -203,6 +159,39 @@ const Figure = () => {
                 {label}
               </Label>
             ))}
+            <Label
+              x={0.5}
+              y={data.signal_beginning}
+              align='left'
+              verticalAlign='top'
+              sx={{
+                color: 'yellow',
+                ml: 3,
+                mt: 1,
+                bg: 'background',
+                textTransform: 'none',
+              }}
+            >
+              {(data.ground_peak - data.signal_beginning).toFixed(1)} m
+            </Label>
+            <Label
+              x={0.7}
+              y={data.signal_beginning}
+              align='left'
+              verticalAlign='top'
+              sx={{
+                color: 'pink',
+                ml: 3,
+                mt: [4, 4, 1, 1],
+                bg: 'background',
+                textTransform: 'none',
+              }}
+            >
+              {(data.alternative_ground_peak - data.signal_beginning).toFixed(
+                1
+              )}{' '}
+              m
+            </Label>
           </Chart>
         </Box>
       </Column>
