@@ -7,6 +7,7 @@ import {
   Ticks,
   TickLabels,
   Plot,
+  Point,
   Scatter,
   Line,
   Grid,
@@ -35,27 +36,27 @@ const LINES = [
 
 const HEIGHTS = [500, 500, 450, 500]
 
-const Marker = ({ color, start }) => {
+const Marker = ({ color, x, y, start }) => {
   return (
-    <Box
-      as='marker'
-      id={`${color}-${start ? 'start' : 'end'}`}
-      markerWidth='24'
-      markerHeight='24'
-      refX='21.9'
-      refY='12'
-      orient={start ? 90 : -90}
-      markerUnits='strokeWidth'
-      sx={{
-        stroke: color,
-        fill: 'none',
-        vectorEffect: 'non-scaling-stroke',
-        strokeWidth: 1,
-      }}
-    >
-      <line x1='13.4' y1='3.5' x2='21.9' y2='12' />
-      <line x1='21.9' y1='12' x2='13.4' y2='20.5' />
-    </Box>
+    <Point x={x} y={y} verticalAlign={!start ? 'top' : 'bottom'}>
+      <Box
+        as='svg'
+        viewBox='0 0 12 12'
+        fill='none'
+        width='12'
+        height='12'
+        strokeWidth='1'
+        sx={{
+          stroke: color,
+          ml: '-6px',
+          mb: start ? '-6px' : '6px',
+        }}
+        transform={start ? 'rotate(180)' : null}
+      >
+        <line x1='1' y1='11' x2='6.2' y2='0' />
+        <line x1='5.8' y1='0' x2='11' y2='11' />
+      </Box>
+    </Point>
   )
 }
 
@@ -104,8 +105,6 @@ const Figure = () => {
                   }}
                 />
               ))}
-              <Marker color='yellow' start />
-              <Marker color='yellow' end />
 
               <Line
                 data={[
@@ -116,12 +115,7 @@ const Figure = () => {
                   stroke: 'yellow',
                   strokeWidth: 1,
                 }}
-                markerEnd='url(#yellow-end)'
-                markerStart='url(#yellow-start)'
               />
-
-              <Marker color='pink' start />
-              <Marker color='pink' end />
 
               <Line
                 data={[
@@ -132,10 +126,19 @@ const Figure = () => {
                   stroke: 'pink',
                   strokeWidth: 1,
                 }}
-                markerEnd='url(#pink-end)'
-                markerStart='url(#pink-start)'
               />
             </Plot>
+
+            <Marker color='yellow' x={0.5} y={data.ground_peak} start />
+            <Marker color='yellow' x={0.5} y={data.signal_beginning} end />
+            <Marker
+              color='pink'
+              x={0.7}
+              y={data.alternative_ground_peak}
+              start
+            />
+            <Marker color='pink' x={0.7} y={data.signal_beginning} end />
+
             {LINES.map(([key, color, label]) => (
               <Label
                 key={key}
@@ -148,6 +151,7 @@ const Figure = () => {
                 {label}
               </Label>
             ))}
+
             <Label
               x={0.5}
               y={data.signal_beginning}
