@@ -1,5 +1,15 @@
 const contents = [
   {
+    id: 'open-lidar-biomass',
+    version: '1.0.0',
+    title: 'Open source LiDAR derived biomass data and code',
+    authors: ['Cindy Chiao', 'Oriana Chegwidden', 'Joe Hamman'],
+    date: '02-15-2022',
+    summary:
+      'An open source implementation of forest biomass estimation using LiDAR.',
+    number: 11,
+  },
+  {
     id: 'offset-disclosure-needs',
     version: '1.0.0',
     title: 'Why carbon offset disclosure matters',
