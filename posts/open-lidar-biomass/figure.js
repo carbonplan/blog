@@ -52,8 +52,8 @@ const Arrow = ({ color, x, y, start }) => {
           ml: '-4.5px',
           mb: start ? '-3.5px' : '7px',
           transform: start ? 'rotate(315deg)' : 'rotate(135deg)',
-          '-webkit-transform': start ? 'rotate(315deg)' : 'rotate(135deg)',
-          '-ms-transform': start ? 'rotate(315deg)' : 'rotate(135deg)',
+          WebkitTransform: start ? 'rotate(315deg)' : 'rotate(135deg)',
+          msTransform: start ? 'rotate(315deg)' : 'rotate(135deg)',
         }}
       >
         <line x1='0' y1='0' x2='0' y2='9' />
