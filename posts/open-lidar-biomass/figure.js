@@ -79,23 +79,23 @@ const Trees = () => {
         <LargeTree
           sx={{ display: ['none', 'none', 'initial', 'initial'] }}
           height={HEIGHTS.map(
-            (height) =>
+            (height, i) =>
               (Math.abs(y(data.ground_peak) - y(data.signal_beginning)) / 100) *
               height *
-              0.9
+              (0.9 - i * 0.005)
           )}
         />
 
         <SmallTree
           sx={{ display: ['none', 'none', 'initial', 'initial'] }}
           height={HEIGHTS.map(
-            (height) =>
+            (height, i) =>
               (Math.abs(
                 y(data.alternative_ground_peak) - y(data.signal_beginning)
               ) /
                 100) *
               height *
-              0.9
+              (0.9 - i * 0.005)
           )}
         />
       </Flex>
