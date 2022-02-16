@@ -155,12 +155,12 @@ const Figure = () => {
               <Scatter
                 size={5}
                 data={data.raw.filter((d) => d[1] > RANGE[1])}
-                color='muted'
+                color='secondary'
               />
               <Line
                 data={data.smoothed.filter((d) => d[1] > RANGE[1])}
                 width={2}
-                color='secondary'
+                color='primary'
               />
               {LINES.map(([key, color]) => (
                 <Line
