@@ -1,4 +1,4 @@
-import { Box, Flex } from 'theme-ui'
+import { Box } from 'theme-ui'
 import React from 'react'
 import {
   Chart,
@@ -12,11 +12,10 @@ import {
   Line,
   Grid,
   Label,
-  useChart,
 } from '@carbonplan/charts'
 import { Column, Row } from '@carbonplan/components'
 
-import { LargeTree, SmallTree } from './trees'
+import Trees from './trees'
 import data from './data.json'
 
 const sx = {
@@ -40,72 +39,25 @@ const HEIGHTS = [500, 500, 450, 500]
 
 const Arrow = ({ color, x, y, start }) => {
   return (
-    <Box sx={{ display: ['initial', 'initial', 'none', 'none'] }}>
-      <Point x={x} y={y} verticalAlign={!start ? 'top' : 'bottom'}>
-        <Box
-          as='svg'
-          viewBox='0 0 9 9'
-          fill='none'
-          width='9'
-          height='9'
-          strokeWidth='1.5'
-          sx={{
-            stroke: color,
-            ml: '-4.5px',
-            mb: start ? '-3.5px' : '7px',
-          }}
-          transform={start ? 'rotate(315)' : 'rotate(135)'}
-        >
-          <line x1='0' y1='0' x2='0' y2='9' />
-          <line x1='0' y1='9' x2='9' y2='9' />
-        </Box>
-      </Point>
-    </Box>
-  )
-}
-const Trees = () => {
-  const { x, y } = useChart()
-  const xPosition = x(0.5)
-  return (
-    <>
-      <Flex
+    <Point x={x} y={y} verticalAlign={!start ? 'top' : 'bottom'}>
+      <Box
+        as='svg'
+        viewBox='0 0 9 9'
+        fill='none'
+        width='9'
+        height='9'
+        strokeWidth='1.5'
         sx={{
-          position: 'absolute',
-          gap: 3,
-          left: [
-            `calc(${xPosition}% + 28px)`,
-            `calc(${xPosition}% + 28px)`,
-            `calc(${xPosition}% + 28px)`,
-            `calc(${xPosition}% + 64px)`,
-          ],
-          top: `${y(data.signal_beginning) - 2}%`,
-          alignContent: 'flex-start',
+          stroke: color,
+          ml: '-4.5px',
+          mb: start ? '-3.5px' : '7px',
         }}
+        transform={start ? 'rotate(315)' : 'rotate(135)'}
       >
-        <LargeTree
-          sx={{ display: ['none', 'none', 'initial', 'initial'] }}
-          height={HEIGHTS.map(
-            (height, i) =>
-              (Math.abs(y(data.ground_peak) - y(data.signal_beginning)) / 100) *
-              height *
-              (0.88 + i * 0.005)
-          )}
-        />
-
-        <SmallTree
-          sx={{ display: ['none', 'none', 'initial', 'initial'] }}
-          height={HEIGHTS.map(
-            (height, i) =>
-              (Math.abs(
-                y(data.alternative_ground_peak) - y(data.signal_beginning)
-              ) /
-                100) *
-              height *
-              (0.88 + i * 0.005)
-          )}
-        />
-      </Flex>
-    </>
+        <line x1='0' y1='0' x2='0' y2='9' />
+        <line x1='0' y1='9' x2='9' y2='9' />
+      </Box>
+    </Point>
   )
 }
 
@@ -194,49 +146,56 @@ const Figure = () => {
                 ))}
                 <TreeLines />
               </Plot>
-              <Trees />
-              <Arrow color='yellow' x={0.5} y={data.ground_peak - 1} start />
-              <Arrow color='yellow' x={0.5} y={data.signal_beginning + 1} end />
-              <Arrow
-                color='pink'
-                x={0.7}
-                y={data.alternative_ground_peak - 1}
-                start
-              />
-              <Arrow color='pink' x={0.7} y={data.signal_beginning + 1} end />
-              <Label
-                x={0.5}
-                y={data.signal_beginning}
-                align='left'
-                verticalAlign='top'
-                sx={{
-                  color: 'yellow',
-                  ml: 3,
-                  mt: [4, 4, 3, 3],
-                  display: ['inherit', 'inherit', 'none', 'none'],
-                  bg: 'background',
-                }}
-              >
-                {(data.ground_peak - data.signal_beginning).toFixed(1)} m
-              </Label>
-              <Label
-                x={0.7}
-                y={data.signal_beginning}
-                align='left'
-                verticalAlign='top'
-                sx={{
-                  color: 'pink',
-                  ml: 3,
-                  mt: [6, 4, 3, 3],
-                  display: ['inherit', 'inherit', 'none', 'none'],
-                  bg: 'background',
-                }}
-              >
-                {(data.alternative_ground_peak - data.signal_beginning).toFixed(
-                  1
-                )}{' '}
-                m
-              </Label>{' '}
+              <Trees heights={HEIGHTS} />
+
+              <Box sx={{ display: ['initial', 'initial', 'none', 'none'] }}>
+                <Arrow color='yellow' x={0.5} y={data.ground_peak - 1} start />
+                <Arrow
+                  color='yellow'
+                  x={0.5}
+                  y={data.signal_beginning + 1}
+                  end
+                />
+                <Arrow
+                  color='pink'
+                  x={0.7}
+                  y={data.alternative_ground_peak - 1}
+                  start
+                />
+                <Arrow color='pink' x={0.7} y={data.signal_beginning + 1} end />
+                <Label
+                  x={0.5}
+                  y={data.signal_beginning}
+                  align='left'
+                  verticalAlign='top'
+                  sx={{
+                    color: 'yellow',
+                    ml: 3,
+                    mt: [4, 4, 3, 3],
+                    bg: 'background',
+                  }}
+                >
+                  {(data.ground_peak - data.signal_beginning).toFixed(1)} m
+                </Label>
+                <Label
+                  x={0.7}
+                  y={data.signal_beginning}
+                  align='left'
+                  verticalAlign='top'
+                  sx={{
+                    color: 'pink',
+                    ml: 3,
+                    mt: [6, 4, 3, 3],
+                    bg: 'background',
+                  }}
+                >
+                  {(
+                    data.alternative_ground_peak - data.signal_beginning
+                  ).toFixed(1)}{' '}
+                  m
+                </Label>
+              </Box>
+
               {LINES.map(([key, color, label]) => (
                 <Label
                   key={key}

@@ -1,6 +1,22 @@
-import { Box, useThemeUI } from 'theme-ui'
+import { Box, Flex, useThemeUI } from 'theme-ui'
+import { useChart } from '@carbonplan/charts'
 
-export const SmallTree = ({ height, sx }) => {
+import data from './data.json'
+
+const sx = {
+  label: {
+    fontFamily: 'mono',
+    letterSpacing: 'mono',
+    textTransform: 'uppercase',
+    fontSize: [0, 0, 0, 1],
+    position: 'absolute',
+    top: 2,
+    right: 2,
+    bg: 'background',
+  },
+}
+
+const SmallTree = ({ height, sx }) => {
   const { theme } = useThemeUI()
 
   return (
@@ -56,7 +72,7 @@ export const SmallTree = ({ height, sx }) => {
     </Box>
   )
 }
-export const LargeTree = ({ height, sx }) => {
+const LargeTree = ({ height, sx }) => {
   const { theme } = useThemeUI()
   return (
     <Box
@@ -133,3 +149,70 @@ export const LargeTree = ({ height, sx }) => {
     </Box>
   )
 }
+
+const Trees = ({ heights }) => {
+  const { x, y } = useChart()
+  const xPosition = x(0.5)
+  return (
+    <>
+      <Flex
+        sx={{
+          position: 'absolute',
+          gap: 3,
+          left: [
+            `calc(${xPosition}% + 28px)`,
+            `calc(${xPosition}% + 28px)`,
+            `calc(${xPosition}% + 28px)`,
+            `calc(${xPosition}% + 64px)`,
+          ],
+          top: `${y(data.signal_beginning) - 2}%`,
+          alignContent: 'flex-start',
+        }}
+      >
+        <Box
+          sx={{
+            display: ['none', 'none', 'initial', 'initial'],
+            position: 'relative',
+          }}
+        >
+          <LargeTree
+            height={heights.map(
+              (height, i) =>
+                (Math.abs(y(data.ground_peak) - y(data.signal_beginning)) /
+                  100) *
+                height *
+                (0.88 + i * 0.005)
+            )}
+          />
+          <Box sx={{ ...sx.label, color: 'yellow' }}>
+            {(data.ground_peak - data.signal_beginning).toFixed(1)} m
+          </Box>
+        </Box>
+
+        <Box
+          sx={{
+            display: ['none', 'none', 'initial', 'initial'],
+            position: 'relative',
+          }}
+        >
+          <SmallTree
+            height={heights.map(
+              (height, i) =>
+                (Math.abs(
+                  y(data.alternative_ground_peak) - y(data.signal_beginning)
+                ) /
+                  100) *
+                height *
+                (0.88 + i * 0.005)
+            )}
+          />
+          <Box sx={{ ...sx.label, color: 'pink' }}>
+            {(data.alternative_ground_peak - data.signal_beginning).toFixed(1)}{' '}
+            m
+          </Box>
+        </Box>
+      </Flex>
+    </>
+  )
+}
+export default Trees
