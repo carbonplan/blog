@@ -44,20 +44,20 @@ const Arrow = ({ color, x, y, start }) => {
       <Point x={x} y={y} verticalAlign={!start ? 'top' : 'bottom'}>
         <Box
           as='svg'
-          viewBox='0 0 12 12'
+          viewBox='0 0 9 9'
           fill='none'
-          width='12'
-          height='12'
-          strokeWidth='1'
+          width='9'
+          height='9'
+          strokeWidth='1.5'
           sx={{
             stroke: color,
-            ml: '-6px',
-            mb: start ? '-6px' : '6px',
+            ml: '-4.5px',
+            mb: start ? '-3.5px' : '7px',
           }}
-          transform={start ? 'rotate(180)' : null}
+          transform={start ? 'rotate(315)' : 'rotate(135)'}
         >
-          <line x1='1' y1='11' x2='6.2' y2='0' />
-          <line x1='5.8' y1='0' x2='11' y2='11' />
+          <line x1='0' y1='0' x2='0' y2='9' />
+          <line x1='0' y1='9' x2='9' y2='9' />
         </Box>
       </Point>
     </Box>
@@ -114,8 +114,8 @@ const TreeLines = () => {
     <>
       <Line
         data={[
-          [0.5, data.ground_peak],
-          [0.5, data.signal_beginning],
+          [0.5, data.ground_peak - 1],
+          [0.5, data.signal_beginning + 1],
         ]}
         sx={{
           stroke: 'yellow',
@@ -125,8 +125,8 @@ const TreeLines = () => {
       />
       <Line
         data={[
-          [0.7, data.alternative_ground_peak],
-          [0.7, data.signal_beginning],
+          [0.7, data.alternative_ground_peak - 1],
+          [0.7, data.signal_beginning + 1],
         ]}
         sx={{
           stroke: 'pink',
@@ -195,15 +195,15 @@ const Figure = () => {
                 <TreeLines />
               </Plot>
               <Trees />
-              <Arrow color='yellow' x={0.5} y={data.ground_peak} start />
-              <Arrow color='yellow' x={0.5} y={data.signal_beginning} end />
+              <Arrow color='yellow' x={0.5} y={data.ground_peak - 1} start />
+              <Arrow color='yellow' x={0.5} y={data.signal_beginning + 1} end />
               <Arrow
                 color='pink'
                 x={0.7}
-                y={data.alternative_ground_peak}
+                y={data.alternative_ground_peak - 1}
                 start
               />
-              <Arrow color='pink' x={0.7} y={data.signal_beginning} end />
+              <Arrow color='pink' x={0.7} y={data.signal_beginning + 1} end />
               <Label
                 x={0.5}
                 y={data.signal_beginning}
