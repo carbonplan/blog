@@ -195,7 +195,6 @@ const Figure = () => {
                 <TreeLines />
               </Plot>
               <Trees />
-
               <Arrow color='yellow' x={0.5} y={data.ground_peak} start />
               <Arrow color='yellow' x={0.5} y={data.signal_beginning} end />
               <Arrow
@@ -205,7 +204,39 @@ const Figure = () => {
                 start
               />
               <Arrow color='pink' x={0.7} y={data.signal_beginning} end />
-
+              <Label
+                x={0.5}
+                y={data.signal_beginning}
+                align='left'
+                verticalAlign='top'
+                sx={{
+                  color: 'yellow',
+                  ml: 3,
+                  mt: [4, 4, 3, 3],
+                  display: ['inherit', 'inherit', 'none', 'none'],
+                  bg: 'background',
+                }}
+              >
+                {(data.ground_peak - data.signal_beginning).toFixed(1)} m
+              </Label>
+              <Label
+                x={0.7}
+                y={data.signal_beginning}
+                align='left'
+                verticalAlign='top'
+                sx={{
+                  color: 'pink',
+                  ml: 3,
+                  mt: [6, 4, 3, 3],
+                  display: ['inherit', 'inherit', 'none', 'none'],
+                  bg: 'background',
+                }}
+              >
+                {(data.alternative_ground_peak - data.signal_beginning).toFixed(
+                  1
+                )}{' '}
+                m
+              </Label>{' '}
               {LINES.map(([key, color, label]) => (
                 <Label
                   key={key}
