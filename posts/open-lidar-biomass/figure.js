@@ -34,7 +34,10 @@ const LINES = [
     'pink',
     <span key={'label'}>
       Alternative
-      <br />
+      <Box
+        as='br'
+        sx={{ display: ['initial', 'initial', 'initial', 'none'] }}
+      />{' '}
       ground peak
     </span>,
   ],
