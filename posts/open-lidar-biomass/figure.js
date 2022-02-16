@@ -29,7 +29,15 @@ const sx = {
 const RANGE = [603260, 603225]
 
 const LINES = [
-  ['alternative_ground_peak', 'pink', 'Alternative ground peak'],
+  [
+    'alternative_ground_peak',
+    'pink',
+    <span>
+      Alternative
+      <br />
+      ground peak
+    </span>,
+  ],
   ['ground_peak', 'yellow', 'Ground peak'],
   ['signal_beginning', 'green', 'Signal beginning'],
   ['signal_end', 'green', 'Signal end'],
@@ -166,13 +174,13 @@ const Figure = () => {
                 />
                 <Arrow color='pink' x={0.7} y={data.signal_beginning + 1} end />
                 <Label
-                  x={0.5}
+                  x={0.515}
                   y={data.signal_beginning}
-                  align='left'
+                  align='right'
                   verticalAlign='top'
                   sx={{
                     color: 'yellow',
-                    ml: 3,
+                    mr: 3,
                     mt: [4, 4, 3, 3],
                     bg: 'background',
                   }}
@@ -180,14 +188,14 @@ const Figure = () => {
                   {(data.ground_peak - data.signal_beginning).toFixed(1)} m
                 </Label>
                 <Label
-                  x={0.7}
+                  x={0.68}
                   y={data.signal_beginning}
                   align='left'
                   verticalAlign='top'
                   sx={{
                     color: 'pink',
                     ml: 3,
-                    mt: [6, 4, 3, 3],
+                    mt: [4, 4, 3, 3],
                     bg: 'background',
                   }}
                 >
@@ -205,7 +213,7 @@ const Figure = () => {
                   align='right'
                   verticalAlign='bottom'
                   y={data[key]}
-                  sx={{ color, backgroundColor: 'background', mb: '2px' }}
+                  sx={{ color, backgroundColor: 'background', mb: '3px' }}
                 >
                   {label}
                 </Label>

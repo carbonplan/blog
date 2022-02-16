@@ -184,7 +184,9 @@ const Trees = ({ heights }) => {
                 (0.88 + i * 0.005)
             )}
           />
-          <Box sx={{ ...sx.label, color: 'yellow' }}>
+          <Box
+            sx={{ ...sx.label, px: [1], pt: [1], pb: ['6px'], color: 'yellow' }}
+          >
             {(data.ground_peak - data.signal_beginning).toFixed(1)} m
           </Box>
         </Box>
@@ -206,7 +208,9 @@ const Trees = ({ heights }) => {
                 (0.88 + i * 0.005)
             )}
           />
-          <Box sx={{ ...sx.label, color: 'pink' }}>
+          <Box
+            sx={{ ...sx.label, px: [1], pt: [1], pb: ['6px'], color: 'pink' }}
+          >
             {(data.alternative_ground_peak - data.signal_beginning).toFixed(1)}{' '}
             m
           </Box>
