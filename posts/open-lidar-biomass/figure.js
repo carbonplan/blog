@@ -51,8 +51,8 @@ const Arrow = ({ color, x, y, start }) => {
           stroke: color,
           ml: '-4.5px',
           mb: start ? '-3.5px' : '7px',
+          transform: start ? 'rotate(315deg)' : 'rotate(135deg)',
         }}
-        transform={start ? 'rotate(315)' : 'rotate(135)'}
       >
         <line x1='0' y1='0' x2='0' y2='9' />
         <line x1='0' y1='9' x2='9' y2='9' />
