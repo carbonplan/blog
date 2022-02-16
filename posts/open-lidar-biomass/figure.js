@@ -65,13 +65,19 @@ const Arrow = ({ color, x, y, start }) => {
 }
 const Trees = () => {
   const { x, y } = useChart()
+  const xPosition = x(0.5)
   return (
     <>
       <Flex
         sx={{
           position: 'absolute',
           gap: 3,
-          left: `calc(${x(0.5)}% + 20px)`,
+          left: [
+            `calc(${xPosition}% + 28px)`,
+            `calc(${xPosition}% + 28px)`,
+            `calc(${xPosition}% + 28px)`,
+            `calc(${xPosition}% + 64px)`,
+          ],
           top: `${y(data.signal_beginning) - 2}%`,
           alignContent: 'flex-start',
         }}
@@ -82,7 +88,7 @@ const Trees = () => {
             (height, i) =>
               (Math.abs(y(data.ground_peak) - y(data.signal_beginning)) / 100) *
               height *
-              (0.9 - i * 0.005)
+              (0.88 + i * 0.005)
           )}
         />
 
@@ -95,7 +101,7 @@ const Trees = () => {
               ) /
                 100) *
               height *
-              (0.9 - i * 0.005)
+              (0.88 + i * 0.005)
           )}
         />
       </Flex>
@@ -134,83 +140,89 @@ const TreeLines = () => {
 
 const Figure = () => {
   return (
-    <Row columns={6}>
-      <Column start={1} width={6}>
-        <Box
-          sx={{
-            height: HEIGHTS,
-          }}
-        >
-          <Chart x={[-0.04, 0.5 / 0.4 - 0.04]} y={RANGE} clamp={false}>
-            <Axis left bottom />
-            <AxisLabel bottom units='joules' arrow={false}>
-              <Box as='span' sx={{ textTransform: 'none' }}>
-                LiDAR
-              </Box>
-              &nbsp;return
-            </AxisLabel>
-            <AxisLabel left units='m' arrow={false}>
-              Distance from satellite
-            </AxisLabel>
-            <Ticks left bottom />
-            <TickLabels left format={(d) => d % RANGE[1]} />
-            <TickLabels bottom />
-            <Grid vertical values={[0.013915494217939783]} sx={sx.reference} />
-            <Plot sx={{ position: 'relative' }}>
-              <Scatter
-                size={5}
-                data={data.raw.filter((d) => d[1] > RANGE[1])}
-                color='secondary'
+    <Box as='figure' sx={{ mt: [6, 6, 6, 7], mb: [4, 4, 4, 5] }}>
+      <Row columns={6}>
+        <Column start={1} width={6}>
+          <Box
+            sx={{
+              height: HEIGHTS,
+            }}
+          >
+            <Chart x={[-0.04, 0.5 / 0.4 - 0.04]} y={RANGE} clamp={false}>
+              <Axis left bottom />
+              <AxisLabel bottom units='joules' arrow={false}>
+                <Box as='span' sx={{ textTransform: 'none' }}>
+                  LiDAR
+                </Box>
+                &nbsp;return
+              </AxisLabel>
+              <AxisLabel left units='m' arrow={false}>
+                Distance from satellite
+              </AxisLabel>
+              <Ticks left bottom />
+              <TickLabels left format={(d) => d % RANGE[1]} />
+              <TickLabels bottom />
+              <Grid
+                vertical
+                values={[0.013915494217939783]}
+                sx={sx.reference}
               />
-              <Line
-                data={data.smoothed.filter((d) => d[1] > RANGE[1])}
-                width={2}
-                color='primary'
-              />
-              {LINES.map(([key, color]) => (
-                <Line
-                  key={key}
-                  data={[
-                    [-0.04, data[key]],
-                    [0.5 / 0.4 - 0.04, data[key]],
-                  ]}
-                  sx={{
-                    stroke: color,
-                    strokeWidth: 1,
-                    strokeDasharray: 4,
-                  }}
+              <Plot sx={{ position: 'relative' }}>
+                <Scatter
+                  size={5}
+                  data={data.raw.filter((d) => d[1] > RANGE[1])}
+                  color='secondary'
                 />
+                <Line
+                  data={data.smoothed.filter((d) => d[1] > RANGE[1])}
+                  width={2}
+                  color='primary'
+                />
+                {LINES.map(([key, color]) => (
+                  <Line
+                    key={key}
+                    data={[
+                      [-0.04, data[key]],
+                      [0.5 / 0.4 - 0.04, data[key]],
+                    ]}
+                    sx={{
+                      stroke: color,
+                      strokeWidth: 1,
+                      strokeDasharray: 4,
+                    }}
+                  />
+                ))}
+                <TreeLines />
+              </Plot>
+              <Trees />
+
+              <Arrow color='yellow' x={0.5} y={data.ground_peak} start />
+              <Arrow color='yellow' x={0.5} y={data.signal_beginning} end />
+              <Arrow
+                color='pink'
+                x={0.7}
+                y={data.alternative_ground_peak}
+                start
+              />
+              <Arrow color='pink' x={0.7} y={data.signal_beginning} end />
+
+              {LINES.map(([key, color, label]) => (
+                <Label
+                  key={key}
+                  x={0.5 / 0.4 - 0.04}
+                  align='right'
+                  verticalAlign='bottom'
+                  y={data[key]}
+                  sx={{ color, backgroundColor: 'background', mb: '2px' }}
+                >
+                  {label}
+                </Label>
               ))}
-              <TreeLines />
-            </Plot>
-            <Trees />
-
-            <Arrow color='yellow' x={0.5} y={data.ground_peak} start />
-            <Arrow color='yellow' x={0.5} y={data.signal_beginning} end />
-            <Arrow
-              color='pink'
-              x={0.7}
-              y={data.alternative_ground_peak}
-              start
-            />
-            <Arrow color='pink' x={0.7} y={data.signal_beginning} end />
-
-            {LINES.map(([key, color, label]) => (
-              <Label
-                key={key}
-                x={0.5 / 0.4 - 0.04}
-                align='right'
-                verticalAlign='bottom'
-                y={data[key]}
-                sx={{ color, backgroundColor: 'background', mb: '2px' }}
-              >
-                {label}
-              </Label>
-            ))}
-          </Chart>
-        </Box>
-      </Column>
-    </Row>
+            </Chart>
+          </Box>
+        </Column>
+      </Row>
+    </Box>
   )
 }
 
