@@ -32,7 +32,7 @@ const LINES = [
   [
     'alternative_ground_peak',
     'pink',
-    <span>
+    <span key={'label'}>
       Alternative
       <br />
       ground peak
