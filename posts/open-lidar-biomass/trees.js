@@ -20,7 +20,7 @@ export const SmallTree = ({ height, sx }) => {
         x2='37.75'
         y2='15'
         stroke={theme.colors.pink}
-        strokeWidth='1.5'
+        vectorEffect='non-scaling-stroke'
       />
       <line
         y1='-0.75'
@@ -28,7 +28,7 @@ export const SmallTree = ({ height, sx }) => {
         y2='-0.75'
         transform='matrix(-0.806908 -0.590678 0.733561 -0.679623 38.8706 110.762)'
         stroke={theme.colors.pink}
-        strokeWidth='1.5'
+        vectorEffect='non-scaling-stroke'
       />
       <line
         y1='-0.75'
@@ -36,7 +36,7 @@ export const SmallTree = ({ height, sx }) => {
         y2='-0.75'
         transform='matrix(-0.824513 -0.565843 0.711278 -0.70291 38.8706 51.8462)'
         stroke={theme.colors.pink}
-        strokeWidth='1.5'
+        vectorEffect='non-scaling-stroke'
       />
       <line
         y1='-0.75'
@@ -44,7 +44,7 @@ export const SmallTree = ({ height, sx }) => {
         y2='-0.75'
         transform='matrix(0.763904 -0.64533 0.779797 0.626032 38.8706 79.2139)'
         stroke={theme.colors.pink}
-        strokeWidth='1.5'
+        vectorEffect='non-scaling-stroke'
       />
       <path
         fillRule='evenodd'
@@ -81,7 +81,7 @@ export const LargeTree = ({ height, sx }) => {
         x2='95.75'
         y2='367'
         stroke={theme.colors.yellow}
-        strokeWidth='1.5'
+        vectorEffect='non-scaling-stroke'
       />
       <line
         y1='-0.75'
@@ -89,7 +89,7 @@ export const LargeTree = ({ height, sx }) => {
         y2='-0.75'
         transform='matrix(-0.806908 -0.590678 0.733561 -0.679623 95.7407 338.525)'
         stroke={theme.colors.yellow}
-        strokeWidth='1.5'
+        vectorEffect='non-scaling-stroke'
       />
       <line
         y1='-0.75'
@@ -97,7 +97,7 @@ export const LargeTree = ({ height, sx }) => {
         y2='-0.75'
         transform='matrix(-0.824513 -0.565843 0.711278 -0.70291 95.7407 228.692)'
         stroke={theme.colors.yellow}
-        strokeWidth='1.5'
+        vectorEffect='non-scaling-stroke'
       />
       <line
         y1='-0.75'
@@ -105,7 +105,7 @@ export const LargeTree = ({ height, sx }) => {
         y2='-0.75'
         transform='matrix(0.763904 -0.64533 0.779797 0.626032 97 274.847)'
         stroke={theme.colors.yellow}
-        strokeWidth='1.5'
+        vectorEffect='non-scaling-stroke'
       />
       <line
         y1='-0.75'
@@ -113,7 +113,7 @@ export const LargeTree = ({ height, sx }) => {
         y2='-0.75'
         transform='matrix(-0.824513 -0.565843 0.711278 -0.70291 95.7407 104.806)'
         stroke={theme.colors.yellow}
-        strokeWidth='1.5'
+        vectorEffect='non-scaling-stroke'
       />
       <line
         y1='-0.75'
@@ -121,14 +121,14 @@ export const LargeTree = ({ height, sx }) => {
         y2='-0.75'
         transform='matrix(0.763904 -0.64533 0.779797 0.626032 95.7407 170.847)'
         stroke={theme.colors.yellow}
-        strokeWidth='1.5'
+        vectorEffect='non-scaling-stroke'
       />
       <path
         fillRule='evenodd'
         clipRule='evenodd'
         d='M94.0011 1.09963C76.3648 1.09963 62.0679 15.3514 62.0679 32.9317C62.0679 40.5153 64.7281 47.4794 69.1693 52.9475L69.2189 53.0086L69.1422 53.0272C51.8879 57.2181 39.08 72.7261 39.08 91.2159C39.08 101.65 43.1587 111.135 49.8136 118.172L49.8634 118.224L49.7963 118.252C32.3635 125.4 20.09 142.497 20.09 162.452C20.09 174.758 24.7573 185.976 32.4236 194.445L32.4687 194.495L32.4077 194.524C13.9083 203.188 1.09995 221.928 1.09995 243.651C1.09995 273.612 25.4652 297.9 55.5213 297.9H136.479C166.535 297.9 190.9 273.612 190.9 243.651C190.9 221.928 178.092 203.188 159.592 194.524L159.531 194.495L159.576 194.445C167.243 185.976 171.91 174.758 171.91 162.452C171.91 142.497 159.636 125.4 142.204 118.252L142.137 118.224L142.186 118.172C148.841 111.135 152.92 101.65 152.92 91.2159C152.92 72.1244 139.265 56.212 121.16 52.6544L121.08 52.6387L121.13 52.5747C125.392 47.1646 127.933 40.3441 127.933 32.9317C127.933 15.3514 113.636 1.09963 96 1.09963H94.0011ZM61.9679 32.9317C61.9679 15.2963 76.3096 1 94.0011 1H96C113.691 1 128.033 15.2963 128.033 32.9317C128.033 40.338 125.504 47.1555 121.259 52.5724C139.37 56.1701 153.02 72.104 153.02 91.2159C153.02 101.65 148.951 111.138 142.309 118.187C159.742 125.366 172.01 142.481 172.01 162.452C172.01 174.759 167.351 185.982 159.696 194.462C178.196 203.154 191 221.912 191 243.651C191 273.667 166.59 298 136.479 298H55.5213C25.41 298 1 273.667 1 243.651C1 221.912 13.804 203.154 32.3043 194.462C24.6488 185.982 19.99 174.759 19.99 162.452C19.99 142.481 32.2579 125.366 49.6912 118.187C43.0489 111.138 38.98 101.65 38.98 91.2159C38.98 72.7064 51.7826 57.1778 69.0421 52.9491C64.6168 47.4732 61.9679 40.5108 61.9679 32.9317Z'
         stroke={theme.colors.yellow}
-        strokeWidth='1.25'
+        strokeWidth='2'
       />
     </Box>
   )
