@@ -7,6 +7,7 @@ import {
   Ticks,
   TickLabels,
   Plot,
+  Point,
   Scatter,
   Line,
   Grid,
@@ -37,6 +38,31 @@ const LINES = [
 
 const HEIGHTS = [500, 500, 450, 500]
 
+const Arrow = ({ color, x, y, start }) => {
+  return (
+    <Box sx={{ display: ['initial', 'initial', 'none', 'none'] }}>
+      <Point x={x} y={y} verticalAlign={!start ? 'top' : 'bottom'}>
+        <Box
+          as='svg'
+          viewBox='0 0 12 12'
+          fill='none'
+          width='12'
+          height='12'
+          strokeWidth='1'
+          sx={{
+            stroke: color,
+            ml: '-6px',
+            mb: start ? '-6px' : '6px',
+          }}
+          transform={start ? 'rotate(180)' : null}
+        >
+          <line x1='1' y1='11' x2='6.2' y2='0' />
+          <line x1='5.8' y1='0' x2='11' y2='11' />
+        </Box>
+      </Point>
+    </Box>
+  )
+}
 const Trees = () => {
   const { x, y } = useChart()
   return (
@@ -73,27 +99,6 @@ const Trees = () => {
           )}
         />
       </Flex>
-
-      <Box sx={{ display: ['initial', 'initial', 'none', 'none'] }}>
-        <Label
-          x={0.51}
-          y={(data.ground_peak + data.signal_beginning) / 2}
-          width={0.5}
-          height={0.5}
-          verticalAlign='middle'
-        >
-          <LargeTree height={HEIGHTS.map((height) => height * 0.13)} />
-        </Label>
-        <Label
-          x={0.71}
-          y={(data.alternative_ground_peak + data.signal_beginning) / 2}
-          width={0.5}
-          height={0.5}
-          verticalAlign='middle'
-        >
-          <SmallTree height={HEIGHTS.map((height) => height * 0.1)} />
-        </Label>
-      </Box>
     </>
   )
 }
@@ -179,6 +184,17 @@ const Figure = () => {
               <TreeLines />
             </Plot>
             <Trees />
+
+            <Arrow color='yellow' x={0.5} y={data.ground_peak} start />
+            <Arrow color='yellow' x={0.5} y={data.signal_beginning} end />
+            <Arrow
+              color='pink'
+              x={0.7}
+              y={data.alternative_ground_peak}
+              start
+            />
+            <Arrow color='pink' x={0.7} y={data.signal_beginning} end />
+
             {LINES.map(([key, color, label]) => (
               <Label
                 key={key}
