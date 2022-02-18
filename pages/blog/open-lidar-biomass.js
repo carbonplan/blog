@@ -1,8 +1,8 @@
-import Index, { meta } from '../../posts/occ-risk-comment.md'
+import Index, { meta } from '../../posts/open-lidar-biomass.md'
 import { Post } from '@carbonplan/layouts'
 
 const Content = () => (
-  <Post meta={meta} number={12}>
+  <Post meta={meta} number={11}>
     <Index />
   </Post>
 )

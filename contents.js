@@ -8,6 +8,17 @@ const contents = [
     date: '02-18-2022',
     summary:
       "We welcome the OCC's draft climate-related financial risk management principles and point out core tensions that could arise in implementation.",
+    number: 12,
+  },
+  {
+    id: 'open-lidar-biomass',
+    version: '1.0.0',
+    title: 'Using LiDAR to estimate forest biomass',
+    authors: ['Cindy Chiao', 'Oriana Chegwidden', 'Joe Hamman'],
+    date: '02-16-2022',
+    summary:
+      'An open source implementation of forest biomass estimation using LiDAR.',
+    card: 'open-lidar-biomass',
     number: 11,
   },
   {
