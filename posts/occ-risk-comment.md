@@ -6,6 +6,7 @@ export const meta = {
   date: '02-18-2022',
   summary:
     "We welcome the OCC's draft climate-related financial risk management principles and point out core tensions that could arise in implementation.",
+  card: 'occ-risk-comment',
 }
 
 We submitted comments to the Office of the Comptroller of the Currency (OCC) on their [Principles for Climate-Related Financial Risk Management
