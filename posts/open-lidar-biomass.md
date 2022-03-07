@@ -26,20 +26,20 @@ Recently, [Harris et al. (2021)](https://doi.org/10.1038/s41558-020-00976-6) syn
 <FigureCaption number={1}>
   Example LiDAR return signal, which could result in two different tree heights
   depending on the choice of methods. The y-axis represents distance from the
-  satellite where the LiDAR instrument is located. A lower value on the y-axis
-  indicates a distance farther from the satellite, and thus closer to the center
-  of earth. (Note that for simplicity we show the top of the y-axis as 0. The
-  actual distance from the satellite can be calculated by adding ~600,000
-  meters). A higher value on the x-axis indicates a larger return signal
-  strength at that distance, implying high reflection and more tree surface area
-  at that height. The raw LiDAR return data are plotted in dark gray dots and a
-  fitted smooth curve is plotted in white. In this example, using either of the
-  two definitions of ground peak lead to different calculated magnitudes of{' '}
-  <i>Max Vegetation Height</i> (25% less when using alternative ground peak in
-  this example). In general, allometric equations relying on{' '}
-  <i>Max Vegetation Height</i> as an input would estimate higher biomass (if
-  using the yellow ground peak) or lower biomass (if using the pink alternative
-  ground peak).{' '}
+  satellite where the LiDAR instrument is located. A higher value (lower
+  position) on the y-axis indicates a distance farther from the satellite, and
+  thus closer to the center of earth. (Note that for simplicity we show the top
+  of the y-axis as 0. The actual distance from the satellite can be calculated
+  by adding ~600,000 meters). A higher value on the x-axis indicates a larger
+  return signal strength at that distance, implying high reflection and more
+  tree surface area at that height. The raw LiDAR return data are plotted in
+  dark gray dots and a fitted smooth curve is plotted in white. In this example,
+  using either of the two definitions of ground peak lead to different
+  calculated magnitudes of <i>Max Vegetation Height</i> (25% less when using
+  alternative ground peak in this example). In general, allometric equations
+  relying on <i>Max Vegetation Height</i> as an input would estimate higher
+  biomass (if using the yellow ground peak) or lower biomass (if using the pink
+  alternative ground peak).{' '}
 </FigureCaption>
 
 ## Why the details matter
@@ -52,7 +52,7 @@ Other similar choices abound. For example, do you use the raw LiDAR return (i.e.
 
 ## Why open source
 
-The easiest way to understand these kinds of analysis choices is to look at the code. In that spirit, we’ve assembled sample AGB data (publicly accessible at: `s3://carbonplan-climatetrace/v1/preprocessed_lidar/`) derived from LiDAR returns from the [Geoscience Laser Altimeter System](https://icesat.gsfc.nasa.gov/icesat/glas.php) that flew on the first [ICESat](https://www.nasa.gov/mission_pages/icesat/) mission along with the [Python processing code](https://github.com/carbonplan/trace/tree/main/carbonplan_trace/v1) that generated the AGB data. We have also prepared a sample [Jupyter Notebook](https://github.com/carbonplan/trace/blob/main/notebooks/lidar_blog_sample_notebook.ipynb) that demonstrates how to work with the data and use the analysis routines. Most key processing steps are contained within the [`glas_height_metrics.py`](https://github.com/carbonplan/trace/blob/main/carbonplan_trace/v1/glas_height_metrics.py) and [`glas_allometric_eq.py`](https://github.com/carbonplan/trace/blob/main/carbonplan_trace/v1/glas_allometric_eq.py) modules. These modules translate LiDAR returns into waveforms, derive height metrics, and then feed the calculated height metrics into regionally-specific allometric equations to derive biomass. For now we have implemented these steps within a broader analysis package ([`trace`](https://github.com/carbonplan/trace)), and are sharing them here primarily as a reference implementation for others doing similar work. But we would happily consider splitting them out into a standalone package if that would be of interest.
+The easiest way to understand these kinds of analysis choices is to look at the code. In that spirit, we’ve assembled sample AGB data (publicly accessible at: `s3://carbonplan-climatetrace/v1/biomass/`) derived from LiDAR returns from the [Geoscience Laser Altimeter System](https://icesat.gsfc.nasa.gov/icesat/glas.php) that flew on the first [ICESat](https://www.nasa.gov/mission_pages/icesat/) mission along with the [Python processing code](https://github.com/carbonplan/trace/tree/main/carbonplan_trace/v1) that generated the AGB data. We have also prepared a sample [Jupyter Notebook](https://github.com/carbonplan/trace/blob/main/notebooks/lidar_blog_sample_notebook.ipynb) that demonstrates how to work with the data and use the analysis routines. Most key processing steps are contained within the [`glas_height_metrics.py`](https://github.com/carbonplan/trace/blob/main/carbonplan_trace/v1/glas_height_metrics.py) and [`glas_allometric_eq.py`](https://github.com/carbonplan/trace/blob/main/carbonplan_trace/v1/glas_allometric_eq.py) modules. These modules translate LiDAR returns into waveforms, derive height metrics, and then feed the calculated height metrics into regionally-specific allometric equations to derive biomass. For now we have implemented these steps within a broader analysis package ([`trace`](https://github.com/carbonplan/trace)), and are sharing them here primarily as a reference implementation for others doing similar work. But we would happily consider splitting them out into a standalone package if that would be of interest.
 
 While LiDAR-derived biomass is often an intermediary product in a larger end-to-end analysis, it is a critical and nuanced step. We hope that the availability of this open source data and code can accelerate future efforts, as well as help users understand and compare different methods. Please [reach out](https://github.com/carbonplan/trace/issues/new/) with questions, contribute to the package, and share what you discover!
 
