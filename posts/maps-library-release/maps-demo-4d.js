@@ -6,7 +6,7 @@ import { Group } from '@carbonplan/components'
 import Parameters from './parameters'
 import Zoom from './zoom'
 
-const bucket = 'https://storage.googleapis.com/carbonplan-share/'
+const bucket = 'https://storage.googleapis.com/carbonplan-maps/v1/demo/'
 
 const CLIMS = {
   tavg: [-20, 30],
@@ -42,13 +42,13 @@ const MapDemo4d = () => {
           <Map>
             <Line
               color={theme.rawColors.primary}
-              source={bucket + 'maps-demo/land'}
+              source={bucket + 'land'}
               variable={'land'}
             />
             <Raster
               colormap={colormap}
               clim={CLIMS[band]}
-              source={bucket + 'maps-demo/4d/tavg-prec-month'}
+              source={bucket + '4d/tavg-prec-month'}
               variable={'climate'}
               dimensions={['band', 'month', 'y', 'x']}
               selector={{ band, month }}
