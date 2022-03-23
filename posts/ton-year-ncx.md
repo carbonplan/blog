@@ -45,7 +45,9 @@ Tables 1 and 2 report these values for a timeframe of 100 years and 1000 years, 
 
 <Figure>
   <TableThousand />
-  <TableCaption number={2}>Calculations for a 1000-year timeframe.</TableCaption>
+  <TableCaption number={2}>
+    Calculations for a 1000-year timeframe.
+  </TableCaption>
 </Figure>
 
 As you can see, the equivalence ratio expands more than tenfold (from 129.61 to 1322.20) when undiscounted physical impacts are compared across 100- and 1000-year timeframes, respectively. In contrast, when using discounted impacts, the equivalence ratio is almost constant across these two distinct timeframes (30.08 versus 30.81).

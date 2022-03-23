@@ -20,7 +20,8 @@ For the initial release of the Climate TRACE platform we used established method
 <Figure>
   <Map />
   <FigureCaption>
-    Cumulative emissions from forests (2001 - 2020). Pixels are 1º x 1º. Open the{' '}
+    Cumulative emissions from forests (2001 - 2020). Pixels are 1º x 1º. Open
+    the{' '}
     <Link
       sx={{
         color: 'secondary',

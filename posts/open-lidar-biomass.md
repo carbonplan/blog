@@ -25,22 +25,22 @@ Recently, [Harris et al. (2021)](https://doi.org/10.1038/s41558-020-00976-6) syn
 <Figure>
   <Chart />
   <FigureCaption number={1}>
-    Example LiDAR return signal, which could result in two different tree heights
-    depending on the choice of methods. The y-axis represents distance from the
-    satellite where the LiDAR instrument is located. A higher value (lower
-    position) on the y-axis indicates a distance farther from the satellite, and
-    thus closer to the center of earth. (Note that for simplicity we show the top
-    of the y-axis as 0. The actual distance from the satellite can be calculated
-    by adding ~600,000 meters). A higher value on the x-axis indicates a larger
-    return signal strength at that distance, implying high reflection and more
-    tree surface area at that height. The raw LiDAR return data are plotted in
-    dark gray dots and a fitted smooth curve is plotted in white. In this example,
-    using either of the two definitions of ground peak lead to different
-    calculated magnitudes of <i>Max Vegetation Height</i> (25% less when using
-    alternative ground peak in this example). In general, allometric equations
-    relying on <i>Max Vegetation Height</i> as an input would estimate higher
-    biomass (if using the yellow ground peak) or lower biomass (if using the pink
-    alternative ground peak).{' '}
+    Example LiDAR return signal, which could result in two different tree
+    heights depending on the choice of methods. The y-axis represents distance
+    from the satellite where the LiDAR instrument is located. A higher value
+    (lower position) on the y-axis indicates a distance farther from the
+    satellite, and thus closer to the center of earth. (Note that for simplicity
+    we show the top of the y-axis as 0. The actual distance from the satellite
+    can be calculated by adding ~600,000 meters). A higher value on the x-axis
+    indicates a larger return signal strength at that distance, implying high
+    reflection and more tree surface area at that height. The raw LiDAR return
+    data are plotted in dark gray dots and a fitted smooth curve is plotted in
+    white. In this example, using either of the two definitions of ground peak
+    lead to different calculated magnitudes of <i>Max Vegetation Height</i> (25%
+    less when using alternative ground peak in this example). In general,
+    allometric equations relying on <i>Max Vegetation Height</i> as an input
+    would estimate higher biomass (if using the yellow ground peak) or lower
+    biomass (if using the pink alternative ground peak).{' '}
   </FigureCaption>
 </Figure>
 

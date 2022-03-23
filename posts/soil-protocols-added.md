@@ -94,8 +94,8 @@ Combining the new analysis with our results from before, we can look at all the 
       interactive version
     </Link>{' '}
     of this table. Abbreviations: Grazing (G), Compost (C), Cropping (Cr),
-    Improved Agriculture (IA), Sustainable Agriculture (SA), Fire + Grazing (FG),
-    Austrailia (Aus), Alberta (Alb)
+    Improved Agriculture (IA), Sustainable Agriculture (SA), Fire + Grazing
+    (FG), Austrailia (Aus), Alberta (Alb)
   </FigureCaption>
 </Figure>
 
