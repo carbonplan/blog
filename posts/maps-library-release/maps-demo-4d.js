@@ -42,7 +42,7 @@ const MapDemo4d = () => {
           <Map>
             <Line
               color={theme.rawColors.primary}
-              source={bucket + 'v1/demo/land'}
+              source={bucket + 'basemaps/land'}
               variable={'land'}
             />
             <Raster

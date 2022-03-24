@@ -64,7 +64,7 @@ const colormap = useColormap('warm')
 <Map>
   <Line
     color={'white'}
-    source={bucket + 'v1/demo/land'}
+    source={bucket + 'basemaps/land'}
     variable={'land'}
   />
   <Raster
