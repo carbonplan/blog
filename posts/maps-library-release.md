@@ -57,20 +57,20 @@ For the simplest possible example, the following code renders a 2D map of global
 import { Map, Raster, Line } from '@carbonplan/maps'
 import { useColormap } from '@carbonplan/colormaps'
 
-const bucket = 'https://storage.googleapis.com/carbonplan-maps/v1/demo/'
+const bucket = 'https://storage.googleapis.com/carbonplan-maps/'
 
 const colormap = useColormap('warm')
 
 <Map>
   <Line
     color={'white'}
-    source={bucket + 'land'}
+    source={bucket + 'v1/demo/land'}
     variable={'land'}
   />
   <Raster
     colormap={colormap}
     clim={[-20,30]}
-    source={bucket + '2d/tavg'}
+    source={bucket + 'v1/demo/2d/tavg'}
     variable={'​​tavg'}
   />
 </Map>
@@ -102,7 +102,7 @@ With the same component, we can just as easily render a 4D map where the third d
   <Raster
   colormap={colormap}
   clim={clim}
-  source={bucket + ‘4d/tavg-prec-month'}
+  source={bucket + 'v1/demo/4d/tavg-prec-month'}
   variable={'climate'}
   selector={{ band, month }}
 />
@@ -118,7 +118,7 @@ In more advanced settings, we might want more control over rendering, including 
 <Raster
   colormap={colormap}
   clim={[-20, 30]}
-  source={bucket + ‘3d/tavg-month’}
+  source={bucket + 'v1/demo/3d/tavg-month'}
   variable={'tavg'}
   selector={{ month: [1, 2] }}
   frag={`

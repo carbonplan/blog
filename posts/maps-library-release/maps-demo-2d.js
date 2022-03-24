@@ -3,7 +3,7 @@ import { Map, Raster, Line } from '@carbonplan/maps'
 import { useThemedColormap } from '@carbonplan/colormaps'
 import Zoom from './zoom'
 
-const bucket = 'https://storage.googleapis.com/carbonplan-maps/v1/demo/'
+const bucket = 'https://storage.googleapis.com/carbonplan-maps/'
 
 const MapDemo2d = () => {
   const { theme } = useThemeUI()
@@ -25,13 +25,13 @@ const MapDemo2d = () => {
       <Map>
         <Line
           color={theme.rawColors.primary}
-          source={bucket + 'land'}
+          source={bucket + 'v1/demo/land'}
           variable={'land'}
         />
         <Raster
           colormap={colormap}
           clim={[-20, 30]}
-          source={bucket + '2d/tavg'}
+          source={bucket + 'v1/demo/2d/tavg'}
           variable={'tavg'}
           dimensions={['y', 'x']}
         />
