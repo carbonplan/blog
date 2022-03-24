@@ -1,5 +1,5 @@
-import { FigureCaption } from '@carbonplan/components'
-import Figure from './open-lidar-biomass/figure'
+import { Figure, FigureCaption } from '@carbonplan/components'
+import Chart from './open-lidar-biomass/figure'
 
 export const meta = {
   version: '1.0.0',
@@ -22,25 +22,27 @@ Estimating forest carbon begins with understanding a single tree. A ground truth
 To generate global-scale datasets of AGB in a more cost-effective manner, researchers have turned to remotely-sensed data. For instance, space-mounted LiDAR has been used to measure elevation globally. This data can be processed to derive canopy metrics (e.g. vegetation height) that are predictive of biomass. Researchers can then develop empirical allometric equations that translate LiDAR-based canopy metrics to AGB using collocated ground measurements. These equations have been published for different geographical, bioclimatic, and ecological zones.
 Recently, [Harris et al. (2021)](https://doi.org/10.1038/s41558-020-00976-6) synthesized these equations to generate biomass estimates across the globe, and helpfully included in their methods a comprehensive [spreadsheet](https://static-content.springer.com/esm/art%3A10.1038%2Fs41558-020-00976-6/MediaObjects/41558_2020_976_MOESM3_ESM.xlsx) of allometric equations and height metric definitions. Others have combined LiDAR and other remote-sensing products for biomass estimation with broader spatial or more frequent temporal coverage ([Baccini et al., 2017](https://doi.org/10.1126/science.aam5962); [Wang et al., 2021](https://doi.org/10.1038/s41558-021-01027-4), [Duncanson et al, 2022](https://doi.org/10.1016/j.rse.2021.112845)).
 
-<Figure />
-<FigureCaption number={1}>
-  Example LiDAR return signal, which could result in two different tree heights
-  depending on the choice of methods. The y-axis represents distance from the
-  satellite where the LiDAR instrument is located. A higher value (lower
-  position) on the y-axis indicates a distance farther from the satellite, and
-  thus closer to the center of earth. (Note that for simplicity we show the top
-  of the y-axis as 0. The actual distance from the satellite can be calculated
-  by adding ~600,000 meters). A higher value on the x-axis indicates a larger
-  return signal strength at that distance, implying high reflection and more
-  tree surface area at that height. The raw LiDAR return data are plotted in
-  dark gray dots and a fitted smooth curve is plotted in white. In this example,
-  using either of the two definitions of ground peak lead to different
-  calculated magnitudes of <i>Max Vegetation Height</i> (25% less when using
-  alternative ground peak in this example). In general, allometric equations
-  relying on <i>Max Vegetation Height</i> as an input would estimate higher
-  biomass (if using the yellow ground peak) or lower biomass (if using the pink
-  alternative ground peak).{' '}
-</FigureCaption>
+<Figure>
+  <Chart />
+  <FigureCaption number={1}>
+    Example LiDAR return signal, which could result in two different tree
+    heights depending on the choice of methods. The y-axis represents distance
+    from the satellite where the LiDAR instrument is located. A higher value
+    (lower position) on the y-axis indicates a distance farther from the
+    satellite, and thus closer to the center of earth. (Note that for simplicity
+    we show the top of the y-axis as 0. The actual distance from the satellite
+    can be calculated by adding ~600,000 meters). A higher value on the x-axis
+    indicates a larger return signal strength at that distance, implying high
+    reflection and more tree surface area at that height. The raw LiDAR return
+    data are plotted in dark gray dots and a fitted smooth curve is plotted in
+    white. In this example, using either of the two definitions of ground peak
+    lead to different calculated magnitudes of <i>Max Vegetation Height</i> (25%
+    less when using alternative ground peak in this example). In general,
+    allometric equations relying on <i>Max Vegetation Height</i> as an input
+    would estimate higher biomass (if using the yellow ground peak) or lower
+    biomass (if using the pink alternative ground peak).{' '}
+  </FigureCaption>
+</Figure>
 
 ## Why the details matter
 

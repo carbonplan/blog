@@ -1,5 +1,5 @@
-import { Link, FigureCaption } from '@carbonplan/components'
-import Figure from './climate-trace-release/figure'
+import { Link, Figure, FigureCaption } from '@carbonplan/components'
+import Map from './climate-trace-release/figure'
 
 export const meta = {
   version: '1.0.0',
@@ -17,24 +17,27 @@ In early 2020, CarbonPlan joined the [Climate TRACE](https://www.climatetrace.or
 
 For the initial release of the Climate TRACE platform we used established methods to estimate gross emissions from stand-replacing forest disturbances. Our work closely followed the approach of [Zarin et al. (2016)](https://doi.org/10.1111/gcb.13153) and is similar to that of the recent [Harris et al. (2021)](https://doi.org/10.1038/s41558-020-00976-6) paper, the results of which are hosted by the [Global Forest Watch](https://www.globalforestwatch.org/) platform. Our analysis created a data product of annual emissions for each 30 m x 30 m forest pixel across the globe from 2001 through 2020. The primary differences between our implementation for the Climate TRACE platform and the original data from Zarin et al. (2016) are an extension through 2020 and the complete coverage of all global forested areas.
 
-<Figure />
-<FigureCaption>
-  Cumulative emissions from forests (2001 - 2020). Pixels are 1º x 1º. Open the{' '}
-  <Link
-    sx={{
-      color: 'secondary',
-      '@media (hover: hover) and (pointer: fine)': {
-        '&:hover': {
-          color: 'primary',
+<Figure>
+  <Map />
+  <FigureCaption>
+    Cumulative emissions from forests (2001 - 2020). Pixels are 1º x 1º. Open
+    the{' '}
+    <Link
+      sx={{
+        color: 'secondary',
+        '@media (hover: hover) and (pointer: fine)': {
+          '&:hover': {
+            color: 'primary',
+          },
         },
-      },
-    }}
-    href='/research/forest-carbon'
-  >
-    interactive
-  </Link>{' '}
-  version to explore more.
-</FigureCaption>
+      }}
+      href='/research/forest-carbon'
+    >
+      interactive
+    </Link>{' '}
+    version to explore more.
+  </FigureCaption>
+</Figure>
 
 Our complete methods are documented in detail [here](https://docs.google.com/document/d/e/2PACX-1vSVPWE8BOOqu_G9_bdioMquhoIOTnJ4UOYeJeCpEr9RMBrazStaIxQIJtrt8DzVBMZb4waxA9fLyyqr/pub) and all of our source code is available on [GitHub](https://github.com/carbonplan/trace). The full data product is visible via an interactive [webmap](https://carbonplan.org/research/forest-carbon). Interested users can also check out a sample [jupyter notebook](https://aws-uswest2-binder.pangeo.io/v2/gh/carbonplan/trace/HEAD?urlpath=lab/tree/notebooks%2Fblogpost_sample_notebook.ipynb) to inspect the resulting publicly-available, cloud-based emissions archive at the 30 m scale and visualize the data like the map above.
 

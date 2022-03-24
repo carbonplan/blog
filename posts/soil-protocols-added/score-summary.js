@@ -58,7 +58,7 @@ const star = (name) => {
 
 const ScoreSummary = () => {
   return (
-    <Box sx={{ mt: [6, 6, 6, 7], mb: [5] }}>
+    <Box sx={{ mb: [5, 5, 5, 6] }}>
       <Row columns={[6]} sx={{ pb: ['1px'], mb: [1], mt: [8, 0, 0, 0] }}>
         <Column start={[2]} width={[1]}>
           <Box sx={sx.header}>Rigor</Box>
