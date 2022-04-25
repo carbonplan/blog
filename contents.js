@@ -7,7 +7,7 @@ const contents = [
     authors: ['Freya Chay', 'Danny Cullenward', 'Grayson Badgley'],
     date: '04-25-2022',
     summary:
-      'Verra has proposed adopting ton-year accounting to credit temporary carbon storage, and NCX has developed a methodology around this option to credit short-term forest harvest delays. Our comments to Verra raise concerns that ton-year accounting is inconsistent with net-zero goals and long-term temperature targets. The proposed changes also raise unique additionality problems that aren’t adequately addressed by NCX.',
+      'We summarize two recent comment letters about Verra’s proposed use of ton-year accounting to issue carbon offset credits — including via a proposed methodology developed by NCX which would credit harvest deferrals as short as a single year.',
     card: 'ton-year-verra',
     number: 13,
   },
