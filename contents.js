@@ -1,5 +1,17 @@
 const contents = [
   {
+    id: 'ton-year-verra',
+    version: '1.0.0',
+    title:
+      'Comments to Verra on ton-year accounting and NCX’s harvest deferral methodology',
+    authors: ['Freya Chay', 'Danny Cullenward', 'Grayson Badgley'],
+    date: '04-25-2022',
+    summary:
+      'We summarize two recent comment letters about Verra’s proposed use of ton-year accounting to issue carbon offset credits — including via a proposed methodology developed by NCX which would credit harvest deferrals as short as a single year.',
+    card: 'ton-year-verra',
+    number: 13,
+  },
+  {
     id: 'occ-risk-comment',
     version: '1.0.0',
     title:
