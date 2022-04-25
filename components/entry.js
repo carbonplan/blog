@@ -115,7 +115,7 @@ const Entry = ({ final, first, info }) => {
             fixedCount={3}
             spacing={[1, 2, 2, 3]}
             maxWidth='150px'
-            align={['right', 'left', 'left', 'left']}
+            align={['right', 'right', 'left', 'left']}
             width={['90%', '90%', '100%', '100%']}
           />
         </Column>
