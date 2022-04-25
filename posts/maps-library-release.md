@@ -99,7 +99,7 @@ The source data is a Zarr group with temperature data from [WorldClim](https://w
 With the same component, we can just as easily render a 4D map where the third dimension is the month and the fourth dimension is temperature or precipitation (labeled “band”). Pointing to this dataset, the `Raster` component becomes the following.
 
 ```jsx
-  <Raster
+<Raster
   colormap={colormap}
   clim={clim}
   source={bucket + 'v1/demo/4d/tavg-prec-month'}
