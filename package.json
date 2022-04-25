@@ -4,8 +4,8 @@
   "description": "short updates on what we do at CarbonPlan",
   "main": "index.js",
   "scripts": {
-    "dev": "npm run build-pages && NODE_ENV=development next -p 4001",
-    "build": "npm run build-pages && next build",
+    "dev": "NODE_ENV=development next -p 4001",
+    "build": "next build",
     "build-pages": "node build-pages.js && prettier --write contents.js 'pages/blog/!(index).js'",
     "build-cards": "node build-cards.js",
     "lint": "eslint . --max-warnings 5",
