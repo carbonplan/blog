@@ -1,10 +1,8 @@
 import { useMemo } from 'react'
 import { Box } from 'theme-ui'
 import Entry from './entry'
-// import contents from '../contents'
 
 const List = ({ posts, year }) => {
-  console.log(posts)
   const filteredContents = useMemo(() => {
     return posts.filter((d) => year[d.date.split('-')[2]])
   }, [posts, year])
