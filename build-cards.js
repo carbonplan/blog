@@ -1,13 +1,14 @@
 const fs = require('fs')
 const glob = require('glob')
 const puppeteer = require('puppeteer')
-const contents = require('./contents.js')
+const { getPostMetadata } = require('./utils/mdx-utils.js')
 
 glob('./cards/**.png', async (err, filePaths) => {
   if (!fs.existsSync('./cards')) {
     fs.mkdirSync('./cards')
   }
 
+  const contents = await getPostMetadata()
   for (const post of contents) {
     if (!filePaths.find((p) => p.includes(post.id))) {
       const file = await getScreenshot(post.id)

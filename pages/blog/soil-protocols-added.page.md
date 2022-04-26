@@ -1,4 +1,5 @@
 import { Box } from 'theme-ui'
+import { Post } from '@carbonplan/layouts'
 import { Link, Figure, FigureCaption } from '@carbonplan/components'
 import RecommendationTable from './soil-protocols-added/recommendation-table'
 import ScoreSummary from './soil-protocols-added/score-summary'
@@ -110,3 +111,5 @@ The only amendment to these recommendations is the addition of the Australia mea
 The three protocols reviewed here — as well as the majority of protocols reviewed in our initial analysis — were also included in the Environmental Defense Fund’s recent and thoughtful [report on Agricultural Soil Carbon Credits](https://www.edf.org/soilcarbon), which we encourage interested readers to explore.
 
 Thanks to those who reached out to give us feedback on our initial review and express interest in the addition of these compliance protocols. We appreciate hearing what people are finding (or would find) useful, and as always, we welcome further feedback.
+
+export default ({ children }) => <Post meta={meta}>{children}</Post>

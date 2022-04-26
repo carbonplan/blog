@@ -1,3 +1,5 @@
+import { Post } from '@carbonplan/layouts'
+
 export const meta = {
   version: '1.0.0',
   title: 'Why carbon offset disclosure matters',
@@ -77,3 +79,5 @@ In addition to disclosing the extent to which companies are relying on avoided e
 Almost all of this information is readily available to offset purchasers, with the limited exception of the breakdown between avoided emissions and carbon removal claims associated with forest offset credits. Since the breakdown in claim type is already indicated by public registry documents and demand for credit differentiation is growing as companies pledge to procure [only carbon removal offsets](https://doi.org/10.1038/d41586-021-02606-3), carbon offset registries and buyers have everything they need to easily bridge this gap.
 
 Corporate-level carbon offset disclosures have the potential to help investors and the general public track the climate claims companies make. Despite the complexity of offset markets, standard disclosures of just a handful of objective criteria can significantly improve the quality of information available to investors who need to understand the benefits, risks, and net-zero alignment of companies’ climate strategies.
+
+export default ({ children }) => <Post meta={meta}>{children}</Post>

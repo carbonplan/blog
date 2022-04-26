@@ -1,3 +1,5 @@
+import { Post } from '@carbonplan/layouts'
+
 export const meta = {
   version: '1.0.0',
   title: 'Welcome to the blog',
@@ -18,3 +20,5 @@ This blog is designed for those goals. You'll see posts written by our team memb
 You can check the [index](/blog) for updates to the blog, or follow us on [twitter](https://twitter.com/carbonplanorg), which we will use to highlight recent research, new blog posts, and other announcements.
 
 Thanks for reading!
+
+export default ({ children }) => <Post meta={meta}>{children}</Post>

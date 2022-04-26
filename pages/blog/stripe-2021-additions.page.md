@@ -1,3 +1,5 @@
+import { Post } from '@carbonplan/layouts'
+
 export const meta = {
   version: '1.0.0',
   title: 'Additions to our CDR database',
@@ -29,3 +31,5 @@ To be honest, we’ve found it challenging to treat capture-only and storage-onl
 While building the CDR database, we’ve observed growing interest in ocean-based carbon removal. Three of the eleven proposals reviewed in this round interact directly with the ocean, including the first alkalinity enhancement proposals we’ve seen. As emphasized by the recently released National Academy of Sciences [report on ocean-based CDR](https://www.nap.edu/catalog/26278/a-research-strategy-for-ocean-based-carbon-dioxide-removal-and-sequestration), we lack fundamental knowledge around many ocean-based CDR mechanisms, and there is not yet a clear path to verification of removed carbon — if it’s even possible. Additionally, because many of these approaches involve shifting chemical equilibria rather than removing and storing particular molecules of carbon, they also require a new way of thinking about volume and permanence. Substantially more research and pilot-scale deployments will be needed to validate these approaches, and we think care should be taken with speculative procurements.
 
 As always, we welcome questions and feedback. If you have found value in the CDR database, let us know! As we figure out where to take this work next, it’s helpful to hear what you have found useful and what you think is missing. Reach out at [hello@carbonplan.org](mailto:hello@carbonplan.org) or on [Twitter](https://twitter.com/carbonplanorg). Finally, thanks to Sadie Frank, Cindy Chiao, and Jeremy Freeman, who all helped out with this round of evaluations.
+
+export default ({ children }) => <Post meta={meta}>{children}</Post>

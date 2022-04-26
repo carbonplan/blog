@@ -1,3 +1,4 @@
+import { Post } from '@carbonplan/layouts'
 import { Figure, TableCaption } from '@carbonplan/components'
 import TableHundred from './ton-year-ncx/table-hundred'
 import TableThousand from './ton-year-ncx/table-thousand'
@@ -125,3 +126,5 @@ Meanwhile, we hope that NCX will acknowledge the challenges with its current met
 ## Update — Feb 04 2022
 
 NCX posted a [response](https://ncx.com/learning-hub/ncx-response-to-carbonplan-critique/) on February 3, but as of this writing has not yet engaged with the substance of our critique.
+
+export default ({ children }) => <Post meta={meta}>{children}</Post>

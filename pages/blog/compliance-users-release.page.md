@@ -1,3 +1,5 @@
+import { Post } from '@carbonplan/layouts'
+
 export const meta = {
   version: '1.0.0',
   title: 'Who is using which offsets in California?',
@@ -17,3 +19,5 @@ Our analysis weaves together three public data sources published as excel spread
 Note that while both offset projects and emitting facilities can be linked to compliance users, the data from CARB does not allow them to be directly connected with each other. In other words, you can link a set of facilities to a set of offsets credits turned in by a compliance user for a particular period, but you cannot link specific offset credits to specific emitting facilities. That’s neither a limit of our approach nor of the public data, but rather a consequence of how the cap-and-trade program works — climate pollution liabilities come due at the compliance user level, so there’s a layer of indirection inherent in the underlying accounting.
 
 Check out the [GitHub repository](https://github.com/carbonplan/compliance-users) for the code and data-processing scripts underlying the web tool, and feel free to reach out if you have any questions about how the tool works or how to use it!
+
+export default ({ children }) => <Post meta={meta}>{children}</Post>

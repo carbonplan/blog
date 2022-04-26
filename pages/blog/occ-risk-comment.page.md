@@ -1,3 +1,5 @@
+import { Post } from '@carbonplan/layouts'
+
 export const meta = {
   version: '1.0.0',
   title:
@@ -35,3 +37,5 @@ Although we appreciate that aspects of banks’ climate-related financial risk m
 Our concerns about climate analytics might seem technical, but without a transparent, common baseline for enabling climate science to inform financial sector needs, there is a real risk that financial institutions like banks will either feel paralyzed by uncertainty or make strategic decisions based on a false sense of precision. Given the impact that these decisions can have on the overall economy, policymakers, practitioners, and community members have an interest in knowing how these risk assessments are being undertaken and how they inform bank activity.
 
 We think regulators like the OCC can contribute to solutions by expanding public data, improving free analysis tools, and partnering with climate experts to develop decision-making frameworks. As agencies across the government focus on climate-related financial risk, we encourage cross-agency collaboration on oversight mechanisms, standard development, and guidance for best practices. We thank the OCC for their work on this topic, and look forward to further guidance from the agency.
+
+export default ({ children }) => <Post meta={meta}>{children}</Post>

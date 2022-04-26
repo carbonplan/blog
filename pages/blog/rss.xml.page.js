@@ -1,6 +1,6 @@
-import contents from '../../contents'
+import { getPostMetadata } from '../../utils/mdx-utils'
 
-const contentsRssXml = () => {
+const contentsRssXml = (contents) => {
   let latestPostDate
   let rssItemsXml = ''
   contents
@@ -36,8 +36,8 @@ const contentsRssXml = () => {
   }
 }
 
-const getRssXml = () => {
-  const { rssItemsXml, latestPostDate } = contentsRssXml()
+const getRssXml = (contents) => {
+  const { rssItemsXml, latestPostDate } = contentsRssXml(contents)
 
   return `<?xml version="1.0" ?>
         <rss
@@ -67,7 +67,8 @@ export async function getServerSideProps(context) {
   if (!res) {
     return
   }
-  const xml = getRssXml()
+  const contents = await getPostMetadata()
+  const xml = getRssXml(contents)
   res.setHeader('Content-Type', 'application/xml')
   res.write(xml)
   res.end()

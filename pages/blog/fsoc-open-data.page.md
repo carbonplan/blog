@@ -1,3 +1,5 @@
+import { Post } from '@carbonplan/layouts'
+
 export const meta = {
   version: '1.0.0',
   title: 'Open data and the Financial Stability Oversight Council',
@@ -31,3 +33,5 @@ Despite the clear need for more open data and tools, open climate-related financ
 > “​​The Council recommends that FSOC members make climate-related data for which they are the custodians freely available to the public, as appropriate and subject to any applicable data confidentiality requirements.”
 
 We were excited to read FSOC’s new report and hope that its member agencies will adopt this recommendation in full. We also hope FSOC and its member agencies will engage open science practitioners in the research community to support the development of a robust risk management paradigm going forward.
+
+export default ({ children }) => <Post meta={meta}>{children}</Post>

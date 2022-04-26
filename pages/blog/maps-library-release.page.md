@@ -1,3 +1,4 @@
+import { Post } from '@carbonplan/layouts'
 import MapDemo2d from './maps-library-release/maps-demo-2d'
 import MapDemo4d from './maps-library-release/maps-demo-4d'
 
@@ -146,3 +147,5 @@ Finally, another recent project called [Viv](https://github.com/hms-dbmi/viv) re
 We're just getting started. We used our library for a [production web map](https://carbonplan.org/research/forest-carbon) for the first time two weeks ago. We'll be building out the library further for our own use cases, and are planning to make it more robust — with validation, tests, etc. — alongside adding new features. It's in the early stages of development, so while we'll adhere to semantic versioning, you should expect frequent updates and breaking changes.
 
 We want to enable others — from front-end developers looking to build new map experiences to Python-wielding climate scientists wanting an easier way to share their datasets on the web — so if you’re working on these problems, please [reach out](https://github.com/carbonplan/maps/issues).
+
+export default ({ children }) => <Post meta={meta}>{children}</Post>

@@ -1,3 +1,5 @@
+import { Post } from '@carbonplan/layouts'
+
 export const meta = {
   version: '1.0.0',
   title:
@@ -18,3 +20,5 @@ Instead, the USDA program should pay for climate-smart commodities directly, wit
 The USDA’s request for information is part of much broader domestic policy efforts aimed at aligning the forestry and agriculture sectors with the Biden Administration's climate goals. The CSAF Partnership Program also could set a critical precedent for implementing legislation currently under debate in Congress. For example, provisions in the [Build Back Better Act](https://agriculture.house.gov/uploadedfiles/house_agriculture_build_back_better_act_provisions_.pdf) would channel billions of dollars to the agricultural sector and could create the groundwork for sound land management practices and the expansion of climate-friendly commodity markets. Getting the details right is necessary to support climate policy goals and avoid problems during implementation.
 
 We thank USDA for the opportunity to comment on the proposed CSAF program and look forward to further engagement on this topic.
+
+export default ({ children }) => <Post meta={meta}>{children}</Post>

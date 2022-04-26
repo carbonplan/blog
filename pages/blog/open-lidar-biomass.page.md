@@ -1,3 +1,4 @@
+import { Post } from '@carbonplan/layouts'
 import { Figure, FigureCaption } from '@carbonplan/components'
 import Chart from './open-lidar-biomass/figure'
 
@@ -63,3 +64,5 @@ While LiDAR-derived biomass is often an intermediary product in a larger end-to-
 CarbonPlan received grant support from WattTime (as part of the [Climate TRACE](https://www.climatetrace.org/) project) and NASA (grant no. 19-ACCESS19-0049). [2i2c](https://2i2c.org/) managed our computing environment on AWS where all of our analysis was performed.
 
 We thank [Mary Farina](https://www.woodwellclimate.org/staff/mary-farina/) and [Jon Wang](https://www.jonwangetal.com/) for providing key insights that supported our work on this project.
+
+export default ({ children }) => <Post meta={meta}>{children}</Post>

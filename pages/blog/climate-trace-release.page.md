@@ -1,3 +1,4 @@
+import { Post } from '@carbonplan/layouts'
 import { Link, Figure, FigureCaption } from '@carbonplan/components'
 import Map from './climate-trace-release/figure'
 
@@ -64,3 +65,5 @@ The limitations associated with the forest emissions dataset we described above 
 ## Thanks
 
 CarbonPlan received grant support from Watttime to participate in Climate TRACE. [2i2c](https://2i2c.org/) provided a managed [Pangeo Cloud](https://pangeo.io/cloud.html) computing environment on AWS where all our analysis was performed. The [University of Maryland](https://storage.googleapis.com/earthenginepartners-hansen/GFC-2020-v1.8/download.html), [World Resource Institute’s Global Forest Watch](https://globalforestwatch.org/), and [NASA](https://firms.modaps.eosdis.nasa.gov/) each provided freely accessible open data that made this work possible.
+
+export default ({ children }) => <Post meta={meta}>{children}</Post>

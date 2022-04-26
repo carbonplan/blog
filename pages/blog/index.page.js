@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { Layout } from '@carbonplan/components'
 import Main from '../../components/main'
+import { getPostMetadata } from '../../utils/mdx-utils'
 
-const Index = () => {
+const Index = ({ posts }) => {
   const [showMobileSettings, setShowMobileSettings] = useState(false)
 
   return (
@@ -20,9 +21,14 @@ const Index = () => {
         onClick: () => setShowMobileSettings(!showMobileSettings),
       }}
     >
-      <Main showMobileSettings={showMobileSettings} />
+      <Main posts={posts} showMobileSettings={showMobileSettings} />
     </Layout>
   )
+}
+
+export async function getStaticProps() {
+  const posts = await getPostMetadata()
+  return { props: { posts } }
 }
 
 export default Index

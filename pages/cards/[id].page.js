@@ -2,7 +2,7 @@ import { Box, Flex, Text } from 'theme-ui'
 import { useEffect, useRef, useState } from 'react'
 import { Monogram, formatDate } from '@carbonplan/components'
 
-import contents from '../../contents'
+import { getPostMetadata } from '../../utils/mdx-utils'
 import { AUTHOR_COLORS } from '../../constants'
 
 const Card = ({ title, authors, date, number }) => {
@@ -117,6 +117,7 @@ const Card = ({ title, authors, date, number }) => {
 export default Card
 
 export async function getStaticPaths() {
+  const contents = await getPostMetadata()
   const paths = contents.map((post) => ({
     params: { id: post.id },
   }))
@@ -131,6 +132,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
+  const contents = await getPostMetadata()
   const post = contents.find((p) => p.id === params.id)
   const { title, authors, date, number } = post
 

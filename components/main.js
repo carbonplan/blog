@@ -28,7 +28,7 @@ const Settings = ({ setYear, year }) => {
   )
 }
 
-const Main = ({ showMobileSettings }) => {
+const Main = ({ posts, showMobileSettings }) => {
   const [year, setYear] = useState(initYear)
 
   const settings = <Settings setYear={setYear} year={year} />
@@ -60,7 +60,7 @@ const Main = ({ showMobileSettings }) => {
           {settings}
         </Column>
         <Column start={[1, 2, 5, 5]} width={[6, 6, 7, 7]}>
-          <List year={year} />
+          <List year={year} posts={posts} />
         </Column>
       </Row>
     </>

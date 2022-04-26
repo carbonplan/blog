@@ -1,3 +1,5 @@
+import { Post } from '@carbonplan/layouts'
+
 export const meta = {
   version: '1.0.0',
   title: 'Climate-related financial risk and corporate net-zero commitments',
@@ -71,3 +73,5 @@ Unfortunately, today’s offsets markets don’t systematically track the distin
 Questions about carbon offset quality are important in their own right, but they also matter for climate-related financial risks. To the extent companies rely heavily on low-quality offsets, they create their own transition risks. Should investors or regulators ever demand companies rely only on high-quality, permanent carbon removal, companies that plan to rely on cheap, low-quality offsets will find themselves scrambling to adjust to a very different and likely more expensive reality — an acute transition risk. On the other hand, if standards for net-zero-aligned offsetting remain amorphous and weak, most corporate pledges will do little to cut pollution and therefore do nothing to mitigate physical climate risks.
 
 As we hope this post makes clear, the nexus of corporate climate-related financial risk and net-zero commitments reveals important contradictions and tensions that researchers, policymakers, and corporate leaders need to better understand. While often viewed as individual elements of climate strategy, financial risk and net-zero commitments are in fact closely linked to each other via transition plans and their use of carbon offsets, the effective governance of which is essential to producing credible disclosure regimes and effective private sector incentives.
+
+export default ({ children }) => <Post meta={meta}>{children}</Post>
