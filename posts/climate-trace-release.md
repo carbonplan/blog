@@ -1,15 +1,11 @@
-import { Link, Figure, FigureCaption } from '@carbonplan/components'
-import Map from './climate-trace-release/figure'
-
-export const meta = {
-  version: '1.0.0',
-  title: 'Climate TRACE release',
-  authors: ['Oriana Chegwidden', 'Cindy Chiao', 'Joe Hamman'],
-  date: '09-16-2021',
-  summary:
-    'Our contributions to the initial Climate TRACE data release, and what’s coming next.',
-  card: 'climate-trace-release',
-}
+---
+version: 1.0.0
+title: Climate TRACE release
+authors: Oriana Chegwidden,Cindy Chiao,Joe Hamman
+date: 09-16-2021
+summary: Our contributions to the initial Climate TRACE data release, and what’s coming next.
+card: climate-trace-release
+---
 
 In early 2020, CarbonPlan joined the [Climate TRACE](https://www.climatetrace.org) coalition. The coalition’s goal is to produce an independent dataset which uses remote sensing data to track greenhouse gas emissions on a timely basis. Today, the coalition includes twelve organizations, each focusing on one or more sectors. We were responsible for estimating emissions arising from the loss of forest biomass due to non-fire disturbances. To accompany the release of Climate TRACE’s initial [platform](https://climatetrace.org/), this post explains our contribution and documents our work.
 
@@ -32,9 +28,7 @@ For the initial release of the Climate TRACE platform we used established method
         },
       }}
       href='/research/forest-carbon'
-    >
-      interactive
-    </Link>{' '}
+    >interactive</Link>{' '}
     version to explore more.
   </FigureCaption>
 </Figure>

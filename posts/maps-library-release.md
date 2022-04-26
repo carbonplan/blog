@@ -1,15 +1,11 @@
-import MapDemo2d from './maps-library-release/maps-demo-2d'
-import MapDemo4d from './maps-library-release/maps-demo-4d'
-
-export const meta = {
-  version: '1.0.0',
-  title: 'A new toolkit for data-driven maps',
-  authors: ['Jeremy Freeman', 'Kata Martin', 'Joe Hamman'],
-  date: '09-27-2021',
-  summary:
-    'Why rendering scientific data in web maps is so tough, and how we’re trying to solve it.',
-  card: 'maps-library-release',
-}
+---
+version: 1.0.0
+title: A new toolkit for data-driven maps
+authors: Jeremy Freeman,Kata Martin,Joe Hamman
+date: 09-27-2021
+summary: Why rendering scientific data in web maps is so tough, and how we’re trying to solve it.
+card: maps-library-release
+---
 
 People have been rendering maps on the web for a long time, but current approaches still struggle with scientific use cases that we’re trying to address with a new [tool](https://github.com/carbonplan/maps). Check out the demo [here](https://maps.demo.carbonplan.org/).
 

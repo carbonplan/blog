@@ -1,16 +1,11 @@
-import { Figure, TableCaption } from '@carbonplan/components'
-import TableHundred from './ton-year-ncx/table-hundred'
-import TableThousand from './ton-year-ncx/table-thousand'
-
-export const meta = {
-  version: '1.0.0',
-  title: 'A critique of NCX’s carbon accounting methods',
-  authors: ['Danny Cullenward', 'Freya Chay', 'Grayson Badgley'],
-  date: '01-31-2022',
-  summary:
-    'We review concerns with NCX’s use of discounted ton-year accounting methods to credit short-term timber harvests delays.',
-  card: 'ton-year-ncx',
-}
+---
+version: 1.0.0
+title: A critique of NCX’s carbon accounting methods
+authors: Danny Cullenward,Freya Chay,Grayson Badgley
+date: 01-31-2022
+summary: We review concerns with NCX’s use of discounted ton-year accounting methods to credit short-term timber harvests delays.
+card: ton-year-ncx
+---
 
 In parallel to the release of our [ton-year accounting research article](https://carbonplan.org/research/ton-year-explainer), we decided to raise concerns about one of the companies ([NCX](https://ncx.com)) that plans to use its own version of ton-year accounting to issue carbon credits through a forthcoming protocol [under development](https://ncx.com/learning-hub/our-verified-carbon-standard-concept-note-approval/) with Verra. In the course of our research, we came to realize that NCX’s approach presents two significant issues that speak directly to the climate-equivalence claims being made. This post documents our concerns in detail in the hope that NCX improves its approach going forward.
 

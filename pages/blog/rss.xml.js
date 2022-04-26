@@ -1,9 +1,9 @@
-import contents from '../../contents'
+import { postMetadata } from '../../utils/mdx-utils'
 
 const contentsRssXml = () => {
   let latestPostDate
   let rssItemsXml = ''
-  contents
+  postMetadata
     .filter(({ id }) => id)
     .forEach(({ id, date, title, summary }) => {
       const [month, day, year] = date.split('-').map((s, i) =>

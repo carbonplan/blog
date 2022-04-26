@@ -1,17 +1,11 @@
-import { Box } from 'theme-ui'
-import { Link, Figure, FigureCaption } from '@carbonplan/components'
-import RecommendationTable from './soil-protocols-added/recommendation-table'
-import ScoreSummary from './soil-protocols-added/score-summary'
-
-export const meta = {
-  version: '1.0.0',
-  title: 'Additions to our analysis of soil carbon protocols',
-  authors: ['Freya Chay', 'Danny Cullenward'],
-  date: '10-13-2021',
-  summary:
-    'We analyzed three new soil carbon protocols and added them our interactive database.',
-  card: 'soil-protocols-added',
-}
+---
+version: 1.0.0
+title: Additions to our analysis of soil carbon protocols
+authors: Freya Chay,Danny Cullenward
+date: 10-13-2021
+summary: We analyzed three new soil carbon protocols and added them our interactive database.
+card: soil-protocols-added
+---
 
 In July 2021, we published an [analysis](https://carbonplan.org/research/soil-protocols-explainer) of 14 protocols that certify or issue credits for soil carbon removal. Our systematic review of the protocols was also published as an [interactive database](https://carbonplan.org/research/soil-protocols), which we are updating now with the release of this short blog post.
 

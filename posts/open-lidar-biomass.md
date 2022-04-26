@@ -1,15 +1,11 @@
-import { Figure, FigureCaption } from '@carbonplan/components'
-import Chart from './open-lidar-biomass/figure'
-
-export const meta = {
-  version: '1.0.0',
-  title: 'Using LiDAR to estimate forest biomass',
-  authors: ['Cindy Chiao', 'Oriana Chegwidden', 'Joe Hamman'],
-  date: '02-16-2022',
-  summary:
-    'An open source implementation of forest biomass estimation using LiDAR.',
-  card: 'open-lidar-biomass',
-}
+---
+version: 1.0.0
+title: Using LiDAR to estimate forest biomass
+authors: Cindy Chiao,Oriana Chegwidden,Joe Hamman
+date: 02-16-2022
+summary: An open source implementation of forest biomass estimation using LiDAR.
+card: open-lidar-biomass
+---
 
 Forests play a key role in the global carbon cycle. Effective policies around forest management in turn require accurate measurement of carbon storage and how carbon varies over space and time. Various methods utilizing remote sensing data have been developed to generate global inventories of forest biomass. However, reproducing and comparing these methods can be a challenge due to insufficiently-detailed method descriptions or the underlying data and software being unavailable.
 

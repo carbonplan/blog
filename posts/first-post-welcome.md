@@ -1,11 +1,11 @@
-export const meta = {
-  version: '1.0.0',
-  title: 'Welcome to the blog',
-  authors: ['Jeremy Freeman'],
-  date: '09-14-2021',
-  summary: "Why we made this and what you'll find here.",
-  card: 'first-post-welcome',
-}
+---
+version: 1.0.0
+title: Welcome to the blog
+authors: Jeremy Freeman
+date: 09-14-2021
+summary: Why we made this and what you'll find here.
+card: first-post-welcome
+---
 
 Public communication is core to our mission at CarbonPlan.
 

@@ -1,12 +1,11 @@
-export const meta = {
-  version: '1.0.0',
-  title: 'Why carbon offset disclosure matters',
-  authors: ['Sadie Frank', 'Danny Cullenward', 'Freya Chay'],
-  date: '02-08-2022',
-  summary:
-    "Voluntary carbon markets don't provide investors with adequate data about who is using offset credits, nor what kinds of climate claims those credits justify. Simple disclosures would fix this gap.",
-  card: 'offset-disclosure-needs',
-}
+---
+version: 1.0.0
+title: Why carbon offset disclosure matters
+authors: Sadie Frank,Danny Cullenward,Freya Chay
+date: 02-08-2022
+summary: Voluntary carbon markets don't provide investors with adequate data about who is using offset credits, nor what kinds of climate claims those credits justify. Simple disclosures would fix this gap.
+card: offset-disclosure-needs
+---
 
 Interest in net-zero-aligned investing is [significant and growing](https://www.climatepolicyinitiative.org/netzerofinancetracker/?page=institutions&view=all). BlackRock, the largest asset manager in the world, [recently wrote](https://www.blackrock.com/corporate/investor-relations/transition-investing) in a client letter that “the issue … is no longer whether the net zero transition will happen but how.” [Financial-industry-led coalitions](https://www.gfanzero.com) managing trillions of dollars have committed to net-zero climate targets that will be implemented via [net-zero transition plans](https://carbonplan.org/blog/climate-financial-risks).
 

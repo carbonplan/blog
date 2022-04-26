@@ -1,13 +1,11 @@
-export const meta = {
-  version: '1.0.0',
-  title:
-    'Comments to the Office of the Comptroller of the Currency on climate-related financial risk',
-  authors: ['Sadie Frank'],
-  date: '02-18-2022',
-  summary:
-    "We welcome the OCC's draft climate-related financial risk management principles and point out core tensions that could arise in implementation.",
-  card: 'occ-risk-comment',
-}
+---
+version: 1.0.0
+title: Comments to the Office of the Comptroller of the Currency on climate-related financial risk
+authors: Sadie Frank
+date: 02-18-2022
+summary: We welcome the OCC's draft climate-related financial risk management principles and point out core tensions that could arise in implementation.
+card: occ-risk-comment
+---
 
 We submitted comments to the Office of the Comptroller of the Currency (OCC) on their [Principles for Climate-Related Financial Risk Management
 for Large Banks ](https://www.occ.treas.gov/news-issuances/bulletins/2021/bulletin-2021-62a.pdf) on February 14th. [Our comments](https://files.carbonplan.org/OCC-Climate-Risks-Comments-02-14-2022.pdf) commend the OCC’s draft principles for comprehensively integrating climate risk considerations across the activities of large US banks. We also draw attention to several key challenges and tensions that the principles surface.

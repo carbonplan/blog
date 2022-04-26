@@ -9,7 +9,8 @@ import {
 import { RotatingArrow } from '@carbonplan/icons'
 
 const Entry = ({ final, first, info }) => {
-  let { id, number, title, authors, date, summary } = info
+  let { id, number, title, authors: rawAuthors, date, summary } = info
+  const authors = rawAuthors.split(',')
 
   const formattedDate = formatDate(date, {
     month: 'numeric',
