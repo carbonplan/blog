@@ -28,7 +28,9 @@ For the initial release of the Climate TRACE platform we used established method
         },
       }}
       href='/research/forest-carbon'
-    >interactive</Link>{' '}
+    >
+      interactive
+    </Link>{' '}
     version to explore more.
   </FigureCaption>
 </Figure>
