@@ -58,7 +58,6 @@
     "eslint": "^7.32.0",
     "eslint-config-next": "^11.0.1",
     "eslint-config-prettier": "^8.3.0",
-    "extract-mdx-metadata": "^1.0.0",
     "glob": "^7.1.7",
     "prettier": "2.3.2",
     "puppeteer": "^10.4.0"
