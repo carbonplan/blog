@@ -20,7 +20,8 @@ Recently, [Harris et al. (2021)](https://doi.org/10.1038/s41558-020-00976-6) syn
 
 <Figure>
   <Chart />
-    <FigureCaption number={1}>Example LiDAR return signal, which could result in two different tree
+  <FigureCaption number={1}>
+    Example LiDAR return signal, which could result in two different tree
     heights depending on the choice of methods. The y-axis represents distance
     from the satellite where the LiDAR instrument is located. A higher value
     (lower position) on the y-axis indicates a distance farther from the
@@ -35,7 +36,8 @@ Recently, [Harris et al. (2021)](https://doi.org/10.1038/s41558-020-00976-6) syn
     less when using alternative ground peak in this example). In general,
     allometric equations relying on <i>Max Vegetation Height</i> as an input
     would estimate higher biomass (if using the yellow ground peak) or lower
-    biomass (if using the pink alternative ground peak).</FigureCaption>
+    biomass (if using the pink alternative ground peak).{' '}
+  </FigureCaption>
 </Figure>
 
 ## Why the details matter

@@ -73,18 +73,24 @@ Combining the new analysis with our results from before, we can look at all the 
 
 <Figure>
   <ScoreSummary />
-    <FigureCaption>Summary table of our results. Each protocol is a row. The{' '}
-    <Box as='span' sx={{ color: 'orange' }}>*</Box>{' '}
+  <FigureCaption>
+    Summary table of our results. Each protocol is a row. The{' '}
+    <Box as='span' sx={{ color: 'orange' }}>
+      *
+    </Box>{' '}
     indicates new additions. The first four columns show scores along four
     individual metrics (each on a scale from 1 to 3) and the final column shows
     the overall rating (on a scale from 1 to 5). For more details, check out the{' '}
     <Link
       href='/research/soil-protocols'
       sx={{ color: 'secondary', '&:hover': { color: 'primary' } }}
-    >interactive version</Link>{' '}
+    >
+      interactive version
+    </Link>{' '}
     of this table. Abbreviations: Grazing (G), Compost (C), Cropping (Cr),
     Improved Agriculture (IA), Sustainable Agriculture (SA), Fire + Grazing
-    (FG), Austrailia (Aus), Alberta (Alb)</FigureCaption>
+    (FG), Austrailia (Aus), Alberta (Alb)
+  </FigureCaption>
 </Figure>
 
 With the addition of these three protocols, our recommendations to buyers remain the same:
