@@ -2,6 +2,8 @@ const fs = require('fs')
 const path = require('path')
 const matter = require('gray-matter')
 
+// Utils based on examples in https://github.com/vercel/next.js/tree/canary/examples/with-mdx-remote
+
 // POSTS_PATH is useful when you want to get the path to a specific file
 const POSTS_PATH = path.join(process.cwd(), 'posts')
 
@@ -12,6 +14,7 @@ const postFilePaths = fs
   .filter((path) => /\.md$/.test(path))
   .map((path) => ({ path, id: path.replace(/\.md$/, '') }))
 
+// postMetadata is the list metadata objects for all postFilePaths
 const postMetadata = postFilePaths
   .map(({ path: filePath, id }) => {
     const source = fs.readFileSync(path.join(POSTS_PATH, filePath))
