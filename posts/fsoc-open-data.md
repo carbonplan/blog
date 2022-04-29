@@ -1,7 +1,8 @@
 ---
 version: 1.0.0
 title: Open data and the Financial Stability Oversight Council
-authors: Sadie Frank
+authors:
+  - Sadie Frank
 date: 11-04-2021
 summary: Why open data and analytics matter in addressing climate-related financial risk.
 card: fsoc-open-data

@@ -1,7 +1,10 @@
 ---
 version: 1.0.0
 title: Using LiDAR to estimate forest biomass
-authors: Cindy Chiao,Oriana Chegwidden,Joe Hamman
+authors:
+  - Cindy Chiao
+  - Oriana Chegwidden
+  - Joe Hamman
 date: 02-16-2022
 summary: An open source implementation of forest biomass estimation using LiDAR.
 card: open-lidar-biomass

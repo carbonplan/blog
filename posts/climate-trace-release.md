@@ -1,7 +1,10 @@
 ---
 version: 1.0.0
 title: Climate TRACE release
-authors: Oriana Chegwidden,Cindy Chiao,Joe Hamman
+authors:
+  - Oriana Chegwidden
+  - Cindy Chiao
+  - Joe Hamman
 date: 09-16-2021
 summary: Our contributions to the initial Climate TRACE data release, and what’s coming next.
 card: climate-trace-release

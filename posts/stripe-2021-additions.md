@@ -1,7 +1,8 @@
 ---
 version: 1.0.0
 title: Additions to our CDR database
-authors: Freya Chay
+authors:
+  - Freya Chay
 date: 12-15-2021
 summary: Analysis of 11 new proposals from Stripe’s Fall 2021 CDR procurement.
 card: stripe-2021-additions

@@ -32,11 +32,9 @@ const COMPONENTS = {
 
 const PostPage = ({ id, source, frontMatter, number }) => {
   const components = useMDXComponents()
-  const rawAuthors = frontMatter.authors
-  const authors = rawAuthors.split(',')
 
   return (
-    <Post meta={{ ...frontMatter, authors }} number={number}>
+    <Post meta={frontMatter} number={number}>
       <MDXRemote
         {...source}
         components={{
