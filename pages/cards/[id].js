@@ -135,5 +135,5 @@ export async function getStaticProps({ params }) {
   const { title, authors, date, number } = post
 
   // Pass post data to the page via props
-  return { props: { title, authors: authors.split(','), date, number } }
+  return { props: { title, authors, date, number } }
 }
