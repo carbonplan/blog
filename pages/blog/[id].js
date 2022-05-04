@@ -16,7 +16,7 @@ import {
 } from '@carbonplan/components'
 import { Code, Pre } from '@carbonplan/prism'
 
-import { postMetadata, POSTS_PATH } from '../../utils/mdx-utils'
+import { postMetadata, POSTS_PATH } from '../../utils/mdx'
 import figures from '../../figures'
 
 const COMPONENTS = {
