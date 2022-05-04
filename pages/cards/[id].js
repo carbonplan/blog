@@ -2,7 +2,7 @@ import { Box, Flex, Text } from 'theme-ui'
 import { useEffect, useRef, useState } from 'react'
 import { Monogram, formatDate } from '@carbonplan/components'
 
-import { postMetadata } from '../../utils/mdx-utils'
+import { postMetadata } from '../../utils/mdx'
 import { AUTHOR_COLORS } from '../../constants'
 
 const Card = ({ title, authors, date, number }) => {
