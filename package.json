@@ -4,9 +4,9 @@
   "description": "short updates on what we do at CarbonPlan",
   "main": "index.js",
   "scripts": {
-    "dev": "npm run build-figures && NODE_ENV=development next -p 4001",
-    "build": "npm run build-figures && next build",
-    "build-figures": "node build-figures.js && prettier --write components/mdx/figures.js 'posts/**/figures.js'",
+    "dev": "npm run build-components && NODE_ENV=development next -p 4001",
+    "build": "npm run build-components && next build",
+    "build-components": "node build-components.js && prettier --write components/mdx/page-components.js",
     "build-cards": "node build-cards.js",
     "lint": "eslint . --max-warnings 5",
     "start": "next start",

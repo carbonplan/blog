@@ -1,1 +1,1 @@
-export { default as figures } from './figures'
+export { default as pageComponents } from './page-components'

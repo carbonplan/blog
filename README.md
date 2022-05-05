@@ -34,6 +34,36 @@ npm run dev
 
 and then visit `http://localhost:4001/blog` in your browser.
 
+### posts
+
+New posts should be added to `posts/` with the post content exported from `posts/{post-name}.md`.
+
+#### components
+
+Beyond the default set of components available to each post, extra components (e.g. figures and tables) must be configured using the `components` key in the MDX frontmatter.
+
+```yaml
+components:
+  - name: ComponentName
+    src: ./path/to/component
+    exportName: ExportedComponentName # not required for default exports
+```
+
+You may also use components imported from external packages. For example,
+
+```yaml
+components:
+  - name: Sun
+    src: '@carbonplan/icons'
+    exportName: Sun
+```
+
+To wire through components for availability in MDX, you can start a development version of the site or explicitly run:
+
+```shell
+npm run build-components
+```
+
 ## license
 
 All the code in this repository is [MIT](https://choosealicense.com/licenses/mit/) licensed, but we request that you please provide attribution if reusing any of our digital content (graphics, logo, articles, etc.).

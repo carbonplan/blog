@@ -17,7 +17,7 @@ import {
 import { Code, Pre } from '@carbonplan/prism'
 
 import { postMetadata, POSTS_PATH } from '../../utils/mdx'
-import { figures } from '../../components/mdx'
+import { pageComponents } from '../../components/mdx'
 
 const COMPONENTS = {
   code: Code,
@@ -40,7 +40,7 @@ const PostPage = ({ id, source, frontMatter, number }) => {
         components={{
           ...components,
           ...COMPONENTS,
-          ...figures[id],
+          ...pageComponents[id],
         }}
       />
     </Post>
