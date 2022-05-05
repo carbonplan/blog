@@ -12,7 +12,6 @@ components:
     src: ./recommendation-table.js
   - name: ScoreSummary
     src: ./score-summary.js
-
 ---
 
 In July 2021, we published an [analysis](https://carbonplan.org/research/soil-protocols-explainer) of 14 protocols that certify or issue credits for soil carbon removal. Our systematic review of the protocols was also published as an [interactive database](https://carbonplan.org/research/soil-protocols), which we are updating now with the release of this short blog post.

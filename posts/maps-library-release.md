@@ -13,7 +13,6 @@ components:
     src: ./maps-demo-2d.js
   - name: MapDemo4d
     src: ./maps-demo-4d.js
-
 ---
 
 People have been rendering maps on the web for a long time, but current approaches still struggle with scientific use cases that we’re trying to address with a new [tool](https://github.com/carbonplan/maps). Check out the demo [here](https://maps.demo.carbonplan.org/).

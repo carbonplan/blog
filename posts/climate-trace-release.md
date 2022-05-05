@@ -11,7 +11,6 @@ card: climate-trace-release
 components:
   - name: Map
     src: ./figure.js
-
 ---
 
 In early 2020, CarbonPlan joined the [Climate TRACE](https://www.climatetrace.org) coalition. The coalition’s goal is to produce an independent dataset which uses remote sensing data to track greenhouse gas emissions on a timely basis. Today, the coalition includes twelve organizations, each focusing on one or more sectors. We were responsible for estimating emissions arising from the loss of forest biomass due to non-fire disturbances. To accompany the release of Climate TRACE’s initial [platform](https://climatetrace.org/), this post explains our contribution and documents our work.
