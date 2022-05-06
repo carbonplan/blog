@@ -1,14 +1,14 @@
 const fs = require('fs')
 const glob = require('glob')
 const puppeteer = require('puppeteer')
-const contents = require('./contents.js')
+const contents = require('./utils/mdx.js')
 
 glob('./cards/**.png', async (err, filePaths) => {
   if (!fs.existsSync('./cards')) {
     fs.mkdirSync('./cards')
   }
 
-  for (const post of contents) {
+  for (const post of contents.postMetadata) {
     if (!filePaths.find((p) => p.includes(post.id))) {
       const file = await getScreenshot(post.id)
       fs.writeFileSync(`./cards/${post.id}.png`, file)

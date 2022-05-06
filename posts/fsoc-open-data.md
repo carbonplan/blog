@@ -1,12 +1,12 @@
-export const meta = {
-  version: '1.0.0',
-  title: 'Open data and the Financial Stability Oversight Council',
-  authors: ['Sadie Frank'],
-  date: '11-04-2021',
-  summary:
-    'Why open data and analytics matter in addressing climate-related financial risk.',
-  card: 'fsoc-open-data',
-}
+---
+version: 1.0.0
+title: Open data and the Financial Stability Oversight Council
+authors:
+  - Sadie Frank
+date: 11-04-2021
+summary: Why open data and analytics matter in addressing climate-related financial risk.
+card: fsoc-open-data
+---
 
 On October 21, the Financial Stability Oversight Council (FSOC) declared climate change an [emerging threat to financial stability](https://home.treasury.gov/news/press-releases/jy0426). FSOC’s report comes at an important moment, as US domestic climate policy is mired in conflict during the COP26 meeting in Glasgow, and as international peers have already pulled ahead of the US in financial climate risk regulation. This blog post responds to one important issue raised by the report: the need for open data in climate-related financial risk analysis.
 

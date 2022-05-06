@@ -1,13 +1,14 @@
-export const meta = {
-  version: '1.0.0',
-  title:
-    'Comments to the United States Department of Agriculture on climate-smart commodity markets',
-  authors: ['Danny Cullenward', 'Sadie Frank', 'Jeremy Freeman'],
-  date: '11-10-2021',
-  summary:
-    'We encourage the USDA to directly procure "climate-smart" commodities instead of subsidizing carbon offsets.',
-  card: 'usda-csaf-comment',
-}
+---
+version: 1.0.0
+title: Comments to the United States Department of Agriculture on climate-smart commodity markets
+authors:
+  - Danny Cullenward
+  - Sadie Frank
+  - Jeremy Freeman
+date: 11-10-2021
+summary: We encourage the USDA to directly procure "climate-smart" commodities instead of subsidizing carbon offsets.
+card: usda-csaf-comment
+---
 
 The United States Department of Agriculture (USDA) recently [published a request for information](https://www.federalregister.gov/documents/2021/09/30/2021-21368/climate-smart-agriculture-and-forestry-partnership-program) on the design of a new program to support the emerging market for “climate-smart commodities.” Specifically, the USDA proposes to create a Climate-Smart Agriculture and Forestry (CSAF) Partnership Program under the Commodity Credit Corporation, an intermediary run by the USDA that would provide public funding to participating projects.
 

@@ -1,12 +1,12 @@
-export const meta = {
-  version: '1.0.0',
-  title: 'Additions to our CDR database',
-  authors: ['Freya Chay'],
-  date: '12-15-2021',
-  summary:
-    'Analysis of 11 new proposals from Stripe’s Fall 2021 CDR procurement.',
-  card: 'stripe-2021-additions',
-}
+---
+version: 1.0.0
+title: Additions to our CDR database
+authors:
+  - Freya Chay
+date: 12-15-2021
+summary: Analysis of 11 new proposals from Stripe’s Fall 2021 CDR procurement.
+card: stripe-2021-additions
+---
 
 Since early 2020, we have been building a public [database](https://carbonplan.org/research/cdr-database) analyzing carbon dioxide removal (CDR) proposals. We’re now updating the database to include an analysis of 11 new proposals submitted in response to [Stripe’s Fall 2021 carbon removal procurement](https://stripe.com/newsroom/news/fall-21-carbon-removal-purchases). You can easily find these new entries with the search term “Stripe Fall 2021”.
 
