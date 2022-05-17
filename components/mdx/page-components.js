@@ -3,6 +3,28 @@ import dynamic from 'next/dynamic'
 // NOTE: This is a dynamically generated file based on the config specified under the
 //       `components` key in each post's frontmatter.
 const components = {
+  'scoping-plan-comments': {
+    EmissionsTable: dynamic(() =>
+      import('../../posts/scoping-plan-comments/emissions-table.js').then(
+        (mod) => mod.EmissionsTable || mod.default
+      )
+    ),
+    EmissionsTargets: dynamic(() =>
+      import('../../posts/scoping-plan-comments/emissions-targets.js').then(
+        (mod) => mod.EmissionsTargets || mod.default
+      )
+    ),
+    EmissionsPlans: dynamic(() =>
+      import('../../posts/scoping-plan-comments/emissions-plans.js').then(
+        (mod) => mod.EmissionsPlans || mod.default
+      )
+    ),
+    DifferenceTable: dynamic(() =>
+      import('../../posts/scoping-plan-comments/difference-table.js').then(
+        (mod) => mod.DifferenceTable || mod.default
+      )
+    ),
+  },
   'ton-year-verra': {},
   'occ-risk-comment': {},
   'open-lidar-biomass': {
