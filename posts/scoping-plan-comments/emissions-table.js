@@ -4,13 +4,13 @@ const EmissionsTable = ({ data }) => {
   const titles = [
     'Scenario',
     'Net Zero date',
-    <span>
+    <span key={0}>
       CDR in 2045 <Colors.Secondary>(million tCO₂e)</Colors.Secondary>
     </span>,
-    <span>
+    <span key={1}>
       CDR in 2045 <Colors.Secondary>(percent)</Colors.Secondary>
     </span>,
-    <span>
+    <span key={2}>
       Emission Reductions in 2045 <Colors.Secondary>(percent)</Colors.Secondary>
     </span>,
   ]
