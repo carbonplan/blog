@@ -21,6 +21,7 @@ const Figure = () => {
     <>
       <Box sx={{ width: '100%', height: ['350px', '350px', '350px', '350px'] }}>
         <Chart x={[2009, 2030]} y={[240, 500]} padding={{ left: 65 }}>
+          <Grid vertical values={ticks} />
           <Ticks left />
           <Ticks
             values={ticks}
@@ -67,7 +68,7 @@ const Figure = () => {
           <Label x={2010} y={422} sx={{ color: 'secondary' }}>
             2020 Target
           </Label>
-          <Grid vertical values={ticks} />
+
           <Plot>
             <Line
               data={[

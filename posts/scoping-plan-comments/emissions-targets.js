@@ -20,6 +20,7 @@ const Figure = () => {
     <>
       <Box sx={{ width: '100%', height: ['250px', '350px', '350px', '350px'] }}>
         <Chart x={[2000, 2035]} y={[0, 600]} padding={{ left: 65 }}>
+          <Grid vertical values={ticks} />
           <Ticks left />
           <Ticks
             values={ticks}
@@ -47,7 +48,7 @@ const Figure = () => {
             values={ticksMobile}
             sx={{ display: ['inherit', 'none', 'none', 'none'] }}
           />
-          <Grid vertical values={ticks} />
+
           <Label x={2005} y={550} sx={{ color: 'yellow' }}>
             Greenhouse gas inventory
           </Label>

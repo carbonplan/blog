@@ -1,12 +1,18 @@
-import { Table } from '@carbonplan/components'
+import { Table, Colors } from '@carbonplan/components'
 
 const EmissionsTable = ({ data }) => {
   const titles = [
     'Scenario',
     'Net Zero date',
-    'CDR in 2045 (million tCO₂e)',
-    'CDR in 2045 (percent)',
-    'Emission Reductions in 2045 (percent)',
+    <span>
+      CDR in 2045 <Colors.Secondary>(million tCO₂e)</Colors.Secondary>
+    </span>,
+    <span>
+      CDR in 2045 <Colors.Secondary>(percent)</Colors.Secondary>
+    </span>,
+    <span>
+      Emission Reductions in 2045 <Colors.Secondary>(percent)</Colors.Secondary>
+    </span>,
   ]
   return (
     <Table
