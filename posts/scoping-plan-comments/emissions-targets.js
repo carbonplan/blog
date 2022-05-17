@@ -5,7 +5,6 @@ import {
   TickLabels,
   Axis,
   AxisLabel,
-  Bar,
   Plot,
   Line,
   Label,

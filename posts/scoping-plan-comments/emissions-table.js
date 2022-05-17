@@ -1,6 +1,6 @@
 import { Table } from '@carbonplan/components'
 
-const EmissionsTable = ({ columns, data }) => {
+const EmissionsTable = ({ data }) => {
   const titles = [
     'Scenario',
     'Net Zero date',
