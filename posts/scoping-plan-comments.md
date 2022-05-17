@@ -5,7 +5,7 @@ authors:
   - Danny Cullenward
 date: 05-17-2022
 summary: California’s net-zero climate plan is long on carbon removal, short on details, and based on flawed analysis.
-card: climate-financial-risks
+card: scoping-plan-comments
 components:
   - name: EmissionsTable
     src: ./emissions-table.js
