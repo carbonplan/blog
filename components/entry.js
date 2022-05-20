@@ -22,7 +22,13 @@ const Entry = ({ final, first, info }) => {
 
   const colors = ['red', 'orange', 'yellow', 'pink']
   const avatars = authors.map((d, i) => {
-    return { name: d, color: colors[(number + i) % 4] }
+    const color = colors[(number + i) % 4]
+    if (typeof d === 'string') {
+      return { id: d, name: d, color }
+    } else {
+      const { src, name } = d
+      return { id: name, src, color }
+    }
   })
 
   return (
