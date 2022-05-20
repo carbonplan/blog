@@ -70,7 +70,7 @@ const Card = ({ title, authors, date, number }) => {
                 color: AUTHOR_COLORS[(number + i) % 4],
               }}
             >
-              {a}
+              {a.name ?? a}
 
               {i < authors.length - 1 && (
                 <Box as='span' sx={{ color: 'primary', mx: [3] }}>
