@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic'
 // NOTE: This is a dynamically generated file based on the config specified under the
 //       `components` key in each post's frontmatter.
 const components = {
+  'seaweed-farming-clarifications': {},
   'scoping-plan-comments': {
     EmissionsTable: dynamic(() =>
       import('../../posts/scoping-plan-comments/emissions-table.js').then(
