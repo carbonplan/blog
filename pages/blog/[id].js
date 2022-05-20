@@ -9,6 +9,7 @@ import { Box } from 'theme-ui'
 import { Post } from '@carbonplan/layouts'
 import {
   Blockquote,
+  Colors,
   Link,
   Figure,
   FigureCaption,
@@ -24,6 +25,7 @@ const COMPONENTS = {
   pre: Pre,
   blockquote: Blockquote,
   Box,
+  ...Colors,
   Link,
   Figure,
   FigureCaption,
