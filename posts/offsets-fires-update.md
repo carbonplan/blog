@@ -7,6 +7,7 @@ authors:
   - Joe Hamman
 date: 06-16-2022
 summary: We have updated our wildfire monitoring tool in preparation for the 2022 fire season.
+card: offsets-fires-update
 components:
   - name: CreditingTable
     src: ./crediting-table.js
