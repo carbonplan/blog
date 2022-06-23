@@ -11,28 +11,6 @@ const components = {
     ),
   },
   'seaweed-farming-clarifications': {},
-  'scoping-plan-comments': {
-    EmissionsTable: dynamic(() =>
-      import('../../posts/scoping-plan-comments/emissions-table.js').then(
-        (mod) => mod.EmissionsTable || mod.default
-      )
-    ),
-    EmissionsTargets: dynamic(() =>
-      import('../../posts/scoping-plan-comments/emissions-targets.js').then(
-        (mod) => mod.EmissionsTargets || mod.default
-      )
-    ),
-    EmissionsPlans: dynamic(() =>
-      import('../../posts/scoping-plan-comments/emissions-plans.js').then(
-        (mod) => mod.EmissionsPlans || mod.default
-      )
-    ),
-    DifferenceTable: dynamic(() =>
-      import('../../posts/scoping-plan-comments/difference-table.js').then(
-        (mod) => mod.DifferenceTable || mod.default
-      )
-    ),
-  },
   'ton-year-verra': {},
   'occ-risk-comment': {},
   'open-lidar-biomass': {
@@ -42,24 +20,10 @@ const components = {
       )
     ),
   },
-  'offset-disclosure-needs': {},
-  'ton-year-ncx': {
-    TableHundred: dynamic(() =>
-      import('../../posts/ton-year-ncx/table-hundred.js').then(
-        (mod) => mod.TableHundred || mod.default
-      )
-    ),
-    TableThousand: dynamic(() =>
-      import('../../posts/ton-year-ncx/table-thousand.js').then(
-        (mod) => mod.TableThousand || mod.default
-      )
-    ),
-  },
   'compliance-users-release': {},
   'stripe-2021-additions': {},
   'usda-csaf-comment': {},
   'fsoc-open-data': {},
-  'climate-financial-risks': {},
   'soil-protocols-added': {
     RecommendationTable: dynamic(() =>
       import('../../posts/soil-protocols-added/recommendation-table.js').then(
