@@ -1,5 +1,5 @@
 ---
-version: 1.0.0
+version: 1.1.0
 title: Comments to Verra on ton-year accounting and NCX’s harvest deferral methodology
 authors:
   - Freya Chay
@@ -39,3 +39,7 @@ Beyond these critical additionality concerns, we also document a pair of issues 
 The issues we raise in our NCX comment letter underscore our overarching concerns about Verra’s program-wide proposal. NCX’s proposed methodology is specifically designed around the use of ton-year accounting — a best-case scenario for managing the novel risks introduced by Verra’s ton-year accounting option. But even here we found major red flags. The use of a proprietary baseline model with methods and results no one else can see makes it impossible to tell if the methodology mitigates ton-year accounting’s unique additionality risks, and the presence of explicit loopholes for crediting non-additional behavior undermines our confidence in the methodology’s rigor.
 
 Overall, we’re left with major questions about how any of this will work — and, if critical methods remain proprietary, whether we’ll be able to tell at all.
+
+## Update — Jun 23 2022
+
+Verra [announced](https://verra.org/verra-defers-updates-to-the-vcs-program/) their decision not to move forward with incorporating ton-year accounting into the VCS Program at this time, but left room to revisit thier decision in the future.
