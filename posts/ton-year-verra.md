@@ -42,4 +42,4 @@ Overall, we’re left with major questions about how any of this will work — a
 
 ## Update — Jun 23 2022
 
-Verra [announced](https://verra.org/verra-defers-updates-to-the-vcs-program/) their decision not to move forward with incorporating ton-year accounting into the VCS Program at this time, but left room to revisit thier decision in the future. 
+Verra [announced](https://verra.org/verra-defers-updates-to-the-vcs-program/) their decision not to move forward with incorporating ton-year accounting into the VCS Program at this time, but left room to revisit thier decision in the future.
