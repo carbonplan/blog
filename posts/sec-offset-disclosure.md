@@ -1,0 +1,22 @@
+---
+version: 1.0.0
+title: Comments to the Securities and Exchange Commission on carbon offset disclosure 
+authors:
+  - Sadie Frank
+  - Danny Cullenward
+date: 06-24-2022
+summary: We summarize our comments to the SEC on the agency's proposed climate-risk disclosure rule. In our comments, we commend the rule's robust approach to carbon offsets and encourage the SEC to strengthen the proposed provisions for carbon removal.
+card: sec-offset-disclosure
+---
+
+We recently [submitted comments](https://files.carbonplan.org/SEC-Climate-Disclosures-Comment-Letter-06-16-2022.pdf) to the Securities and Exchange Commission (SEC) regarding their proposed climate-risk disclosure rule. The proposed rule represents a significant step forward for U.S. climate-related financial regulation. Under the new SEC rule, a publicly-traded company would be required to disclose its climate-related financial risks, strategies for managing those risks, and any climate targets or goals it may have set. 
+
+We focused our comments on the proposed rule’s provisions for carbon offsets disclosure. Crucially, the proposed rule stipulates that companies must disclose their use of offsets and must report the use of offsets separately from their gross emissions. Separate reporting is necessary to ensure that investors are able to discern the balance between a company’s internal and external mitigation efforts, which is in turn required to evaluate a company’s net-zero alignment. We commend the SEC for developing a robust approach to carbon offset disclosure, and believe that if finalized, the rule will provide much-needed information to investors. 
+
+To illustrate why the proposed offset disclosure is necessary to provide material information to investors, we grounded our letter’s discussion of offset risks in examples drawn from voluntary disclosures and regulatory filings with the SEC. These existing practices highlight potential risks from companies’ interactions in the voluntary carbon markets, which face challenges including [a limited supply of high-quality credits and opaque pricing](https://www.mckinsey.com/business-functions/sustainability/our-insights/a-blueprint-for-scaling-voluntary-carbon-markets-to-meet-the-climate-challenge). They also present a [potentially volatile future](https://www.bloomberg.com/news/articles/2022-01-21/carbon-offsets-trading-could-go-two-very-different-ways) that is largely reliant on a still-emerging set of voluntary standards. 
+
+As carbon markets become increasingly woven into corporate climate strategy, robust disclosure rules are necessary to protect investors and help steer capital toward companies that best manage climate risks. Disclosure is needed because systemic issues in the voluntary carbon markets could lead to financial risks, including the impact that new regulations could have on credit supply and demand; the emerging threat of anti-greenwashing litigation; and increased credit prices from strengthening voluntary standards. For instance, if markets move towards supplying higher quality credits — including the permanent carbon removal required to achieve net-zero targets — prices could significantly increase, raising costs for companies who develop a business plan reliant on a glut of cheap offsets. 
+
+We also encourage the SEC to strengthen its proposed offset disclosure rules to specifically identify companies’ reliance on carbon removal services. Integrating carbon removal into disclosure requirements is critical because corporate net-zero goals and targets [require the use of carbon removal](https://sciencebasedtargets.org/net-zero) to neutralize whatever residual emissions remain after a company decarbonizes its operations and value chain. While not every company plans to set a net-zero target, [many investors](https://www.gfanzero.com/) are interested in net-zero alignment and [many companies](https://zerotracker.net/) have already decided to pursue this kind of climate target.
+
+We’ve previously explored how today’s [voluntary offset disclosures](https://carbonplan.org/blog/offset-disclosure-needs) do not provide adequate information to investors. These existing gaps underscore the importance of consistent, comparable, and reliable information furnished in regulatory filings — exactly as the SEC has proposed. We look forward to the SEC’s final rulemaking and further efforts to improve offset market disclosures. 
