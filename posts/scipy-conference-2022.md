@@ -6,7 +6,7 @@ authors:
   - Anderson Banihirwe
   - Joe Hamman
 date: 08-08-2022
-summary: We recently attended the 21st annual Scientific Computing with Python conference
+summary: We recently attended the 21st annual Scientific Computing with Python conference.
 card: scipy-conference-2022
 ---
 
