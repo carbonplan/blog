@@ -1,12 +1,12 @@
 ---
 version: 1.0.0
-title: CarbonPlan presence at SciPy 2022
+title: Highlights from attending SciPy 2022
 authors:
   - Max Jones
   - Anderson Banihirwe
   - Joe Hamman
 date: 08-08-2022
-summary: We recently attended the 21st annual Scientific Computing with Python conference.
+summary: We recently attended the 21st annual Scientific Computing with Python conference. Here we share highlights from the tutorials and presentations.
 card: scipy-conference-2022
 ---
 
