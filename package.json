@@ -27,9 +27,9 @@
   "dependencies": {
     "@carbonplan/charts": "^2.7.0",
     "@carbonplan/colormaps": "^3.0.1",
-    "@carbonplan/components": "^11.5.0",
+    "@carbonplan/components": "^11.7.1",
     "@carbonplan/icons": "^1.0.0",
-    "@carbonplan/layouts": "^2.2.0",
+    "@carbonplan/layouts": "^2.4.3",
     "@carbonplan/maps": "^1.2.0",
     "@carbonplan/prism": "^1.0.3",
     "@carbonplan/theme": "^7.0.0",

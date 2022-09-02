@@ -66,7 +66,7 @@ const Entry = ({ final, first, info }) => {
             <Column
               start={[1]}
               width={[6, 6, 4, 4]}
-              sx={{ mt: [4, 4, -2, '-14px'] }}
+              sx={{ mt: [4, 4, '-7px', '-14px'] }}
             >
               <Button
                 size='md'
@@ -114,15 +114,16 @@ const Entry = ({ final, first, info }) => {
         <Column
           start={[4, 4, 6, 6]}
           width={[3, 3, 2, 2]}
-          sx={{ order: [2, 2, 3, 3], mt: [-1] }}
+          sx={{ order: [2, 2, 3, 3], mt: [-1, -1, -2, -3] }}
         >
           <AvatarGroup
             members={avatars}
+            spacing={[2, 2, 2, 3]}
             fixedCount={3}
-            spacing={[1, 2, 2, 3]}
-            maxWidth='150px'
+            limit={3}
+            maxWidth={'175px'}
             align={['right', 'right', 'left', 'left']}
-            width={['90%', '90%', '100%', '100%']}
+            width={['100%', '100%', '100%', '100%']}
           />
         </Column>
       </Row>

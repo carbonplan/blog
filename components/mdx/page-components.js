@@ -3,6 +3,18 @@ import dynamic from 'next/dynamic'
 // NOTE: This is a dynamically generated file based on the config specified under the
 //       `components` key in each post's frontmatter.
 const components = {
+  'cloud-downscaling-pipelines': {
+    PipelineDiagram: dynamic(() =>
+      import(
+        '../../posts/cloud-downscaling-pipelines/pipeline-diagram.js'
+      ).then((mod) => mod.PipelineDiagram || mod.default)
+    ),
+    ArrayDiagram: dynamic(() =>
+      import('../../posts/cloud-downscaling-pipelines/array-diagram.js').then(
+        (mod) => mod.ArrayDiagram || mod.default
+      )
+    ),
+  },
   'physical-risk-workshop': {},
   'scipy-conference-2022': {},
   'sec-offset-disclosure': {},
