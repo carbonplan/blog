@@ -21,7 +21,7 @@ Working in the cloud on a project at this scale also posed several challenges. I
 
 ## Design and motivation
 
-We designed this project around an open-source [package](https://github.com/carbonplan/cmip6-downscaling) that allows users to run multiple downscaling algorithms composed of common utilities using shared infrastructure. We also started by ensuring that the primary datasets — observational training data and the CMIP6 data archive — were available in the [Analysis Ready Cloud Optimized (ARCO) ](https://ieeexplore.ieee.org/abstract/document/9354557) [Zarr](https://zarr.dev/) format.
+We designed this project around an open-source [package](https://github.com/carbonplan/cmip6-downscaling) that allows users to run multiple downscaling algorithms composed of common utilities using shared infrastructure. We also started by ensuring that the primary datasets — observational training data and the CMIP6 data archive — were available in the [Analysis Ready Cloud Optimized (ARCO)](https://ieeexplore.ieee.org/abstract/document/9354557) [Zarr](https://zarr.dev/) format.
 
 This approach has several benefits. First, it saves compute resources by separating the steps of downscaling that are common across multi-GCM ensembles (e.g. creating temporal summaries of a reference dataset) or across multiple downscaling methods (e.g. creating the same regridded intermediate product). Especially combined with caching (see below), this makes it possible for repeated analyses to share intermediate datasets, which saves on computation. Second, by using pipelines that run in cloud infrastructure and access public data, we ensure that our approach will be usable and reproducible by others. In particular, this implementation should serve as a reference to help lower the barrier for a broader community to do this kind of work in the cloud. Third, implementing multiple methods in a common pipeline framework with shared utilities makes it easier to understand how methods differ, in most cases just by directly reading the code. This supports knowledge transfer and future methods development whether by us or by others.
 
@@ -37,7 +37,7 @@ The specific analysis pipeline we implemented consisted of a workflow with share
   </FigureCaption>
 </Figure>
 
-We used [Prefect](https://www.prefect.io/), a Python-based workflow management tool, to run these tasks. Prefect is Python native and decomposes orchestration pipelines into `Flows` and `tasks`. Adapting existing Python functions into Prefect tasks only requires adding a [decorator](https://realpython.com/primer-on-python-decorators/). Using Prefect provided several useful features, including the ability to add notifications — logging, retries, caching, failure, etc. — to our pipelines, and [relatively-smooth integration with Dask](https://docs-v1.prefect.io/core/advanced_tutorials/dask-cluster.html) for running our workflows at scale both in parallel and distributed settings.
+We used [Prefect](https://www.prefect.io/), a Python-based workflow management tool, to run these tasks. Prefect is Python native and decomposes orchestration pipelines into `Flows` and `Tasks`. Adapting existing Python functions into Prefect tasks only requires adding a [decorator](https://realpython.com/primer-on-python-decorators/). Using Prefect provided several useful features, including the ability to add notifications — logging, retries, caching, failure, etc. — to our pipelines, and [relatively smooth integration with Dask](https://docs-v1.prefect.io/core/advanced_tutorials/dask-cluster.html) for running our workflows at scale both in parallel and distributed settings.
 
 In the sections that follow, we’ll delve deeper into some specific technological choices we made, their challenges, and the lessons we learned.
 
@@ -50,7 +50,7 @@ While prefect has some [built-in caching](https://docs-v1.prefect.io/core/concep
 
 We initially worked around Prefect's lack of caching support for Xarray objects by using [xpersist](https://xpersist.readthedocs.io/en/latest/how-to/use-xpersist-with-prefect.html), a Python package that extends prefect’s caching functionality with Zarr support, using code similar to the following example:
 
-```python
+```python theme=sunrise
 from xpersist import XpersistResult
 from prefect import task
 import xarray as xr
@@ -64,8 +64,7 @@ import xarray as xr
     ),
 )
 def compute_expensive_result(ds):
-    data = ds.groupby("time.month").mean()
-    return data
+    return ds.groupby("time.month").mean()
 ```
 
 In the above example, Prefect caches the results of the expensive operation the first time it runs. Any subsequent steps that use results from a cached task are retrieved from the cache instead of being recomputed. We were able to enable caching within our pipeline easily with xpersist. However, we ultimately abandoned this approach due to several limitations.
@@ -78,7 +77,7 @@ After experimenting with xpersist, we resolved our caching issues using a simple
 
 The pseudocode below shows how this custom caching mechanism worked:
 
-```python
+```python theme=sunrise
 @task
 def compute_expensive_result(input_path):
 
@@ -108,7 +107,7 @@ Verifying the integrity of Zarr stores was a significant challenge. For context,
 
 As a method for confirming whether we were missing chunks, we first considered checking whether the `.zmetadata` file had been written. While this reliably indicates if the store exists, it does not guarantee that all chunks have been written. To add an additional layer of validation, we developed a mechanism to check for discrepancies between Zarr's initialized chunks and the chunks written to disk. The function for this validation is shown below.
 
-```python
+```python theme=sunrise
 def validate_zarr_store(target, raise_on_error=True):
     """Validate a Zarr store.
     Parameters
@@ -165,7 +164,7 @@ def validate_zarr_store(target, raise_on_error=True):
 ```
 
 By using this function, we were able to check whether a Zarr store had been written correctly. Additionally, we created the [xarray-schema](https://github.com/xarray-contrib/xarray-schema) Python package to verify if the Xarray object loaded from disk matched the expected schema.
-These workarounds allowed us to feel more confident with each step, but are not a panacea for checking data integrity in Zarr. The following GitHub issues discuss Zarr data integrity checks: [issue #912](https://github.com/zarr-developers/zarr-Python/issues/912), [issue #587](https://github.com/zarr-developers/zarr-Python/issues/587), [issue #392](https://github.com/zarr-developers/zarr-Python/issues/392).
+These workarounds allowed us to feel more confident with each step, but are not a panacea for checking data integrity in Zarr. The following GitHub issues discuss Zarr data integrity checks: [Issue #912](https://github.com/zarr-developers/zarr-Python/issues/912), [Issue #587](https://github.com/zarr-developers/zarr-Python/issues/587), [Issue #392](https://github.com/zarr-developers/zarr-Python/issues/392).
 At the time of writing, the [Zarr v3.0 spec](https://github.com/zarr-developers/zarr-specs/pull/149) is still in development. Perhaps methods for checking store integrity will be included in this release.
 
 ## Parallel Computing with Dask
@@ -176,7 +175,7 @@ Dask is a widely used Python framework for parallel computing. It integrates wit
 
 Our downscaling pipeline required regridding certain datasets at different spatial resolutions. We turned to [xESMF](https://pangeo-xesmf.readthedocs.io/en/latest/), which is a Python wrapper for the Fortran-based [ESMF](https://earthsystemmodeling.org/docs/release/ESMF_5_2_0/ESMF_refdoc/node2.html). While this library worked for our purposes, we encountered issues when combined with Dask’s parallelism. Specifically, using xESMF in a multi-threaded setting resulted in an intermittent, opaque error:
 
-```python
+```python theme=sunrise
 ValueError: ESMC_GridCreateNoPeriDim() failed with rc = 545.
 Please check the log files (named "*ESMF_LogFile").
 ```
@@ -198,8 +197,8 @@ A core concept in Dask is that a dataset can be loaded and processed in chunks w
   <FigureCaption number={3}>Dask array chunked in time</FigureCaption>
 </Figure>
 
-In this example, chunking the dataset in space results in more than a million chunks, which can result in millions of tasks and substantial memory utilization due to the large task graph generated by Dask. To avoid such bottlenecks, we frequently had to “rechunk” our data either along the time or space axis. To avoid the expensive method of re-chunking data on the fly, we used [rechunker](https://rechunker.readthedocs.io/en/latest/), a Python package that performs efficient on-disk rechunking of Zarr stores, i.e. it reads data from one Zarr store, rechunks it, and writes it directly to a temporary location.
-While amazingly effective, rechunker does produce many intermediate Zarr stores, which can grow in size on large jobs, and thus requires diligent clean up in order to avoid excessive cloud storage costs.
+In this example, chunking the dataset in space results in more than a million chunks, which can result in millions of tasks and substantial memory utilization due to the large task graph generated by Dask. To avoid such bottlenecks, we frequently had to “rechunk” our data either along the time or space axis. To avoid the expensive method of rechunking data on the fly, we used [rechunker](https://rechunker.readthedocs.io/en/latest/), a Python package that performs efficient on-disk rechunking of Zarr stores. It assesses the original chunking schema of a Zarr store, a target schema, and a defined memory constraint. The package then finds a computationally efficient intermediate chunking scheme that will allow the rechunking operation to complete within memory.
+While highly effective, rechunker does produce many intermediate Zarr stores, which can grow in size on large jobs, and thus requires diligent clean up in order to avoid excessive cloud storage costs.
 
 ### Memory leaks and poor performance due to large task graphs
 
