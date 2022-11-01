@@ -31,7 +31,7 @@ const MapDemo2d = () => {
         <Raster
           colormap={colormap}
           clim={[-20, 30]}
-          source={bucket + 'v1/demo/2d/tavg'}
+          source={bucket + 'v2/demo/2d/tavg'}
           variable={'tavg'}
           dimensions={['y', 'x']}
         />
