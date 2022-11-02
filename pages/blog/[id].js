@@ -16,13 +16,13 @@ import {
   FigureCaption,
   TableCaption,
 } from '@carbonplan/components'
-import { Pre } from '@carbonplan/prism'
+import { Code } from '@carbonplan/prism'
 
 import { postMetadata, POSTS_PATH } from '../../utils/mdx'
 import { pageComponents } from '../../components/mdx'
 
 const COMPONENTS = {
-  pre: Pre,
+  pre: Code,
   blockquote: Blockquote,
   Box,
   ...Colors,
