@@ -48,7 +48,7 @@ const MapDemo4d = () => {
             <Raster
               colormap={colormap}
               clim={CLIMS[band]}
-              source={bucket + 'v1/demo/4d/tavg-prec-month'}
+              source={bucket + 'v2/demo/4d/tavg-prec-month'}
               variable={'climate'}
               dimensions={['band', 'month', 'y', 'x']}
               selector={{ band, month }}

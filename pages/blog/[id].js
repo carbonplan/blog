@@ -2,9 +2,10 @@ import fs from 'fs'
 import matter from 'gray-matter'
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
+import remarkMdxCodeMeta from 'remark-mdx-code-meta'
 import path from 'path'
 import { useMDXComponents } from '@mdx-js/react'
-
+import { useThemedStylesWithMdx } from '@theme-ui/mdx'
 import { Box } from 'theme-ui'
 import { Post } from '@carbonplan/layouts'
 import {
@@ -15,14 +16,13 @@ import {
   FigureCaption,
   TableCaption,
 } from '@carbonplan/components'
-import { Code, Pre } from '@carbonplan/prism'
+import { Code } from '@carbonplan/prism'
 
 import { postMetadata, POSTS_PATH } from '../../utils/mdx'
 import { pageComponents } from '../../components/mdx'
 
 const COMPONENTS = {
-  code: Code,
-  pre: Pre,
+  pre: Code,
   blockquote: Blockquote,
   Box,
   ...Colors,
@@ -33,7 +33,7 @@ const COMPONENTS = {
 }
 
 const PostPage = ({ id, source, frontMatter, number }) => {
-  const components = useMDXComponents()
+  const components = useThemedStylesWithMdx(useMDXComponents())
 
   return (
     <Post meta={frontMatter} number={number}>
@@ -59,7 +59,7 @@ export const getStaticProps = async ({ params }) => {
   const mdxSource = await serialize(content, {
     // Optionally pass remark/rehype plugins
     mdxOptions: {
-      remarkPlugins: [],
+      remarkPlugins: [remarkMdxCodeMeta],
       rehypePlugins: [],
     },
     scope: data,

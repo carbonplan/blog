@@ -23,21 +23,7 @@ For the initial release of the Climate TRACE platform we used established method
   <Map />
   <FigureCaption>
     Cumulative emissions from forests (2001 - 2020). Pixels are 1º x 1º. Open
-    the{' '}
-    <Link
-      sx={{
-        color: 'secondary',
-        '@media (hover: hover) and (pointer: fine)': {
-          '&:hover': {
-            color: 'primary',
-          },
-        },
-      }}
-      href='/research/forest-carbon'
-    >
-      interactive
-    </Link>{' '}
-    version to explore more.
+    the [interactive](/research/forest-carbon) version to explore more.
   </FigureCaption>
 </Figure>
 

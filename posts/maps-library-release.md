@@ -74,7 +74,7 @@ const colormap = useColormap('warm')
   <Raster
     colormap={colormap}
     clim={[-20,30]}
-    source={bucket + 'v1/demo/2d/tavg'}
+    source={bucket + 'v2/demo/2d/tavg'}
     variable={'​​tavg'}
   />
 </Map>
@@ -106,7 +106,7 @@ With the same component, we can just as easily render a 4D map where the third d
 <Raster
   colormap={colormap}
   clim={clim}
-  source={bucket + 'v1/demo/4d/tavg-prec-month'}
+  source={bucket + 'v2/demo/4d/tavg-prec-month'}
   variable={'climate'}
   selector={{ band, month }}
 />
@@ -122,7 +122,7 @@ In more advanced settings, we might want more control over rendering, including 
 <Raster
   colormap={colormap}
   clim={[-20, 30]}
-  source={bucket + 'v1/demo/3d/tavg-month'}
+  source={bucket + 'v2/demo/3d/tavg-month'}
   variable={'tavg'}
   selector={{ month: [1, 2] }}
   frag={`

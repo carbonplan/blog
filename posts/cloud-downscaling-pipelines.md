@@ -51,7 +51,7 @@ While prefect has some [built-in caching](https://docs-v1.prefect.io/core/concep
 
 We initially worked around Prefect's lack of caching support for Xarray objects by using [xpersist](https://xpersist.readthedocs.io/en/latest/how-to/use-xpersist-with-prefect.html), a Python package that extends prefect’s caching functionality with Zarr support, using code similar to the following example:
 
-```python theme=sunrise
+```python theme="sunrise"
 from xpersist import XpersistResult
 from prefect import task
 import xarray as xr
@@ -78,7 +78,7 @@ After experimenting with xpersist, we resolved our caching issues using a simple
 
 The pseudocode below shows how this custom caching mechanism worked:
 
-```python theme=sunrise
+```python theme="sunrise"
 @task
 def compute_expensive_result(input_path):
 
@@ -108,7 +108,7 @@ Verifying the integrity of Zarr stores was a significant challenge. For context,
 
 As a method for confirming whether we were missing chunks, we first considered checking whether the `.zmetadata` file had been written. While this reliably indicates if the store exists, it does not guarantee that all chunks have been written. To add an additional layer of validation, we developed a mechanism to check for discrepancies between Zarr's initialized chunks and the chunks written to disk. The function for this validation is shown below.
 
-```python theme=sunrise
+```python theme="sunrise"
 def validate_zarr_store(target, raise_on_error=True):
     """Validate a Zarr store.
     Parameters
@@ -176,7 +176,7 @@ Dask is a widely used Python framework for parallel computing. It integrates wit
 
 Our downscaling pipeline required regridding certain datasets at different spatial resolutions. We turned to [xESMF](https://pangeo-xesmf.readthedocs.io/en/latest/), which is a Python wrapper for the Fortran-based [ESMF](https://earthsystemmodeling.org/docs/release/ESMF_5_2_0/ESMF_refdoc/node2.html). While this library worked for our purposes, we encountered issues when combined with Dask’s parallelism. Specifically, using xESMF in a multi-threaded setting resulted in an intermittent, opaque error:
 
-```python theme=sunrise
+```python theme="sunrise"
 ValueError: ESMC_GridCreateNoPeriDim() failed with rc = 545.
 Please check the log files (named "*ESMF_LogFile").
 ```
