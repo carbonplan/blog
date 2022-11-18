@@ -4,7 +4,7 @@ title: California forest carbon buffer pool update
 authors:
   - Grayson Badgley
   - Danny Cullenward
-date: 11-17-2022
+date: 11-18-2022
 summary: Offset projects hit by recent wildfires report larger carbon losses than we had projected.
 card: buffer-analysis-update
 data:
@@ -13,12 +13,6 @@ data:
       max: 82.69
       current: 73.24
       termination: 62.84
-    carbonplan:
-      low: 1.81
-      high: 2.39
-    official:
-      rp5: 0.55
-      rp6: 3.18
 components:
   - name: ReversalsTable
     src: ./reversals-table.js
