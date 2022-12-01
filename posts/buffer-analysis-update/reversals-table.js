@@ -6,7 +6,7 @@ const sx = {
     textTransform: 'uppercase',
     letterSpacing: 'smallcaps',
     fontFamily: 'heading',
-    fontSize: [2, 2, 2, 3],
+    fontSize: [0, 2, 2, 3],
   },
 }
 
@@ -14,12 +14,12 @@ const ReversalsTable = () => {
   return (
     <Table
       columns={[4, 4, 4, 4]}
-      start={[[1], [1, 2, 2, 2], [1, 3, 3, 3], [1, 4, 4, 4]]}
+      start={[[1], [2, 2, 2, 2], [3, 3, 3, 3], [4, 4, 4, 4]]}
       width={[
-        [4, 1, 1, 1],
-        [4, 1, 1, 1],
-        [4, 1, 1, 1],
-        [4, 1, 1, 1],
+        [1, 1, 1, 1],
+        [1, 1, 1, 1],
+        [1, 1, 1, 1],
+        [1, 1, 1, 1],
       ]}
       data={[
         [
