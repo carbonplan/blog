@@ -3,6 +3,13 @@ import dynamic from 'next/dynamic'
 // NOTE: This is a dynamically generated file based on the config specified under the
 //       `components` key in each post's frontmatter.
 const components = {
+  'buffer-analysis-update': {
+    ReversalsTable: dynamic(() =>
+      import('../../posts/buffer-analysis-update/reversals-table.js').then(
+        (mod) => mod.ReversalsTable || mod.default
+      )
+    ),
+  },
   'cdr-database-archived': {},
   'klimadao-bct-response': {},
   'cloud-downscaling-pipelines': {
