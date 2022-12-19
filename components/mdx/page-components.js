@@ -3,6 +3,13 @@ import dynamic from 'next/dynamic'
 // NOTE: This is a dynamically generated file based on the config specified under the
 //       `components` key in each post's frontmatter.
 const components = {
+  'enhanced-weathering-update': {
+    BeforeAfter: dynamic(() =>
+      import('../../posts/enhanced-weathering-update/before-after.js').then(
+        (mod) => mod.BeforeAfter || mod.default
+      )
+    ),
+  },
   'buffer-analysis-update': {
     ReversalsTable: dynamic(() =>
       import('../../posts/buffer-analysis-update/reversals-table.js').then(
