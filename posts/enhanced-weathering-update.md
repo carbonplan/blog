@@ -19,7 +19,12 @@ In response to helpful feedback from scientists and practitioners following the 
 
 <Figure>
   <BeforeAfter />
-  <FigureCaption number={1}>The Enhanced Weathering pathway diagram as initially released (before) and as updated to reflect the changes described in this blog post (after). You can explore the updated diagram in more detail in the [interactive tool](https://carbonplan.org/research/cdr-verification/enhanced-weathering). </FigureCaption>
+  <FigureCaption number={1}>
+    The Enhanced Weathering pathway diagram as initially released (before) and
+    as updated to reflect the changes described in this blog post (after). You
+    can explore the updated diagram in more detail in the [interactive
+    tool](https://carbonplan.org/research/cdr-verification/enhanced-weathering).
+  </FigureCaption>
 </Figure>
 
 In the initial release, we framed our analysis of Enhanced Weathering around an understanding that the additional flux of dissolved inorganic carbon (DIC) from the site of rock application represented captured CO₂. This was a somewhat limited view, however, and the feedback we received encouraged us to instead think about Enhanced Weathering as causing an overall shift in CO₂ fluxes as a result of the alkalinity introduced by rock weathering. We think this framing more accurately captures the reality and complexity of Enhanced Weathering as a carbon cycle intervention, and we have adopted it in the updated framework.
