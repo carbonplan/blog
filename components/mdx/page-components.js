@@ -3,6 +3,23 @@ import dynamic from 'next/dynamic'
 // NOTE: This is a dynamically generated file based on the config specified under the
 //       `components` key in each post's frontmatter.
 const components = {
+  'climate-risks-insurance': {
+    States: dynamic(() =>
+      import('../../posts/climate-risks-insurance/states.js').then(
+        (mod) => mod.States || mod.default
+      )
+    ),
+    HatchedCircle: dynamic(() =>
+      import('../../posts/climate-risks-insurance/hatched-circle.js').then(
+        (mod) => mod.HatchedCircle || mod.default
+      )
+    ),
+    BlueCircle: dynamic(() =>
+      import('../../posts/climate-risks-insurance/blue-circle.js').then(
+        (mod) => mod.BlueCircle || mod.default
+      )
+    ),
+  },
   'enhanced-weathering-update': {
     BeforeAfter: dynamic(() =>
       import('../../posts/enhanced-weathering-update/before-after.js').then(
