@@ -13,6 +13,7 @@ import List from './list'
 const initYear = {
   2021: true,
   2022: true,
+  2023: true,
 }
 
 const Settings = ({ setYear, year }) => {
