@@ -25,6 +25,7 @@ async function getScreenshot(postId) {
   await page.setViewport({ width: 1200, height: 630 })
   await page.goto(baseUrl + '/cards/' + postId)
   await page.waitForSelector('#final-authors', { timeout: 3000 })
+  await new Promise((resolve) => setTimeout(resolve, 1000))
   const file = await page.screenshot()
   await page.close()
 
