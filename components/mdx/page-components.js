@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic'
 // NOTE: This is a dynamically generated file based on the config specified under the
 //       `components` key in each post's frontmatter.
 const components = {
+  'compliance-users-update': {},
   'cdr-standards-call': {},
   'climate-risk-metadata': {},
   'lionshead-fire-update': {
