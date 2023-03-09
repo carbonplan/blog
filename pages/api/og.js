@@ -1,6 +1,7 @@
 import { formatDate } from '@carbonplan/components'
 import { ImageResponse } from '@vercel/og'
 import { AUTHOR_COLORS } from '../../constants'
+
 export const config = {
   runtime: 'edge',
 }
@@ -20,7 +21,7 @@ export default async function handler(req) {
 
     const date = searchParams.get('date')
     const number = searchParams.get('number')
-    const lines = authors.length
+    const wrapAuthors = searchParams.get('wrapAuthors') || true
 
     return new ImageResponse(
       (
@@ -86,7 +87,7 @@ export default async function handler(req) {
                     display: 'flex',
                     color: AUTHOR_COLORS[(number + index) % 4],
 
-                    ...(lines >= 4 && index > 0
+                    ...(wrapAuthors && index > 0
                       ? {
                           // attempt at emulating display: inline-block
                           flexWrap: 'wrap',
@@ -143,7 +144,7 @@ export default async function handler(req) {
                 fontSize: 5,
                 writingMode: 'vertical-rl',
                 whiteSpace: 'nowrap',
-                display: 'none', // 'inline-block' isn't supported yet
+                //display: 'none', // 'inline-block' isn't supported yet
                 overflow: 'visible',
                 marginRight: '-12px',
               }}
