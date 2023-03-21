@@ -1,5 +1,7 @@
 import { formatDate } from '@carbonplan/components'
+import theme from '@carbonplan/theme'
 import { ImageResponse } from '@vercel/og'
+
 import { AUTHOR_COLORS } from '../../constants'
 
 export const config = {
@@ -35,6 +37,7 @@ export default async function handler(req) {
             paddingRight: '78px',
             paddingTop: '70px',
             paddingBottom: '70px',
+            backgroundColor: theme.colors.background,
           }}
         >
           <div
@@ -45,13 +48,16 @@ export default async function handler(req) {
             }}
             id='left'
           >
-            <div style={{ display: 'flex' }} id='upper'>
+            <div
+              style={{ display: 'flex', flexDirection: 'column' }}
+              id='upper'
+            >
               <div
                 style={{
-                  color: 'secondary',
+                  color: theme.colors.secondary,
                   fontFamily: 'faux',
                   letterSpacing: 'smallcaps',
-                  fontSize: '5px',
+                  fontSize: '34px',
                   marginBottom: '3px',
                   marginTop: '-10px',
                 }}
@@ -63,6 +69,7 @@ export default async function handler(req) {
                   maxWidth: '800px',
                   fontSize: '70px',
                   marginTop: '42px',
+                  color: theme.colors.primary,
                 }}
               >
                 {title}
@@ -71,31 +78,23 @@ export default async function handler(req) {
             <div
               style={{
                 display: 'flex',
+                flexDirection: 'column',
                 fontFamily: 'mono',
                 letterSpacing: 'mono',
                 textTransform: 'uppercase',
-                color: 'secondary',
-                fontSize: '5px',
+                fontSize: '34px',
                 marginBottom: '-6px',
               }}
-              id='final-authors'
             >
               {authors.map((author, index) => (
                 <div
                   key={author}
                   style={{
-                    display: 'flex',
+                    display:
+                      wrapAuthors && index === authors.length - 1
+                        ? 'none'
+                        : 'flex',
                     color: AUTHOR_COLORS[(number + index) % 4],
-
-                    ...(wrapAuthors && index > 0
-                      ? {
-                          // attempt at emulating display: inline-block
-                          flexWrap: 'wrap',
-                        }
-                      : {
-                          // attempt at emulating display: block
-                          flexDirection: 'column',
-                        }),
                   }}
                 >
                   {author.name ?? author}
@@ -103,14 +102,26 @@ export default async function handler(req) {
                   {index < authors.length - 1 && (
                     <span
                       style={{
-                        color: 'primary',
-                        marginLeft: '1rem',
-                        marginRight: '1rem',
+                        color: theme.colors.primary,
+                        marginLeft: '16px',
+                        marginRight: '16px',
                       }}
                     >
                       +
                     </span>
                   )}
+
+                  {wrapAuthors && index === authors.length - 2 ? (
+                    <div
+                      key={author}
+                      style={{
+                        display: 'flex',
+                        color: AUTHOR_COLORS[(number + index + 1) % 4],
+                      }}
+                    >
+                      {authors[index + 1].name ?? authors[index + 1]}
+                    </div>
+                  ) : null}
                 </div>
               ))}
             </div>
@@ -135,18 +146,20 @@ export default async function handler(req) {
               <path d='M3,15 C3,10.366 5.444,6.303 9.104,4 L4.401,4 C1.68,6.868 0,10.734 0,15 C0,19.785 2.112,24.068 5.441,27 L11.008,27 C6.311,25.039 3,20.4 3,15'></path>
             </svg>
 
-            <span
+            <div
               style={{
                 fontFamily: 'mono',
                 letterSpacing: 'mono',
                 textTransform: 'uppercase',
-                color: 'secondary',
-                fontSize: 5,
-                writingMode: 'vertical-rl',
+                color: theme.colors.secondary,
+                fontSize: '34px',
+                // writingMode: 'vertical-rl',
                 whiteSpace: 'nowrap',
-                //display: 'none', // 'inline-block' isn't supported yet
+                display: 'flex',
                 overflow: 'visible',
-                marginRight: '-12px',
+                minWidth: 0,
+                transform: 'rotate(90deg)',
+                marginBottom: '42px',
               }}
             >
               {formatDate(date, {
@@ -154,13 +167,13 @@ export default async function handler(req) {
                 day: 'numeric',
                 year: 'numeric',
               })}
-            </span>
+            </div>
           </div>
         </div>
       ),
       {
         width: 1200,
-        height: 600,
+        height: 630,
       }
     )
   } catch (error) {
