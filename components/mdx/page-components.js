@@ -3,6 +3,11 @@ import dynamic from 'next/dynamic'
 // NOTE: This is a dynamically generated file based on the config specified under the
 //       `components` key in each post's frontmatter.
 const components = {
+  'forest-offsets-mismatch': {
+    Table: dynamic(() =>
+      import('@carbonplan/components').then((mod) => mod.Table || mod.default)
+    ),
+  },
   'compliance-users-update': {},
   'cdr-standards-call': {},
   'climate-risk-metadata': {},
