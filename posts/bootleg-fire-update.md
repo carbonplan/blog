@@ -4,7 +4,7 @@ title: Klamath East poised for automatic termination
 authors:
   - Grayson Badgley
 date: 03-29-2023
-summary: Carbon losses from the Bootleg Fire are severe enough to cause the termination of a forest offsets project in Oregon.
+summary: Carbon losses from the Bootleg Fire are severe enough to cause the termination of a forest offset project in Oregon.
 card: bootleg-fire-update
 ---
 
