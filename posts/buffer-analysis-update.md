@@ -7,7 +7,6 @@ authors:
 date: 12-01-2022
 summary: Offset projects hit by recent wildfires report larger carbon losses than we had projected.
 card: buffer-analysis-update
-fileId: 14HWfduvsFCneJ3K3yQyg3i4aX_zC4whpN8RSznFt4G8
 data:
   ACR255:
     slag:
