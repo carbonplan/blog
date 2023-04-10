@@ -3,6 +3,18 @@ import dynamic from 'next/dynamic'
 // NOTE: This is a dynamically generated file based on the config specified under the
 //       `components` key in each post's frontmatter.
 const components = {
+  'vcl-update-v2023.04.0': {
+    VCLChart: dynamic(() =>
+      import('../../posts/vcl-update-v2023.04.0/vcl-chart.js').then(
+        (mod) => mod.VCLChart || mod.default
+      )
+    ),
+    BeforeAfter: dynamic(() =>
+      import('../../posts/vcl-update-v2023.04.0/before-after.js').then(
+        (mod) => mod.BeforeAfter || mod.default
+      )
+    ),
+  },
   'bootleg-fire-update': {},
   'forest-offsets-mismatch': {
     Table: dynamic(() =>
