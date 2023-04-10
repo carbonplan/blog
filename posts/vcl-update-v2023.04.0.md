@@ -27,7 +27,15 @@ With this round of Verification Framework updates, we are adding three new pathw
 
 <Figure>
   <VCLChart />
-  <FigureCaption number={1}>The Verification Confidence Level (VCL) metric represents our confidence that carbon removal and storage durability outcomes can be accurately quantified using the best scientific understanding, measurement, and modeling approaches available today. Each CDR pathway is associated with a range of VCLs, which captures differences between potential approaches within each pathway and the associated quantification uncertainties. This figure highlights pathways added in this round of updates.</FigureCaption>
+  <FigureCaption number={1}>
+    The Verification Confidence Level (VCL) metric represents our confidence
+    that carbon removal and storage durability outcomes can be accurately
+    quantified using the best scientific understanding, measurement, and
+    modeling approaches available today. Each CDR pathway is associated with a
+    range of VCLs, which captures differences between potential approaches
+    within each pathway and the associated quantification uncertainties. This
+    figure highlights pathways added in this round of updates.
+  </FigureCaption>
 </Figure>
 
 It’s important to note that our choice to focus on the uncertainties associated with storing carbon for 1000+ years uniquely affects our consideration of biochar. For context, biochar is produced by using pyrolysis to transform biomass into a form that degrades more slowly, resulting in longer-term storage of the embodied carbon. In our assessment, we specifically consider biochar that is applied to agricultural fields as a soil amendment. The degradation of biochar in soils is contingent on its physical and chemical characteristics and the environment in which it is applied, and in general, we cannot predict biochar degradation over long time scales with confidence. This means that estimates of how much carbon remains stored for 1000+ years are highly uncertain. Those interested in biochar for shorter duration carbon storage may find it appropriate to adjust these uncertainties.
@@ -43,8 +51,15 @@ First, we updated the mineral ocean alkalinity enhancement (OAE) pathway to refl
 Second, we made changes to ensure that no uncertainties are double counted in the VCL metric. At a high level, each pathway is composed of components that determine net carbon removal and storage durability outcomes. We classify each component as informing carbon drawdown, project emissions, or storage durability, and analyze the associated uncertainty given the best available quantification approaches. The VCL metric is determined by counting the number of components with a medium, high, or very high uncertainty. In some cases, multiple components may reflect the same underlying uncertainty — for example, long-term leakage of CO₂ from a storage reservoir could be understood as a drawdown uncertainty or a durability uncertainty. In such cases, we have updated the tool to ensure all uncertainties are reflected in drawdown components, and calculate the VCL metric excluding durability components. This change does not affect the final VCL metric for any of the CDR pathways currently in the tool.
 
 <Figure>
-<BeforeAfter />
-<FigureCaption number={2}>The ocean biomass sinking pathway diagram as initially released (before) and as updated to include the component ‘Outgassing’ (after). Since ‘Outgassing’ captures the same underlying uncertainty as ‘Deepwater recirculation’, the latter is excluded from the calculation of the overall VCL. You can explore this example in more detail in the [interactive tool](https://carbonplan.org/research/cdr-verification/ocean-biomass-sinking-no-harvest).</FigureCaption>
+  <BeforeAfter />
+  <FigureCaption number={2}>
+    The ocean biomass sinking pathway diagram as initially released (before) and
+    as updated to include the component ‘Outgassing’ (after). Since ‘Outgassing’
+    captures the same underlying uncertainty as ‘Deepwater recirculation’, the
+    latter is excluded from the calculation of the overall VCL. You can explore
+    this example in more detail in the [interactive
+    tool](https://carbonplan.org/research/cdr-verification/ocean-biomass-sinking-no-harvest).
+  </FigureCaption>
 </Figure>
 
 Third, we updated text throughout the tool to ensure components that are shared across pathways are described consistently. A full accounting of these changes can be found on [GitHub](https://github.com/carbonplan/cdr-verification).
