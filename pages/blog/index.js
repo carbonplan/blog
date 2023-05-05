@@ -17,6 +17,7 @@ const Index = ({ posts }) => {
       footer={true}
       links={'local'}
       nav={'blog'}
+      url={'https://carbonplan.org/blog'}
       settings={{
         value: showMobileSettings,
         onClick: () => setShowMobileSettings(!showMobileSettings),
