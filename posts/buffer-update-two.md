@@ -21,11 +21,12 @@ These new details about ACR260 allow us to provide a comprehensive update on the
   <ReversalsTable />
   <TableCaption number={1}>
     Magnitude of credits and source of current information on wildfire reversals
-    that have burned six of California's forest carbon offset projects. We know
-    about the status of reversals from three different sources: reversals
-    verified by the California Air Resources Board (3 projects), reversals with
-    project paperwork quantifying the magnitude of pending carbon losses (2
-    projects), and new reporting on the possible termination of ACR260.
+    that have burned six of California's forest carbon offset projects. Magnitude denominated in units of million tCO₂. We know
+about the status of reversals from three different sources: reversals
+verified by the California Air Resources Board (3 projects), reversals with
+project paperwork quantifying the magnitude of pending carbon losses (2
+projects), and new reporting on the possible termination of ACR260.
+
   </TableCaption>
 </Figure>
 
