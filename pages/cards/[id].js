@@ -13,6 +13,20 @@ const Card = ({ title, authors, date, number }) => {
     setLines(Math.round(titleText.current?.offsetHeight / 67))
   }, [])
 
+  const shouldInline = (i) => {
+    if (lines < 4) {
+      return false
+    }
+
+    if (authors.length > 3) {
+      return true
+    }
+
+    if (i > 0) {
+      return true
+    }
+  }
+
   return (
     <Flex
       sx={{
@@ -66,7 +80,7 @@ const Card = ({ title, authors, date, number }) => {
             <Box
               key={a}
               sx={{
-                display: lines >= 4 && i > 0 ? 'inline-block' : 'block',
+                display: shouldInline(i) ? 'inline-block' : 'block',
                 color: AUTHOR_COLORS[(number + i) % 4],
               }}
             >
