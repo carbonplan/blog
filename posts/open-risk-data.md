@@ -4,7 +4,7 @@ title: Climate change happens in public. Risk assessments should, too.
 authors:
   - Oriana Chegwidden
 date: 09-05-2023
-summary: Announcing the release of a new extreme heat dataset, and sharing my reflections on why it’s important to do this kind of work in the open
+summary: Announcing the release of a new extreme heat dataset, and reflecting on why it’s important to do this kind of work in the open.
 card: open-risk-data
 ---
 
