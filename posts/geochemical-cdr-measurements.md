@@ -8,12 +8,12 @@ authors:
   - name: Phil Renforth
     src: https://images.carbonplan.org/authors/phil-renforth.png
   - Freya Chay
-date: 09-06-2023
-summary: TK
+date: 09-07-2023
+summary: “Measurements in Geochemical Carbon Dioxide Removal” by Campbell et al. presents a timely synthesis of measurement techniques to support CDR decision-making with a strong technical foundation.
 card: geochemical-cdr-measurements
 ---
 
-This week, we saw the release of the first edition of “Measurements in Geochemical Carbon Dioxide Removal” (Campbell et al. 2023), led by researchers at Heriot-Watt university. We think this report is so important, CarbonPlan contributed a forward. Funded in part by the [Industrial Decarbonisation Research and Innovation Centre (IDRIC)](https://idric.org), this report consolidates technical best practices for geochemical measurements that are relevant to carbon dioxide removal (CDR) approaches like [enhanced weathering](https://carbonplan.org/research/cdr-verification/enhanced-weathering) and [alkaline waste mineralization](https://carbonplan.org/research/cdr-verification/alkaline-waste-mineralization). It is freely accessible to the public, and should serve as a resource for all members of the geochemical CDR community to learn about relevant analytical techniques and how they can contribute to more effective and informed decision-making.
+This week, we saw the release of the first edition of [_“Measurements in Geochemical Carbon Dioxide Removal”_ (Campbell et al. 2023)](https://doi.org/10.17861/2GE7-RE08), led by researchers at Heriot-Watt university. We think this report is so important, CarbonPlan contributed a forward. Funded in part by the [Industrial Decarbonisation Research and Innovation Centre (IDRIC)](https://idric.org), this report consolidates technical best practices for geochemical measurements that are relevant to carbon dioxide removal (CDR) approaches like [enhanced weathering](https://carbonplan.org/research/cdr-verification/enhanced-weathering) and [alkaline waste mineralization](https://carbonplan.org/research/cdr-verification/alkaline-waste-mineralization). It is freely accessible to the public, and should serve as a resource for all members of the geochemical CDR community to learn about relevant analytical techniques and how they can contribute to more effective and informed decision-making.
 
 There are two features of this report that we are especially excited to highlight.
 
@@ -21,4 +21,4 @@ First, this report provides a much-needed summary of the “what”, the “why�
 
 Second, this report represents a broad and collaborative effort that is poised to evolve alongside our understanding of geochemical CDR. Carbon removal accounting is improving through smarter field sampling, better laboratory precision, and new types of measurements. This report can capture those changes in future editions. The authors of the first edition want feedback from the CDR community and invite collaborations with CDR researchers and companies in preparing for the next edition. We think this potential for cross-disciplinary engagement elevates the significance of this report beyond its content alone.
 
-As interest, research, and investment in geochemical CDR accelerates, it will be important to ensure that the “big picture” — as embodied in monitoring , reporting, and verification (MRV) standards or deployment plans — rests upon a rigorous technical foundation. By making technical knowledge more widely accessible, “Measurements in Geochemical Carbon Dioxide Removal” supports progress toward understanding and effectively implementing geochemical CDR.
+As interest, research, and investment in geochemical CDR accelerates, it will be important to ensure that the “big picture” — as embodied in monitoring , reporting, and verification (MRV) standards or deployment plans — rests upon a rigorous technical foundation. By making technical knowledge more widely accessible, _“Measurements in Geochemical Carbon Dioxide Removal”_ supports progress toward understanding and effectively implementing geochemical CDR.
