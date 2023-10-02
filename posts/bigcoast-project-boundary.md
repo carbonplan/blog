@@ -34,24 +34,24 @@ My next step was to visit [the official BigCoast project page at the Verra offse
   </FigureCaption>
 </Figure>
 
-Back at the drawing board, I next found a document entitled <BreakAll>`VCS_Joint_Prjct_Description_Monitoring_Report_BigCoast.pdf`</BreakAll> that contained an appendix labeled "Project area polygon location." I was hoping this appendix would be the jackpot. Instead, it turned out to be one the most baffling pieces of paperwork I've ever seen.
+Back at the drawing board, I next found a document entitled <BreakAll>`VCS_Joint_Prjct_Description_Monitoring_Report_BigCoast.pdf`</BreakAll> that contained an appendix labeled “Project area polygon location.” I was hoping this appendix would be the jackpot. Instead, it turned out to be one the most baffling pieces of paperwork I've ever seen.
 
 Rather than post machine-readable boundary data – an ESRI shapefile, KML, or GeoJSON – the project developer elected to provide more than 70,000 latitude/longitude coordinate pairs in table form, spread across 688 pages of a PDF. I can’t imagine a less user-friendly format. But, somewhat perversely, the sheer absurdity of the whole thing became a challenge – I felt [compelled](https://xkcd.com/356/) to figure out if I could make something sensible of it.
 
 <Figure>
   <Screenshot />
   <FigureCaption number={2}>
-    Screenshot of the first page of the "Project area polygon location"
+    Screenshot of the first page of the “Project area polygon location”
     appendix. The appendix includes an additional 687 pages with data, which we
     used to infer the boundary of the BigCoast offset project.
   </FigureCaption>
 </Figure>
 
-Transforming the data into something useful required some experimentation. Coordinates alone aren't sufficient to recreate complex geometries. You also need to know how coordinates relate to each other. Typically, you’d lay out connected points in "rings,” starting with a single point and moving clockwise until you come back to where you started. This strategy allows you to draw even the most complicated shapes. But it gets trickier when the shape you're describing has more than one ring, because you also need to know where one ring ends and the next begins. Needless to say, these sorts of subtle details didn't come across in PDF format.
+Transforming the data into something useful required some experimentation. Coordinates alone aren't sufficient to recreate complex geometries. You also need to know how coordinates relate to each other. Typically, you’d lay out connected points in “rings,” starting with a single point and moving clockwise until you come back to where you started. This strategy allows you to draw even the most complicated shapes. But it gets trickier when the shape you're describing has more than one ring, because you also need to know where one ring ends and the next begins. Needless to say, these sorts of subtle details didn't come across in PDF format.
 
 Ultimately, I appealed to brute force. Rather than treating each point as a coordinate, I just drew a 100x100 meter square around each point, an approach known as buffering. From there, you _just_ need to take the intersection of the tens of thousands of squares to create a single geometry.
 
-If you squint and tilt your head, our reconstructed boundary looks sort of similar to the various, blurry static maps included in BigCoast's project documents. Our effort is at least more credible than the boundary uploaded to Verra. As further validation, our reconstruction has an area of 106,567 acres, which is remarkably close to 108,780 acres, the project's official acreage as listed in BigCoast's project documentation. And when I overlaid the inferred boundary against [ British Columbia's wildfire dataset](https://catalogue.data.gov.bc.ca/dataset/fire-perimeters-current), I calculated that about 276 acres – or 112 hectares – of the project burned in the [Cameron Bluffs Fire](https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2023&incidentNumber=V70600). That's pretty close to the "[a]bout 100 hectares" of burned forest the owner of the project told Bloomberg about. The time it took me to figure this out: upwards of 5 hours.
+If you squint and tilt your head, our reconstructed boundary looks sort of similar to the various, blurry static maps included in BigCoast's project documents. Our effort is at least more credible than the boundary uploaded to Verra. As further validation, our reconstruction has an area of 106,567 acres, which is remarkably close to 108,780 acres, the project's official acreage as listed in BigCoast's project documentation. And when I overlaid the inferred boundary against [ British Columbia's wildfire dataset](https://catalogue.data.gov.bc.ca/dataset/fire-perimeters-current), I calculated that about 276 acres – or 112 hectares – of the project burned in the [Cameron Bluffs Fire](https://wildfiresituation.nrs.gov.bc.ca/incidents?fireYear=2023&incidentNumber=V70600). That's pretty close to the “[a]bout 100 hectares” of burned forest the owner of the project told Bloomberg about. The time it took me to figure this out: upwards of 5 hours.
 
 <Figure>
   <Map showZoom showInferred />
