@@ -22,7 +22,7 @@ const Screenshot = () => {
       >
         <Box
           as='img'
-          src='/offsets-projects-boundaries/screenshot.png'
+          src='https://images.carbonplan.org/blog/bigcoast-project-boundary/screenshot.png'
           sx={{
             width: '100%',
             borderWidth: 3,
@@ -96,7 +96,7 @@ const Screenshot = () => {
               <Box
                 as='img'
                 onClick={() => setExpanded(false)}
-                src='/offsets-projects-boundaries/screenshot.png'
+                src='https://images.carbonplan.org/blog/bigcoast-project-boundary/screenshot.png'
                 sx={{
                   maxWidth: '100%',
                   maxHeight: '100%',
