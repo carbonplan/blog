@@ -1,6 +1,6 @@
 import { Box } from 'theme-ui'
 
-const Zoom = ({ zoomed, setZoomed }) => {
+const Zoom = ({ setZoomed }) => {
   return (
     <Box sx={{ position: 'absolute', top: 0, left: 0 }}>
       <Box
@@ -8,12 +8,12 @@ const Zoom = ({ zoomed, setZoomed }) => {
         aria-label='Zoom out'
         onClick={() => setZoomed(false)}
         sx={{
-          color: !zoomed ? 'secondary' : 'primary',
+          color: 'primary',
           border: 'none',
           bg: 'transparent',
           m: [0],
           p: [0],
-          cursor: !zoomed ? 'inherit' : 'pointer',
+          cursor: 'pointer',
           textTransform: 'uppercase',
           fontFamily: 'body',
           letterSpacing: 'smallcaps',
@@ -34,12 +34,12 @@ const Zoom = ({ zoomed, setZoomed }) => {
         aria-label='Zoom in'
         onClick={() => setZoomed(true)}
         sx={{
-          color: zoomed ? 'secondary' : 'primary',
+          color: 'primary',
           border: 'none',
           bg: 'transparent',
           m: [0],
           p: [0],
-          cursor: zoomed ? 'inherit' : 'pointer',
+          cursor: 'pointer',
           textTransform: 'uppercase',
           fontFamily: 'body',
           letterSpacing: 'smallcaps',

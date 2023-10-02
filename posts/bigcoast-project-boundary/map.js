@@ -30,6 +30,7 @@ const Point = ({ scale, position, sx, projection }) => {
 }
 
 const AnimatedPoint = animated(Point)
+
 const Label = ({ position, children, projection, scale, translate }) => {
   const [x, y] = projection(position)
 
@@ -45,7 +46,8 @@ const Label = ({ position, children, projection, scale, translate }) => {
         fontFamily: 'mono',
         fill: 'primary',
         textTransform: 'uppercase',
-        ml: 2,
+        ml: '12px',
+        mt: '-6px',
         position: 'absolute',
         left: `${(100 * effectiveX) / 400}%`,
         top: `${(100 * effectiveY) / 200}%`,
@@ -184,7 +186,7 @@ const Map = ({ showInferred = false, showZoom = false }) => {
               projection={projection}
               scale={scale}
               translate={translate}
-              position={[-123.0607, 49.4927]}
+              position={[-123.1207, 49.2827]}
             >
               Vancouver
             </AnimatedLabel>
@@ -192,7 +194,7 @@ const Map = ({ showInferred = false, showZoom = false }) => {
               projection={projection}
               scale={scale}
               translate={translate}
-              position={[-123.2656, 48.6284]}
+              position={[-123.3656, 48.4284]}
             >
               Victoria
             </AnimatedLabel>
