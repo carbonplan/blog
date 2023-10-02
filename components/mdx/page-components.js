@@ -3,6 +3,23 @@ import dynamic from 'next/dynamic'
 // NOTE: This is a dynamically generated file based on the config specified under the
 //       `components` key in each post's frontmatter.
 const components = {
+  'bigcoast-project-boundary': {
+    Map: dynamic(() =>
+      import('../../posts/bigcoast-project-boundary/map.js').then(
+        (mod) => mod.Map || mod.default
+      )
+    ),
+    Screenshot: dynamic(() =>
+      import('../../posts/bigcoast-project-boundary/screenshot.js').then(
+        (mod) => mod.Screenshot || mod.default
+      )
+    ),
+    BreakAll: dynamic(() =>
+      import('../../posts/bigcoast-project-boundary/break-all.js').then(
+        (mod) => mod.BreakAll || mod.default
+      )
+    ),
+  },
   'geochemical-cdr-measurements': {},
   'open-risk-data': {},
   'forest-offsets-firms': {},
