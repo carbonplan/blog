@@ -1,0 +1,28 @@
+---
+version: 1.0.0
+title: Adding nuance on agricultural lime in the CDR Verification Framework
+authors:
+  - Tyler Kukla
+  - Freya Chay
+  - name: Zeke Hausfather
+    src: https://images.carbonplan.org/authors/zeke-hausfather.png
+date: 10-11-2023
+summary: Lime is used to manage soil pH in many agricultural fields and can remove carbon from the atmosphere when it weathers. We are updating our CDR Verification Framework tool to emphasize that changes in lime use and weathering should be accounted for in enhanced weathering and biochar deployments.
+card: vcl-update-v2023.10.0
+---
+
+Last year, we released the CDR Verification Framework, a tool that maps out the key uncertainties associated with calculating net carbon removal for different methods, which our framework refers to as “pathways to carbon removal.”
+
+The CDR Verification Framework is designed to be updated over time as our understanding of different pathways evolves. We are currently updating the “[Change in agricultural lime use](https://carbonplan.org/research/cdr-verification/docs/components/lime-reduce)” component in the [enhanced weathering](https://carbonplan.org/research/cdr-verification/enhanced-weathering) and [biochar](https://carbonplan.org/research/cdr-verification/biochar) pathways. This component captures the possibility that some CDR deployments could affect a farmer’s application of agricultural lime, a soil amendment that is commonly used to manage soil pH. In the previous version of the framework, we assumed that lime application was consistently a net source of CO₂, and that displacing agricultural lime through a CDR deployment would therefore result in avoided emissions. In reality, lime dissolves (i.e., “weathers”) when it is applied to soil just like other mineral feedstocks, and could result in carbon removal. This update does not change our overall confidence in the ability to accurately quantify the outcomes of either pathway considered, as captured by the Verification Confidence Level (VCL) metric, but does reflect a more nuanced understanding of what can happen when a CDR project changes agricultural lime use.
+
+Most agricultural lime applications use carbon-bearing carbonate limestone (CaCO₃, MgCO₃), also called aglime ([West & McBride, 2005](https://doi.org/10.1016/j.agee.2005.01.002)). One unit of aglime has the potential to weather and produce two units of inorganic carbon. Importantly, only one unit of that inorganic carbon comes from the atmosphere — the other comes from the rock itself. In contrast, when a mineral that doesn’t contain carbon weathers, such as a silicate (e.g. CaSi₂Al₂O₈) or quicklime (CaO), both units of inorganic carbon are atmosphere-derived. Because aglime weathering releases carbon to the system that was previously stored in the rock, it has the potential to become a source of carbon to the atmosphere.
+
+How do we know when aglime is a carbon source or sink? It’s easy to find literature that characterizes lime use as a net source (e.g., [IPCC, 1997](htts://www.ipcc-nggip.iges.or.jp/public/gl/invs1.html), [2006](https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol4.html); [Bing et al., 2023](https://doi.org/10.5194/essd-15-2431-2023); [Beerling et al., 2023](https://doi.org/10.48550/arXiv.2308.04302)). But there are also many examples where lime weathering is found to be a carbon sink (e.g., [Oh and Raymond, 2006](https://doi.org/10.1029/2005GB002565); [Hamilton et al., 2007](https://doi.org/10.1029/2006GB002738); [Zhang et al., 2022](https://doi.org/10.1002/lno.12244)). What distinguishes these results is often the characteristics of the study site, or how far the study tracks carbon over space and time. These factors matter because, across space and time, different processes can release inorganic carbon to the atmosphere, affecting the balance of what’s removed versus what’s emitted.
+
+For example, [carbonate precipitation](https://carbonplan.org/research/cdr-verification/docs/components/carb-terr) in soils, rivers, or the ocean can release carbon back into the atmosphere, sometimes long after the weathering occurred. Additionally, if aglime weathers in [acidic soils](https://carbonplan.org/research/cdr-verification/docs/components/alk-loss), it can release carbon locally as it dissolves, but could result in net carbon removal downstream when the dissolved minerals leave the acidic soil.
+
+Because of all this, pre-existing agricultural lime application serves as a baseline against which the enhanced weathering deployment must be compared. For example, on a field where aglime is already being applied, carbon removal could be achieved by replacing aglime with a silicate or by increasing aglime application to optimize for carbon removal. In either case, the baseline effect of agricultural lime weathering should be considered site-by-site, and accounted for with the same spatial and temporal boundaries as the enhanced weathering deployment.
+
+If biochar provides pH benefits when applied to soils, it could reduce the application of agricultural lime as well, and then would require similar accounting. In practice, the “liming potential” of biochar can vary from one feedstock to the other and may not affect farmer behavior.
+
+This update to the CDR Verification Framework recognizes that lime weathering can be a carbon source or a carbon sink. If a CDR project changes how farmers apply agricultural lime, those changes must be considered when calculating net carbon removal.
