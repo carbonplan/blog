@@ -10,10 +10,11 @@ import {
 
 import List from './list'
 
-const initYear = {
-  2021: true,
-  2022: true,
-  2023: true,
+const currentYear = new Date().getFullYear()
+const initYear = {}
+
+for (let year = 2021; year <= currentYear; year++) {
+  initYear[year] = true
 }
 
 const Settings = ({ setYear, year }) => {
