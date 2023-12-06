@@ -10,18 +10,14 @@ import {
 
 import List from './list'
 
-const initYear = {
-  2021: true,
-  2022: true,
-  2023: true,
-}
+const getCurrentYear = () => new Date().getFullYear()
 
-const Settings = ({ setYear, year }) => {
+const Settings = ({ setYears, years }) => {
   return (
     <Group spacing='md'>
       <Filter
-        values={year}
-        setValues={setYear}
+        values={years}
+        setValues={setYears}
         label='Filter by year'
         showAll
       />
@@ -30,9 +26,16 @@ const Settings = ({ setYear, year }) => {
 }
 
 const Main = ({ showMobileSettings, posts }) => {
-  const [year, setYear] = useState(initYear)
+  const [years, setYears] = useState(() => {
+    const currentYear = getCurrentYear()
+    const initYears = {}
+    for (let year = 2021; year <= currentYear; year++) {
+      initYears[year] = true
+    }
+    return initYears
+  })
 
-  const settings = <Settings setYear={setYear} year={year} />
+  const settings = <Settings setYears={setYears} years={years} />
 
   return (
     <>
@@ -61,7 +64,7 @@ const Main = ({ showMobileSettings, posts }) => {
           {settings}
         </Column>
         <Column start={[1, 2, 5, 5]} width={[6, 6, 7, 7]}>
-          <List year={year} posts={posts} />
+          <List years={years} posts={posts} />
         </Column>
       </Row>
     </>
