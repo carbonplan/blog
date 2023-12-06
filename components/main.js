@@ -10,12 +10,7 @@ import {
 
 import List from './list'
 
-const currentYear = new Date().getFullYear()
-const initYears = {}
-
-for (let year = 2021; year <= currentYear; year++) {
-  initYears[year] = true
-}
+const getCurrentYear = () => new Date().getFullYear()
 
 const Settings = ({ setYears, years }) => {
   return (
@@ -31,7 +26,14 @@ const Settings = ({ setYears, years }) => {
 }
 
 const Main = ({ showMobileSettings, posts }) => {
-  const [years, setYears] = useState(initYears)
+  const [years, setYears] = useState(() => {
+    const currentYear = getCurrentYear()
+    const initYears = {}
+    for (let year = 2021; year <= currentYear; year++) {
+      initYears[year] = true
+    }
+    return initYears
+  })
 
   const settings = <Settings setYears={setYears} years={years} />
 
