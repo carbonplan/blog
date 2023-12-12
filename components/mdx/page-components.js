@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic'
 // NOTE: This is a dynamically generated file based on the config specified under the
 //       `components` key in each post's frontmatter.
 const components = {
+  'zarr-visualization-update': {},
   'buffer-update-three': {},
   'vcl-update-v2023.10.0': {},
   'bigcoast-project-boundary': {
