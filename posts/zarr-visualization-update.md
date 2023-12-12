@@ -16,14 +16,7 @@ new Date() < new Date(Date.UTC(2023, 11, 15, 8)) ?
 
 <p>
   <Secondary as='em'>
-    We’ll be co-presenting with our Development Seed collaborators on{' '}
-    <Link
-      href='https://agu.confex.com/agu/fm23/meetingapp.cgi/Paper/1303670'
-      sx={{ color: 'secondary', '&:hover': { color: 'primary' } }}
-    >
-      Next Gen Zarr web map visualization at AGU on December 14th
-    </Link>{' '}
-    – come check it out if you’re attending the conference!
+    We’ll be co-presenting with our Development Seed collaborators on <Link href='https://agu.confex.com/agu/fm23/meetingapp.cgi/Paper/1303670' sx={{color: 'secondary', '&:hover': {color: 'primary'}}}>Next Generation Zarr web map visualization at AGU on December 14th</Link> – come check it out if you’re attending the conference!
   </Secondary>
 </p>
 : null}
@@ -34,7 +27,7 @@ Our mapping library is built around [Zarr](https://zarr.dev/), a cloud-optimized
 
 First, we explored whether the next version of the Zarr specification (V3) and the [“sharding” extension](https://zarr.dev/zeps/accepted/ZEP0002.html) could allow the same dataset to be accessed via large outer chunks (or “shards”) for analysis and smaller inner chunks for visualization. We implemented support for reading Zarr V3 data in our [`@carbonplan/maps`](https://github.com/carbonplan/maps) library, via our [`zarr-js`](https://github.com/freeman-lab/zarr-js) JavaScript client library. We built a [web application](http://prototype-maps.demo.carbonplan.org/) to provide a unified interface for rendering data stored in different configurations and produced datasets conforming to the Zarr V2 and V3 specifications. We also developed a [Python library](https://github.com/carbonplan/benchmark-maps) for reproducible benchmarking of these approaches. We were glad to confirm similar performance for data stored using Zarr V3 (non-sharded) compared to Zarr V2, though this was expected because without sharding the two storage formats are generally similar. We found slightly slower performance (~14%) for sharded V3 data relative to non-sharded V3 data, but we believe that future performance improvements could close this gap.
 
-Second, we implemented support for “on-the-fly” projection of data stored with latitude/longitude coordinates in the [`@carbonplan/maps`](https://github.com/carbonplan/maps) Javascript library. In our testing, we found slower performance (~30%) with this coordinate system relative to Web Mercator, particularly at higher zoom levels. This feature is a major step towards dynamically rendering analysis-ready datasets because many Earth science data products are stored in this coordinate system, so we expect many users will be willing to tolerate the performance difference. But the results are also a reminder that removing some pre-processing steps may come at the cost of visualization performance.
+Second, we implemented support for on-the-fly projection in the [`@carbonplan/maps`](https://github.com/carbonplan/maps) Javascript library, making it possible to load “unprojected” data stored with latitude/longitude coordinates and dynamically project it into Web Mercator (and, in the future, other coordinate systems). In our testing, we found slower performance (~30%) with this approach relative to rendering data already stored in Web Mercator, particularly at higher zoom levels. This feature is still a major step towards dynamically rendering analysis-ready datasets because many Earth science data products are stored in this coordinate system, so we expect many users will be willing to tolerate the performance difference. But the results are a reminder that removing some pre-processing steps may come at the cost of visualization performance.
 
 You can check out the [Zarr visualization report](https://nasa-impact.github.io/zarr-visualization-report/) for more details on our approach, benchmarking results, and recommendations. Our collaborators at Development Seed, an engineering and product company that specializes in Earth data, have built a tile server approach to Zarr visualization, in which a server dynamically generates visualization-ready Zarr data from a different data source. That differs in several ways to the “serverless” approach described above, and has both advantages and disadvantages. The Zarr Visualization Report provides more information on the tile server approach.
 
