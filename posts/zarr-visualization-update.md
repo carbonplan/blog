@@ -16,7 +16,14 @@ new Date() < new Date(Date.UTC(2023, 11, 15, 8)) ?
 
 <p>
   <Secondary as='em'>
-    We’ll be co-presenting with our Development Seed collaborators on <Link href='https://agu.confex.com/agu/fm23/meetingapp.cgi/Paper/1303670' sx={{color: 'secondary', '&:hover': {color: 'primary'}}}>Next Generation Zarr web map visualization at AGU on December 14th</Link> – come check it out if you’re attending the conference!
+    We’ll be co-presenting with our Development Seed collaborators on{' '}
+    <Link
+      href='https://agu.confex.com/agu/fm23/meetingapp.cgi/Paper/1303670'
+      sx={{ color: 'secondary', '&:hover': { color: 'primary' } }}
+    >
+      Next Generation Zarr web map visualization at AGU on December 14th
+    </Link>{' '}
+    – come check it out if you’re attending the conference!
   </Secondary>
 </p>
 : null}
