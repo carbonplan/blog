@@ -54,7 +54,7 @@ To validate the performance improvement, we compared workflows for calculating W
       ['Temporal Extent', '365 days', '365 days'],
       ['# of Workers', '10', '10'],
       ['Worker Instance ', 'm7i.xlarge ', 'm7i.xlarge '],
-      ['Time', '20 minutes 24 seconds', '2 min 49 seconds'],
+      ['Time', '20 min 24 seconds', '2 min 49 seconds'],
     ]}
   />
 </Figure>
