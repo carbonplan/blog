@@ -56,7 +56,6 @@ To validate the performance improvement, we compared workflows for calculating W
       ['Worker Instance ', 'm7i.xlarge ', 'm7i.xlarge '],
       ['Time', '20 minutes 24 seconds', '2 min 49 seconds'],
     ]}
-    sx={{ my: [5] }}
   />
 </Figure>
 
