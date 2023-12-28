@@ -65,7 +65,7 @@ As the table above shows, the ARCO/Kerchunk method took under three minutes, com
 
 We hope that the example above shows the utility of Kerchunk for large-scale analysis of Earth Science data. The Kerchunk reference we made can be freely used or redistributed, and the source NEX-GDDP-CMIP6 dataset used to create the reference is licensed under Creative Commons Zero license (CC0) and the underlying CMIP6 datasets are licensed under Creative Commons - Attribution 4.0 (CC4). More examples of using Kerchunk can be found on the [official docs](https://fsspec.github.io/kerchunk/) as well as the [Project Pythia cookbook](https://projectpythia.org/kerchunk-cookbook/README.html).
 
-The Kerchunk project is under active development, so you might find some sharp edges and breaking changes. At the time of writing, Kerchunk supports NetCDF 3 and 4, GRIB2, TIFF/GeoTIFF and FITS; other archival formats are not yet supported. Additionally, if your use case requires a different chunking schema then the underlying file chunking, you will want to look to ETL tools such as [pangeo-forge-recipes](https://pangeo-forge.readthedocs.io/en/latest/) and [xarray-beam](https://xarray-beam.readthedocs.io/en/latest/).
+The Kerchunk project is under active development, so you might find some sharp edges and breaking changes. At the time of writing, Kerchunk supports NetCDF 3 and 4, GRIB2, TIFF/GeoTIFF and FITS; other archival formats are not yet supported. Additionally, if your use case requires a different chunking schema than the underlying file chunking, you will want to look to ETL tools such as [pangeo-forge-recipes](https://pangeo-forge.readthedocs.io/en/latest/) and [xarray-beam](https://xarray-beam.readthedocs.io/en/latest/).
 
 ## Thanks
 
