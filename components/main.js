@@ -39,6 +39,7 @@ const Main = ({ showMobileSettings, posts }) => {
 
   return (
     <>
+      {new Date().toTimeString()}
       <Tray expanded={showMobileSettings}>{settings}</Tray>
       <Heading
         description={
