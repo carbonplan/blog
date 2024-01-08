@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic'
 // NOTE: This is a dynamically generated file based on the config specified under the
 //       `components` key in each post's frontmatter.
 const components = {
+  'compliance-users-v3': {},
   'kerchunk-climate-data': {
     Table: dynamic(() =>
       import('@carbonplan/components').then((mod) => mod.Table || mod.default)
