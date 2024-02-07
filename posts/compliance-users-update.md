@@ -1,10 +1,10 @@
 ---
 version: 1.0.0
-title: Updates to the Compliance Users Tool
+title: Updates to the Compliance Users tool
 authors:
   - Freya Chay
 date: 2-23-2023
-summary: We updated the Compliance Users Tool to include the latest available cap-and-trade program data about who is using which offsets.
+summary: We updated the Compliance Users tool to include the latest available cap-and-trade program data about who is using which offsets.
 card: compliance-users-update
 ---
 
