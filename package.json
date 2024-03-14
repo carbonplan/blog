@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/carbonplan/blog#readme",
   "dependencies": {
-    "@carbonplan/charts": "^3.0.0",
+    "@carbonplan/charts": "^3.1.1",
     "@carbonplan/colormaps": "^4.0.0",
     "@carbonplan/components": "^12.5.0",
     "@carbonplan/icons": "^2.0.0",
