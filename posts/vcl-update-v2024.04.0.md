@@ -21,13 +21,15 @@ With the addition of two new pathways, the framework now includes five biomass-b
   <VCLChart />
   <FigureCaption number={1}>
     The Verification Framework summarizes the uncertainties associated with each
-    CDR pathway using a metric called the Verification Confidence Level (VCL), which
-    represents our confidence that carbon removal outcomes can be accurately
-    quantified using the best scientific understanding, measurement, and
-    modeling approaches available today. Each pathway is associated with a VCL
-    range, which captures differences in implementation within a given pathway.
-    This figure highlights the VCL ratings for the five terrestrial
-    biomass-based pathways. For more information on the VCL metric, read our [original explainer](https://carbonplan.org/research/cdr-verification-explainer).
+    CDR pathway using a metric called the Verification Confidence Level (VCL),
+    which represents our confidence that carbon removal outcomes can be
+    accurately quantified using the best scientific understanding, measurement,
+    and modeling approaches available today. Each pathway is associated with a
+    VCL range, which captures differences in implementation within a given
+    pathway. This figure highlights the VCL ratings for the five terrestrial
+    biomass-based pathways. For more information on the VCL metric, read our
+    [original
+    explainer](https://carbonplan.org/research/cdr-verification-explainer).
   </FigureCaption>
 </Figure>
 
