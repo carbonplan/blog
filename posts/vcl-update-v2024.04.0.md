@@ -5,7 +5,7 @@ authors:
   - Freya Chay
 color: yellow
 date: 04-01-2024
-summary: We updated our Verification Framework tool to include more detail and a broader representation of biomass-based CDR pathways. We added two new pathways and updated three others.
+summary: We updated the Verification Framework tool to include more detail and a broader representation of biomass-based CDR pathways. We added two new pathways and updated three others.
 card: vcl-update-v2024.04.0
 components:
   - name: VCLChart
@@ -50,12 +50,12 @@ In practice, quantifying these upstream uncertainties will require establishing 
 
 Some approaches to biomass-based carbon removal could potentially result in avoided emissions. For example, a primary goal of bioenergy with carbon capture and storage (BECCS) is producing an energy product like electricity or heat, which ideally displaces the use of fossil fuels. As another example, diverting biomass from a landfill could avoid methane emissions associated with anaerobic decomposition.
 
-Characterizing avoided emissions is useful for understanding the overall impact of a CDR project. But to understand the role for these projects in a net-zero world, we should consider the carbon removal component separately. Including these other benefits in the calculation of net carbon removal risks replicating the problematic logic of conventional “offsetting” claims. In the Verification Framework, we therefore indicate where a biomass-based CDR approach might be expected to generate avoided emissions co-benefits, but recommend that these avoided emissions be excluded from the calculation of net carbon removal.
+Characterizing avoided emissions is useful for understanding the overall impact of a CDR project. But to understand the role for these projects in a net-zero world, we should consider the carbon removal component separately. In the Verification Framework, we therefore indicate where a biomass-based CDR approach might be expected to generate avoided emissions co-benefits, but recommend that these avoided emissions be excluded from the calculation of net carbon removal.
 
 ## Acknowledgements
 
 Thanks to the Frontier team — including Joanna Klitzke, Hannah Bebbington, Zeke Hausfather, Frauke Kracke, Judy Savitskaya, and Scott Litzelman — for collaborating on this round of updates.
 
-Thanks also to the scientific experts and CDR companies who gave feedback and input: Anne Ware (NREL), Corrine Scown (LBNL), Erica Belmont (Carbon Direct), Florentino de la Cruz (University of North Florida), Kodama, Matt Gammans (Isometric), Morgan Raven (UC Santa Barbara), Rewind, Sarah Nordahl (LBNL), Sinéad Crotty (Carbon Containment Lab), Vaulted, Yimin Zhang (NREL). Any remaining mistakes or mischaracterizations are our sole responsibility.
+Thanks also to the scientific experts and CDR companies who gave feedback and input: Anne Ware (NREL), Corinne Scown (LBNL), Erica Belmont (Carbon Direct), Florentino de la Cruz (University of North Florida), Kodama, Matt Gammans (Isometric), Morgan Raven (UC Santa Barbara), Rewind, Sarah Nordahl (LBNL), Sinéad Crotty (Carbon Containment Lab), Vaulted, Yimin Zhang (NREL). Any remaining mistakes or mischaracterizations are our sole responsibility.
 
 Sarah Baker (LLNL) helped coordinate input from members of the national labs. The participation of scientists at Lawrence Livermore National Laboratory (LBNL), Lawrence Berkeley National Laboratory (LBNL), and the National Renewable Energy Lab (NREL) was [funded](https://www.energy.gov/technologytransitions/articles/doe-selects-four-national-laboratory-led-teams-accelerate) by the DOE Office of Technology Transitions in collaboration with the Office of Fossil Energy and Carbon Management (FECM).
