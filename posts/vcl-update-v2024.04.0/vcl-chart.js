@@ -83,7 +83,7 @@ const VCLChart = () => {
           Terrestrial biomass sinking
         </Label>
         <Label x={0} y={3} verticalAlign='bottom' sx={{ ...sx.label }}>
-          Biomass storage
+          Biomass burial
         </Label>
         <Label
           x={0}
