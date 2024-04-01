@@ -96,7 +96,7 @@ const VCLChart = () => {
 
         <Plot>
           <Rect x={[2, 5]} y={[13, 14]} color={'yellow'} />
-          <Rect x={[2, 4]} y={[10, 11]} color={'yellow'} />
+          <Rect x={[2, 5]} y={[10, 11]} color={'yellow'} />
           <Rect x={[1, 4]} y={[7, 8]} color={'yellow'} />
           <Rect x={[0, 4]} y={[4, 5]} color={'yellow'} />
           <Rect x={[0, 3]} y={[1, 2]} color={'yellow'} />
