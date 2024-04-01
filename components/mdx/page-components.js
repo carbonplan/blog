@@ -3,6 +3,13 @@ import dynamic from 'next/dynamic'
 // NOTE: This is a dynamically generated file based on the config specified under the
 //       `components` key in each post's frontmatter.
 const components = {
+  'vcl-update-v2024.04.0': {
+    VCLChart: dynamic(() =>
+      import('../../posts/vcl-update-v2024.04.0/vcl-chart.js').then(
+        (mod) => mod.VCLChart || mod.default
+      )
+    ),
+  },
   'ftx-donation-return': {},
   'compliance-users-v3': {},
   'kerchunk-climate-data': {
