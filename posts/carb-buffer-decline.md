@@ -6,7 +6,6 @@ authors:
 date: 04-05-2024
 summary: New data released by the California Air Resources Board shows that California’s forest offset buffer pool has shrunk two quarters in a row.
 card: carb-buffer-decline
-fileId: 15dZiRTDJRsPBbZZJl68_796yHrT5ACa8S-_BXe6psAw
 components:
   - name: BufferBalance
     src: ./buffer-balance.js
