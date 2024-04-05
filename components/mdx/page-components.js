@@ -3,6 +3,13 @@ import dynamic from 'next/dynamic'
 // NOTE: This is a dynamically generated file based on the config specified under the
 //       `components` key in each post's frontmatter.
 const components = {
+  'carb-buffer-decline': {
+    BufferBalance: dynamic(() =>
+      import('../../posts/carb-buffer-decline/buffer-balance.js').then(
+        (mod) => mod.BufferBalance || mod.default
+      )
+    ),
+  },
   'vcl-update-v2024.04.0': {
     VCLChart: dynamic(() =>
       import('../../posts/vcl-update-v2024.04.0/vcl-chart.js').then(
