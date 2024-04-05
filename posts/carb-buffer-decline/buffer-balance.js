@@ -12,8 +12,6 @@ import {
   Point,
 } from '@carbonplan/charts'
 
-// data from https://github.com/carbonplan/toucan-crypto-offsets/tree/main/data
-
 const data = {
   '2014-04-01': null,
   '2014-07-01': 1193461.0,
@@ -107,7 +105,7 @@ const BufferBalance = () => {
         <Plot>
           <StackedBar data={counts} color={['grey', 'grey', 'red']} />
         </Plot>
-        <Point x={2024.25} y={40000000} align='right'>
+        <Point x={2024.125} y={35000000} align='right' verticalAlign='bottom'>
           <Box
             sx={{
               color: 'red',
