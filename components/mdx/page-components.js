@@ -4,6 +4,8 @@ import dynamic from 'next/dynamic'
 //       `components` key in each post's frontmatter.
 const components = {
   'whiskey-ifm-fire': {},
+  'mescalero-wildfires-2024': {},
+  'rimba-raya-license': {},
   'carb-buffer-decline': {
     BufferBalance: dynamic(() =>
       import('../../posts/carb-buffer-decline/buffer-balance.js').then(
