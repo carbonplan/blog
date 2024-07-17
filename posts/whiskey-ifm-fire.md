@@ -6,7 +6,6 @@ authors:
 date: 07-17-2024
 summary: 'The Shelly Fire in Northern California highlights two problems with the offsets market: carbon losses from wildfire and disclosure of project boundaries.'
 card: whiskey-ifm-fire
-fileId: 1f4Nuf--We6crBdtevOp6xYExDNipwkNJ3jSL38AbKto
 ---
 
 Another large forest offset project is burning, marking the second project to burn in the 2024 wildfire season. Thanks to the sharp eyes of Zeke Lunder, who runs [The Lookout](https://the-lookout.org/) where he dispenses invaluable and timely analysis of wildfires across the American West, we know that the [Shelly Fire](https://app.watchduty.org/#/i/24191) is currently burning through the “Scott River Whiskey IFM [improved forest management] Project” ([ACR733](https://carbonplan.org/research/offsets-db/projects/ACR733)), a voluntary offset project located in Northern California. Zeke first mentioned the project’s intersection with the Shelly Fire over a week ago during his [July 7 livestream](https://youtu.be/szD6M2sQpwY?t=1245).
