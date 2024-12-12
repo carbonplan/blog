@@ -3,6 +3,80 @@ import dynamic from 'next/dynamic'
 // NOTE: This is a dynamically generated file based on the config specified under the
 //       `components` key in each post's frontmatter.
 const components = {
+  'klamath-east-relisting': {},
+  'ipcc-cdr-methodologies': {},
+  'whiskey-ifm-fire': {},
+  'mescalero-wildfires-2024': {},
+  'rimba-raya-license': {},
+  'carb-buffer-decline': {
+    BufferBalance: dynamic(() =>
+      import('../../posts/carb-buffer-decline/buffer-balance.js').then(
+        (mod) => mod.BufferBalance || mod.default
+      )
+    ),
+  },
+  'vcl-update-v2024.04.0': {
+    VCLChart: dynamic(() =>
+      import('../../posts/vcl-update-v2024.04.0/vcl-chart.js').then(
+        (mod) => mod.VCLChart || mod.default
+      )
+    ),
+  },
+  'ftx-donation-return': {},
+  'compliance-users-v3': {},
+  'kerchunk-climate-data': {
+    Table: dynamic(() =>
+      import('@carbonplan/components').then((mod) => mod.Table || mod.default)
+    ),
+  },
+  'zarr-visualization-update': {},
+  'buffer-update-three': {},
+  'vcl-update-v2023.10.0': {},
+  'bigcoast-project-boundary': {
+    Map: dynamic(() =>
+      import('../../posts/bigcoast-project-boundary/map.js').then(
+        (mod) => mod.Map || mod.default
+      )
+    ),
+    Screenshot: dynamic(() =>
+      import('../../posts/bigcoast-project-boundary/screenshot.js').then(
+        (mod) => mod.Screenshot || mod.default
+      )
+    ),
+    BreakAll: dynamic(() =>
+      import('../../posts/bigcoast-project-boundary/break-all.js').then(
+        (mod) => mod.BreakAll || mod.default
+      )
+    ),
+  },
+  'geochemical-cdr-measurements': {},
+  'open-risk-data': {},
+  'forest-offsets-firms': {},
+  'buffer-update-two': {
+    ReversalsTable: dynamic(() =>
+      import('../../posts/buffer-update-two/reversals-table.js').then(
+        (mod) => mod.ReversalsTable || mod.default
+      )
+    ),
+  },
+  'vcl-update-v2023.04.0': {
+    VCLChart: dynamic(() =>
+      import('../../posts/vcl-update-v2023.04.0/vcl-chart.js').then(
+        (mod) => mod.VCLChart || mod.default
+      )
+    ),
+    BeforeAfter: dynamic(() =>
+      import('../../posts/vcl-update-v2023.04.0/before-after.js').then(
+        (mod) => mod.BeforeAfter || mod.default
+      )
+    ),
+  },
+  'bootleg-fire-update': {},
+  'forest-offsets-mismatch': {
+    Table: dynamic(() =>
+      import('@carbonplan/components').then((mod) => mod.Table || mod.default)
+    ),
+  },
   'compliance-users-update': {},
   'cdr-standards-call': {},
   'climate-risk-metadata': {},

@@ -69,7 +69,7 @@ export const getStaticProps = async ({ params }) => {
     props: {
       id: params.id,
       source: mdxSource,
-      frontMatter: data,
+      frontMatter: { ...data, path: `/blog/${params.id}` },
       number,
     },
   }
