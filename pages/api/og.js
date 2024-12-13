@@ -9,38 +9,56 @@ export const config = {
 }
 
 const getFonts = async () => {
-  const [relativeMedium, faux, mono] = await Promise.all([
-    fetch(
-      'https://fonts.carbonplan.org/relative/relative-medium-pro-convert.otf',
-      {
+  try {
+    const [relativeMedium, faux, mono] = await Promise.all([
+      fetch('https://fonts.carbonplan.org/relative/relative-medium-pro.otf', {
         next: { revalidate: false },
-      }
-    ).then((res) => res.arrayBuffer()),
-    fetch('https://fonts.carbonplan.org/relative/relative-faux-book-pro.otf', {
-      next: { revalidate: false },
-    }).then((res) => res.arrayBuffer()),
-    fetch(
-      'https://fonts.carbonplan.org/relative/relative-mono-11-pitch-pro.otf',
-      {
-        next: { revalidate: false },
-      }
-    ).then((res) => res.arrayBuffer()),
-  ])
+      }).then(async (res) => {
+        if (!res.ok)
+          throw new Error(`Failed to load medium font: ${res.status}`)
+        return res.arrayBuffer()
+      }),
+      fetch(
+        'https://fonts.carbonplan.org/relative/relative-faux-book-pro.otf',
+        {
+          next: { revalidate: false },
+        }
+      ).then(async (res) => {
+        if (!res.ok) throw new Error(`Failed to load faux font: ${res.status}`)
+        return res.arrayBuffer()
+      }),
+      fetch(
+        'https://fonts.carbonplan.org/relative/relative-mono-11-pitch-pro.otf',
+        {
+          next: { revalidate: false },
+        }
+      ).then(async (res) => {
+        if (!res.ok) throw new Error(`Failed to load mono font: ${res.status}`)
+        return res.arrayBuffer()
+      }),
+    ])
 
-  return [
-    {
-      name: 'heading',
-      data: relativeMedium,
-    },
-    {
-      name: 'faux',
-      data: faux,
-    },
-    {
-      name: 'mono',
-      data: mono,
-    },
-  ]
+    return [
+      {
+        name: 'heading',
+        data: relativeMedium,
+        fontWeight: 'normal',
+      },
+      {
+        name: 'faux',
+        data: faux,
+        fontWeight: 'normal',
+      },
+      {
+        name: 'mono',
+        data: mono,
+        fontWeight: 'normal',
+      },
+    ]
+  } catch (error) {
+    console.error('Error loading fonts:', error)
+    throw error
+  }
 }
 
 export default async function handler(req) {
@@ -68,12 +86,12 @@ export default async function handler(req) {
             display: 'flex',
             flexDirection: 'row',
             justifyContent: 'space-between',
-            height: '100vh',
-            width: '100vw',
+            height: '100%',
+            width: '100%',
             paddingLeft: '78px',
             paddingRight: '78px',
-            paddingTop: '54px',
-            paddingBottom: '64px',
+            paddingTop: '55px',
+            paddingBottom: '62px',
             backgroundColor: theme.colors.background,
           }}
         >
@@ -86,7 +104,10 @@ export default async function handler(req) {
             id='left'
           >
             <div
-              style={{ display: 'flex', flexDirection: 'column' }}
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+              }}
               id='upper'
             >
               <div
@@ -95,6 +116,8 @@ export default async function handler(req) {
                   fontFamily: 'faux',
                   fontSize: '34px',
                   letterSpacing: '0.07em',
+                  WebkitTextStroke: '1px currentColor',
+                  marginTop: '2px',
                 }}
               >
                 blog / carbonplan
@@ -103,12 +126,13 @@ export default async function handler(req) {
                 style={{
                   maxWidth: '800px',
                   fontSize: '64px',
-                  marginTop: '42px',
+                  marginTop: '44px',
                   marginBottom: '42px',
                   color: theme.colors.primary,
                   fontFamily: 'heading',
                   letterSpacing: '-0.015em',
                   lineHeight: '1.05',
+                  WebkitTextStroke: '1px currentColor',
                 }}
               >
                 {title}
@@ -119,7 +143,6 @@ export default async function handler(req) {
                 display: 'flex',
                 flexDirection: wrapAuthors ? 'row' : 'column',
                 flexWrap: 'wrap',
-                // gap: '16px',
                 fontFamily: 'mono',
                 textTransform: 'uppercase',
                 fontSize: '34px',
@@ -135,6 +158,7 @@ export default async function handler(req) {
                   style={{
                     display: 'flex',
                     color: theme.colors[AUTHOR_COLORS[(number + i) % 4]],
+                    WebkitTextStroke: '1px currentColor',
                   }}
                 >
                   {author}
@@ -144,6 +168,7 @@ export default async function handler(req) {
                         color: theme.colors.primary,
                         marginLeft: '16px',
                         marginRight: '16px',
+                        WebkitTextStroke: '1px currentColor',
                       }}
                     >
                       +
@@ -186,7 +211,8 @@ export default async function handler(req) {
                 transform: 'rotate(90deg)',
                 transformOrigin: 'right',
                 marginRight: '12px',
-                marginBottom: '-20px',
+                marginBottom: '-18px',
+                WebkitTextStroke: '1px currentColor',
               }}
             >
               {formatDate(date, {
