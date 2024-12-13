@@ -8,10 +8,46 @@ export const config = {
   runtime: 'edge',
 }
 
+const getFonts = async () => {
+  const [relativeMedium, faux, mono] = await Promise.all([
+    fetch(
+      'https://fonts.carbonplan.org/relative/relative-medium-pro-convert.otf',
+      {
+        next: { revalidate: false },
+      }
+    ).then((res) => res.arrayBuffer()),
+    fetch('https://fonts.carbonplan.org/relative/relative-faux-book-pro.otf', {
+      next: { revalidate: false },
+    }).then((res) => res.arrayBuffer()),
+    fetch(
+      'https://fonts.carbonplan.org/relative/relative-mono-11-pitch-pro.otf',
+      {
+        next: { revalidate: false },
+      }
+    ).then((res) => res.arrayBuffer()),
+  ])
+
+  return [
+    {
+      name: 'heading',
+      data: relativeMedium,
+    },
+    {
+      name: 'faux',
+      data: faux,
+    },
+    {
+      name: 'mono',
+      data: mono,
+    },
+  ]
+}
+
 export default async function handler(req) {
   try {
-    const { searchParams } = new URL(req.url)
+    const fonts = await getFonts()
 
+    const { searchParams } = new URL(req.url)
     const title = searchParams.get('title')
     const authorsString = searchParams.get('authors')
     let authors = []
@@ -23,7 +59,7 @@ export default async function handler(req) {
 
     const date = searchParams.get('date')
     const number = searchParams.get('number')
-    const wrapAuthors = searchParams.get('wrapAuthors') || true
+    const wrapAuthors = searchParams.get('wrapAuthors') === 'true'
 
     return new ImageResponse(
       (
@@ -31,12 +67,13 @@ export default async function handler(req) {
           style={{
             display: 'flex',
             flexDirection: 'row',
+            justifyContent: 'space-between',
             height: '100vh',
             width: '100vw',
             paddingLeft: '78px',
             paddingRight: '78px',
-            paddingTop: '70px',
-            paddingBottom: '70px',
+            paddingTop: '54px',
+            paddingBottom: '64px',
             backgroundColor: theme.colors.background,
           }}
         >
@@ -56,10 +93,8 @@ export default async function handler(req) {
                 style={{
                   color: theme.colors.secondary,
                   fontFamily: 'faux',
-                  letterSpacing: 'smallcaps',
                   fontSize: '34px',
-                  marginBottom: '3px',
-                  marginTop: '-10px',
+                  letterSpacing: '0.07em',
                 }}
               >
                 blog / carbonplan
@@ -67,9 +102,13 @@ export default async function handler(req) {
               <h1
                 style={{
                   maxWidth: '800px',
-                  fontSize: '70px',
+                  fontSize: '64px',
                   marginTop: '42px',
+                  marginBottom: '42px',
                   color: theme.colors.primary,
+                  fontFamily: 'heading',
+                  letterSpacing: '-0.015em',
+                  lineHeight: '1.05',
                 }}
               >
                 {title}
@@ -78,28 +117,28 @@ export default async function handler(req) {
             <div
               style={{
                 display: 'flex',
-                flexDirection: 'column',
+                flexDirection: wrapAuthors ? 'row' : 'column',
+                flexWrap: 'wrap',
+                // gap: '16px',
                 fontFamily: 'mono',
-                letterSpacing: 'mono',
                 textTransform: 'uppercase',
                 fontSize: '34px',
                 marginBottom: '-6px',
+                lineHeight: '1.35',
+                letterSpacing: '0.07em',
+                maxWidth: '800px',
               }}
             >
-              {authors.map((author, index) => (
+              {authors.map((author, i) => (
                 <div
                   key={author}
                   style={{
-                    display:
-                      wrapAuthors && index === authors.length - 1
-                        ? 'none'
-                        : 'flex',
-                    color: AUTHOR_COLORS[(number + index) % 4],
+                    display: 'flex',
+                    color: theme.colors[AUTHOR_COLORS[(number + i) % 4]],
                   }}
                 >
-                  {author.name ?? author}
-
-                  {index < authors.length - 1 && (
+                  {author}
+                  {i < authors.length - 1 && (
                     <span
                       style={{
                         color: theme.colors.primary,
@@ -110,36 +149,27 @@ export default async function handler(req) {
                       +
                     </span>
                   )}
-
-                  {wrapAuthors && index === authors.length - 2 ? (
-                    <div
-                      key={author}
-                      style={{
-                        display: 'flex',
-                        color: AUTHOR_COLORS[(number + index + 1) % 4],
-                      }}
-                    >
-                      {authors[index + 1].name ?? authors[index + 1]}
-                    </div>
-                  ) : null}
                 </div>
               ))}
             </div>
           </div>
-          <div style={{ flex: '1 0 64px' }} id='center'></div>
           <div
             style={{
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',
+              alignItems: 'flex-end',
+              height: '100%',
             }}
             id='right'
           >
             <svg
-              width='80'
               stroke='none'
-              fill='currentColor'
+              fill={theme.colors.primary}
               viewBox='0 0 32 32'
+              width='160'
+              height='160'
+              style={{ marginTop: '-10px', marginRight: '-10px' }}
             >
               <path d='M21.9395,14.9395 L17.5005,19.3785 L17.5005,7.0005 L14.5005,7.0005 L14.5005,19.3785 L10.0605,14.9395 L7.9395,17.0605 L14.9395,24.0605 C15.2325,24.3535 15.6165,24.5005 16.0005,24.5005 C16.3835,24.5005 16.7675,24.3535 17.0605,24.0605 L24.0605,17.0605 L21.9395,14.9395 Z'></path>
               <path d='M27.5986,4 L22.8966,4 C26.5556,6.303 28.9996,10.366 28.9996,15 C28.9996,20.4 25.6896,25.039 20.9926,27 L26.5586,27 C29.8886,24.068 31.9996,19.785 31.9996,15 C31.9996,10.734 30.3196,6.868 27.5986,4'></path>
@@ -149,17 +179,14 @@ export default async function handler(req) {
             <div
               style={{
                 fontFamily: 'mono',
-                letterSpacing: 'mono',
                 textTransform: 'uppercase',
                 color: theme.colors.secondary,
                 fontSize: '34px',
-                // writingMode: 'vertical-rl',
-                whiteSpace: 'nowrap',
-                display: 'flex',
-                overflow: 'visible',
-                minWidth: 0,
+                letterSpacing: '0.07em',
                 transform: 'rotate(90deg)',
-                marginBottom: '42px',
+                transformOrigin: 'right',
+                marginRight: '12px',
+                marginBottom: '-20px',
               }}
             >
               {formatDate(date, {
@@ -174,6 +201,7 @@ export default async function handler(req) {
       {
         width: 1200,
         height: 630,
+        fonts,
       }
     )
   } catch (error) {
