@@ -42,17 +42,14 @@ const getFonts = async () => {
       {
         name: 'heading',
         data: relativeMedium,
-        fontWeight: 'normal',
       },
       {
         name: 'faux',
         data: faux,
-        fontWeight: 'normal',
       },
       {
         name: 'mono',
         data: mono,
-        fontWeight: 'normal',
       },
     ]
   } catch (error) {
@@ -75,9 +72,8 @@ export default async function handler(req) {
       authors = [authorsString]
     }
 
+    const wrapAuthors = authors.length > 3
     const date = searchParams.get('date')
-    const number = searchParams.get('number')
-    const wrapAuthors = searchParams.get('wrapAuthors') === 'true'
 
     return new ImageResponse(
       (
@@ -127,12 +123,15 @@ export default async function handler(req) {
                   maxWidth: '800px',
                   fontSize: '64px',
                   marginTop: '44px',
-                  marginBottom: '42px',
                   color: theme.colors.primary,
                   fontFamily: 'heading',
                   letterSpacing: '-0.015em',
                   lineHeight: '1.05',
                   WebkitTextStroke: '1px currentColor',
+                  display: '-webkit-box',
+                  WebkitLineClamp: 4,
+                  WebkitBoxOrient: 'vertical',
+                  textOverflow: 'ellipsis',
                 }}
               >
                 {title}
@@ -157,7 +156,7 @@ export default async function handler(req) {
                   key={author}
                   style={{
                     display: 'flex',
-                    color: theme.colors[AUTHOR_COLORS[(number + i) % 4]],
+                    color: theme.colors[AUTHOR_COLORS[i % 4]],
                     WebkitTextStroke: '1px currentColor',
                   }}
                 >
