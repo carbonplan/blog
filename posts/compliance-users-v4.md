@@ -1,6 +1,6 @@
 ---
 version: 1.0.0
-title: New data added to our Compliance Users tool
+title: New data added to the Compliance Users tool
 authors:
   - Freya Chay
   - Grayson Badgley
