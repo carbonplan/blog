@@ -1,11 +1,11 @@
 ---
 version: 1.0.0
-title: New data added to our compliance users tool
+title: New data added to our Compliance Users tool
 authors:
   - Freya Chay
   - Grayson Badgley
 date: 12-19-2024
-summary: We updated the compliance users tool to include the latest available cap-and-trade program data about who used which offsets during the program’s fourth compliance period.
+summary: We updated the Compliance Users tool to include the latest available cap-and-trade program data about who used which offsets during the program’s fourth compliance period.
 card: compliance-users-v4
 ---
 
