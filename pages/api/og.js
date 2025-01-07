@@ -1,36 +1,40 @@
+import React from 'react'
 import { formatDate } from '@carbonplan/components'
 import theme from '@carbonplan/theme'
-import { ImageResponse } from '@vercel/og'
+import { ImageResponse } from 'next/og'
 
 import { AUTHOR_COLORS } from '../../constants'
+import { postMetadata } from '../../utils/post-metadata'
 
-export const config = {
-  runtime: 'edge',
-}
+export const runtime = 'edge'
 
-const getFonts = async () => {
+const getFonts = async (origin) => {
   try {
+    const headers = new Headers({ Referer: origin })
     const [relativeMedium, faux, mono] = await Promise.all([
-      fetch('https://fonts.carbonplan.org/relative/relative-medium-pro.otf', {
-        next: { revalidate: false },
+      fetch('https://fonts.carbonplan.org/relative/relative-medium-pro.woff', {
+        cache: 'force-cache',
+        headers,
       }).then(async (res) => {
         if (!res.ok)
           throw new Error(`Failed to load medium font: ${res.status}`)
         return res.arrayBuffer()
       }),
       fetch(
-        'https://fonts.carbonplan.org/relative/relative-faux-book-pro.otf',
+        'https://fonts.carbonplan.org/relative/relative-faux-book-pro.woff',
         {
-          next: { revalidate: false },
+          cache: 'force-cache',
+          headers,
         }
       ).then(async (res) => {
         if (!res.ok) throw new Error(`Failed to load faux font: ${res.status}`)
         return res.arrayBuffer()
       }),
       fetch(
-        'https://fonts.carbonplan.org/relative/relative-mono-11-pitch-pro.otf',
+        'https://fonts.carbonplan.org/relative/relative-mono-11-pitch-pro.woff',
         {
-          next: { revalidate: false },
+          cache: 'force-cache',
+          headers,
         }
       ).then(async (res) => {
         if (!res.ok) throw new Error(`Failed to load mono font: ${res.status}`)
@@ -60,20 +64,25 @@ const getFonts = async () => {
 
 export default async function handler(req) {
   try {
-    const fonts = await getFonts()
-
+    const origin = new URL(req.url).origin
+    const fonts = await getFonts(origin)
     const { searchParams } = new URL(req.url)
-    const title = searchParams.get('title')
-    const authorsString = searchParams.get('authors')
-    let authors = []
-    if (authorsString.includes(',')) {
-      authors = authorsString.split(',')
-    } else {
-      authors = [authorsString]
+    const id = searchParams.get('id')
+
+    if (!id) {
+      throw new Error('Missing id parameter')
     }
 
+    const post = postMetadata.find((post) => post.id === id)
+    if (!post) {
+      throw new Error(`Post not found for id: ${id}`)
+    }
+
+    const { title, date } = post
+    const authors = post.authors.map((author) =>
+      typeof author === 'string' ? author : author.name
+    )
     const wrapAuthors = authors.length > 3
-    const date = searchParams.get('date')
 
     return new ImageResponse(
       (
@@ -112,7 +121,6 @@ export default async function handler(req) {
                   fontFamily: 'faux',
                   fontSize: '34px',
                   letterSpacing: '0.07em',
-                  WebkitTextStroke: '1px currentColor',
                   marginTop: '2px',
                 }}
               >
@@ -127,7 +135,6 @@ export default async function handler(req) {
                   fontFamily: 'heading',
                   letterSpacing: '-0.015em',
                   lineHeight: '1.05',
-                  WebkitTextStroke: '1px currentColor',
                   display: '-webkit-box',
                   WebkitLineClamp: 4,
                   WebkitBoxOrient: 'vertical',
@@ -157,7 +164,6 @@ export default async function handler(req) {
                   style={{
                     display: 'flex',
                     color: theme.colors[AUTHOR_COLORS[i % 4]],
-                    WebkitTextStroke: '1px currentColor',
                   }}
                 >
                   {author}
@@ -167,7 +173,6 @@ export default async function handler(req) {
                         color: theme.colors.primary,
                         marginLeft: '16px',
                         marginRight: '16px',
-                        WebkitTextStroke: '1px currentColor',
                       }}
                     >
                       +
@@ -211,7 +216,6 @@ export default async function handler(req) {
                 transformOrigin: 'right',
                 marginRight: '12px',
                 marginBottom: '-18px',
-                WebkitTextStroke: '1px currentColor',
               }}
             >
               {formatDate(date, {

@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Layout } from '@carbonplan/components'
 
 import Main from '../../components/main'
-import { postMetadata } from '../../utils/mdx'
+import { postMetadata } from '../../utils/post-metadata'
 
 const Index = ({ posts }) => {
   const [showMobileSettings, setShowMobileSettings] = useState(false)

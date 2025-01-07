@@ -1,6 +1,6 @@
 const fs = require('fs')
 const glob = require('glob')
-const { postMetadata } = require('./utils/mdx.js')
+const { postMetadata } = require('./utils/post-metadata.js')
 
 glob.sync('./components/mdx/page-components.js').forEach((f) => {
   if (fs.rmSync) return fs.rmSync(f)
