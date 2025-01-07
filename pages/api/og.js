@@ -8,9 +8,9 @@ import { postMetadata } from '../../utils/post-metadata'
 
 export const runtime = 'edge'
 
-const getFonts = async (origin) => {
+const getFonts = async () => {
   try {
-    const headers = new Headers({ Referer: origin })
+    const headers = new Headers({ Referer: 'https://carbonplan.org' })
     const [relativeMedium, faux, mono] = await Promise.all([
       fetch('https://fonts.carbonplan.org/relative/relative-medium-pro.woff', {
         cache: 'force-cache',
@@ -64,8 +64,7 @@ const getFonts = async (origin) => {
 
 export default async function handler(req) {
   try {
-    const origin = new URL(req.url).origin
-    const fonts = await getFonts(origin)
+    const fonts = await getFonts()
     const { searchParams } = new URL(req.url)
     const id = searchParams.get('id')
 
