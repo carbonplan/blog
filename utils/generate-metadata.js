@@ -2,7 +2,7 @@ const fs = require('fs')
 const path = require('path')
 const matter = require('gray-matter')
 
-// We generate this at build to allow us to afrom edge functions like dynamic OG images (og.js)
+// We generate this at build to allow us to access from edge functions like dynamic OG images (og.js)
 
 const POSTS_PATH = path.join(process.cwd(), 'posts')
 
