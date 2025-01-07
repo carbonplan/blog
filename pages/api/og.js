@@ -8,54 +8,33 @@ import { postMetadata } from '../../utils/post-metadata'
 
 export const runtime = 'edge'
 
+const fetchFont = async (fontPath, fontType) => {
+  const headers = new Headers({ Referer: 'https://carbonplan.org/' })
+  const res = await fetch(`https://fonts.carbonplan.org/relative/${fontPath}`, {
+    cache: 'force-cache',
+    headers,
+  })
+
+  if (!res.ok) throw new Error(`Failed to load ${fontType} font: ${res.status}`)
+  return res.arrayBuffer()
+}
+
 const getFonts = async () => {
   try {
-    const headers = new Headers({ Referer: 'https://carbonplan.org/' })
-    const [relativeMedium, faux, mono] = await Promise.all([
-      fetch('https://fonts.carbonplan.org/relative/relative-medium-pro.woff', {
-        cache: 'force-cache',
-        headers,
-      }).then(async (res) => {
-        if (!res.ok)
-          throw new Error(`Failed to load medium font: ${res.status}`)
-        return res.arrayBuffer()
-      }),
-      fetch(
-        'https://fonts.carbonplan.org/relative/relative-faux-book-pro.woff',
-        {
-          cache: 'force-cache',
-          headers,
-        }
-      ).then(async (res) => {
-        if (!res.ok) throw new Error(`Failed to load faux font: ${res.status}`)
-        return res.arrayBuffer()
-      }),
-      fetch(
-        'https://fonts.carbonplan.org/relative/relative-mono-11-pitch-pro.woff',
-        {
-          cache: 'force-cache',
-          headers,
-        }
-      ).then(async (res) => {
-        if (!res.ok) throw new Error(`Failed to load mono font: ${res.status}`)
-        return res.arrayBuffer()
-      }),
-    ])
-
-    return [
-      {
-        name: 'heading',
-        data: relativeMedium,
-      },
-      {
-        name: 'faux',
-        data: faux,
-      },
-      {
-        name: 'mono',
-        data: mono,
-      },
+    const fonts = [
+      { path: 'relative-medium-pro.woff', type: 'medium', name: 'heading' },
+      { path: 'relative-faux-book-pro.woff', type: 'faux', name: 'faux' },
+      { path: 'relative-mono-11-pitch-pro.woff', type: 'mono', name: 'mono' },
     ]
+
+    const fontData = await Promise.all(
+      fonts.map(({ path, type }) => fetchFont(path, type))
+    )
+
+    return fonts.map(({ name }, index) => ({
+      name,
+      data: fontData[index],
+    }))
   } catch (error) {
     console.error('Error loading fonts:', error)
     throw error
