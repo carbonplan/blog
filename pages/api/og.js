@@ -10,7 +10,7 @@ export const runtime = 'edge'
 
 const getFonts = async () => {
   try {
-    const headers = new Headers({ Referer: 'https://carbonplan.org' })
+    const headers = new Headers({ Referer: 'https://carbonplan.org/' })
     const [relativeMedium, faux, mono] = await Promise.all([
       fetch('https://fonts.carbonplan.org/relative/relative-medium-pro.woff', {
         cache: 'force-cache',
