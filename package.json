@@ -42,7 +42,6 @@
     "@react-spring/web": "^9.6.0",
     "@theme-ui/color": "^0.15.3",
     "@theme-ui/mdx": "^0.15.3",
-    "@vercel/og": "^0.6.4",
     "d3-array": "^3.1.1",
     "d3-fetch": "^3.0.1",
     "d3-format": "^3.1.0",
