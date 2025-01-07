@@ -39,7 +39,7 @@ const PostPage = ({ id, source, frontMatter, number }) => {
   const components = useThemedStylesWithMdx(useMDXComponents())
 
   return (
-    <Post meta={frontMatter} number={number}>
+    <Post meta={frontMatter} number={number} id={id}>
       <MDXRemote
         {...source}
         components={{

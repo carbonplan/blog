@@ -2,6 +2,17 @@
 const postMetadata = [
   {
     version: '1.0.0',
+    title: 'New data added to the Compliance Users tool',
+    authors: ['Freya Chay', 'Grayson Badgley'],
+    date: '12-19-2024',
+    summary:
+      'We updated the Compliance Users tool to include the latest available cap-and-trade program data about who used which offsets during the program’s fourth compliance period.',
+    card: 'compliance-users-v4',
+    id: 'compliance-users-v4',
+    number: 47,
+  },
+  {
+    version: '1.0.0',
     title: 'Think twice before resurrecting burned offset projects',
     authors: ['Grayson Badgley'],
     date: '11-26-2024',
