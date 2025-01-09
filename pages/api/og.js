@@ -24,9 +24,17 @@ export default async function handler(req) {
     const authors = post.authors.map((author) =>
       typeof author === 'string' ? author : author?.name || ''
     )
+    const forceWrapAuthors = searchParams.get('forceWrapAuthors') === 'true'
 
     return new ImageResponse(
-      <BlogPostOG title={title} date={date} authors={authors} />,
+      (
+        <BlogPostOG
+          title={title}
+          date={date}
+          authors={authors}
+          forceWrapAuthors={forceWrapAuthors}
+        />
+      ),
       {
         width: 1200,
         height: 630,
