@@ -5,6 +5,7 @@ authors:
   - Danny Cullenward
   - Sadie Frank
   - Jeremy Freeman
+collapseCardAuthors: true
 date: 11-10-2021
 summary: We encourage the USDA to directly procure "climate-smart" commodities instead of subsidizing carbon offsets.
 card: usda-csaf-comment

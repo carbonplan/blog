@@ -8,6 +8,7 @@ authors:
   - name: Phil Renforth
     src: https://images.carbonplan.org/authors/phil-renforth.png
   - Freya Chay
+collapseCardAuthors: true
 date: 09-07-2023
 summary: “Measurements in Geochemical Carbon Dioxide Removal” by Campbell et al. presents a timely synthesis of measurement techniques to support CDR decision-making with a strong technical foundation.
 card: geochemical-cdr-measurements
