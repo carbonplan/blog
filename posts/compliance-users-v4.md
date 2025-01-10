@@ -6,7 +6,6 @@ authors:
   - Grayson Badgley
 date: 12-19-2024
 summary: We updated the Compliance Users tool to include the latest available cap-and-trade program data about who used which offsets during the program’s fourth compliance period.
-card: compliance-users-v4
 ---
 
 In 2022, we built a [tool](https://carbonplan.org/research/compliance-users) that makes data about offset use within the California cap-and-trade program more accessible. Earlier this month, the California Air Resources Board (CARB) released its [annual data update](https://ww2.arb.ca.gov/our-work/programs/cap-and-trade-program/cap-and-trade-program-data), which we have now added to the tool.

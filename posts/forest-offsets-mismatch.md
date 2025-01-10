@@ -5,7 +5,6 @@ authors:
   - Grayson Badgley
 date: 03-21-2023
 summary: A new paper about declining habitat suitability for conifers in California's Sierra Nevada demonstrates the shaky scientific foundations of California's forest offsets program.
-card: forest-offsets-mismatch
 components:
   - name: Table
     src: '@carbonplan/components'

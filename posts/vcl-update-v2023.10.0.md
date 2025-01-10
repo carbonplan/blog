@@ -8,7 +8,6 @@ authors:
     src: https://images.carbonplan.org/authors/zeke-hausfather.png
 date: 10-11-2023
 summary: Lime is used to manage soil pH in many agricultural fields and can remove carbon from the atmosphere when it weathers. We are updating our CDR Verification Framework tool to emphasize that changes in lime use and weathering should be accounted for in enhanced weathering and biochar deployments.
-card: vcl-update-v2023.10.0
 ---
 
 Last year, we released the CDR Verification Framework, a tool that maps out the key uncertainties associated with calculating net carbon removal for different methods, which our framework refers to as “pathways to carbon removal.”

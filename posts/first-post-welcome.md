@@ -5,7 +5,6 @@ authors:
   - Jeremy Freeman
 date: 09-14-2021
 summary: Why we made this and what you'll find here.
-card: first-post-welcome
 ---
 
 Public communication is core to our mission at CarbonPlan.

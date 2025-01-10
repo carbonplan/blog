@@ -8,7 +8,6 @@ authors:
   - Joe Hamman
 date: 09-02-2022
 summary: We describe our experiences building cloud-based data analysis pipelines for climate model downscaling, including specific challenges we faced and lessons we learned.
-card: cloud-downscaling-pipelines
 components:
   - name: PipelineDiagram
     src: ./pipeline-diagram.js

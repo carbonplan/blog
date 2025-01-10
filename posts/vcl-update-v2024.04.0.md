@@ -6,7 +6,6 @@ authors:
 color: yellow
 date: 04-01-2024
 summary: We updated the Verification Framework tool to include more detail and a broader representation of biomass-based CDR pathways. We added two new pathways and updated three others.
-card: vcl-update-v2024.04.0
 components:
   - name: VCLChart
     src: ./vcl-chart.js

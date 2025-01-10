@@ -5,7 +5,6 @@ authors:
   - Grayson Badgley
 date: 11-29-2023
 summary: New paperwork shows that carbon losses insured by California’s forest offset buffer pool are higher than previously estimated.
-card: buffer-update-three
 ---
 
 For the third time in a row, the “Finite Carbon - Colville IFM project” (ACR255) has filed paperwork indicating that the project has lost more carbon than it gained. That puts the project in reversal and means California’s forest offset buffer pool will need to step in to insure against those losses.

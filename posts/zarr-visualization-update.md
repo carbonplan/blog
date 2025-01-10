@@ -7,7 +7,6 @@ authors:
   - Anderson Banihirwe
 date: 12-12-2023
 summary: We’ve relaxed the data pre-processing requirements that limit the flexibility of our mapping toolkit. Here’s how we did it.
-card: zarr-visualization-update
 ---
 
 {

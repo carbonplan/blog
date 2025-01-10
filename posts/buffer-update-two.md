@@ -5,7 +5,6 @@ authors:
   - Grayson Badgley
 date: 08-02-2023
 summary: New reporting indicates that the wildfire component of California's buffer pool is almost surely depleted.
-card: buffer-update-two
 components:
   - name: ReversalsTable
     src: ./reversals-table.js

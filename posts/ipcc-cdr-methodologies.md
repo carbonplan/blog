@@ -7,7 +7,6 @@ authors:
     src: https://images.carbonplan.org/authors/steve-smith.png
 date: 10-21-2024
 summary: Upcoming CDR methodologies from the IPCC will provide a blueprint for national reporting of CDR. Now is the time to share evidence.
-card: ipcc-cdr-methodologies
 ---
 
 The IPCC Task Force on National Greenhouse Gas Inventories (TFI) plays a quiet but critical role in global climate policy. This body develops [methodologies](https://www.ipcc-nggip.iges.or.jp/public/index.html) that countries use to estimate and report the greenhouse gas emissions and removals that happen within their borders. Those national inventories provide the basis for national climate policies and for reporting progress toward Nationally Determined Contributions (NDCs) under the Paris Agreement.

@@ -7,7 +7,6 @@ authors:
   - Freya Chay
 date: 09-20-2022
 summary: Why we are archiving the CDR Database and shifting our attention to other priorities in the carbon removal ecosystem.
-card: cdr-database-archived
 ---
 
 One of our first projects at CarbonPlan was building the [CDR Database](https://carbonplan.org/research/cdr-database). Over the last two years, we analyzed more than 200 carbon dioxide removal (CDR) proposals, across a wide range of approaches, with the goal of bringing more openness, transparency, and accountability to the carbon removal ecosystem. In the early days of our organization, the CDR Database was by far our most-accessed research product.

@@ -7,7 +7,6 @@ authors:
   - Raphael Hagen
 date: 08-31-2023
 summary: We added near real-time satellite data to our fire and offset project monitoring tool to highlight active and changing portions of fires.
-card: forest-offsets-firms
 ---
 
 Over the past three fire seasons, we have [monitored wildfires](https://carbonplan.org/blog/offsets-fires-update) that burn within forest carbon offsets projects enrolled under California’s offsets program. To continue to improve our ability to monitor rapidly changing fires and highlight active burn areas, we have now added near real-time satellite data to our [monitoring tool](https://carbonplan.org/research/forest-offsets-fires).

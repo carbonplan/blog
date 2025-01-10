@@ -5,7 +5,6 @@ authors:
   - Jeremy Freeman
 date: 02-07-2024
 summary: Two years ago, we received a donation we didn’t ask for. Last month, we were asked to send it back.
-card: ftx-donation-return
 ---
 
 In the summer of 2021, we received an unsolicited donation of $200k from the charity arm of the now-disgraced cryptocurrency firm FTX. It was unsolicited both in the sense that we did not ask for it, nor did we agree to accept it. A [story in Forbes](https://www.forbes.com/sites/johnhyatt/2022/11/22/this-climate-change-nonprofit-didnt-ask-for-ftxs-moneybut-got-200000-anyways/) covered the bizarre incident well.

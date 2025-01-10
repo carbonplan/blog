@@ -7,7 +7,6 @@ authors:
   - Joe Hamman
 date: 02-16-2022
 summary: An open source implementation of forest biomass estimation using LiDAR.
-card: open-lidar-biomass
 components:
   - name: Chart
     src: ./figure.js

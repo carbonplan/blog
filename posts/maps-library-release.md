@@ -7,7 +7,6 @@ authors:
   - Joe Hamman
 date: 09-27-2021
 summary: Why rendering scientific data in web maps is so tough, and how we’re trying to solve it.
-card: maps-library-release
 components:
   - name: MapDemo2d
     src: ./maps-demo-2d.js

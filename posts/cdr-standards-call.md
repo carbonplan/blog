@@ -11,7 +11,6 @@ authors:
     src: https://images.carbonplan.org/authors/elizabeth-troein.png
 date: 2-10-2023
 summary: We summarize a public letter from 35 organizations across the CDR ecosystem calling for a scientifically-grounded standards body for long-duration CDR that could review and harmonize emerging protocols.
-card: cdr-standards-call
 ---
 
 Last November, [Stripe](https://stripe.com/climate), [Lowercarbon Capital](https://lowercarboncapital.com), [Isometric](https://isometric.com), and CarbonPlan organized a convening focused on carbon dioxide removal (CDR) measurement, reporting, and verification (MRV). At the convening, there was broad agreement that more robust structures are needed to ensure high-quality quantification and verification of carbon removal deployments.

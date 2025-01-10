@@ -5,7 +5,6 @@ authors:
   - Grayson Badgley
 date: 04-30-2024
 summary: A political threat to a massive offset project in Indonesia illustrates the risks of carbon offsetting.
-card: rimba-raya-license
 ---
 
 Rimba Raya is one of the world’s largest offset projects and among the more highly regarded projects available on the market today – a tropical haven in Indonesia where both the atmosphere and endangered orangutans are protected through forest preservation. Unfortunately, the project’s future looks uncertain. Carbon Pulse, a carbon market news outlet, recently reported that the Indonesian government revoked a license crucial to the continued operation of Rimba Raya and that the project is now “[struggling to keep afloat](https://carbon-pulse.com/281876).”

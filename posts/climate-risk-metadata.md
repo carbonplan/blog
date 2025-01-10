@@ -6,7 +6,6 @@ authors:
   - Sadie Frank
 date: 01-30-2023
 summary: Highlighting scientific factors that can influence climate risk products.
-card: climate-risk-metadata
 ---
 
 Until recently, physical climate risk assessments were conducted largely in academic contexts, where detailed methods descriptions are the norm. In that setting, researchers can evaluate and trust scientific analyses because they can review the methodological details, which increasingly means having access to the underlying data and code.

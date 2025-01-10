@@ -9,7 +9,6 @@ authors:
   - Raphael Hagen
 date: 04-10-2023
 summary: We added new pathways (direct ocean removal, alkaline waste mineralization, and biochar), modified existing pathways, and upgraded the tool with improved versioning, additional documentation, and the ability to see how components are shared across pathways.
-card: vcl-update-v2023.04.0
 components:
   - name: VCLChart
     src: ./vcl-chart.js

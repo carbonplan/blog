@@ -7,7 +7,6 @@ authors:
     src: https://images.carbonplan.org/authors/zeke-hausfather.png
 date: 12-19-2022
 summary: Updating our representation of Enhanced Weathering in the CDR Verification Framework in response to helpful feedback.
-card: enhanced-weathering-update
 components:
   - name: BeforeAfter
     src: ./before-after.js

@@ -7,7 +7,6 @@ authors:
     src: https://images.carbonplan.org/authors/julianne-deangelo.png
 date: 05-20-2022
 summary: Relying on public data, our recent seaweed farming modeling work made key assumptions about seaweed cultivation. We summarize why making these assumptions was necessary, and why as a result the modeled costs may not capture current advances taking place in the field.
-card: seaweed-farming-clarifications
 ---
 
 _<Secondary>Julianne DeAngelo is a Ph.D. Candidate at the University of California, Irvine</Secondary>_

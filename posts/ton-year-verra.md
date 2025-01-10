@@ -7,7 +7,6 @@ authors:
   - Grayson Badgley
 date: 04-25-2022
 summary: We summarize two recent comment letters about Verra’s proposed use of ton-year accounting to issue carbon offset credits — including via a proposed methodology developed by NCX which would credit harvest deferrals as short as a single year.
-card: ton-year-verra
 ---
 
 We recently submitted two comment letters to the offsets registry [Verra](https://verra.org/) on the topic of using [ton-year accounting](https://carbonplan.org/research/ton-year-explainer) to issue carbon credits. The [first comment letter](https://files.carbonplan.org/Verra-Ton-Year-Comment-Letter-04-08-22.pdf) responds to Verra’s proposal to introduce a ton-year accounting option across its program — a change that would represent a profound shift in the way that Verra manages the permanence of carbon offset claims. The [second comment letter](https://files.carbonplan.org/Verra-NCX-Harvest-Deferral-Comment-Letter-04-21-2022.pdf) responds to a methodology developed by Verra and the forest carbon offsets company [NCX](https://ncx.com/ncx/) that uses ton-year accounting to credit forest harvest delays as short as one year.
