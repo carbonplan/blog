@@ -18,17 +18,17 @@ export default async function handler(req) {
       throw new Error(`Post not found for id: ${id}`)
     }
 
-    const { title, date } = post
+    const { title, date, number, collapseCardAuthors } = post
     const authors = post.authors.map((author) =>
       typeof author === 'string' ? author : author?.name || ''
     )
-    const forceWrapAuthors = searchParams.get('forceWrapAuthors') === 'true'
 
     const { component, fonts, options } = await getBlogPostCard({
       title,
       date,
       authors,
-      forceWrapAuthors,
+      collapseCardAuthors,
+      number,
     })
 
     return new ImageResponse(component, {
