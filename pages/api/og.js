@@ -8,6 +8,9 @@ export default async function handler(req) {
   try {
     const { searchParams } = new URL(req.url)
     const id = searchParams.get('id')
+    const collapseCardAuthorsParam =
+      searchParams.get('collapseCardAuthors') === 'true'
+    const titleWidthOverrideParam = searchParams.get('titleWidthOverride')
 
     if (!id) {
       throw new Error('Missing id parameter')
@@ -18,7 +21,14 @@ export default async function handler(req) {
       throw new Error(`Post not found for id: ${id}`)
     }
 
-    const { title, date, number, collapseCardAuthors } = post
+    const {
+      title,
+      date,
+      number,
+      collapseCardAuthors,
+      forceWrapAuthors, // fallback for old name for collapseCardAuthors
+      titleWidthOverride,
+    } = post
     const authors = post.authors.map((author) =>
       typeof author === 'string' ? author : author?.name || ''
     )
@@ -27,8 +37,10 @@ export default async function handler(req) {
       title,
       date,
       authors,
-      collapseCardAuthors,
       number,
+      collapseCardAuthors:
+        collapseCardAuthorsParam || collapseCardAuthors || forceWrapAuthors,
+      titleWidthOverride: titleWidthOverrideParam || titleWidthOverride,
     })
 
     return new ImageResponse(component, {
