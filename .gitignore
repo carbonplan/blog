@@ -4,4 +4,4 @@
 .vscode
 node_modules
 .env*.local
-utils/post-metadata.js
+utils/metadata.js

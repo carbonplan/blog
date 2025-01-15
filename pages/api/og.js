@@ -1,6 +1,6 @@
 import { ImageResponse } from 'next/og'
 import { getBlogPostCard } from '@carbonplan/layouts'
-import { postMetadata } from '../../utils/post-metadata'
+import { postMetadata } from '../../utils/metadata'
 
 export const runtime = 'edge'
 

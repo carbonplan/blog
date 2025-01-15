@@ -1,4 +1,4 @@
-import { postMetadata } from '../../utils/post-metadata'
+import { postMetadata } from '../../utils/metadata'
 
 function Contents() {
   // getServerSideProps will do the heavy lifting

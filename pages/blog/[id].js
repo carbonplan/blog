@@ -19,7 +19,7 @@ import {
 } from '@carbonplan/components'
 import { Code } from '@carbonplan/prism'
 
-import { postMetadata } from '../../utils/post-metadata'
+import { postMetadata } from '../../utils/metadata'
 import { pageComponents } from '../../components/mdx'
 
 const POSTS_PATH = path.join(process.cwd(), 'posts')

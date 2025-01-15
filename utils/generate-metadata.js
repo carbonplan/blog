@@ -36,7 +36,4 @@ module.exports = {
 `
 
 // Write the metadata file
-fs.writeFileSync(
-  path.join(process.cwd(), 'utils', 'post-metadata.js'),
-  fileContent
-)
+fs.writeFileSync(path.join(process.cwd(), 'utils', 'metadata.js'), fileContent)
