@@ -28,7 +28,7 @@ const postMetadata = postFilePaths
 
 // Generate the metadata file content
 const fileContent = `// This file is auto-generated. Do not edit it manually.
-const postMetadata = ${JSON.stringify(postMetadata, null, 2)}
+const postMetadata = ${JSON.stringify(postMetadata)}
 
 module.exports = {
   postMetadata,
