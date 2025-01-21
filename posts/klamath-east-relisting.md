@@ -5,7 +5,6 @@ authors:
   - Grayson Badgley
 date: 11-26-2024
 summary: For the first time, a landowner is looking to re-enroll a forest that was part of a project terminated after a catastrophic fire. While this practice is legal, it has potentially negative consequences for California’s buffer pool.
-card: klamath-east-relisting
 ---
 
 The risks wildfire poses to the operation of California’s forest offset program are bigger than you might think — because the same place can burn more than once. In 2021, the Bootleg Fire burned through more than 400,000 acres of Southern Oregon, including nearly 100,000 acres of a California forest offset project called Klamath East ([ACR273](https://carbonplan.org/research/offsets-db/projects/ACR273)). The damage was so severe that the entire project was terminated, resulting in the retirement of 1.14 million offset credits from California’s buffer pool. The buffer pool is meant to insure California’s cap and trade program against the loss of offset projects and, to date, the Bootleg reversal represents the second largest withdrawal from the buffer pool in program history.

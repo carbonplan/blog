@@ -6,7 +6,6 @@ authors:
   - Oriana Chegwidden
 date: 08-19-2022
 summary: We hosted a workshop with the Environmental Defense Fund (EDF) and the Initiative on Climate Risk and Resilience Law (ICRRL) on physical climate risk and financial regulation.
-card: physical-risk-workshop
 ---
 
 The human and economic costs of climate change are increasingly visible across the U.S. In turn, regulators tasked with overseeing the economy and financial markets are focusing their attention to risks from climate hazards like floods, wildfires, and heatwaves. In 2021, the Biden Administration issued an [executive order](https://www.whitehouse.gov/briefing-room/presidential-actions/2021/05/20/executive-order-on-climate-related-financial-risk/) directing key regulatory agencies to review how they can address climate-related financial risk. In the year that followed, [several agencies](https://ceres.org/accelerator/regulation/scorecard?_ga=2.138448954.821819762.1657639703-6922862.1657639703) have taken encouraging steps to integrate climate risk into their work. Despite these important developments, much remains to be done to successfully ensure that climate change considerations are integrated into financial regulation — a task that requires [collaboration and engagement across different technical domains](https://carbonplan.org/research/data-financial-risk).

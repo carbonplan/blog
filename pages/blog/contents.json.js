@@ -1,4 +1,4 @@
-import { postMetadata } from '../../utils/mdx'
+import { postMetadata } from '../../utils/metadata'
 
 function Contents() {
   // getServerSideProps will do the heavy lifting

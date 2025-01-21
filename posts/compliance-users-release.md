@@ -7,7 +7,6 @@ authors:
   - Danny Cullenward
 date: 01-05-2022
 summary: A new tool for tracking the use of carbon offsets for compliance in California's cap-and-trade program.
-card: compliance-users-release
 ---
 
 In California’s cap-and-trade program, polluters can use offset credits to satisfy a portion of their compliance obligation. For accountability purposes, we think it’s important to be able to connect the dots between offset projects and the emissions they enable.

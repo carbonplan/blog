@@ -5,7 +5,6 @@ authors:
   - Grayson Badgley
 date: 06-26-2024
 summary: Two fires in southern New Mexico have damaged the Mescalero Apache offset project, a large forest project enrolled in California’s forest offset program.
-card: mescalero-wildfires-2024
 ---
 
 Wildfires are burning again in the United States. This time, it’s the [South Fork and Salt fires](https://inciweb.wildfire.gov/incident-information/nmmea-south-fork-and-salt), which started burning last Monday in southern New Mexico. Anomalously dry and windy conditions helped fuel these blazes, which quickly engulfed thousands of acres, triggering widespread evacuations, damaging upwards of 1,000 structures, and tragically killing at least two people.

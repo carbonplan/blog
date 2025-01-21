@@ -8,9 +8,10 @@ authors:
   - name: Phil Renforth
     src: https://images.carbonplan.org/authors/phil-renforth.png
   - Freya Chay
+collapseCardAuthors: true
+titleWidthOverride: 900
 date: 09-07-2023
 summary: “Measurements in Geochemical Carbon Dioxide Removal” by Campbell et al. presents a timely synthesis of measurement techniques to support CDR decision-making with a strong technical foundation.
-card: geochemical-cdr-measurements
 ---
 
 Yesterday, researchers published the first edition of [_“Measurements in Geochemical Carbon Dioxide Removal”_](https://doi.org/10.17861/2GE7-RE08) (Campbell et al. 2023), to which CarbonPlan contributed a forward. This work was led by scientists at Heriot-Watt University, and funded in part by the Industrial Decarbonisation Research and Innovation Centre (IDRIC). The report consolidates technical best practices for geochemical measurements that are relevant to carbon dioxide removal (CDR) approaches like [enhanced weathering](https://carbonplan.org/research/cdr-verification/enhanced-weathering) and [alkaline waste mineralization](https://carbonplan.org/research/cdr-verification/alkaline-waste-mineralization). It is freely accessible to the public, and should serve as a resource for all members of the geochemical CDR community to learn about relevant analytical techniques and how they can contribute to more effective and informed decision-making.

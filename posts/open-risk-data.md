@@ -5,7 +5,6 @@ authors:
   - Oriana Chegwidden
 date: 09-05-2023
 summary: Announcing the release of a new extreme heat dataset, and reflecting on why it’s important to do this kind of work in the open.
-card: open-risk-data
 ---
 
 Searches on Google for the term “heatwave” fluctuate throughout the year, typically peaking in July and bottoming out in December. But for the past two decades searches have been steadily rising — even in the winter. Now, more people seek information about extreme heat when it’s cold than they did when it was hot 20 years ago. It’s hard to imagine this trend is unrelated to climate change. And I think it demonstrates that one of the ways people are responding to climate risks is by trying to learn more about them.

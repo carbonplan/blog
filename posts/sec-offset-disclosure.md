@@ -6,7 +6,6 @@ authors:
   - Danny Cullenward
 date: 06-24-2022
 summary: We summarize our comments to the SEC on the agency's proposed climate-risk disclosure rule. In our comments, we commend the rule's robust approach to carbon offsets and encourage the SEC to strengthen the proposed provisions for carbon removal.
-card: sec-offset-disclosure
 ---
 
 We recently [submitted comments](https://files.carbonplan.org/SEC-Climate-Disclosures-Comment-Letter-06-16-2022.pdf) to the Securities and Exchange Commission (SEC) regarding their proposed climate-risk disclosure rule. The proposed rule represents a significant step forward for U.S. climate-related financial regulation. Under the new SEC rule, a publicly-traded company would be required to disclose its climate-related financial risks, strategies for managing those risks, and any climate targets or goals it may have set.

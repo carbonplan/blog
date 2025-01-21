@@ -5,7 +5,6 @@ authors:
   - Grayson Badgley
 date: 10-02-2023
 summary: Figuring out the location of an offset project shouldn't involve a scavenger hunt.
-card: bigcoast-project-boundary
 components:
   - name: Map
     src: ./map.js

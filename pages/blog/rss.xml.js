@@ -1,4 +1,4 @@
-import { postMetadata } from '../../utils/mdx'
+import { postMetadata } from '../../utils/metadata'
 
 const contentsRssXml = () => {
   let latestPostDate

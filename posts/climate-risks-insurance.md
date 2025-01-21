@@ -7,7 +7,6 @@ authors:
 date: 12-20-2022
 summary: We analyze different ways the Federal Insurance Office could identify the most climate-vulnerable states.
 fileId: 1zcsvClWeNMJIcnbTHg0eGcXISb9aftyvdUNJgbPHaKI
-card: climate-risks-insurance
 components:
   - name: States
     src: ./states.js

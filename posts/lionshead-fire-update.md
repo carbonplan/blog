@@ -6,7 +6,6 @@ authors:
   - Danny Cullenward
 date: 01-20-2023
 summary: Missed deadlines and paperwork discrepancies obscure the status of California’s forest carbon offset buffer pool.
-card: lionshead-fire-update
 components:
   - name: Scan
     src: ./scan.js

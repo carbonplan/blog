@@ -7,7 +7,6 @@ authors:
   - Joe Hamman
 date: 08-08-2022
 summary: We recently attended the 21st annual Scientific Computing with Python conference. Here we share highlights from the tutorials and presentations.
-card: scipy-conference-2022
 ---
 
 At CarbonPlan, we both leverage and contribute to open source software projects that enable our work and the work of the broader climate community. Sometimes that includes participating in community events, like the annual [Scientific Computing with Python (SciPy) conference](https://www.scipy2022.scipy.org/), which members of our team attended last month in Austin, Texas.

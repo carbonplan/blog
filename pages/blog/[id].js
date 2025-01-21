@@ -1,3 +1,4 @@
+import React from 'react'
 import fs from 'fs'
 import matter from 'gray-matter'
 import { MDXRemote } from 'next-mdx-remote'
@@ -18,8 +19,10 @@ import {
 } from '@carbonplan/components'
 import { Code } from '@carbonplan/prism'
 
-import { postMetadata, POSTS_PATH } from '../../utils/mdx'
+import { postMetadata } from '../../utils/metadata'
 import { pageComponents } from '../../components/mdx'
+
+const POSTS_PATH = path.join(process.cwd(), 'posts')
 
 const COMPONENTS = {
   pre: Code,
@@ -36,7 +39,7 @@ const PostPage = ({ id, source, frontMatter, number }) => {
   const components = useThemedStylesWithMdx(useMDXComponents())
 
   return (
-    <Post meta={frontMatter} number={number}>
+    <Post meta={frontMatter} number={number} id={id}>
       <MDXRemote
         {...source}
         components={{

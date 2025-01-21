@@ -5,7 +5,6 @@ authors:
   - Danny Cullenward
 date: 09-14-2022
 summary: KlimaDAO sidesteps CarbonPlan’s criticisms of offset credit quality.
-card: klimadao-bct-response
 ---
 
 Last week, KlimaDAO published [an analysis](https://www.klimadao.finance/blog/klimadao-analysis-of-the-base-carbon-tonne) of the Base Carbon Tonne (BCT) — a tokenized “pool” of conventional carbon offset credits that [we criticized](https://carbonplan.org/research/toucan-crypto-offsets) earlier this spring. This post responds to KlimaDAO’s analysis, which presents sunny conclusions that KlimaDAO describes as “in tension” with CarbonPlan’s findings on credit quality.

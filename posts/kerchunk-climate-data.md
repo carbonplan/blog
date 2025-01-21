@@ -7,7 +7,6 @@ authors:
   - Oriana Chegwidden
 date: 12-15-2023
 summary: The open source Python library Kerchunk can speed up climate research.
-card: kerchunk-climate-data
 components:
   - name: Table
     src: '@carbonplan/components'

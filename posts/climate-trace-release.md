@@ -7,7 +7,6 @@ authors:
   - Joe Hamman
 date: 09-16-2021
 summary: Our contributions to the initial Climate TRACE data release, and what’s coming next.
-card: climate-trace-release
 components:
   - name: Map
     src: ./figure.js
