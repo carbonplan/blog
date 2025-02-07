@@ -11,7 +11,7 @@ const List = ({ posts, years }) => {
     <Box>
       {filteredContents.map((d, ix) => (
         <Entry
-          key={d.title}
+          key={d.title + d.date}
           info={d}
           first={ix === 0}
           final={ix === filteredContents.length - 1}
