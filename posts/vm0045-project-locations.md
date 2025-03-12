@@ -6,7 +6,6 @@ authors:
   - Grayson Badgley
 date: 3-12-2025
 summary: Forest offset projects are starting to measure their impact against real forests instead of unobserved, modeled counterfactuals. This change could improve the integrity of offsets, but data transparency remains a problem in the offsets industry. Third party observers need public project location data to evaluate if projects lead to real climate benefits.
-card: vm0045-project-locations
 ---
 
 Starting today, the American Forest Foundation (AFF) is [auctioning off](https://familyforestcarbon.org/for-corporations/american-forest-foundation-auction/) more than a million offset credits from its new Family Forest Carbon Program. The auction marks the culmination of [years of effort](https://verra.org/methodologies/methodology-for-improved-forest-management/#block_59acdd43a6b5588f0edaf67a6a29fc18) to generate credits using a dynamic baseline — a technique meant to fix a critical shortcoming with how forest-backed offset credits are generated. There is a lot to be excited about when it comes to AFF’s implementation of dynamic baselines, but without improvements around basic project data disclosure, it will be hard for the public to independently assess the real impacts.
