@@ -4,7 +4,7 @@ title: New accounting rules blur the line between decarbonization and carbon dio
 authors:
   - Tyler Kukla
   - Freya Chay
-date: 04-14-2025
+date: 04-15-2025
 summary: Isometric’s new protocol for wastewater alkalinity enhancement risks counting decarbonization as carbon dioxide removal. The rules could reshape how carbon removal is defined in other pathways, as well.
 components:
   - name: AccountingGraph
