@@ -3,6 +3,13 @@ import dynamic from 'next/dynamic'
 // NOTE: This is a dynamically generated file based on the config specified under the
 //       `components` key in each post's frontmatter.
 const components = {
+  'counterfactual-accounting-update': {
+    AccountingGraph: dynamic(() =>
+      import(
+        '../../posts/counterfactual-accounting-update/accounting-graph.js'
+      ).then((mod) => mod.AccountingGraph || mod.default)
+    ),
+  },
   'vm0045-project-locations': {},
   'ethanol-cdr-update': {},
   'compliance-users-v4': {},
