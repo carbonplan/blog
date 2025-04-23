@@ -3,6 +3,18 @@ import dynamic from 'next/dynamic'
 // NOTE: This is a dynamically generated file based on the config specified under the
 //       `components` key in each post's frontmatter.
 const components = {
+  'offsets-db-additions': {
+    BeneficiarySearch: dynamic(() =>
+      import('../../posts/offsets-db-additions/beneficiary-search.js').then(
+        (mod) => mod.BeneficiarySearch || mod.default
+      )
+    ),
+    ProjectTypeSummary: dynamic(() =>
+      import('../../posts/offsets-db-additions/project-type-summary.js').then(
+        (mod) => mod.ProjectTypeSummary || mod.default
+      )
+    ),
+  },
   'counterfactual-accounting-update': {
     AccountingGraph: dynamic(() =>
       import(
