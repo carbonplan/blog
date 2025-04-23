@@ -54,6 +54,7 @@
     "react-dom": "^18.2.0",
     "rehype-slug": "^4.0.1",
     "remark-mdx-code-meta": "^2.0.0",
+    "swr": "^2.3.3",
     "theme-ui": "^0.15.3",
     "topojson-client": "^3.1.0",
     "zarr-js": "^1.0.0"
