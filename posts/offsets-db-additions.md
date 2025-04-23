@@ -14,7 +14,7 @@ components:
     src: ./project-type-summary.js
 ---
 
-We’ve expanded the functionality of OffsetsDB, our database that organizes offset data from five of the largest offset registries. Starting today, you can access two new types of data: standardized information about the organizations and companies using offsets, and improved information about project types.
+We’ve expanded the functionality of [OffsetsDB](https://carbonplan.org/research/offsets-db), our database that organizes offset data from five of the largest offset registries. Starting today, you can access two new types of data: standardized information about the organizations and companies using offsets, and improved information about project types.
 
 Adding the retirement user data is a big change. Hardly a week goes by without someone emailing us asking how to figure out who benefits from retiring the offset credits sold by a particular project. It’s such a common question because it’s such an important question. A transparent offset market requires that we’re able to trace offset credits to companies and the specific claims (e.g., net zero) those companies make.
 
