@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic'
 // NOTE: This is a dynamically generated file based on the config specified under the
 //       `components` key in each post's frontmatter.
 const components = {
+  'cdrxiv-launch-announcement': {},
   'offsets-db-additions': {
     BeneficiarySearch: dynamic(() =>
       import('../../posts/offsets-db-additions/beneficiary-search.js').then(
