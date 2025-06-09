@@ -1,6 +1,6 @@
 ---
 version: 1.0.0
-title: 'Workshop notes: accounting for aglime in enhanced rock weathering'
+title: 'Workshop notes: Accounting for aglime in enhanced rock weathering'
 authors:
   - Tyler Kukla
   - name: Zeke Hausfather
