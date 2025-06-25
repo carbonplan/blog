@@ -4,7 +4,7 @@ title: This fire season promises to be rough. We’re tracking its impact on off
 authors:
   - Grayson Badgley
   - Maggie Koerth
-date: 06-24-2025
+date: 06-25-2025
 summary: We’re relaunching our forest offsets tracking tool for the 2025 North American fire season.
 Slug: offset-fires-2025
 ---
