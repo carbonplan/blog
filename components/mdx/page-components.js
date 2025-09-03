@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic'
 // NOTE: This is a dynamically generated file based on the config specified under the
 //       `components` key in each post's frontmatter.
 const components = {
+  'lionshead-fifth-anniversary': {},
   'cdrxiv-open-software': {},
   'offset-fires-2025': {},
   'aglime-accounting-workshop': {},
