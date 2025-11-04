@@ -3,7 +3,7 @@ version: 1.0.0
 title: A letter from our Board President and Chair
 authors:
   - Jeremy Freeman
-date: 11-04-2023
+date: 11-04-2025
 summary: Jeremy reflects on CarbonPlan’s first six years, and shares about a new moment of growth for the team.
 ---
 
