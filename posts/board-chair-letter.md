@@ -4,7 +4,7 @@ title: A letter from our Board President and Chair
 authors:
   - Jeremy Freeman
 date: 11-04-2025
-summary: Jeremy reflects on CarbonPlan’s first six years, and shares about a new moment of growth for the team.
+summary: Jeremy reflects on CarbonPlan's first six years, and shares about a moment of growth for the team.
 ---
 
 We founded CarbonPlan nearly six years ago. While I could spend many thousands of words describing the work we've done and the impact it has had, what I'm most impressed by is the team we've assembled. I've always believed in what cross-disciplinary teams can accomplish, and how they can combine to be so much more than the sum of their parts. So it's been a true joy to watch what a group of climate scientists, policy experts, ecologists, product designers, open source developers, writers, and operations experts can do together. Our entire team has also grown over the years — in their skills and expertise, and in their thought leadership within the fields of carbon removal, carbon offsets, and climate impacts.
