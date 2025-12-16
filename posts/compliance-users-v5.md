@@ -3,7 +3,7 @@ version: 1.0.0
 title: New data added to the Compliance Users tool
 authors:
   - Freya Chay
-date: 12-15-2025
+date: 12-16-2025
 summary: We updated the Compliance Users tool to include the latest available cap-and-trade program data about who used which offsets in 2024.
 ---
 
