@@ -1,0 +1,19 @@
+---
+version: 1.0.0
+title: We’ve added boundary data for forest offset projects to OffsetsDB
+authors:
+  - Grayson Badgley
+  - Anderson Banihirwe
+  - Shane Loeffler
+date: 01-14-2026
+summary: Knowing the location of offsets projects enables more robust market oversight. We’ve added geographic information for 500 forest offset projects to OffsetsDB to assist those efforts.
+---
+
+There’s an obvious need for more oversight of the global carbon market. A basic requirement of effective oversight is that the public know the actual locations of individual offset projects. First off, location matters because bad things can happen to offset projects. The only way to know, say, [if a forest offset project burns down](https://carbonplan.org/research/offset-project-fire), is to know the precise boundaries of the project. Second, access to offset project locations has been critical to [numerous](https:doi.org/10.1257/app.20230052) [academic](https://doi.org/10.1126/science.ade3535) [studies](https://doi.org/10.1073/pnas.2004334117) [raising](https://doi.org/10.1111/gcb.15943) [concerns](https://doi.org/10.1038/s43247-023-00984-2) [about](https://doi.org/10.1002/eap.2817) [over-crediting](https://doi.org/10.1111/gcb.16380) across the carbon market. All of these analyses, which identify serious problems with the rules of the carbon market, rely on project location data. Unfortunately, there is no requirement that projects actually disclose their location. This lack of transparency seriously undermines the credibility of the global carbon market.
+
+That’s why we’ve added project boundary data from 500 [forest offset projects](https://carbonplan.org/research/offsets-db?geography=true) to OffsetsDB.
+This release relies entirely on the [open source dataset](https://doi.org/10.5281/zenodo.11459391) of project boundaries released by Renoster, the offsets rating agency. Their dataset carefully collates both official boundary data that Renoster collected from various offset registries, as well as boundaries they painstakingly constructed themselves through a process called [georeferencing](https://en.wikipedia.org/wiki/Georeferencing). Wonderfully, Renoster chose to share their hard work under a permissive license, meaning we can freely reuse it in OffsetsDB.
+
+As part of bringing boundary data into OffsetsDB, we added a simple map tool that allows you to directly examine project boundaries alongside other pertinent project information. This is helpful for quickly visualizing the boundaries of individual projects. It’s also helpful for studying regional patterns. For example, glancing at the boundary of [CAR1180](https://carbonplan.org/research/offsets-db/projects/CAR1180) reveals that it is located adjacent to at least four other offset projects. We’re not exactly sure why these projects are clustered together — is it just happenstance, or perhaps there is some quirk in crediting rules that makes these forests especially attractive for enrollment? Exploring the geographic patterns of project enrollment represents an underutilized approach for better understanding how offset programs work.
+
+Most importantly, this update highlights just how little we know about the actual locations of forest offset projects. OffsetsDB contains over 1,900 forest projects, yet we only have boundary information for 500 of them. That works out to roughly 25 percent coverage for forest projects. If we consider all 11,000 projects tracked by OffsetsDB, that coverage falls to a dismal four percent. Clearly there is more work to be done. While it’s helpful for independent researchers to keep piecing together location data, the sheer scale of missing data points to the need for more proactive efforts from standard settings bodies to require that all projects share their locations in a standardized way.
