@@ -3,6 +3,13 @@ import dynamic from 'next/dynamic'
 // NOTE: This is a dynamically generated file based on the config specified under the
 //       `components` key in each post's frontmatter.
 const components = {
+  'cdr-policy-report': {
+    DownloadReport: dynamic(() =>
+      import('../../posts/cdr-policy-report/download-report.js').then(
+        (mod) => mod.DownloadReport || mod.default
+      )
+    ),
+  },
   'cdr-temporal-lags': {},
   'offsetsdb-project-geometries': {},
   'compliance-users-v5': {},
