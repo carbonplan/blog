@@ -66,6 +66,7 @@ export const getStaticProps = async ({ params }) => {
       rehypePlugins: [],
     },
     scope: data,
+    blockJS: false,
   })
 
   return {

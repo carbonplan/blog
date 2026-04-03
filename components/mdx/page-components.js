@@ -3,6 +3,28 @@ import dynamic from 'next/dynamic'
 // NOTE: This is a dynamically generated file based on the config specified under the
 //       `components` key in each post's frontmatter.
 const components = {
+  'zarr-layer-maps': {
+    Table: dynamic(() =>
+      import('@carbonplan/components').then((mod) => mod.Table || mod.default)
+    ),
+    TopozarrDiagram: dynamic(() =>
+      import('../../posts/zarr-layer-maps/topozarr-diagram.js').then(
+        (mod) => mod.TopozarrDiagram || mod.default
+      )
+    ),
+  },
+  'cdr-policy-report': {
+    DownloadReport: dynamic(() =>
+      import('../../posts/cdr-policy-report/download-report.js').then(
+        (mod) => mod.DownloadReport || mod.default
+      )
+    ),
+  },
+  'cdr-temporal-lags': {},
+  'offsetsdb-project-geometries': {},
+  'compliance-users-v5': {},
+  'board-chair-letter': {},
+  'lionshead-fifth-anniversary': {},
   'cdrxiv-open-software': {},
   'offset-fires-2025': {},
   'aglime-accounting-workshop': {},
