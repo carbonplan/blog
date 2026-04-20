@@ -3,6 +3,18 @@ import dynamic from 'next/dynamic'
 // NOTE: This is a dynamically generated file based on the config specified under the
 //       `components` key in each post's frontmatter.
 const components = {
+  'lithos-first-issuance': {
+    Roughness: dynamic(() =>
+      import('../../posts/lithos-first-issuance/roughness.js').then(
+        (mod) => mod.Roughness || mod.default
+      )
+    ),
+    Alkalinity: dynamic(() =>
+      import('../../posts/lithos-first-issuance/alk.js').then(
+        (mod) => mod.Alkalinity || mod.default
+      )
+    ),
+  },
   'zarr-layer-maps': {
     Table: dynamic(() =>
       import('@carbonplan/components').then((mod) => mod.Table || mod.default)
