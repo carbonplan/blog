@@ -11,7 +11,7 @@ import {
   Line,
   Rect,
 } from '@carbonplan/charts'
-import rows from './dic_vs_infiltration.csv'
+import { dic_vs_infiltration } from './data'
 
 const X_MAX = 500
 
@@ -19,13 +19,13 @@ const lerp = (x0, y0, x1, y1, x) => y0 + ((y1 - y0) * (x - x0)) / (x1 - x0)
 
 const clipSeries = (key) => {
   const pts = []
-  for (let i = 0; i < rows.length; i++) {
-    const x = rows[i].q_mm_per_yr
-    const y = rows[i][key]
+  for (let i = 0; i < dic_vs_infiltration.length; i++) {
+    const x = dic_vs_infiltration[i].q_mm_per_yr
+    const y = dic_vs_infiltration[i][key]
     if (x <= X_MAX) {
       pts.push([x, y])
     } else {
-      const prev = rows[i - 1]
+      const prev = dic_vs_infiltration[i - 1]
       pts.push([X_MAX, lerp(prev.q_mm_per_yr, prev[key], x, y, X_MAX)])
       break
     }

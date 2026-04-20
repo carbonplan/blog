@@ -11,17 +11,17 @@ import {
   Line,
   Rect,
 } from '@carbonplan/charts'
-import rows from './nb1_rate_vs_roughness_factor.csv'
+import { nb1_rate_vs_roughness_factor } from './data'
 
-const diam50 = rows.map((r) => [
+const diam50 = nb1_rate_vs_roughness_factor.map((r) => [
   r.log_dissolution_rate_mol_m2_s,
   r.roughness_factor_diam_50um,
 ])
-const diam396 = rows.map((r) => [
+const diam396 = nb1_rate_vs_roughness_factor.map((r) => [
   r.log_dissolution_rate_mol_m2_s,
   r.roughness_factor_diam_396um,
 ])
-const diam990 = rows.map((r) => [
+const diam990 = nb1_rate_vs_roughness_factor.map((r) => [
   r.log_dissolution_rate_mol_m2_s,
   r.roughness_factor_diam_990um,
 ])
