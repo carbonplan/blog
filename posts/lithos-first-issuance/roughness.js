@@ -212,7 +212,7 @@ const Roughness = () => {
           <Label x={-11} y={2e4} sx={{ color: 'grey', textTransform: 'none' }}>
             990 µm
           </Label>
-          <Label x={-12.8} y={35} sx={{ color: 'primary' }}>
+          <Label x={-12.8} y={35} sx={{ color: 'primary', mt: [0, 0, 0, -2] }}>
             Expected
             <br />
             range
