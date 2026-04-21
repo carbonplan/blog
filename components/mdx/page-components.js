@@ -3,6 +3,13 @@ import dynamic from 'next/dynamic'
 // NOTE: This is a dynamically generated file based on the config specified under the
 //       `components` key in each post's frontmatter.
 const components = {
+  'pig-manure-inconsistencies': {
+    Reporting: dynamic(() =>
+      import('../../posts/pig-manure-inconsistencies/reporting.js').then(
+        (mod) => mod.Reporting || mod.default
+      )
+    ),
+  },
   'lithos-first-issuance': {
     Roughness: dynamic(() =>
       import('../../posts/lithos-first-issuance/roughness.js').then(
