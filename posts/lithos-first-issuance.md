@@ -56,7 +56,7 @@ Even for very fast weathering rates, we find that weathering 64 percent of the f
     (despite 64 percent of the rock dissolving) and that carbon is removed with
     perfect efficiency. Lines show three different grain sizes — Lithos reports
     that 90 percent of their grains have diameters smaller than 990 _μm_.
-    Dissolution rate ranges at the top of the figure include an estimate for
+    Dissolution rate ranges at the bottom of the figure include an estimate for
     basalts ([Strefler et al., 2018](https://doi.org/10.1088/1748-9326/aaa9c4))
     and some of the fastest reacting minerals in a basalt ([Oelkers et al.,
     2018](https://doi.org/10.1016/j.chemgeo.2018.10.008); [Renforth et al.,
