@@ -15,7 +15,6 @@ const Index = ({ posts }) => {
       }
       card={'https://images.carbonplan.org/social/blog.png'}
       footer={true}
-      links={'local'}
       nav={'blog'}
       url={'https://carbonplan.org/blog'}
       settings={{
