@@ -3,6 +3,18 @@ import dynamic from 'next/dynamic'
 // NOTE: This is a dynamically generated file based on the config specified under the
 //       `components` key in each post's frontmatter.
 const components = {
+  'producing-ocr-data': {
+    Overview: dynamic(() =>
+      import('../../posts/producing-ocr-data/overview.js').then(
+        (mod) => mod.Overview || mod.default
+      )
+    ),
+    Retry: dynamic(() =>
+      import('../../posts/producing-ocr-data/retry.js').then(
+        (mod) => mod.Retry || mod.default
+      )
+    ),
+  },
   'pig-manure-inconsistencies': {
     Reporting: dynamic(() =>
       import('../../posts/pig-manure-inconsistencies/reporting.js').then(
