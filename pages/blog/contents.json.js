@@ -5,9 +5,13 @@ function Contents() {
 }
 
 export function getServerSideProps({ res }) {
-  const pages = postMetadata.map(({ date, id }) => {
+  const pages = postMetadata.map(({ date, id, authors, title, summary }) => {
     const [month, day, year] = date.split('-')
-    return { page: `blog/${id}`, date: `${year}-${month}-${day}` }
+    return {
+      page: `blog/${id}`,
+      date: `${year}-${month}-${day}`,
+      metadata: { type: 'blog', authors, title, summary },
+    }
   })
 
   res.setHeader('Content-Type', 'application/json')
