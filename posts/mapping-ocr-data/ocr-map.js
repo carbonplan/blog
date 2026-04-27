@@ -582,7 +582,11 @@ const OcrMap = () => {
         </Column>
       </Row>
       <Row columns={6}>
-        <Column start={[1, 1, 1, 1]} width={[6, 6, 6, 3]}>
+        <Column
+          start={[1, 1, 1, 1]}
+          width={[6, 6, 6, 6]}
+          sx={{ maxWidth: 540 }}
+        >
           <Flex
             sx={{
               gap: '2px',
