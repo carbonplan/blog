@@ -3,6 +3,13 @@ import dynamic from 'next/dynamic'
 // NOTE: This is a dynamically generated file based on the config specified under the
 //       `components` key in each post's frontmatter.
 const components = {
+  'mapping-ocr-data': {
+    OcrMap: dynamic(() =>
+      import('../../posts/mapping-ocr-data/ocr-map.js').then(
+        (mod) => mod.OcrMap || mod.default
+      )
+    ),
+  },
   'producing-ocr-data': {
     Overview: dynamic(() =>
       import('../../posts/producing-ocr-data/overview.js').then(
