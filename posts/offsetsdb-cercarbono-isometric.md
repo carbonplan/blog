@@ -9,7 +9,7 @@ date: 05-06-2026
 summary: We’ve added two new offset registries to OffsetsDB.
 ---
 
-Starting today, OffsetsDB includes data from two additional carbon offset registries: [Isometric](https://registry.isometric.com/) and [Cercarbono](https://www.ecoregistry.io/projects-list/cercarbono-co2), bringing the total number of registries covered by OffsetsDB to seven.
+Starting today, [OffsetsDB](https://carbonplan.org/research/offsets-db) includes data from two additional carbon offset registries: [Isometric](https://registry.isometric.com/) and [Cercarbono](https://www.ecoregistry.io/projects-list/cercarbono-co2), bringing the total number of registries covered by OffsetsDB to seven.
 
 Adding new registries to OffsetsDB is required to maintain its usefulness. Historically, activity within the carbon market has been concentrated within a handful of offset registries. By some estimates, the five registries originally included in OffsetsDB represent [98 percent](https://icvcm.org/integrity-council-confirms-verra-and-art-meet-its-high-integrity-benchmark/) of the market. More recently, however, we’ve seen the emergence of a number of new offset registries, each tailored to slightly different parts of the carbon market. Isometric and Puro, for example, entered the market to satisfy a growing demand for long-duration carbon removal. Other registries, like Global Carbon Council or Cercarbono, serve more niche corners of the traditional carbon market. Cercarbono, for example, had an early emphasis on offset projects developed in Colombia.
 
