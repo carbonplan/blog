@@ -3,6 +3,8 @@ import dynamic from 'next/dynamic'
 // NOTE: This is a dynamically generated file based on the config specified under the
 //       `components` key in each post's frontmatter.
 const components = {
+  'pnw-wildfires-2026': {},
+  'offsetsdb-cercarbono-isometric': {},
   'mapping-ocr-data': {
     OcrMap: dynamic(() =>
       import('../../posts/mapping-ocr-data/ocr-map.js').then(
